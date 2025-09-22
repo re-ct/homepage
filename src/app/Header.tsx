@@ -74,11 +74,8 @@ const sxStyles = {
   },
 };
 
-interface HeaderProps {
-  isSchoolPage?: boolean;
-}
 
-const Header: React.FC<HeaderProps> = () => {
+const Header = () => {
   const router = useRouter();
   const schoolHandleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
