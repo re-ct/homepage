@@ -1,0 +1,1 @@
+export const contact = 'https://forms.gle/tWbY3pJaxRpEq7Nz8';

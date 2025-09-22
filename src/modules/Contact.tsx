@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import pcImg from '../../public/image/top/img_pc.png';
+import { contact } from '../lib/const/Link';
 
 const Contact = () => {
   return (
@@ -52,7 +53,7 @@ const Contact = () => {
         }}
       >
         <Link
-          href="https://forms.gle/tWbY3pJaxRpEq7Nz8"
+          href={contact}
           rel="noopener noreferrer"
           target="_blank"
           sx={{
