@@ -6,11 +6,11 @@ import { commonSxStyles } from './Style';
 
 interface CustomButtonProps {
   label: string;
-  isPrimary?: boolean;
-  showFreeLabel?: boolean;
+  isPrimary: boolean;
+  showFreeLabel: boolean;
   icon?: 'arrow-right' | 'new-tab';
   href: string;
-  isExternal?: boolean;
+  isExternal: boolean;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
