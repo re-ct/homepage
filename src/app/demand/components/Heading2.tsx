@@ -5,8 +5,8 @@ import { alpha } from '@mui/system';
 interface Heading2Props {
   subText: string;
   mainText: string;
-  position: 'center' | 'right';
-  backGroundWhite: boolean;
+  position?: 'center' | 'right';
+  backGroundWhite?: boolean;
 }
 
 export const Heading2: React.FC<Heading2Props> = ({
