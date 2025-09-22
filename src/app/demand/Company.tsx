@@ -62,7 +62,6 @@ const Company = () => {
         >
           <CustomButton
             label="会社概要を見る"
-            variant="primary"
             showFreeLabel={false}
             icon="new-tab"
             href="/"

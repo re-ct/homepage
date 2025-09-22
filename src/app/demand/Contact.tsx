@@ -72,7 +72,7 @@ const Contact = () => {
       >
         <CustomButton
           label="お問い合わせフォームへ"
-          variant="secondary"
+          isPrimary={false}
           showFreeLabel={false}
           icon="arrow-right"
           href={contact}

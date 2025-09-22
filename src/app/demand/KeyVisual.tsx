@@ -122,7 +122,6 @@ const KeyVisual = () => {
           >
             <CustomButton
               label="お問い合わせ"
-              variant="primary"
               icon="arrow-right"
               href={contact}
               isExternal={true}

@@ -6,7 +6,7 @@ import { commonSxStyles } from './Style';
 
 interface CustomButtonProps {
   label: string;
-  variant?: 'primary' | 'secondary';
+  isPrimary?: boolean;
   showFreeLabel?: boolean;
   icon?: 'arrow-right' | 'new-tab';
   href: string;
@@ -15,7 +15,7 @@ interface CustomButtonProps {
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   label,
-  variant = 'primary',
+  isPrimary = true,
   showFreeLabel = true,
   icon,
   href,
@@ -43,11 +43,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       sx={[
         {
           backgroundColor:
-            variant === 'primary'
+            isPrimary
               ? commonSxStyles.color.primary
               : commonSxStyles.color.white,
           color:
-            variant === 'primary'
+            isPrimary
               ? commonSxStyles.color.white
               : commonSxStyles.color.primary,
           textTransform: 'none',
@@ -78,11 +78,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
             component="span"
             sx={{
               backgroundColor:
-                variant === 'primary'
+                isPrimary
                   ? commonSxStyles.color.white
                   : commonSxStyles.color.primary,
               color:
-                variant === 'primary'
+                isPrimary
                   ? commonSxStyles.color.primary
                   : commonSxStyles.color.white,
               borderRadius: '4px',
