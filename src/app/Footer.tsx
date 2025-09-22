@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
+import { contact } from '../lib/const/Link';
 
 const Copyright = () => {
   return (
@@ -26,7 +27,7 @@ const Footer = () => {
     { text: '開発等の相談', href: '/demand', nested: true },
     {
       text: 'お問い合わせ',
-      href: 'https://forms.gle/tWbY3pJaxRpEq7Nz8',
+      href: contact,
       external: true,
     },
     { text: 'プライバシーポリシー', href: '/privacy' },

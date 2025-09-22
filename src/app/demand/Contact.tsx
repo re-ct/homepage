@@ -3,6 +3,7 @@ import CustomButton from './components/Button';
 import { Box, Typography } from '@mui/material';
 import img from '../../../public/image/demand/contact_image.webp';
 import { commonSxStyles } from './components/Style';
+import { contact } from '../../lib/const/Link';
 
 const sxStyles = {
   text: {
@@ -74,7 +75,7 @@ const Contact = () => {
           variant="secondary"
           showFreeLabel={false}
           icon="arrow-right"
-          href="https://forms.gle/tWbY3pJaxRpEq7Nz8"
+          href={contact}
           isExternal={true}
         />
       </Box>

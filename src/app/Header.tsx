@@ -11,6 +11,8 @@ import { PlayCircle } from '@mui/icons-material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
+import { contact } from '../lib/const/Link';
+
 
 const sxStyles = {
   schoolHeader: {
@@ -84,7 +86,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
   const demandHandleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    router.push('https://forms.gle/tWbY3pJaxRpEq7Nz8');
+    router.push(contact);
   };
   const pathname = usePathname();
   const isSchoolPage = pathname.includes('/school');

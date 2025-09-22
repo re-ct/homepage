@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import CustomButton from './components/Button';
 import img from '../../../public/image/demand/keyVisual_image.webp';
 import { commonSxStyles } from './components/Style';
+import { contact } from '../../lib/const/Link';
 
 const KeyVisual = () => {
   return (
@@ -123,7 +124,7 @@ const KeyVisual = () => {
               label="お問い合わせ"
               variant="primary"
               icon="arrow-right"
-              href="https://forms.gle/tWbY3pJaxRpEq7Nz8"
+              href={contact}
               isExternal={true}
             />
           </Box>
