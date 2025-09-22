@@ -6,8 +6,8 @@ import { commonSxStyles } from './components/Style';
 
 type SkillData = {
   id: string;
-  category: string,
-  item: string[],
+  category: string;
+  item: string[];
 };
 
 const skillData: SkillData[] = [

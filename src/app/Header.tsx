@@ -13,7 +13,6 @@ import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import { contact } from '../lib/const/Link';
 
-
 const sxStyles = {
   schoolHeader: {
     width: '980px',
@@ -73,7 +72,6 @@ const sxStyles = {
     },
   },
 };
-
 
 const Header = () => {
   const router = useRouter();

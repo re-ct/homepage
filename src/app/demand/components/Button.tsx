@@ -42,14 +42,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       target={isExternal ? '_blank' : undefined}
       sx={[
         {
-          backgroundColor:
-            isPrimary
-              ? commonSxStyles.color.primary
-              : commonSxStyles.color.white,
-          color:
-            isPrimary
-              ? commonSxStyles.color.white
-              : commonSxStyles.color.primary,
+          backgroundColor: isPrimary
+            ? commonSxStyles.color.primary
+            : commonSxStyles.color.white,
+          color: isPrimary
+            ? commonSxStyles.color.white
+            : commonSxStyles.color.primary,
           textTransform: 'none',
           padding: hasIcon ? '16px 20px 16px 25px' : '16px 20px 16px 20px',
           borderRadius: '50px',
@@ -77,14 +75,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
           <Typography
             component="span"
             sx={{
-              backgroundColor:
-                isPrimary
-                  ? commonSxStyles.color.white
-                  : commonSxStyles.color.primary,
-              color:
-                isPrimary
-                  ? commonSxStyles.color.primary
-                  : commonSxStyles.color.white,
+              backgroundColor: isPrimary
+                ? commonSxStyles.color.white
+                : commonSxStyles.color.primary,
+              color: isPrimary
+                ? commonSxStyles.color.primary
+                : commonSxStyles.color.white,
               borderRadius: '4px',
               px: '6px',
               py: '2px',

@@ -11,7 +11,8 @@ import Company from './Company';
 import { demandTopTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
-  title: 'ソフトウェア開発の相談・依頼 | 開発実績多数！ソフトウェア開発の依頼は株式会社レクトへ',
+  title:
+    'ソフトウェア開発の相談・依頼 | 開発実績多数！ソフトウェア開発の依頼は株式会社レクトへ',
 };
 
 const Demand = () => {

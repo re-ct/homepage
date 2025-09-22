@@ -5,7 +5,6 @@ import React from 'react';
 import { commonSxStyles } from './components/Style';
 import { alpha } from '@mui/system';
 
-
 type Flow = {
   id: string;
   step: string;
@@ -13,7 +12,7 @@ type Flow = {
   detail: string;
 };
 
-const flow: Flow[]  = [
+const flow: Flow[] = [
   {
     id: '1',
     step: 'STEP 1',
