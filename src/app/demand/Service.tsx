@@ -4,7 +4,13 @@ import skill from '../../../public/image/demand/service_skill.webp';
 import React from 'react';
 import { commonSxStyles } from './components/Style';
 
-const skillData = [
+type SkillData = {
+  id: string;
+  category: string,
+  item: string[],
+};
+
+const skillData: SkillData[] = [
   {
     id: '1',
     category: '開発言語',
