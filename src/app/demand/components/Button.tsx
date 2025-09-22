@@ -38,8 +38,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     <Button
       variant="contained"
       href={href}
-      rel={isExternal ? 'noopener noreferrer' : ''}
-      target={isExternal ? '_blank' : ''}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      target={isExternal ? '_blank' : undefined}
       sx={[
         {
           backgroundColor:
