@@ -25,6 +25,7 @@ const sxStyles = {
     flexWrap: 'nowrap',
     gap: 3,
     justifyContent: 'center',
+    alignItems: 'stretch',
     px: 3,
     '@media screen and (max-width:450px)': {
       justifyContent: 'flex-start',
@@ -35,15 +36,18 @@ const sxStyles = {
     minWidth: '300px',
     maxWidth: '300px',
     p: 0,
+    '& > a': {
+      height: '100%',
+    }
   },
   listItemBox: {
     width: '300px',
     pt: 2,
-    pb: 3,
+    pb: 5,
     px: 2,
-    height: '400px',
     backgroundColor: '#fff',
     borderRadius: 3,
+    height: '100%',
     '&:hover': {
       opacity: 0.8,
       backgroundColor: '#fff',
