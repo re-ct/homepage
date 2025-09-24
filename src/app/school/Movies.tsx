@@ -25,6 +25,7 @@ const sxStyles = {
     flexWrap: 'nowrap',
     gap: 3,
     justifyContent: 'center',
+    alignItems: 'stretch',
     px: 3,
     '@media screen and (max-width:450px)': {
       justifyContent: 'flex-start',
@@ -35,15 +36,18 @@ const sxStyles = {
     minWidth: '300px',
     maxWidth: '300px',
     p: 0,
+    '& > a': {
+      height: '100%',
+    },
   },
   listItemBox: {
     width: '300px',
     pt: 2,
-    pb: 3,
+    pb: 5,
     px: 2,
-    height: '400px',
     backgroundColor: '#fff',
     borderRadius: 3,
+    height: '100%',
     '&:hover': {
       opacity: 0.8,
       backgroundColor: '#fff',
@@ -116,8 +120,17 @@ const movieList: Movie[] = [
       'Scratch(スクラッチ)でシューティングゲームを作ろう！【超入門】初心者でもバッチリ！',
     summary:
       'プログラミング初心者でもわかりやすく丁寧に解説！Scratch(スクラッチ)を通してプログラミングの基礎的な技術を身につけましょう！',
-    href: 'https://www.udemy.com/course/scratch-shooting/',
+    href: 'https://www.udemy.com/course/scratch-shooting/?referralCode=51442CE63543EE22D9A6',
     img: 'thumbnail_movie_scratchShooting.png',
+  },
+  {
+    id: 'movie2',
+    title:
+      'Scratch(スクラッチ)でアクションゲームを作ろう！【超入門】初心者でもバッチリ！',
+    summary:
+      'みんな大好きアクションゲームをScratch(スクラッチ)で作ってみよう！移動や攻撃、HPなどゲームに作りに役立つプログラミング方法を身につけましょう！',
+    href: 'https://www.udemy.com/course/scratch-action/?referralCode=2B01C00B12BC9D6CD65A',
+    img: 'thumbnail_movie_scratchAction.png',
   },
 ];
 
