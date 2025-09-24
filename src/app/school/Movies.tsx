@@ -116,7 +116,7 @@ const movieList: Movie[] = [
       'Scratch(スクラッチ)でシューティングゲームを作ろう！【超入門】初心者でもバッチリ！',
     summary:
       'プログラミング初心者でもわかりやすく丁寧に解説！Scratch(スクラッチ)を通してプログラミングの基礎的な技術を身につけましょう！',
-    href: 'https://www.udemy.com/course/scratch-shooting/',
+    href: 'https://www.udemy.com/course/scratch-shooting/?referralCode=51442CE63543EE22D9A6',
     img: 'thumbnail_movie_scratchShooting.png',
   },
 ];
