@@ -38,7 +38,7 @@ const sxStyles = {
     p: 0,
     '& > a': {
       height: '100%',
-    }
+    },
   },
   listItemBox: {
     width: '300px',
