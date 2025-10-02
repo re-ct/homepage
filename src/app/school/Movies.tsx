@@ -132,6 +132,15 @@ const movieList: Movie[] = [
     href: 'https://www.udemy.com/course/scratch-action/?referralCode=2B01C00B12BC9D6CD65A',
     img: 'thumbnail_movie_scratchAction.png',
   },
+  {
+    id: 'movie3',
+    title:
+      'Scratch(スクラッチ)でタイムアタックゲームを作ろう！【超入門】初心者でもバッチリ！',
+    summary:
+      '車を操作して最速タイムを目指すタイムアタックゲームをScratch(スクラッチ)で作ってみよう！条件分岐や変数、クローンといったScratchでよく使うコードブロックの使い方をマスターしよう！',
+    href: 'https://www.udemy.com/course/scratch-race/?referralCode=38B9499821BEDA5C47E3',
+    img: 'thumbnail_movie_scratchRace.png',
+  },
 ];
 
 const Movies = () => {
