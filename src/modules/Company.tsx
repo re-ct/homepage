@@ -15,8 +15,6 @@ const rows = [
   createData('設立', '2024年6月3日'),
   createData('所在地', '愛知県豊川市御津町西方日暮1-12'),
   createData('代表', '渡辺 優樹'),
-  createData('生年月日', '1994年12月28日'),
-  createData('電話番号', '080-3945-1221'),
   createData('主な事業内容', '情報通信サービスの開発・運営'),
 ];
 
