@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from '../components/Header/Header';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 import Footer from './Footer';
 import { GoogleTagManager } from '@next/third-parties/google';
