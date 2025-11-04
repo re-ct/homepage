@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import { commonSxStyles } from '../Style';
-import CustomButton from '../Button';
+import { commonSxStyles } from '../components/Style';
+import CustomButton from '../components/Button';
 
 const sxStyles = {
   list: {
