@@ -39,6 +39,7 @@ export const commonSxStyles = {
   color: {
     primary: {
       400: '#407BFF',
+      100: '#F1F5FD',
     },
     Orange: {
       400: '#EF6C00',
