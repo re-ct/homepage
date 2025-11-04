@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { ReactNode } from 'react'; // ReactNodeを使用する場合は必要
+import { ReactNode } from 'react';
 
 interface accordionData {
   id: string;
