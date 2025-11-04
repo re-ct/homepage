@@ -2,6 +2,7 @@ import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
 import Contact from './Contact';
+import Faq from './Faq';
 
 export const metadata = {
   title: 'プログラミング教室Re:ProS(レプロス repros)フランチャイズオーナー募集',
@@ -17,6 +18,7 @@ export const metadata = {
 const School = () => {
   return (
     <main>
+      <Faq />
       <Contact />
       <BreadcrumbsNavigation titles={fcTopTitle} />
     </main>
