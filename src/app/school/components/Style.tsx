@@ -38,6 +38,7 @@ export const commonSxStyles = {
   },
   color: {
     primary: {
+      900: '#24285B',
       400: '#407BFF',
       100: '#F1F5FD',
     },
