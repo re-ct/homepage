@@ -1,6 +1,7 @@
 import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
+import AboutScratch from './AboutScratch';
 import Fee from './Fee';
 import Flow from './Flow';
 import Faq from './Faq';
@@ -20,6 +21,7 @@ export const metadata = {
 const School = () => {
   return (
     <main>
+      <AboutScratch />
       <Fee />
       <Flow />
       <Faq />
