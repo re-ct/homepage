@@ -25,8 +25,8 @@ const School = () => {
     <main>
       <KeyVisual />
       <Feature />
-      <AboutScratch />
       <Fee />
+      <AboutScratch />
       <Flow />
       <Faq />
       <Contact />

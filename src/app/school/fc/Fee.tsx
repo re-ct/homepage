@@ -18,6 +18,8 @@ const sxStyles = {
       color: commonSxStyles.color.white,
       p: '20px',
       textAlign: 'left',
+      display: 'flex',
+      alignItems: 'center',
     },
     '& td': {
       p: '20px',
@@ -30,15 +32,13 @@ const sxStyles = {
     },
     '& tr': {
       display: 'grid',
-      gridTemplateColumns: '150px 1fr',
-      '&:nth-child(2)': {
+      gridTemplateColumns: '170px 1fr',
+      '& + tr': {
         '& th': {
           borderTop: 'solid 1px' + commonSxStyles.color.white,
-          borderBottom: 'solid 1px' + commonSxStyles.color.white,
         },
         '& td': {
           borderTop: 'solid 1px' + commonSxStyles.color.primary[900],
-          borderBottom: 'solid 1px' + commonSxStyles.color.primary[900],
         }
       }
     }
@@ -51,7 +51,7 @@ const sxStyles = {
   model: {
     borderRadius: '8px',
     border: 'solid 1px #C6C6C6',
-    p: 4,
+    p: '32px 24px',
     mt: 5,
   },
   modelTitle: {
@@ -60,10 +60,8 @@ const sxStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '@media screen and (max-width:768px)': {
-      flexDirection: 'column',
-      rowGap: '8px'
-    }
+    flexDirection: 'column',
+    rowGap: '8px'
   },
   modelTitlePoint: {
     borderRadius: '30px',
@@ -77,7 +75,7 @@ const sxStyles = {
     mt: '20px',
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
+    gap: '6px',
     '@media screen and (max-width:768px)': {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -112,19 +110,12 @@ const sxStyles = {
     }
   },
   dlWrapProfit: {
-    width: '24%',
-    maxWidth: '200px',
+    width: '17%',
+    maxWidth: '152px',
     '@media screen and (max-width:768px)': {
       maxWidth: '100%',
       gridRow: '1 / 2',
       gridColumn: '1 / 2',
-    },
-  },
-  dlWrapSales: {
-    '@media screen and (max-width:768px)': {
-      gridRow: '1 / 3',
-      gridColumn: '2 / 3',
-      height: '100%',
     },
   },
   dlWrapFee: {
@@ -141,13 +132,28 @@ const sxStyles = {
       flexDirection: 'column',
     },
   },
+  dlWrapSales: {
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: commonSxStyles.color.primary[100],
+    py: '12px',
+    px: '20px',
+    borderRadius: '4px',
+    '@media screen and (max-width:768px)': {
+      gridRow: '1 / 3',
+      gridColumn: '2 / 3',
+      height: '100%',
+      flexDirection: 'column',
+      justifyContent: 'center',
+    },
+  },
   dlWrapFeeBox: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    pr: 2,
-    minWidth: '121px',
+    pr: '13px',
+    minWidth: '86px',
     '@media screen and (max-width:768px)': {
       minWidth: 'auto',
       pr: 0,
@@ -165,11 +171,15 @@ const sxStyles = {
   ddFeeDetails: {
     pl: 2,
     borderLeft: 'dotted 1px #656565',
+    minHeight: '49px',
+    display: 'flex',
+    alignItems: 'center',
     '@media screen and (max-width:768px)': {
       pl: 0,
       pt: 1,
       borderLeft: 'none',
       borderTop: 'dotted 1px #656565',
+      minHeight: 'auto',
     },
     '& > ul': {
       listStyle: 'none',
@@ -247,6 +257,7 @@ const Fee = () => {
                 <Box 
                   component="td"               
                 >
+                  <Box component="span" sx={commonSxStyles.typography.normalText}>生徒数に関わらず</Box><br/>
                   月額固定 <Box component="strong">1</Box>万円<Box component="span" sx={commonSxStyles.typography.normalText}> (税抜)</Box>
                 </Box>
               </Box>
@@ -259,13 +270,26 @@ const Fee = () => {
                 <Box 
                   component="td"               
                 >
-                  最低 <Box component="strong">6</Box>ヶ月
+                  最低 <Box component="strong">6</Box>ヶ月<Box component="span" sx={commonSxStyles.typography.normalText}> (以降自動更新)</Box>
+                </Box>
+              </Box>
+              <Box component="tr" >
+                <Box 
+                  component="th"               
+                >
+                  教室運営の裁量
+                </Box>
+                <Box 
+                  component="td"               
+                >
+                  <Box component="span" sx={commonSxStyles.typography.normalText}>授業料や生徒数、教室の稼働時間など</Box><br/>
+                  オーナー様の裁量で自由に決定してOK
                 </Box>
               </Box>
             </Box>
           </Box>
           <Typography component="p" sx={[commonSxStyles.typography.smallText,sxStyles.note]}>
-            ※契約内容、初期費用、ロイヤリティ、およびサポート内容は、予告なく変更となる場合がございます。<br/>※最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
+            ※教室運営に必要な備品の準備・生徒の集客活動はご自身で行っていただきます。<br/>※契約内容、初期費用、ロイヤリティ、およびサポート内容は、予告なく変更となる場合がございます。<br/>※最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
           </Typography>
           <Box sx={sxStyles.model}>
             <Typography component="h3" sx={[commonSxStyles.typography.largeText,sxStyles.modelTitle]}>
@@ -284,9 +308,16 @@ const Fee = () => {
                 width={19}
                 height={8}
               />
-              <Box sx={[sxStyles.dlWrap,sxStyles.dlWrapSales]}>
-                <Box component="dt" sx={commonSxStyles.typography.normalText}>売上</Box>
-                <Box component="dd"><Box component="strong">40</Box>万円/月</Box>
+              <Box sx={sxStyles.dlWrapSales}>
+                <Box sx={sxStyles.dlWrapFeeBox}>
+                  <Box component="dt" sx={commonSxStyles.typography.normalText}>売上</Box>
+                  <Box component="dd"><Box component="strong">40</Box>万円/月</Box>
+                </Box>
+                <Box component="dd" sx={sxStyles.ddFeeDetails}>
+                  <Box component="ul">
+                    <Typography component="li">授業料：月額8000円</Typography>
+                  </Box>
+                </Box>
               </Box>
               <Box
                 component="img"
@@ -303,13 +334,13 @@ const Fee = () => {
                 <Box component="dd" sx={sxStyles.ddFeeDetails}>
                   <Box component="ul">
                     <Typography component="li">ロイヤリティ：1万円</Typography>
-                    <Typography component="li">人件費：8万円<Typography component="span">※講師1名(時給1,250円、週2日×8時間換算)</Typography></Typography>
+                    <Typography component="li">人件費：8万円<Typography component="span">※講師1名(時給1250円、8時間換算)</Typography></Typography>
                     <Typography component="li">その他経費：10万円</Typography>
                   </Box>
                 </Box>
               </Box>
             </Box>
-            <Typography sx={[commonSxStyles.typography.smallText,sxStyles.feeNote]}>※本収益モデルは試算であり、実際と異なる場合があります。週2日稼働で売上40万円としていますが、稼働日数や定員に制限はありません。</Typography>
+            <Typography sx={[commonSxStyles.typography.smallText,sxStyles.feeNote]}>※本収益モデルは試算であり、実際と異なる場合があります。稼働日数や定員に制限はありません。</Typography>
           </Box>
         </Box>
       </Box>
