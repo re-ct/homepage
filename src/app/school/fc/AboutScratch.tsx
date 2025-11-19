@@ -44,7 +44,7 @@ const sxStyles = {
     }
   },
   voiceWrap: {
-    backgroundColor: commonSxStyles.color.white,
+    backgroundColor: commonSxStyles.color.primary[100],
     py: 3,
     px: 3,
     borderRadius: 2,
@@ -60,7 +60,7 @@ const sxStyles = {
       transform: 'translateY(-50%)',
       borderTop: 'solid 9px transparent',
       borderBottom: 'solid 9px transparent',
-      borderLeft: 'solid 20px white',
+      borderLeft: 'solid 20px'+commonSxStyles.color.primary[100],
     },
   },
   voiceHuman: {
@@ -87,7 +87,7 @@ const AboutScratch = () => {
 <Box
   sx={{
     width: '100%',
-    backgroundColor: commonSxStyles.color.primary[100],
+    backgroundColor: commonSxStyles.color.white,
     pt: 7,
     pb: 10,
     '@media screen and (max-width:450px)': {
