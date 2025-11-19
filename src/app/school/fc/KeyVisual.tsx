@@ -54,7 +54,8 @@ const sxStyles = {
     borderRadius: '40px',
     '@media screen and (max-width:768px)': {
       borderRadius: 0,
-      width: "100%"
+      width: "100%",
+      verticalAlign: 'bottom',
     }
   },
   subCopy: {
