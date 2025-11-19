@@ -3,6 +3,7 @@ import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
 import AboutScratch from './AboutScratch';
 import KeyVisual from './KeyVisual';
+import Feature from './Feature';
 import Fee from './Fee';
 import Flow from './Flow';
 import Faq from './Faq';
@@ -23,6 +24,7 @@ const School = () => {
   return (
     <main>
       <KeyVisual />
+      <Feature />
       <AboutScratch />
       <Fee />
       <Flow />

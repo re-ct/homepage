@@ -45,10 +45,17 @@ export const commonSxStyles = {
     Orange: {
       400: '#EF6C00',
     },
-    black: '#000',
+    Yellow: {
+      300: '#FFF652',
+    },
+    Gray: {
+      900: '#000000',
+      800: '#303030',
+      700: '#5D5D5D',
+      300: '#CCCCCC',
+      200: '#DDDDDD',
+    },
     white: '#fff',
-    background: '#EFF7FF',
-    border: '#969696',
-    grayText: '#545454',
+    black: '#333'
   },
 };
