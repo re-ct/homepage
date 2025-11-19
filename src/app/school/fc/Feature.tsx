@@ -1,13 +1,19 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import React from 'react';
-import { CheckCircleOutlined } from '@mui/icons-material';
+import { CheckCircleOutlined,CoPresent,CurrencyYen,ImportContacts } from '@mui/icons-material';
 import { ReactNode } from 'react';
 
 type Point = {
   id: number;
   title: string | ReactNode; 
   detail: string | ReactNode; 
+};
+
+type Worries = {
+  id: number;
+  title: string | ReactNode;
+  icon: string | ReactNode; 
 };
 
 const point: Point[] = [
@@ -33,8 +39,83 @@ const point: Point[] = [
   },
 ]
 
+const worries: Worries[] = [
+  {
+    id: 1,
+    title: <><strong>教える事に興味はある</strong>が<br/>難しいプログラミングは不安</>,
+    icon: <><CoPresent/></>
+  },
+  {
+    id: 2,
+    title: <><strong>空き時間を利用</strong>して、<br/>副収入を得たい</>,
+    icon: <><CurrencyYen/></>
+  },
+  {
+    id: 3,
+    title: <><strong>教材やカリキュラム作り</strong>は<br/>正直面倒...</>,
+    icon: <><ImportContacts/></>,
+  },
+]
+
 
 const sxStyles = {
+  content: {
+    position: 'relative',
+    width: '100%',
+    backgroundColor: commonSxStyles.color.primary[400],
+    pt: 7,
+    pb: 10,
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '0',
+      height: '0',
+      borderLeft: '18px solid transparent',
+      borderRight: '18px solid transparent',
+      borderBottom: '17px solid transparent',
+      borderTop: '17px solid'+ commonSxStyles.color.white,
+    },
+  },
+  worries: {
+    display: 'flex',
+    columnGap: '40px',
+    alignItems: 'center',
+    listStyle: 'none',
+    '@media screen and (max-width:768px)': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      rowGap: '12px',
+    },
+  },
+  worriesList: {
+    display: 'flex',
+    columnGap: '12px',
+    alignItems: 'center',
+  },
+  worriesIcon :{
+    maxWidth: '40px',
+    minWidth: '40px',
+    aspectRatio: '1/1',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 0 4px rgba(0, 0, 0, 0.15)',
+    border: '1px solid' + commonSxStyles.color.white,
+    borderRadius: '100px',
+    '& > svg': {
+      maxWidth: '17px',
+    }
+  },
+  worriesListText: {
+    '& > br': {
+      '@media screen and (max-width:768px)': {
+        display: 'none',
+      },
+    },
+  },
   heading2: {
     display: 'flex',
     flexDirection: 'column',
@@ -173,15 +254,50 @@ const sxStyles = {
 
 const Feature = () => {
   return (
+    <>
     <Box
       sx={{
         width: '100%',
-        backgroundColor: commonSxStyles.color.primary[400],
-        pt: 7,
-        pb: 10,
-        '@media screen and (max-width:768px)': {
-        },
+        backgroundColor: commonSxStyles.color.white,
+        pt: '28px',
+        pb: 4,
       }}>
+        <Box
+          sx={{
+            maxWidth: '948px',
+            px: '24px',
+            mx: 'auto',
+            '@media screen and (max-width:768px)': {
+              maxWidth: '100%',
+            },
+          }}
+        >
+          <Box
+          sx={sxStyles.worries}
+          component="ul"
+        >
+          {worries.map((item) => (
+            <React.Fragment key={item.id}>
+              <Box component="li" sx={sxStyles.worriesList}>
+                <Box sx={sxStyles.worriesIcon}>
+                  {item.icon}
+                </Box>
+                <Typography
+                  sx={[
+                    sxStyles.worriesListText,
+                    commonSxStyles.typography.largeText,
+                  ]}
+                >
+                  {item.title}
+                </Typography>
+              </Box>
+            </React.Fragment>
+          ))}
+        </Box>
+      </Box>
+    </Box>
+    <Box
+      sx={sxStyles.content}>
         <Box
           sx={{
             maxWidth: '948px',
@@ -265,6 +381,7 @@ const Feature = () => {
         <Typography sx={[sxStyles.note,commonSxStyles.typography.smallText]}>※契約内容およびサポート内容は、予告なく変更となる場合がございます。最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。</Typography>
       </Box>
     </Box>
+    </>
   )
 };
 export default Feature;
