@@ -5,6 +5,7 @@ import AboutScratch from './AboutScratch';
 import KeyVisual from './KeyVisual';
 import Feature from './Feature';
 import Fee from './Fee';
+import Comparison from './Comparison';
 import Flow from './Flow';
 import Faq from './Faq';
 import Contact from './Contact';
@@ -26,6 +27,7 @@ const School = () => {
       <KeyVisual />
       <Feature />
       <Fee />
+      <Comparison />
       <AboutScratch />
       <Flow />
       <Faq />
