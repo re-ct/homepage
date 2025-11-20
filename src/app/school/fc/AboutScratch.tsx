@@ -5,6 +5,32 @@ import pcImage from '../../../../public/image/school/fc/aboutScratch_pcImage.web
 import manager from '../../../../public/image/school/fc/aboutScratch_manager.webp';
 
 const sxStyles = {
+  section: {
+    width: '100%',
+    backgroundColor: commonSxStyles.color.white,
+    pt: 7,
+    pb: 10,
+    '@media screen and (max-width:450px)': {
+    },
+  },
+  sectionWrap: {
+    maxWidth: '948px',
+    px: '24px',
+    mx: 'auto',
+    '@media screen and (max-width:450px)': {
+      maxWidth: '100%',
+    },
+  },
+  heading: {
+    color: commonSxStyles.color.black,
+    textAlign: 'center',
+    '& > br': {
+      display: 'none',
+      '@media screen and (max-width:450px)': {
+        display: 'block',
+      },
+    }
+  },
   contents: {
     display: 'grid',
     gridTemplateColumns: '1fr 300px',
@@ -85,38 +111,15 @@ const sxStyles = {
 const AboutScratch = () => {
   return (
 <Box
-  sx={{
-    width: '100%',
-    backgroundColor: commonSxStyles.color.white,
-    pt: 7,
-    pb: 10,
-    '@media screen and (max-width:450px)': {
-    },
-  }}>
+  sx={sxStyles.section}>
     <Box
-      sx={{
-        maxWidth: '948px',
-        px: '24px',
-        mx: 'auto',
-        '@media screen and (max-width:450px)': {
-          maxWidth: '100%',
-        },
-      }}
+      sx={sxStyles.sectionWrap}
     >
       <Typography
         variant="h2"
         component="h2"
         sx={[
-          {
-            color: commonSxStyles.color.black,
-            textAlign: 'center',
-            '& > br': {
-              display: 'none',
-              '@media screen and (max-width:450px)': {
-                display: 'block',
-              },
-            }
-          },
+          sxStyles.heading,
           commonSxStyles.typography.heading2,
         ]}
         >

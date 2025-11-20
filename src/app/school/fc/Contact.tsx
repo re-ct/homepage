@@ -15,6 +15,16 @@ const sxStyles = {
       flexDirection: 'column',
     },
   },
+  heading: {
+    color: commonSxStyles.color.black,
+    textAlign: 'center',
+    '& > br': {
+      display: 'none',
+      '@media screen and (max-width:450px)': {
+        display: 'block',
+      },
+    }
+  },
   item: {
     backgroundColor: commonSxStyles.color.white,
     width: '100%',
@@ -76,17 +86,7 @@ const Contact = () => {
         <Typography
           variant="h2"
           component="h2"
-          sx={[
-            {
-              color: commonSxStyles.color.white,
-              textAlign: 'center',
-              '& > br': {
-                display: 'none',
-                '@media screen and (max-width:450px)': {
-                  display: 'block',
-                },
-              }
-            },
+          sx={[sxStyles.heading,
             commonSxStyles.typography.heading2,
           ]}
           >

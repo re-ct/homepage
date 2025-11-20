@@ -47,7 +47,7 @@ const accordionData = [
     id: 'panel6',
     question: '生徒の集客はどのように行うのですか？',
     answer:
-      <>Webサイト・チラシ・SNSを使った集客方法などが主流です。</>,
+      <>生徒の集客活動は、オーナー様ご自身で行っていただきます。</>,
   },
   {
     id: 'panel7',
@@ -64,6 +64,22 @@ const accordionData = [
 ];
 
 const sxStyles = {
+  section: {
+    width: '100%',
+    backgroundColor: commonSxStyles.color.white,
+    pt: 10,
+    pb: 10,
+  },
+  sectionWrap: {
+    maxWidth: '948px',
+    px: '24px',
+    mx: 'auto',
+    pt: '120px',
+    mt: '-120px',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
+    },
+  },
   accordion: {
     border: 'solid 2px #F0F0F0',
     borderRadius: '8px',
@@ -122,23 +138,10 @@ const sxStyles = {
 const Faq = () => {
   return (
     <Box
-      sx={{
-        width: '100%',
-        backgroundColor: commonSxStyles.color.white,
-        pt: 7,
-        pb: 10,
-        '@media screen and (max-width:450px)': {
-        },
-      }}>
+      sx={sxStyles.section}>
         <Box
-          sx={{
-            maxWidth: '948px',
-            px: '24px',
-            mx: 'auto',
-            '@media screen and (max-width:450px)': {
-              maxWidth: '100%',
-            },
-          }}
+          sx={sxStyles.sectionWrap}
+          id="faq"
         >
           <Typography
             variant="h2"

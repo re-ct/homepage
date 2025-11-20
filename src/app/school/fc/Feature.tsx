@@ -59,6 +59,22 @@ const worries: Worries[] = [
 
 
 const sxStyles = {
+  section: {
+    width: '100%',
+    backgroundColor: commonSxStyles.color.white,
+    pt: '28px',
+    pb: 4,
+  },
+  wrap: {
+    maxWidth: '948px',
+    px: '24px',
+    mx: 'auto',
+    pt: '120px',
+    mt: '-120px',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
+    },
+  },
   content: {
     position: 'relative',
     width: '100%',
@@ -77,6 +93,14 @@ const sxStyles = {
       borderRight: '18px solid transparent',
       borderBottom: '17px solid transparent',
       borderTop: '17px solid'+ commonSxStyles.color.white,
+    },
+  },
+  contentWrap: {
+    maxWidth: '948px',
+    px: '24px',
+    mx: 'auto',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
     },
   },
   worries: {
@@ -256,21 +280,11 @@ const Feature = () => {
   return (
     <>
     <Box
-      sx={{
-        width: '100%',
-        backgroundColor: commonSxStyles.color.white,
-        pt: '28px',
-        pb: 4,
-      }}>
+      sx={sxStyles.section}
+      >
         <Box
-          sx={{
-            maxWidth: '948px',
-            px: '24px',
-            mx: 'auto',
-            '@media screen and (max-width:768px)': {
-              maxWidth: '100%',
-            },
-          }}
+          sx={sxStyles.wrap}
+          id="feature"
         >
           <Box
           sx={sxStyles.worries}
@@ -299,14 +313,7 @@ const Feature = () => {
     <Box
       sx={sxStyles.content}>
         <Box
-          sx={{
-            maxWidth: '948px',
-            px: '24px',
-            mx: 'auto',
-            '@media screen and (max-width:768px)': {
-              maxWidth: '100%',
-            },
-          }}
+          sx={sxStyles.contentWrap}
         >
         <Typography
           variant="h2"

@@ -51,6 +51,26 @@ const sxStyles = {
     pt: '100px',
     pb: '110px',
   },
+  wrap: {
+    maxWidth: '948px',
+    px: '24px',
+    mx: 'auto',
+    pt: '120px',
+    mt: '-120px',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
+    },
+  },
+  heading: {
+    color: commonSxStyles.color.black,
+    textAlign: 'center',
+    '& > br': {
+      display: 'none',
+      '@media screen and (max-width:450px)': {
+        display: 'block',
+      },
+    }
+  },
   note: {
     mt: '20px',
     '@media screen and (max-width:948px)': {
@@ -246,29 +266,14 @@ const Comparison = () => {
     <Box
       sx={sxStyles.content}>
         <Box
-          sx={{
-            maxWidth: '948px',
-            px: '24px',
-            mx: 'auto',
-            '@media screen and (max-width:948px)': {
-              maxWidth: '100%',
-            },
-          }}
+          sx={sxStyles.wrap}
+          id="comparison"
         >
           <Typography
             variant="h2"
             component="h2"
             sx={[
-              {
-                color: commonSxStyles.color.black,
-                textAlign: 'center',
-                '& > br': {
-                  display: 'none',
-                  '@media screen and (max-width:450px)': {
-                    display: 'block',
-                  },
-                }
-              },
+              sxStyles.tableHeading,
               commonSxStyles.typography.heading2,
             ]}
             >

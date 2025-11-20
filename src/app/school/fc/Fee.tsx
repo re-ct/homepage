@@ -193,42 +193,48 @@ const sxStyles = {
   },
   feeNote: {
     mt: '20px',
-  }
+  },
+  section: {
+    width: '100%',
+    backgroundColor: commonSxStyles.color.white,
+    pt: 7,
+    pb: 10,
+  },
+  sectionWrap: {
+    maxWidth: '948px',
+    px: '24px',
+    pt: '120px',
+    mt: '-120px',
+    mx: 'auto',
+    '@media screen and (max-width:450px)': {
+      maxWidth: '100%',
+    },
+  },
+  heading: {
+    color: commonSxStyles.color.black,
+    textAlign: 'center',
+    '& > br': {
+      display: 'none',
+      '@media screen and (max-width:450px)': {
+        display: 'block',
+      },
+    }
+  },
 }
 
 const Fee = () => {
   return (
     <Box
-      sx={{
-        width: '100%',
-        backgroundColor: commonSxStyles.color.white,
-        pt: 7,
-        pb: 10,
-      }}>
+      sx={sxStyles.section}>
         <Box
-          sx={{
-            maxWidth: '948px',
-            px: '24px',
-            mx: 'auto',
-            '@media screen and (max-width:450px)': {
-              maxWidth: '100%',
-            },
-          }}
+          sx={sxStyles.sectionWrap}
+          id="fee"
         >
           <Typography
             variant="h2"
             component="h2"
             sx={[
-              {
-                color: commonSxStyles.color.black,
-                textAlign: 'center',
-                '& > br': {
-                  display: 'none',
-                  '@media screen and (max-width:450px)': {
-                    display: 'block',
-                  },
-                }
-              },
+              sxStyles.heading,
               commonSxStyles.typography.heading2,
             ]}
             >

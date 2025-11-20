@@ -24,13 +24,13 @@ const menu: Menu[] = [
   },
   {
     id: '2',
-    title: '他社との違い',
-    url: '#comparison',
+    title: '費用',
+    url: '#fee',
   },
   {
     id: '3',
-    title: '費用',
-    url: '#fee',
+    title: '他社との違い',
+    url: '#comparison',
   },
   {
     id: '4',

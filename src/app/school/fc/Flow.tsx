@@ -32,7 +32,6 @@ const flow: Flow[] = [
   {
     step: '05',
     title: '開講準備',
-    detail: '※生徒募集含む',
   },
   {
     step: '06',
@@ -87,6 +86,8 @@ const sxStyles = {
     maxWidth: '948px',
     px: '24px',
     mx: 'auto',
+    pt: '120px',
+    mt: '-120px',
     '@media screen and (max-width:450px)': {
       maxWidth: '100%',
     },
@@ -105,12 +106,12 @@ const sxStyles = {
 
   layoutGrid: {
     display: 'grid',
-    gridTemplateColumns: '300px 1fr',
+    gridTemplateColumns: '1fr 380px',
     gap: 5,
     mt: 5,
     '@media screen and (max-width:768px)': {
       display: 'flex',
-      flexDirection: 'column-reverse',
+      flexDirection: 'column',
       alignItems: 'center'
     },
   },
@@ -118,10 +119,6 @@ const sxStyles = {
   image: {
     maxWidth: '100%',
     height: 'auto',
-    position: 'sticky',
-    top: 0,
-    pt: 9,
-    mt: -9,
     '@media screen and (max-width:768px)': {
       maxWidth: '400px',
       width: '100%',
@@ -158,7 +155,7 @@ const Arrow = () => {
 const Flow = () => {
   return (
     <Box sx={sxStyles.flowWrap}>
-      <Box sx={sxStyles.contentArea}>
+      <Box sx={sxStyles.contentArea} id="flow">
         <Typography
           variant="h2"
           component="h2"
@@ -170,14 +167,6 @@ const Flow = () => {
           加盟から<br/>運営までの流れ
         </Typography>
         <Box sx={sxStyles.layoutGrid}>
-          <Box
-            component="img"
-            src={image.src}
-            alt="開講準備から開講後まで本部がサポートいたします"
-            width={600}
-            height={658}
-            sx={sxStyles.image}
-          />
           <Box
             sx={[sxStyles.list, commonSxStyles.typography.normalText]}
             component="ol"
@@ -215,6 +204,14 @@ const Flow = () => {
               </React.Fragment>
             ))}
           </Box>
+          <Box
+            component="img"
+            src={image.src}
+            alt="開講準備から開講後まで本部がサポートいたします"
+            width={600}
+            height={658}
+            sx={sxStyles.image}
+          />
         </Box>
       </Box>
     </Box>
