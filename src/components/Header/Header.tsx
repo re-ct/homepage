@@ -1,9 +1,9 @@
 'use client';
 import AppBar from '@mui/material/AppBar';
 import { usePathname } from 'next/navigation';
-import CorporateHeader from './CorporateHeader';
-import DemandHeader from './DemandHeader';
-import SchoolHeader from './SchoolHeader';
+import CorporateHeader from './CorporateHeader'
+import DemandHeader from './DemandHeader'
+import SchoolHeader from './SchoolHeader'
 
 const Header = () => {
   const pathname = usePathname();

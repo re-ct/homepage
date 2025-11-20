@@ -42,7 +42,7 @@ const sxStyles = {
       filter: 'brightness(0.8)',
     },
   },
-};
+}
 
 const DemandHeader = () => {
   const router = useRouter();
@@ -50,7 +50,7 @@ const DemandHeader = () => {
     e.preventDefault();
     router.push(contact);
   };
-  return (
+  return(
     <Toolbar
       sx={{
         backgroundColor: '#fff',
@@ -78,7 +78,7 @@ const DemandHeader = () => {
         </Button>
       </Box>
     </Toolbar>
-  );
-};
+  )
+}
 
 export default DemandHeader;
