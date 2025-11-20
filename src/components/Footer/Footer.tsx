@@ -1,10 +1,8 @@
 'use client';
-import CorporateFooter from './CorporateFooter'
+import CorporateFooter from './CorporateFooter';
 
 const Footer = () => {
-  return (
-    <CorporateFooter />
-  )
-}
+  return <CorporateFooter />;
+};
 
 export default Footer;
