@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
-import { display, width } from '@mui/system';
 
 const sxStyles = {
   copy: {

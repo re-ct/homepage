@@ -11,13 +11,13 @@ type TBreadCrumbProps = {
 
 const sxStyles = {
   wrap: {
+    borderTop: 'solid 1px #E7E7E7',
     textAlign: 'center',
-    mx: 'auto',
-    maxWidth: '932px',
     width: '100%',
     '& > nav': {
+      maxWidth: '932px',
       overflowX: 'scroll',
-      margin: 0,
+      margin: '0 auto',
       '&::-webkit-scrollbar': {
         display: 'none', // スクロールバーを非表示
       },
