@@ -113,6 +113,7 @@ const sxStyles = {
     borderRadius: '8px',
     boxShadow: 'none',
     marginTop: 2,
+    backgroundColor: commonSxStyles.color.white,
     '&:first-child': {
       borderRadius: '8px',
     },
@@ -127,6 +128,11 @@ const sxStyles = {
     fontWeight: 'bold',
     textAlign: 'left',
     fontSize: '16px',
+    backgroundColor: commonSxStyles.color.white,
+    transition: 'filter 0.3s linear',
+    '&:hover': {
+      filter: 'brightness(0.95)',
+    },
     '& > span': {
       my: '20px',
     },

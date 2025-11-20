@@ -40,6 +40,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       target={isExternal ? '_blank' : undefined}
       sx={[
         {
+          cursor: 'pointer',
           backgroundColor:
             variant === 'primary'
               ? commonSxStyles.color.Orange[400]
