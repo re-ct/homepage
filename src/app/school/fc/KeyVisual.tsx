@@ -25,6 +25,9 @@ const sxStyles = {
     },
     '&>div': {
       width: 'auto',
+      '@media screen and (max-width:768px)': {
+        width: '100%',
+      }
     }
   },
   imageBox: {

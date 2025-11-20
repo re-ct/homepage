@@ -124,13 +124,13 @@ const sxStyles = {
         color: '#000',
         fontSize: '14px',
         transition: 'all 0.3s ease-out',
-        borderBottom: 'solid 3px #fff',
+        borderBottom: 'solid 2px #fff',
         '@media screen and (max-width:1190px)': {
           fontSize: '12px',
         },
         '&:hover': {
           color: '#24285B',
-          borderBottom: 'solid 3px #24285B',
+          borderBottom: 'solid 2px #24285B',
         },
       },
     },

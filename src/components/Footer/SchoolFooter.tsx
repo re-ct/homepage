@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
+import {contact} from '../../lib/const/Link'
 
 const sxStyles = {
   copy: {
@@ -119,7 +120,6 @@ const SchoolFooter = () => {
             src={logoReprosImg.src}
             width={150}
             height={25}
-            priority={true}
             style={{ verticalAlign: 'bottom' }}
           />
           <List sx={sxStyles.links}>
@@ -145,7 +145,7 @@ const SchoolFooter = () => {
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
               <Link href="/">運営会社</Link>
-              <Link href="/contact">お問い合わせ</Link>
+              <Link href={contact}>お問い合わせ</Link>
               <Link href="/privacy">プライバシーポリシー</Link>
               <Link href="/announcement">電子広告</Link>
             </Box>
