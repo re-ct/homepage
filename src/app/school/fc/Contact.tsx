@@ -23,7 +23,7 @@ const sxStyles = {
       '@media screen and (max-width:450px)': {
         display: 'block',
       },
-    }
+    },
   },
   item: {
     backgroundColor: commonSxStyles.color.white,
@@ -34,7 +34,7 @@ const sxStyles = {
     pb: 6,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   itemTitle: {
     fontSize: '28px',
@@ -52,14 +52,14 @@ const sxStyles = {
       '@media screen and (max-width:450px)': {
         display: 'block',
       },
-    }
+    },
   },
   button: {
     mt: 2,
     width: '100%',
     textAlign: 'center',
-  }
-}
+  },
+};
 
 const Contact = () => {
   return (
@@ -69,8 +69,7 @@ const Contact = () => {
         backgroundColor: commonSxStyles.color.primary[400],
         pt: 7,
         pb: 10,
-        '@media screen and (max-width:450px)': {
-        },
+        '@media screen and (max-width:450px)': {},
       }}
     >
       <Box
@@ -86,32 +85,24 @@ const Contact = () => {
         <Typography
           variant="h2"
           component="h2"
-          sx={[sxStyles.heading,
-            commonSxStyles.typography.heading2,
-          ]}
-          >
-            加盟を<br/>ご検討の方へ
+          sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
+        >
+          加盟を
+          <br />
+          ご検討の方へ
         </Typography>
         <Box
           sx={[sxStyles.list, commonSxStyles.typography.normalText]}
           component="ul"
         >
-          <Box
-            component="li"
-            sx={sxStyles.item}
-          >
-            <Typography
-              variant="h3"
-              component="h3"
-              sx={sxStyles.itemTitle}
-              >
+          <Box component="li" sx={sxStyles.item}>
+            <Typography variant="h3" component="h3" sx={sxStyles.itemTitle}>
               資料請求
             </Typography>
-            <Typography
-              component="p"
-              sx={sxStyles.itemText}
-              >
-              Re:ProSに関する資料を無料で<br />お受け取りできます
+            <Typography component="p" sx={sxStyles.itemText}>
+              Re:ProSに関する資料を無料で
+              <br />
+              お受け取りできます
             </Typography>
             <Box sx={sxStyles.button}>
               <CustomButton
@@ -123,22 +114,14 @@ const Contact = () => {
               />
             </Box>
           </Box>
-          <Box
-            component="li"
-            sx={sxStyles.item}
-          >
-            <Typography
-              variant="h3"
-              component="h3"
-              sx={sxStyles.itemTitle}
-              >
+          <Box component="li" sx={sxStyles.item}>
+            <Typography variant="h3" component="h3" sx={sxStyles.itemTitle}>
               お問い合わせ
             </Typography>
-            <Typography
-              component="p"
-              sx={sxStyles.itemText}
-              >
-              お申し込み・加盟に関する<br />ご相談はこちら
+            <Typography component="p" sx={sxStyles.itemText}>
+              お申し込み・加盟に関する
+              <br />
+              ご相談はこちら
             </Typography>
             <Box sx={sxStyles.button}>
               <CustomButton
@@ -153,6 +136,6 @@ const Contact = () => {
         </Box>
       </Box>
     </Box>
-  )
+  );
 };
 export default Contact;

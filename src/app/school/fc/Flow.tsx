@@ -112,7 +112,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
     },
   },
 
@@ -126,9 +126,8 @@ const sxStyles = {
       top: 'auto',
       pt: 0,
       mt: 0,
-    }
-  }
-  ,
+    },
+  },
   stepTitle: {
     fontWeight: 'bold',
   },
@@ -145,8 +144,8 @@ const sxStyles = {
     fontSize: '18px',
     fontWeight: 'bold',
     color: '#97B5F8',
-  }
-}
+  },
+};
 
 const Arrow = () => {
   return <Box component="span" sx={sxStyles.icon}></Box>;
@@ -159,12 +158,11 @@ const Flow = () => {
         <Typography
           variant="h2"
           component="h2"
-          sx={[
-            sxStyles.heading2,
-            commonSxStyles.typography.heading2,
-          ]}
+          sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
         >
-          加盟から<br/>運営までの流れ
+          加盟から
+          <br />
+          運営までの流れ
         </Typography>
         <Box sx={sxStyles.layoutGrid}>
           <Box
@@ -174,31 +172,22 @@ const Flow = () => {
             {flow.map((item, index) => (
               <React.Fragment key={item.step}>
                 <Box component="li" sx={sxStyles.listItem}>
-                    <Typography
-                      sx={[
-                        sxStyles.stepTitle,
-                        commonSxStyles.typography.largeText,
-                      ]}
-                    >
-                      <Typography
-                        component="span"
-                        sx={[
-                          sxStyles.step,
-                        ]}
-                      >
-                        {item.step}
-                      </Typography>
-                      {item.title}
+                  <Typography
+                    sx={[
+                      sxStyles.stepTitle,
+                      commonSxStyles.typography.largeText,
+                    ]}
+                  >
+                    <Typography component="span" sx={[sxStyles.step]}>
+                      {item.step}
                     </Typography>
-                    {item.detail && (
-                      <Typography
-                        sx={[
-                          sxStyles.stepDetail,
-                        ]}
-                      >
-                        {item.detail}
-                      </Typography>
-                    )}
+                    {item.title}
+                  </Typography>
+                  {item.detail && (
+                    <Typography sx={[sxStyles.stepDetail]}>
+                      {item.detail}
+                    </Typography>
+                  )}
                 </Box>
                 {index < flow.length - 1 && <Arrow />}
               </React.Fragment>

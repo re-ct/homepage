@@ -71,7 +71,7 @@ const sxStyles = {
     },
     '@media screen and (max-width:768px)': {
       display: 'none',
-    }
+    },
   },
   schoolHeader: {
     display: 'flex',
@@ -83,7 +83,7 @@ const sxStyles = {
       display: 'flex',
       columnGap: '12px',
       alignItems: 'center',
-    }
+    },
   },
   logoText: {
     fontSize: '13px',
@@ -101,8 +101,8 @@ const sxStyles = {
       display: 'none',
       '@media screen and (max-width:1190px) and (min-width:769px)': {
         display: 'block',
-      }
-    }
+      },
+    },
   },
   linksMenu: {
     display: 'flex',
@@ -128,9 +128,9 @@ const sxStyles = {
         '&:hover': {
           color: '#407BFF',
           borderBottom: 'solid 3px #407BFF',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   linksButtons: {
     display: 'flex',
@@ -153,7 +153,7 @@ const sxStyles = {
       lineHeight: '1',
       width: '126px',
       height: '38px',
-    }
+    },
   },
   linksButtonsMaterial: {
     '& > a': {
@@ -161,9 +161,9 @@ const sxStyles = {
       color: commonSxStyles.color.white,
       transition: 'filter 0.3s',
       '&:hover': {
-        filter:'brightness(0.8)'
+        filter: 'brightness(0.8)',
       },
-    }
+    },
   },
   linksButtonsContact: {
     '& > a': {
@@ -172,9 +172,9 @@ const sxStyles = {
       color: commonSxStyles.color.Orange[400],
       transition: 'filter 0.3s',
       '&:hover': {
-        filter:'brightness(0.9)'
+        filter: 'brightness(0.9)',
       },
-    }
+    },
   },
   hamburgerMenu: {
     width: '100vw',
@@ -188,8 +188,8 @@ const sxStyles = {
       display: 'flex',
       alignItems: 'center',
       color: commonSxStyles.color.black,
-      justifyContent: 'space-between'
-    }
+      justifyContent: 'space-between',
+    },
   },
   iconButton: {
     display: 'none',
@@ -203,8 +203,8 @@ const sxStyles = {
     '& span': {
       '@media screen and (max-width:768px)': {
         fontSize: '10px',
-      }
-    }
+      },
+    },
   },
   iconButtonClose: {
     marginInline: 'auto 16px',
@@ -217,7 +217,7 @@ const sxStyles = {
     minWidth: '48px',
     '& span': {
       fontSize: '10px',
-    }
+    },
   },
   linksHamburgerButtons: {
     mt: 5,
@@ -239,20 +239,20 @@ const sxStyles = {
       letterSpacing: '0.05em',
       lineHeight: '1',
       width: '100%',
-    }
+    },
   },
   linksHamburgerButtonsMaterial: {
     '& > a': {
       backgroundColor: commonSxStyles.color.Orange[400],
       color: commonSxStyles.color.white,
-    }
+    },
   },
   linksHamburgerButtonsContact: {
     mt: 3,
     '& > a': {
       border: 'solid 1px' + commonSxStyles.color.Orange[400],
       color: commonSxStyles.color.Orange[400],
-    }
+    },
   },
 };
 
@@ -262,7 +262,12 @@ const SchoolFcHeader = () => {
     setOpen(newOpen);
   };
   return (
-    <Toolbar sx={{ backgroundColor: '#fff', boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.08)', }}>
+    <Toolbar
+      sx={{
+        backgroundColor: '#fff',
+        boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.08)',
+      }}
+    >
       <Box sx={sxStyles.wrap}>
         <Box sx={sxStyles.schoolHeader} component="h1">
           <Link href="/school/fc">
@@ -272,9 +277,13 @@ const SchoolFcHeader = () => {
               width={150}
               height={25}
               priority={true}
-              style={{ verticalAlign: 'bottom'  }}
+              style={{ verticalAlign: 'bottom' }}
             />
-            <Typography component="p" sx={sxStyles.logoText}>フランチャイズオーナー<br/>募集サイト</Typography>
+            <Typography component="p" sx={sxStyles.logoText}>
+              フランチャイズオーナー
+              <br />
+              募集サイト
+            </Typography>
           </Link>
         </Box>
         <Box sx={sxStyles.links}>
@@ -282,46 +291,47 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link href={item.url}>
-                    {item.title}
-                  </Link>
+                  <Link href={item.url}>{item.title}</Link>
                 </Box>
               </React.Fragment>
             ))}
           </Box>
           <Box component="ul" sx={sxStyles.linksButtons}>
-            <Box component="li" sx={[sxStyles.linksButton,sxStyles.linksButtonsMaterial]}>
+            <Box
+              component="li"
+              sx={[sxStyles.linksButton, sxStyles.linksButtonsMaterial]}
+            >
               <Link href="/school/fc">
-              {/* TODO：リンク入れる */}
+                {/* TODO：リンク入れる */}
                 資料請求
               </Link>
             </Box>
-            <Box component="li" sx={[sxStyles.linksButton,sxStyles.linksButtonsContact]}>
+            <Box
+              component="li"
+              sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
+            >
               {/* TODO：リンク入れる */}
-              <Link href="/school/fc">
-                お問い合わせ
-              </Link>
+              <Link href="/school/fc">お問い合わせ</Link>
             </Box>
           </Box>
         </Box>
-        <IconButton 
-          onClick={toggleDrawer(true)} 
-          sx={sxStyles.iconButton}
-        ><MenuIcon /><Typography component="span">メニュー</Typography>
+        <IconButton onClick={toggleDrawer(true)} sx={sxStyles.iconButton}>
+          <MenuIcon />
+          <Typography component="span">メニュー</Typography>
         </IconButton>
         <Drawer open={open} onClose={toggleDrawer(false)} anchor="right">
-          <IconButton 
-            onClick={toggleDrawer(false)} 
+          <IconButton
+            onClick={toggleDrawer(false)}
             sx={sxStyles.iconButtonClose}
-          ><CloseIcon /><Typography component="span">閉じる</Typography>
+          >
+            <CloseIcon />
+            <Typography component="span">閉じる</Typography>
           </IconButton>
           <Box component="ul" sx={sxStyles.hamburgerMenu}>
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link
-                    href={item.url}
-                    onClick={toggleDrawer(false)}>
+                  <Link href={item.url} onClick={toggleDrawer(false)}>
                     {item.title}
                     <KeyboardArrowRight />
                   </Link>
@@ -330,17 +340,27 @@ const SchoolFcHeader = () => {
             ))}
           </Box>
           <Box component="ul" sx={sxStyles.linksHamburgerButtons}>
-            <Box component="li" sx={[sxStyles.linksHamburgerButton,sxStyles.linksHamburgerButtonsMaterial]}>
+            <Box
+              component="li"
+              sx={[
+                sxStyles.linksHamburgerButton,
+                sxStyles.linksHamburgerButtonsMaterial,
+              ]}
+            >
               <Link href="/school/fc">
-              {/* TODO：リンク入れる */}
+                {/* TODO：リンク入れる */}
                 資料請求
               </Link>
             </Box>
-            <Box component="li" sx={[sxStyles.linksHamburgerButton,sxStyles.linksHamburgerButtonsContact]}>
+            <Box
+              component="li"
+              sx={[
+                sxStyles.linksHamburgerButton,
+                sxStyles.linksHamburgerButtonsContact,
+              ]}
+            >
               {/* TODO：リンク入れる */}
-              <Link href="/school/fc">
-                お問い合わせ
-              </Link>
+              <Link href="/school/fc">お問い合わせ</Link>
             </Box>
           </Box>
         </Drawer>

@@ -19,11 +19,7 @@ const Copyright = () => {
   );
 };
 
-<<<<<<< HEAD
-const CorporateHeader = () => {
-=======
 const CorporateFooter = () => {
->>>>>>> headerFix
   const footerContent = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
@@ -96,8 +92,4 @@ const CorporateFooter = () => {
   );
 };
 
-<<<<<<< HEAD
-export default CorporateHeader;
-=======
 export default CorporateFooter;
->>>>>>> headerFix

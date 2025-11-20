@@ -56,6 +56,6 @@ export const commonSxStyles = {
       200: '#DDDDDD',
     },
     white: '#fff',
-    black: '#333'
+    black: '#333',
   },
 };

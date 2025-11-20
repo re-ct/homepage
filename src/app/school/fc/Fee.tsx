@@ -28,7 +28,7 @@ const sxStyles = {
         fontFamily: 'Arial,sans-serif',
         fontSize: '18px',
         fontWeight: 'bold',
-      }
+      },
     },
     '& tr': {
       display: 'grid',
@@ -39,9 +39,9 @@ const sxStyles = {
         },
         '& td': {
           borderTop: 'solid 1px' + commonSxStyles.color.primary[900],
-        }
-      }
-    }
+        },
+      },
+    },
   },
   note: {
     maxWidth: '600px',
@@ -61,7 +61,7 @@ const sxStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    rowGap: '8px'
+    rowGap: '8px',
   },
   modelTitlePoint: {
     borderRadius: '30px',
@@ -84,8 +84,8 @@ const sxStyles = {
     '& img': {
       '@media screen and (max-width:768px)': {
         display: 'none',
-      }
-    }
+      },
+    },
   },
   dlWrap: {
     py: '12px',
@@ -106,8 +106,8 @@ const sxStyles = {
         fontFamily: 'Arial,sans-serif',
         fontSize: '24px',
         fontWeight: 'bold',
-      }
-    }
+      },
+    },
   },
   dlWrapProfit: {
     width: '17%',
@@ -165,8 +165,8 @@ const sxStyles = {
         fontFamily: 'Arial,sans-serif',
         fontSize: '24px',
         fontWeight: 'bold',
-      }
-    }
+      },
+    },
   },
   ddFeeDetails: {
     pl: 2,
@@ -186,10 +186,10 @@ const sxStyles = {
       '& > li': {
         fontSize: '11px',
         '& > span': {
-        fontSize: '10px',
-        }
-      }
-    }
+          fontSize: '10px',
+        },
+      },
+    },
   },
   feeNote: {
     mt: '20px',
@@ -218,138 +218,152 @@ const sxStyles = {
       '@media screen and (max-width:450px)': {
         display: 'block',
       },
-    }
+    },
   },
-}
+};
 
 const Fee = () => {
   return (
-    <Box
-      sx={sxStyles.section}>
-        <Box
-          sx={sxStyles.sectionWrap}
-          id="fee"
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.sectionWrap} id="fee">
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
         >
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={[
-              sxStyles.heading,
-              commonSxStyles.typography.heading2,
-            ]}
-            >
-            契約内容
-          </Typography>
-          <Box component="table" sx={sxStyles.table}>
-            <Box component="tbody">
-              <Box component="tr">
-                <Box
-                component="th"
-                >
-                  初期費用
-                </Box>
-                <Box 
-                  component="td" 
-                >
-                  <Box component="strong">30</Box>万円<Box component="span" sx={commonSxStyles.typography.normalText}> (税抜)</Box>
-                </Box>
-              </Box>
-              <Box component="tr" >
-                <Box 
-                  component="th"               
-                >
-                  ロイヤリティ
-                </Box>
-                <Box 
-                  component="td"               
-                >
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>生徒数に関わらず</Box><br/>
-                  月額固定 <Box component="strong">1</Box>万円<Box component="span" sx={commonSxStyles.typography.normalText}> (税抜)</Box>
-                </Box>
-              </Box>
-              <Box component="tr" >
-                <Box 
-                  component="th"               
-                >
-                  契約期間
-                </Box>
-                <Box 
-                  component="td"               
-                >
-                  最低 <Box component="strong">6</Box>ヶ月<Box component="span" sx={commonSxStyles.typography.normalText}> (以降自動更新)</Box>
-                </Box>
-              </Box>
-              <Box component="tr" >
-                <Box 
-                  component="th"               
-                >
-                  教室運営の裁量
-                </Box>
-                <Box 
-                  component="td"               
-                >
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>授業料や生徒数、教室の稼働時間など</Box><br/>
-                  オーナー様の裁量で自由に決定してOK
+          契約内容
+        </Typography>
+        <Box component="table" sx={sxStyles.table}>
+          <Box component="tbody">
+            <Box component="tr">
+              <Box component="th">初期費用</Box>
+              <Box component="td">
+                <Box component="strong">30</Box>万円
+                <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  {' '}
+                  (税抜)
                 </Box>
               </Box>
             </Box>
-          </Box>
-          <Typography component="p" sx={[commonSxStyles.typography.smallText,sxStyles.note]}>
-            ※教室運営に必要な備品の準備・生徒の集客活動はご自身で行っていただきます。<br/>※契約内容、初期費用、ロイヤリティ、およびサポート内容は、予告なく変更となる場合がございます。<br/>※最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
-          </Typography>
-          <Box sx={sxStyles.model}>
-            <Typography component="h3" sx={[commonSxStyles.typography.largeText,sxStyles.modelTitle]}>
-              <Typography component="span" sx={[sxStyles.modelTitlePoint,commonSxStyles.typography.normalText]}>収益モデル例</Typography>
-              週2回開講・受講生数50名とした場合
-            </Typography>
-            <Box component="dl" sx={sxStyles.modelBox}>
-              <Box sx={[sxStyles.dlWrap,sxStyles.dlWrapProfit]}>
-                <Box component="dt" sx={commonSxStyles.typography.normalText}>利益</Box>
-                <Box component="dd"><Box component="strong">21</Box>万円/月</Box>
-              </Box>
-              <Box
-                component="img"
-                src={equal.src}
-                alt=""
-                width={19}
-                height={8}
-              />
-              <Box sx={sxStyles.dlWrapSales}>
-                <Box sx={sxStyles.dlWrapFeeBox}>
-                  <Box component="dt" sx={commonSxStyles.typography.normalText}>売上</Box>
-                  <Box component="dd"><Box component="strong">40</Box>万円/月</Box>
+            <Box component="tr">
+              <Box component="th">ロイヤリティ</Box>
+              <Box component="td">
+                <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  生徒数に関わらず
                 </Box>
-                <Box component="dd" sx={sxStyles.ddFeeDetails}>
-                  <Box component="ul">
-                    <Typography component="li">授業料：月額8000円</Typography>
-                  </Box>
-                </Box>
-              </Box>
-              <Box
-                component="img"
-                src={minus.src}
-                alt=""
-                width={19}
-                height={2}
-              />
-              <Box sx={sxStyles.dlWrapFee}>
-                <Box sx={sxStyles.dlWrapFeeBox}>
-                  <Box component="dt" sx={commonSxStyles.typography.normalText}>費用</Box>
-                  <Box component="dd"><Box component="strong">19</Box>万円/月</Box>
-                </Box>
-                <Box component="dd" sx={sxStyles.ddFeeDetails}>
-                  <Box component="ul">
-                    <Typography component="li">ロイヤリティ：1万円</Typography>
-                    <Typography component="li">人件費：8万円<Typography component="span">※講師1名(時給1250円、8時間換算)</Typography></Typography>
-                    <Typography component="li">その他経費：10万円</Typography>
-                  </Box>
+                <br />
+                月額固定 <Box component="strong">1</Box>万円
+                <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  {' '}
+                  (税抜)
                 </Box>
               </Box>
             </Box>
-            <Typography sx={[commonSxStyles.typography.smallText,sxStyles.feeNote]}>※本収益モデルは試算であり、実際と異なる場合があります。稼働日数や定員に制限はありません。</Typography>
+            <Box component="tr">
+              <Box component="th">契約期間</Box>
+              <Box component="td">
+                最低 <Box component="strong">6</Box>ヶ月
+                <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  {' '}
+                  (以降自動更新)
+                </Box>
+              </Box>
+            </Box>
+            <Box component="tr">
+              <Box component="th">教室運営の裁量</Box>
+              <Box component="td">
+                <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  授業料や生徒数、教室の稼働時間など
+                </Box>
+                <br />
+                オーナー様の裁量で自由に決定してOK
+              </Box>
+            </Box>
           </Box>
         </Box>
+        <Typography
+          component="p"
+          sx={[commonSxStyles.typography.smallText, sxStyles.note]}
+        >
+          ※教室運営に必要な備品の準備・生徒の集客活動はご自身で行っていただきます。
+          <br />
+          ※契約内容、初期費用、ロイヤリティ、およびサポート内容は、予告なく変更となる場合がございます。
+          <br />
+          ※最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
+        </Typography>
+        <Box sx={sxStyles.model}>
+          <Typography
+            component="h3"
+            sx={[commonSxStyles.typography.largeText, sxStyles.modelTitle]}
+          >
+            <Typography
+              component="span"
+              sx={[
+                sxStyles.modelTitlePoint,
+                commonSxStyles.typography.normalText,
+              ]}
+            >
+              収益モデル例
+            </Typography>
+            週2回開講・受講生数50名とした場合
+          </Typography>
+          <Box component="dl" sx={sxStyles.modelBox}>
+            <Box sx={[sxStyles.dlWrap, sxStyles.dlWrapProfit]}>
+              <Box component="dt" sx={commonSxStyles.typography.normalText}>
+                利益
+              </Box>
+              <Box component="dd">
+                <Box component="strong">21</Box>万円/月
+              </Box>
+            </Box>
+            <Box component="img" src={equal.src} alt="" width={19} height={8} />
+            <Box sx={sxStyles.dlWrapSales}>
+              <Box sx={sxStyles.dlWrapFeeBox}>
+                <Box component="dt" sx={commonSxStyles.typography.normalText}>
+                  売上
+                </Box>
+                <Box component="dd">
+                  <Box component="strong">40</Box>万円/月
+                </Box>
+              </Box>
+              <Box component="dd" sx={sxStyles.ddFeeDetails}>
+                <Box component="ul">
+                  <Typography component="li">授業料：月額8000円</Typography>
+                </Box>
+              </Box>
+            </Box>
+            <Box component="img" src={minus.src} alt="" width={19} height={2} />
+            <Box sx={sxStyles.dlWrapFee}>
+              <Box sx={sxStyles.dlWrapFeeBox}>
+                <Box component="dt" sx={commonSxStyles.typography.normalText}>
+                  費用
+                </Box>
+                <Box component="dd">
+                  <Box component="strong">19</Box>万円/月
+                </Box>
+              </Box>
+              <Box component="dd" sx={sxStyles.ddFeeDetails}>
+                <Box component="ul">
+                  <Typography component="li">ロイヤリティ：1万円</Typography>
+                  <Typography component="li">
+                    人件費：8万円
+                    <Typography component="span">
+                      ※講師1名(時給1250円、8時間換算)
+                    </Typography>
+                  </Typography>
+                  <Typography component="li">その他経費：10万円</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Typography
+            sx={[commonSxStyles.typography.smallText, sxStyles.feeNote]}
+          >
+            ※本収益モデルは試算であり、実際と異なる場合があります。稼働日数や定員に制限はありません。
+          </Typography>
+        </Box>
       </Box>
-  )
+    </Box>
+  );
 };
 export default Fee;

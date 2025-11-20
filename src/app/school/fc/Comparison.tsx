@@ -4,30 +4,53 @@ import { ReactNode } from 'react';
 
 type SchoolInformation = {
   id: number;
-  company: string | ReactNode; 
-  initialCost: string | ReactNode; 
+  company: string | ReactNode;
+  initialCost: string | ReactNode;
   royalty: string | ReactNode;
   skill: string | ReactNode;
   age: string | ReactNode;
   period: string | ReactNode;
 };
 
-
 const schoolInformation: SchoolInformation[] = [
   {
     id: 1,
     company: <>Re:ProS</>,
-    initialCost: <><strong>30</strong>万円(税抜)</>,
-    royalty: <><span>1教室の月額利用料(固定)</span><br/><strong>1</strong>万円(税抜)</>,
+    initialCost: (
+      <>
+        <strong>30</strong>万円(税抜)
+      </>
+    ),
+    royalty: (
+      <>
+        <span>1教室の月額利用料(固定)</span>
+        <br />
+        <strong>1</strong>万円(税抜)
+      </>
+    ),
     skill: <>Scratchのみ</>,
     age: <>小学生〜中学生 </>,
-    period: <><strong>6</strong>ヶ月<span> ※以降自動更新</span></>,
+    period: (
+      <>
+        <strong>6</strong>ヶ月<span> ※以降自動更新</span>
+      </>
+    ),
   },
   {
     id: 2,
     company: <>A社</>,
-    initialCost: <><strong>40</strong>万円(税抜)</>,
-    royalty: <><span>1教室の月額利用料(固定)</span><br/><strong>5</strong>万円(税抜)</>,
+    initialCost: (
+      <>
+        <strong>40</strong>万円(税抜)
+      </>
+    ),
+    royalty: (
+      <>
+        <span>1教室の月額利用料(固定)</span>
+        <br />
+        <strong>5</strong>万円(税抜)
+      </>
+    ),
     skill: <>ScratchJr、Scratch、Unity、C# など</>,
     age: <>小学生～中学生</>,
     period: <>不明</>,
@@ -35,13 +58,33 @@ const schoolInformation: SchoolInformation[] = [
   {
     id: 3,
     company: <>B社</>,
-    initialCost: <><strong>100</strong>万円(税抜)</>,
-    royalty: <><span>生徒一人あたり</span><br/><strong>1800</strong>円(税抜)</>,
-    skill: <>ビジュアルプログラミング〜<br/>テキストプログラミングまで </>,
+    initialCost: (
+      <>
+        <strong>100</strong>万円(税抜)
+      </>
+    ),
+    royalty: (
+      <>
+        <span>生徒一人あたり</span>
+        <br />
+        <strong>1800</strong>円(税抜)
+      </>
+    ),
+    skill: (
+      <>
+        ビジュアルプログラミング〜
+        <br />
+        テキストプログラミングまで{' '}
+      </>
+    ),
     age: <>小学生〜高校生 </>,
-    period: <>3年<span> ※以降自動更新</span></>,
+    period: (
+      <>
+        3年<span> ※以降自動更新</span>
+      </>
+    ),
   },
-]
+];
 
 const sxStyles = {
   content: {
@@ -69,13 +112,13 @@ const sxStyles = {
       '@media screen and (max-width:450px)': {
         display: 'block',
       },
-    }
+    },
   },
   note: {
     mt: '20px',
     '@media screen and (max-width:948px)': {
       mt: '36px',
-    }
+    },
   },
   tablePc: {
     mt: 5,
@@ -104,14 +147,14 @@ const sxStyles = {
           borderRadius: '4px 4px 0 0',
         },
         '&:nth-child(3)': {
-          borderRight: '2px solid'+commonSxStyles.color.white,
+          borderRight: '2px solid' + commonSxStyles.color.white,
         },
       },
       '& tr': {
         display: 'grid',
         gridTemplateColumns: '180px 260px 230px 230px',
         alignItems: 'flex-end',
-      }
+      },
     },
     '& tbody': {
       '& th': {
@@ -153,43 +196,43 @@ const sxStyles = {
           },
           '& strong': {
             fontSize: '20px',
-          }
+          },
         },
         '&:nth-child(3)': {
-          borderRight: '2px solid #D2E0FF'
+          borderRight: '2px solid #D2E0FF',
         },
         '&:not(:nth-child(2))': {
           borderBottom: '2px solid #D2E0FF',
           '& strong': {
             fontSize: '16px',
             fontWeight: 'normal',
-          }
+          },
         },
         '&:last-child': {
           borderRight: '2px solid #D2E0FF',
-        }
+        },
       },
       '& tr': {
         display: 'grid',
         gridTemplateColumns: '180px 260px 230px 230px',
-        '&:last-child':{
+        '&:last-child': {
           alignItems: 'flex-start',
           '& td': {
             '&:nth-child(2)': {
               pb: '20px',
               borderRadius: '0 0 4px 4px',
-            }
-          }
-        }
-      }
-    }
+            },
+          },
+        },
+      },
+    },
   },
-  tableSp : {
+  tableSp: {
     display: 'none',
     '@media screen and (max-width:948px)': {
       display: 'block',
       marginTop: '52px',
-    }
+    },
   },
   tableItemsWrap: {
     display: 'grid',
@@ -208,7 +251,7 @@ const sxStyles = {
     justifyContent: 'center',
     backgroundColor: commonSxStyles.color.white,
     fontWeight: 'bold',
-    border: 'solid 1px'+commonSxStyles.color.Gray[200],
+    border: 'solid 1px' + commonSxStyles.color.Gray[200],
     '&:nth-child(1)': {
       borderRadius: '6px 0 0 6px',
       backgroundColor: commonSxStyles.color.primary[900],
@@ -223,7 +266,7 @@ const sxStyles = {
     marginTop: '14px',
     '& + &': {
       marginTop: '8px',
-    }
+    },
   },
   tableContentTitle: {
     backgroundColor: '#D2E0FF',
@@ -246,7 +289,7 @@ const sxStyles = {
       fontWeight: 'bold',
       '& strong': {
         fontWeight: 'bold',
-      }
+      },
     },
     '&:nth-child(2)': {
       borderRight: '1px solid' + commonSxStyles.color.Gray[300],
@@ -258,175 +301,171 @@ const sxStyles = {
       fontSize: '14px',
       fontWeight: 'normal',
     },
-  }
-}
+  },
+};
 
 const Comparison = () => {
   return (
-    <Box
-      sx={sxStyles.content}>
-        <Box
-          sx={sxStyles.wrap}
-          id="comparison"
+    <Box sx={sxStyles.content}>
+      <Box sx={sxStyles.wrap} id="comparison">
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
         >
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={[
-              sxStyles.heading,
-              commonSxStyles.typography.heading2,
-            ]}
-            >
-              他社との違い
-          </Typography>
-          <Box component="table" sx={sxStyles.tablePc}>
-            <Box component="thead">
-              <Box component="tr">
-                <Box
-                component="th"
-                >
-                  
-                </Box>
-                {schoolInformation.map((info) => (
-                  <Box 
-                    component="th" 
-                    key={`header-${info.id}`}
-                  >
-                    {info.company}
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-            <Box component="tbody">
-              <Box component="tr">
-                <Box component="th">初期費用<br/><span>(加盟費用・開業資金)</span></Box>
-                {schoolInformation.map((info) => (
-                  <Box component="td" key={`cost-${info.id}`}>
-                    <Box>
-                      {info.initialCost}
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
-              <Box component="tr">
-                <Box component="th">ロイヤリティ</Box>
-                {schoolInformation.map((info) => (
-                  <Box component="td" key={`royalty-${info.id}`}>
-                    <Box>
-                      {info.royalty}
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
-              <Box component="tr">
-                <Box component="th">指導言語</Box>
-                {schoolInformation.map((info) => (
-                  <Box component="td" key={`skill-${info.id}`}>
-                    <Box>
-                      {info.skill}
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
-              <Box component="tr">
-                <Box component="th">対象年齢</Box>
-                {schoolInformation.map((info) => (
-                  <Box component="td" key={`age-${info.id}`}>
-                    <Box>
-                      {info.age}
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
-              <Box component="tr">
-                <Box component="th">契約期間</Box>
-                {schoolInformation.map((info) => (
-                  <Box component="td" key={`period-${info.id}`}>
-                    <Box>
-                      {info.period}
-                    </Box>
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={sxStyles.tableSp}>
-            <Box sx={sxStyles.tableHeadingWrap}>
+          他社との違い
+        </Typography>
+        <Box component="table" sx={sxStyles.tablePc}>
+          <Box component="thead">
+            <Box component="tr">
+              <Box component="th"></Box>
               {schoolInformation.map((info) => (
-                <Typography 
-                  key={`header-${info.id}`}
-                  sx={[sxStyles.tableHeading,commonSxStyles.typography.largeText]}
-                >
+                <Box component="th" key={`header-${info.id}`}>
                   {info.company}
-                </Typography>
+                </Box>
               ))}
             </Box>
-            <Box sx={sxStyles.tableContentWrap}>
-              <Typography sx={sxStyles.tableContentTitle}>初期費用<br/><span>(加盟費用・開業資金)</span></Typography>
-              <Box sx={sxStyles.tableItemsWrap}>
-                {schoolInformation.map((info) => (
-                  <Box key={`cost-${info.id}`} sx={sxStyles.tableContentText}>
-                    <Typography sx={commonSxStyles.typography.smallText}>
-                      {info.initialCost}
-                    </Typography>
-                  </Box>
-                ))}
+          </Box>
+          <Box component="tbody">
+            <Box component="tr">
+              <Box component="th">
+                初期費用
+                <br />
+                <span>(加盟費用・開業資金)</span>
               </Box>
+              {schoolInformation.map((info) => (
+                <Box component="td" key={`cost-${info.id}`}>
+                  <Box>{info.initialCost}</Box>
+                </Box>
+              ))}
             </Box>
-            <Box sx={sxStyles.tableContentWrap}>
-              <Typography sx={sxStyles.tableContentTitle}>ロイヤリティ</Typography>
-              <Box sx={sxStyles.tableItemsWrap}>
-                {schoolInformation.map((info) => (
-                  <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
-                    <Typography sx={commonSxStyles.typography.smallText}>
-                      {info.royalty}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
+            <Box component="tr">
+              <Box component="th">ロイヤリティ</Box>
+              {schoolInformation.map((info) => (
+                <Box component="td" key={`royalty-${info.id}`}>
+                  <Box>{info.royalty}</Box>
+                </Box>
+              ))}
             </Box>
-            <Box sx={sxStyles.tableContentWrap}>
-              <Typography sx={sxStyles.tableContentTitle}>指導言語</Typography>
-              <Box sx={sxStyles.tableItemsWrap}>
-                {schoolInformation.map((info) => (
-                  <Box key={`skill-${info.id}`} sx={sxStyles.tableContentText}>
-                    <Typography sx={commonSxStyles.typography.smallText}>
-                      {info.skill}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
+            <Box component="tr">
+              <Box component="th">指導言語</Box>
+              {schoolInformation.map((info) => (
+                <Box component="td" key={`skill-${info.id}`}>
+                  <Box>{info.skill}</Box>
+                </Box>
+              ))}
             </Box>
-            <Box sx={sxStyles.tableContentWrap}>
-              <Typography sx={sxStyles.tableContentTitle}>対象年齢</Typography>
-              <Box sx={sxStyles.tableItemsWrap}>
-                {schoolInformation.map((info) => (
-                  <Box key={`age-${info.id}`} sx={sxStyles.tableContentText}>
-                    <Typography sx={commonSxStyles.typography.smallText}>
-                      {info.age}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
+            <Box component="tr">
+              <Box component="th">対象年齢</Box>
+              {schoolInformation.map((info) => (
+                <Box component="td" key={`age-${info.id}`}>
+                  <Box>{info.age}</Box>
+                </Box>
+              ))}
             </Box>
-            <Box sx={sxStyles.tableContentWrap}>
-              <Typography sx={sxStyles.tableContentTitle}>契約期間</Typography>
-              <Box sx={sxStyles.tableItemsWrap}>
-                {schoolInformation.map((info) => (
-                  <Box key={`period-${info.id}`} sx={sxStyles.tableContentText}>
-                    <Typography sx={commonSxStyles.typography.smallText}>
-                      {info.period}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
+            <Box component="tr">
+              <Box component="th">契約期間</Box>
+              {schoolInformation.map((info) => (
+                <Box component="td" key={`period-${info.id}`}>
+                  <Box>{info.period}</Box>
+                </Box>
+              ))}
             </Box>
           </Box>
-          <Typography component="p" sx={[commonSxStyles.typography.smallText,sxStyles.note]}>
-            ※A社、B社の情報は、各社公式ウェブサイト（2025年10月時点）に基づき作成しています。<br/>※比較対象は「子ども向けプログラミング教室」を軸とするフランチャイズの中から選定しています。<br/>※上記情報は、あくまで調査時点のものであり、各社の料金体系やサービス内容は予告なく変更される場合があります。最終的なご判断は、必ず各社へ直接お問い合わせの上、ご自身の責任で行ってください。
-          </Typography>
+        </Box>
+        <Box sx={sxStyles.tableSp}>
+          <Box sx={sxStyles.tableHeadingWrap}>
+            {schoolInformation.map((info) => (
+              <Typography
+                key={`header-${info.id}`}
+                sx={[
+                  sxStyles.tableHeading,
+                  commonSxStyles.typography.largeText,
+                ]}
+              >
+                {info.company}
+              </Typography>
+            ))}
+          </Box>
+          <Box sx={sxStyles.tableContentWrap}>
+            <Typography sx={sxStyles.tableContentTitle}>
+              初期費用
+              <br />
+              <span>(加盟費用・開業資金)</span>
+            </Typography>
+            <Box sx={sxStyles.tableItemsWrap}>
+              {schoolInformation.map((info) => (
+                <Box key={`cost-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Typography sx={commonSxStyles.typography.smallText}>
+                    {info.initialCost}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box sx={sxStyles.tableContentWrap}>
+            <Typography sx={sxStyles.tableContentTitle}>
+              ロイヤリティ
+            </Typography>
+            <Box sx={sxStyles.tableItemsWrap}>
+              {schoolInformation.map((info) => (
+                <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Typography sx={commonSxStyles.typography.smallText}>
+                    {info.royalty}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box sx={sxStyles.tableContentWrap}>
+            <Typography sx={sxStyles.tableContentTitle}>指導言語</Typography>
+            <Box sx={sxStyles.tableItemsWrap}>
+              {schoolInformation.map((info) => (
+                <Box key={`skill-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Typography sx={commonSxStyles.typography.smallText}>
+                    {info.skill}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box sx={sxStyles.tableContentWrap}>
+            <Typography sx={sxStyles.tableContentTitle}>対象年齢</Typography>
+            <Box sx={sxStyles.tableItemsWrap}>
+              {schoolInformation.map((info) => (
+                <Box key={`age-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Typography sx={commonSxStyles.typography.smallText}>
+                    {info.age}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box sx={sxStyles.tableContentWrap}>
+            <Typography sx={sxStyles.tableContentTitle}>契約期間</Typography>
+            <Box sx={sxStyles.tableItemsWrap}>
+              {schoolInformation.map((info) => (
+                <Box key={`period-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Typography sx={commonSxStyles.typography.smallText}>
+                    {info.period}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+        <Typography
+          component="p"
+          sx={[commonSxStyles.typography.smallText, sxStyles.note]}
+        >
+          ※A社、B社の情報は、各社公式ウェブサイト（2025年10月時点）に基づき作成しています。
+          <br />
+          ※比較対象は「子ども向けプログラミング教室」を軸とするフランチャイズの中から選定しています。
+          <br />
+          ※上記情報は、あくまで調査時点のものであり、各社の料金体系やサービス内容は予告なく変更される場合があります。最終的なご判断は、必ず各社へ直接お問い合わせの上、ご自身の責任で行ってください。
+        </Typography>
       </Box>
     </Box>
-  )
+  );
 };
 export default Comparison;

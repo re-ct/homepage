@@ -1,62 +1,131 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import React from 'react';
-import { CheckCircleOutlined,CoPresent,CurrencyYen,ImportContacts } from '@mui/icons-material';
+import {
+  CheckCircleOutlined,
+  CoPresent,
+  CurrencyYen,
+  ImportContacts,
+} from '@mui/icons-material';
 import { ReactNode } from 'react';
 
 type Point = {
   id: number;
-  title: string | ReactNode; 
-  detail: string | ReactNode; 
+  title: string | ReactNode;
+  detail: string | ReactNode;
 };
 
 type Worries = {
   id: number;
   title: string | ReactNode;
-  icon: string | ReactNode; 
+  icon: string | ReactNode;
 };
 
 const point: Point[] = [
   {
     id: 1,
     title: <>プログラミング知識ゼロでOK</>,
-    detail: <>視覚的で直感的なScratchを使用するため、<br/>難しいコードは不要。<br/>教える側もすぐに慣れます。</>,
+    detail: (
+      <>
+        視覚的で直感的なScratchを使用するため、
+        <br />
+        難しいコードは不要。
+        <br />
+        教える側もすぐに慣れます。
+      </>
+    ),
   },
   {
     id: 2,
-    title: <>月額1万円<span>(税抜) </span>の<br/>固定ロイヤリティで始めやすい<span>※</span></>,
-    detail: <>ロイヤリティは、生徒数や売上に関わらず<br/>月額固定。低リスクで高収益を目指せます。</>,
+    title: (
+      <>
+        月額1万円<span>(税抜) </span>の<br />
+        固定ロイヤリティで始めやすい<span>※</span>
+      </>
+    ),
+    detail: (
+      <>
+        ロイヤリティは、生徒数や売上に関わらず
+        <br />
+        月額固定。低リスクで高収益を目指せます。
+      </>
+    ),
   },
   {
     id: 3,
     title: <>教材・指導マニュアル完備</>,
-    detail: <>本部が開発したScratch教材、指導マニュアルを<br/>一式提供。授業準備の負担を軽減します。</>,
+    detail: (
+      <>
+        本部が開発したScratch教材、指導マニュアルを
+        <br />
+        一式提供。授業準備の負担を軽減します。
+      </>
+    ),
   },
   {
     id: 4,
-    title: <>ライフスタイルに合わせて<br/>開講可能</>,
-    detail: <>週末の数時間や<br/>平日の夜のみの稼働でもOKです。</>,
+    title: (
+      <>
+        ライフスタイルに合わせて
+        <br />
+        開講可能
+      </>
+    ),
+    detail: (
+      <>
+        週末の数時間や
+        <br />
+        平日の夜のみの稼働でもOKです。
+      </>
+    ),
   },
-]
+];
 
 const worries: Worries[] = [
   {
     id: 1,
-    title: <><strong>教える事に興味はある</strong>が<br/>難しいプログラミングは不安</>,
-    icon: <><CoPresent/></>
+    title: (
+      <>
+        <strong>教える事に興味はある</strong>が<br />
+        難しいプログラミングは不安
+      </>
+    ),
+    icon: (
+      <>
+        <CoPresent />
+      </>
+    ),
   },
   {
     id: 2,
-    title: <><strong>空き時間を利用</strong>して、<br/>副収入を得たい</>,
-    icon: <><CurrencyYen/></>
+    title: (
+      <>
+        <strong>空き時間を利用</strong>して、
+        <br />
+        副収入を得たい
+      </>
+    ),
+    icon: (
+      <>
+        <CurrencyYen />
+      </>
+    ),
   },
   {
     id: 3,
-    title: <><strong>教材やカリキュラム作り</strong>は<br/>正直面倒...</>,
-    icon: <><ImportContacts/></>,
+    title: (
+      <>
+        <strong>教材やカリキュラム作り</strong>は<br />
+        正直面倒...
+      </>
+    ),
+    icon: (
+      <>
+        <ImportContacts />
+      </>
+    ),
   },
-]
-
+];
 
 const sxStyles = {
   section: {
@@ -92,7 +161,7 @@ const sxStyles = {
       borderLeft: '18px solid transparent',
       borderRight: '18px solid transparent',
       borderBottom: '17px solid transparent',
-      borderTop: '17px solid'+ commonSxStyles.color.white,
+      borderTop: '17px solid' + commonSxStyles.color.white,
     },
   },
   contentWrap: {
@@ -119,7 +188,7 @@ const sxStyles = {
     columnGap: '12px',
     alignItems: 'center',
   },
-  worriesIcon :{
+  worriesIcon: {
     maxWidth: '40px',
     minWidth: '40px',
     aspectRatio: '1/1',
@@ -131,7 +200,7 @@ const sxStyles = {
     borderRadius: '100px',
     '& > svg': {
       maxWidth: '17px',
-    }
+    },
   },
   worriesListText: {
     '& > br': {
@@ -210,7 +279,7 @@ const sxStyles = {
     color: commonSxStyles.color.Orange[400],
     '@media screen and (max-width:768px)': {
       display: 'none',
-    }
+    },
   },
   liNumber: {
     display: 'none',
@@ -223,10 +292,10 @@ const sxStyles = {
       borderRadius: '20px',
       fontSize: '12px',
       lineHeight: 1,
-      border: 'solid 1px'+ commonSxStyles.color.Orange[400],
+      border: 'solid 1px' + commonSxStyles.color.Orange[400],
       color: commonSxStyles.color.Orange[400],
       fontFamily: 'Arial,sans-serif',
-    }
+    },
   },
   liTitle: {
     gridColumn: '2 / 3',
@@ -243,7 +312,7 @@ const sxStyles = {
     },
     '& > span': {
       fontSize: '16px',
-    }
+    },
   },
   liDetail: {
     gridColumn: '2 / 3',
@@ -257,7 +326,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       marginTop: '16px',
       textAlign: 'center',
-    }
+    },
   },
   image: {
     gridColumn: '3 / 4',
@@ -273,95 +342,64 @@ const sxStyles = {
   note: {
     marginTop: '20px',
     color: commonSxStyles.color.white,
-  }
-}
+  },
+};
 
 const Feature = () => {
   return (
     <>
-    <Box
-      sx={sxStyles.section}
-      >
-        <Box
-          sx={sxStyles.wrap}
-          id="feature"
-        >
-          <Box
-          sx={sxStyles.worries}
-          component="ul"
-        >
-          {worries.map((item) => (
-            <React.Fragment key={item.id}>
-              <Box component="li" sx={sxStyles.worriesList}>
-                <Box sx={sxStyles.worriesIcon}>
-                  {item.icon}
-                </Box>
-                <Typography
-                  sx={[
-                    sxStyles.worriesListText,
-                    commonSxStyles.typography.largeText,
-                  ]}
-                >
-                  {item.title}
-                </Typography>
-              </Box>
-            </React.Fragment>
-          ))}
-        </Box>
-      </Box>
-    </Box>
-    <Box
-      sx={sxStyles.content}>
-        <Box
-          sx={sxStyles.contentWrap}
-        >
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={[
-            sxStyles.heading2,
-            commonSxStyles.typography.heading2,
-          ]}
-        >
-          <Typography
-            component="span"
-            sx={[
-              sxStyles.subText,
-            ]}
-          >Re:ProSなら</Typography>
-          <Typography
-            component="span"
-            sx={[
-              sxStyles.emphasisText,
-            ]}
-          >プログラミング知識は<br/>後からでOK！<br/>教材作りゼロ！</Typography>
-          <Typography
-            component="span"
-            sx={[
-              sxStyles.mainText,
-            ]}
-          >本部がサポートします。</Typography>
-        </Typography>
-        <Box
-          sx={sxStyles.ul}
-          component="ul"
-        >
-          {point.map((item) => (
-            <React.Fragment key={item.id}>
-              <Box component="li" sx={sxStyles.li}>
-                  <CheckCircleOutlined sx={sxStyles.icon} />
+      <Box sx={sxStyles.section}>
+        <Box sx={sxStyles.wrap} id="feature">
+          <Box sx={sxStyles.worries} component="ul">
+            {worries.map((item) => (
+              <React.Fragment key={item.id}>
+                <Box component="li" sx={sxStyles.worriesList}>
+                  <Box sx={sxStyles.worriesIcon}>{item.icon}</Box>
                   <Typography
                     sx={[
-                      sxStyles.liNumber,
+                      sxStyles.worriesListText,
+                      commonSxStyles.typography.largeText,
                     ]}
                   >
+                    {item.title}
+                  </Typography>
+                </Box>
+              </React.Fragment>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={sxStyles.content}>
+        <Box sx={sxStyles.contentWrap}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
+          >
+            <Typography component="span" sx={[sxStyles.subText]}>
+              Re:ProSなら
+            </Typography>
+            <Typography component="span" sx={[sxStyles.emphasisText]}>
+              プログラミング知識は
+              <br />
+              後からでOK！
+              <br />
+              教材作りゼロ！
+            </Typography>
+            <Typography component="span" sx={[sxStyles.mainText]}>
+              本部がサポートします。
+            </Typography>
+          </Typography>
+          <Box sx={sxStyles.ul} component="ul">
+            {point.map((item) => (
+              <React.Fragment key={item.id}>
+                <Box component="li" sx={sxStyles.li}>
+                  <CheckCircleOutlined sx={sxStyles.icon} />
+                  <Typography sx={[sxStyles.liNumber]}>
                     POINT {item.id}
                   </Typography>
                   <Typography
-                    sx={[
-                      sxStyles.liTitle,
-                      commonSxStyles.typography.heading3,
-                    ]}
+                    sx={[sxStyles.liTitle, commonSxStyles.typography.heading3]}
                   >
                     {item.title}
                   </Typography>
@@ -377,18 +415,20 @@ const Feature = () => {
                     sx={[
                       sxStyles.liDetail,
                       commonSxStyles.typography.normalText,
-                      ]}
-                    >
+                    ]}
+                  >
                     {item.detail}
                   </Typography>
-              </Box>
-            </React.Fragment>
-          ))}
+                </Box>
+              </React.Fragment>
+            ))}
+          </Box>
+          <Typography sx={[sxStyles.note, commonSxStyles.typography.smallText]}>
+            ※契約内容およびサポート内容は、予告なく変更となる場合がございます。最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
+          </Typography>
         </Box>
-        <Typography sx={[sxStyles.note,commonSxStyles.typography.smallText]}>※契約内容およびサポート内容は、予告なく変更となる場合がございます。最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。</Typography>
       </Box>
-    </Box>
     </>
-  )
+  );
 };
 export default Feature;

@@ -1,10 +1,10 @@
 'use client';
 import AppBar from '@mui/material/AppBar';
 import { usePathname } from 'next/navigation';
-import CorporateHeader from './CorporateHeader'
-import DemandHeader from './DemandHeader'
-import SchoolHeader from './SchoolHeader'
-import SchoolFcHeader from './SchoolFcHeader'
+import CorporateHeader from './CorporateHeader';
+import DemandHeader from './DemandHeader';
+import SchoolHeader from './SchoolHeader';
+import SchoolFcHeader from './SchoolFcHeader';
 
 const Header = () => {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ const Header = () => {
     >
       {isSchoolFcPage ? (
         <SchoolFcHeader />
-      ) :isSchoolPage ? (
+      ) : isSchoolPage ? (
         <SchoolHeader />
       ) : isDemandPage ? (
         <DemandHeader />

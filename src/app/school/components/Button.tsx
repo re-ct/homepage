@@ -44,19 +44,19 @@ const CustomButton: React.FC<CustomButtonProps> = ({
             variant === 'primary'
               ? commonSxStyles.color.Orange[400]
               : variant === 'secondary'
-              ? commonSxStyles.color.white
-              : 'transparent',
-          
+                ? commonSxStyles.color.white
+                : 'transparent',
+
           color:
             variant === 'primary'
               ? commonSxStyles.color.white
               : variant === 'secondary'
-              ? commonSxStyles.color.Orange[400]
-              : commonSxStyles.color.white,
+                ? commonSxStyles.color.Orange[400]
+                : commonSxStyles.color.white,
           border:
             variant === 'primary'
-                ? 'none'
-                : variant === 'secondary'
+              ? 'none'
+              : variant === 'secondary'
                 ? 'solid 1px ' + commonSxStyles.color.Orange[400]
                 : 'solid 1px ' + commonSxStyles.color.white,
           textTransform: 'none',
@@ -67,14 +67,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
           transition: 'filter 0.3s',
           '@media screen and (max-width:450px)': {
             minWidth: 'auto',
-            width: '100%'
+            width: '100%',
           },
           '&:hover': {
             boxShadow: 'none',
-            filter: 
-            variant === 'primary'
-              ? 'brightness(0.8)'
-              : 'brightness(0.9)'
+            filter:
+              variant === 'primary' ? 'brightness(0.8)' : 'brightness(0.9)',
           },
         },
         commonSxStyles.typography.buttonNormalText,

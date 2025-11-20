@@ -9,8 +9,8 @@ const sxStyles = {
     backgroundColor: '#00319F',
     py: 2,
     '@media screen and (max-width:450px)': {
-      p: '26px 16px 16px'
-    }
+      p: '26px 16px 16px',
+    },
   },
   copyWrap: {
     maxWidth: '932px',
@@ -23,7 +23,7 @@ const sxStyles = {
       flexDirection: 'column-reverse',
       rowGap: '32px',
       px: 0,
-    }
+    },
   },
   copyText: {
     color: '#fff',
@@ -53,18 +53,18 @@ const sxStyles = {
       },
       '&:hover': {
         opacity: 0.7,
-      }
-    }
+      },
+    },
   },
   footer: {
     paddingTop: '40px',
-    borderTop: 'solid 1px #E7E7E7'
+    borderTop: 'solid 1px #E7E7E7',
   },
   footerWrap: {
     maxWidth: '932px',
     px: '16px',
     mx: 'auto',
-    paddingBottom:'60px',
+    paddingBottom: '60px',
   },
   title: {
     letterSpacing: '1px',
@@ -88,26 +88,32 @@ const sxStyles = {
     '& > a': {
       transition: 'all 0.3s linear',
       '&:hover': {
-        textDecoration: 'underline'
-      }
-    }
-  }
-}
+        textDecoration: 'underline',
+      },
+    },
+  },
+};
 
 const SchoolFooter = () => {
   const footerContent = [
-    { text: '豊川市でプログラミングを学ぶならRe:ProS', href: '/school'},
-    { text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア', href: '/articles/'}, //別リポジトリのサイトのため、ローカルでは見れない
-    { text: 'Re:ProS フランチャイズオーナー募集サイト', href: '/school/fc/', external: true, },
+    { text: '豊川市でプログラミングを学ぶならRe:ProS', href: '/school' },
+    {
+      text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア',
+      href: '/articles/',
+    }, //別リポジトリのサイトのため、ローカルでは見れない
+    {
+      text: 'Re:ProS フランチャイズオーナー募集サイト',
+      href: '/school/fc/',
+      external: true,
+    },
   ];
   return (
     <>
-      <Box
-        component="footer"
-        sx={sxStyles.footer}
-      >
+      <Box component="footer" sx={sxStyles.footer}>
         <Box sx={sxStyles.footerWrap}>
-          <Typography sx={sxStyles.title}>愛知県豊川市御津町で運営するプログラミング教室</Typography>
+          <Typography sx={sxStyles.title}>
+            愛知県豊川市御津町で運営するプログラミング教室
+          </Typography>
           <Image
             alt="豊川市でプログラミングを学ぶならRe:ProS(レプロス)"
             src={logoReprosImg.src}
@@ -118,10 +124,7 @@ const SchoolFooter = () => {
           />
           <List sx={sxStyles.links}>
             {footerContent.map((link, index) => (
-              <ListItem
-                key={index}
-                sx={sxStyles.linksItem}
-              >
+              <ListItem key={index} sx={sxStyles.linksItem}>
                 {link.href ? (
                   <Link
                     href={link.href}
@@ -137,13 +140,8 @@ const SchoolFooter = () => {
             ))}
           </List>
         </Box>
-        <Box
-          component="footer"
-          sx={sxStyles.copy}
-        >
-          <Box
-            sx={sxStyles.copyWrap}
-          >
+        <Box component="footer" sx={sxStyles.copy}>
+          <Box sx={sxStyles.copyWrap}>
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
               <Link href="/">運営会社</Link>
