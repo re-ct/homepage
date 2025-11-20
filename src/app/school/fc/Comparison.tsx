@@ -53,12 +53,18 @@ const sxStyles = {
   },
   note: {
     mt: '20px',
+    '@media screen and (max-width:948px)': {
+      mt: '36px',
+    }
   },
-  table: {
+  tablePc: {
     mt: 5,
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
+    '@media screen and (max-width:948px)': {
+      display: 'none',
+    },
     '& thead': {
       '& th': {
         backgroundColor: '#D2E0FF',
@@ -157,6 +163,81 @@ const sxStyles = {
         }
       }
     }
+  },
+  tableSp : {
+    display: 'none',
+    '@media screen and (max-width:948px)': {
+      display: 'block',
+      marginTop: '52px',
+    }
+  },
+  tableItemsWrap: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+  },
+  tableHeadingWrap: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+    position: 'sticky',
+    top: '65px',
+  },
+  tableHeading: {
+    padding: '16px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: commonSxStyles.color.white,
+    fontWeight: 'bold',
+    border: 'solid 1px'+commonSxStyles.color.Gray[200],
+    '&:nth-child(1)': {
+      borderRadius: '6px 0 0 6px',
+      backgroundColor: commonSxStyles.color.primary[900],
+      color: commonSxStyles.color.white,
+      border: 'none',
+    },
+    '&:nth-child(3)': {
+      borderRadius: '0 6px 6px 0',
+    },
+  },
+  tableContentWrap: {
+    marginTop: '14px',
+    '& + &': {
+      marginTop: '8px',
+    }
+  },
+  tableContentTitle: {
+    backgroundColor: '#D2E0FF',
+    padding: '6px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '13px',
+    letterSpacing: '0.05em',
+    lineHeight: '1.7',
+    marginBottom: '8px',
+  },
+  tableContentText: {
+    padding: '20px 10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    '&:nth-child(1) p': {
+      fontWeight: 'bold',
+      '& strong': {
+        fontWeight: 'bold',
+      }
+    },
+    '&:nth-child(2)': {
+      borderRight: '1px solid' + commonSxStyles.color.Gray[300],
+      borderLeft: '1px solid' + commonSxStyles.color.Gray[300],
+    },
+    '& strong': {
+      fontFamily: 'Arial,sans-serif',
+      marginRight: '1px',
+      fontSize: '14px',
+      fontWeight: 'normal',
+    },
   }
 }
 
@@ -169,7 +250,7 @@ const Comparison = () => {
             maxWidth: '948px',
             px: '24px',
             mx: 'auto',
-            '@media screen and (max-width:768px)': {
+            '@media screen and (max-width:948px)': {
               maxWidth: '100%',
             },
           }}
@@ -193,7 +274,7 @@ const Comparison = () => {
             >
               他社との違い
           </Typography>
-          <Box component="table" sx={sxStyles.table}>
+          <Box component="table" sx={sxStyles.tablePc}>
             <Box component="thead">
               <Box component="tr">
                 <Box
@@ -259,6 +340,78 @@ const Comparison = () => {
                     <Box>
                       {info.period}
                     </Box>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          </Box>
+          <Box sx={sxStyles.tableSp}>
+            <Box sx={sxStyles.tableHeadingWrap}>
+              {schoolInformation.map((info) => (
+                <Typography 
+                  key={`header-${info.id}`}
+                  sx={[sxStyles.tableHeading,commonSxStyles.typography.largeText]}
+                >
+                  {info.company}
+                </Typography>
+              ))}
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>初期費用<br/><span>(加盟費用・開業資金)</span></Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`cost-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.initialCost}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>ロイヤリティ</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.royalty}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>指導言語</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`skill-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.skill}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>対象年齢</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`age-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.age}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>契約期間</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`period-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.period}
+                    </Typography>
                   </Box>
                 ))}
               </Box>
