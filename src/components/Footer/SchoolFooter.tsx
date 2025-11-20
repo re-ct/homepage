@@ -101,6 +101,7 @@ const SchoolFooter = () => {
     {
       text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア',
       href: '/articles/',
+      external: true,
     }, //別リポジトリのサイトのため、ローカルでは見れない
     {
       text: 'Re:ProS フランチャイズオーナー募集サイト',
@@ -126,15 +127,24 @@ const SchoolFooter = () => {
             {footerContent.map((link, index) => (
               <ListItem key={index} sx={sxStyles.linksItem}>
                 {link.href ? (
+                  link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.text}
+                  </a>
+                ) : (
                   <Link
                     href={link.href}
-                    rel={link.external ? 'noopener noreferrer' : undefined}
-                    target={link.external ? '_blank' : undefined}
                   >
                     {link.text}
                   </Link>
+                )
                 ) : (
-                  <ListItemText />
+                  <ListItemText
+                  />
                 )}
               </ListItem>
             ))}
