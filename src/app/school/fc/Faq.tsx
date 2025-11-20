@@ -5,6 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ReactNode } from 'react';
+import FadeInOnView from '../components/FadeInOnView';
 
 interface accordionData {
   id: string;
@@ -165,47 +166,49 @@ const sxStyles = {
 const Faq = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.sectionWrap} id="faq">
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={[
-            {
-              color: commonSxStyles.color.black,
-              textAlign: 'center',
-              '& > br': {
-                display: 'none',
-                '@media screen and (max-width:450px)': {
-                  display: 'block',
+      <FadeInOnView>
+        <Box sx={sxStyles.sectionWrap} id="faq">
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={[
+              {
+                color: commonSxStyles.color.black,
+                textAlign: 'center',
+                '& > br': {
+                  display: 'none',
+                  '@media screen and (max-width:450px)': {
+                    display: 'block',
+                  },
                 },
               },
-            },
-            commonSxStyles.typography.heading2,
-          ]}
-        >
-          よくある質問
-        </Typography>
-        <Box sx={sxStyles.wrap}>
-          {accordionData.map((item) => (
-            <Accordion key={item.id} sx={sxStyles.accordion}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: '#24285B' }} />}
-                aria-controls={`${item.id}-content`}
-                id={`${item.id}-header`}
-                sx={sxStyles.accordionSummary}
-              >
-                <Typography sx={sxStyles.accordionSummaryText} component="span">
-                  Q
-                </Typography>
-                {item.question}
-              </AccordionSummary>
-              <AccordionDetails sx={sxStyles.accordionDetails}>
-                {item.answer}
-              </AccordionDetails>
-            </Accordion>
-          ))}
+              commonSxStyles.typography.heading2,
+            ]}
+          >
+            よくある質問
+          </Typography>
+          <Box sx={sxStyles.wrap}>
+            {accordionData.map((item) => (
+              <Accordion key={item.id} sx={sxStyles.accordion}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon sx={{ color: '#24285B' }} />}
+                  aria-controls={`${item.id}-content`}
+                  id={`${item.id}-header`}
+                  sx={sxStyles.accordionSummary}
+                >
+                  <Typography sx={sxStyles.accordionSummaryText} component="span">
+                    Q
+                  </Typography>
+                  {item.question}
+                </AccordionSummary>
+                <AccordionDetails sx={sxStyles.accordionDetails}>
+                  {item.answer}
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

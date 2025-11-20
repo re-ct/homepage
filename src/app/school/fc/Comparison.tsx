@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import { ReactNode } from 'react';
-import { common } from '@mui/material/colors';
+import FadeInOnView from '../components/FadeInOnView';
 
 type SchoolInformation = {
   id: number;
@@ -308,164 +308,166 @@ const sxStyles = {
 const Comparison = () => {
   return (
     <Box sx={sxStyles.content}>
-      <Box sx={sxStyles.wrap} id="comparison">
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
-        >
-          他社との違い
-        </Typography>
-        <Box component="table" sx={sxStyles.tablePc}>
-          <Box component="thead">
-            <Box component="tr">
-              <Box component="th"></Box>
-              {schoolInformation.map((info) => (
-                <Box component="th" key={`header-${info.id}`}>
-                  {info.company}
+      <FadeInOnView>
+        <Box sx={sxStyles.wrap} id="comparison">
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
+          >
+            他社との違い
+          </Typography>
+          <Box component="table" sx={sxStyles.tablePc}>
+            <Box component="thead">
+              <Box component="tr">
+                <Box component="th"></Box>
+                {schoolInformation.map((info) => (
+                  <Box component="th" key={`header-${info.id}`}>
+                    {info.company}
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box component="tbody">
+              <Box component="tr">
+                <Box component="th">
+                  初期費用
+                  <br />
+                  <span>(加盟費用・開業資金)</span>
                 </Box>
-              ))}
+                {schoolInformation.map((info) => (
+                  <Box component="td" key={`cost-${info.id}`}>
+                    <Box>{info.initialCost}</Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box component="tr">
+                <Box component="th">ロイヤリティ</Box>
+                {schoolInformation.map((info) => (
+                  <Box component="td" key={`royalty-${info.id}`}>
+                    <Box>{info.royalty}</Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box component="tr">
+                <Box component="th">指導言語</Box>
+                {schoolInformation.map((info) => (
+                  <Box component="td" key={`skill-${info.id}`}>
+                    <Box>{info.skill}</Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box component="tr">
+                <Box component="th">対象年齢</Box>
+                {schoolInformation.map((info) => (
+                  <Box component="td" key={`age-${info.id}`}>
+                    <Box>{info.age}</Box>
+                  </Box>
+                ))}
+              </Box>
+              <Box component="tr">
+                <Box component="th">契約期間</Box>
+                {schoolInformation.map((info) => (
+                  <Box component="td" key={`period-${info.id}`}>
+                    <Box>{info.period}</Box>
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Box>
-          <Box component="tbody">
-            <Box component="tr">
-              <Box component="th">
+          <Box sx={sxStyles.tableSp}>
+            <Box sx={sxStyles.tableHeadingWrap}>
+              {schoolInformation.map((info) => (
+                <Typography
+                  key={`header-${info.id}`}
+                  sx={[
+                    sxStyles.tableHeading,
+                    commonSxStyles.typography.largeText,
+                  ]}
+                >
+                  {info.company}
+                </Typography>
+              ))}
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>
                 初期費用
                 <br />
                 <span>(加盟費用・開業資金)</span>
-              </Box>
-              {schoolInformation.map((info) => (
-                <Box component="td" key={`cost-${info.id}`}>
-                  <Box>{info.initialCost}</Box>
-                </Box>
-              ))}
-            </Box>
-            <Box component="tr">
-              <Box component="th">ロイヤリティ</Box>
-              {schoolInformation.map((info) => (
-                <Box component="td" key={`royalty-${info.id}`}>
-                  <Box>{info.royalty}</Box>
-                </Box>
-              ))}
-            </Box>
-            <Box component="tr">
-              <Box component="th">指導言語</Box>
-              {schoolInformation.map((info) => (
-                <Box component="td" key={`skill-${info.id}`}>
-                  <Box>{info.skill}</Box>
-                </Box>
-              ))}
-            </Box>
-            <Box component="tr">
-              <Box component="th">対象年齢</Box>
-              {schoolInformation.map((info) => (
-                <Box component="td" key={`age-${info.id}`}>
-                  <Box>{info.age}</Box>
-                </Box>
-              ))}
-            </Box>
-            <Box component="tr">
-              <Box component="th">契約期間</Box>
-              {schoolInformation.map((info) => (
-                <Box component="td" key={`period-${info.id}`}>
-                  <Box>{info.period}</Box>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-        </Box>
-        <Box sx={sxStyles.tableSp}>
-          <Box sx={sxStyles.tableHeadingWrap}>
-            {schoolInformation.map((info) => (
-              <Typography
-                key={`header-${info.id}`}
-                sx={[
-                  sxStyles.tableHeading,
-                  commonSxStyles.typography.largeText,
-                ]}
-              >
-                {info.company}
               </Typography>
-            ))}
-          </Box>
-          <Box sx={sxStyles.tableContentWrap}>
-            <Typography sx={sxStyles.tableContentTitle}>
-              初期費用
-              <br />
-              <span>(加盟費用・開業資金)</span>
-            </Typography>
-            <Box sx={sxStyles.tableItemsWrap}>
-              {schoolInformation.map((info) => (
-                <Box key={`cost-${info.id}`} sx={sxStyles.tableContentText}>
-                  <Typography sx={commonSxStyles.typography.smallText}>
-                    {info.initialCost}
-                  </Typography>
-                </Box>
-              ))}
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`cost-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.initialCost}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>
+                ロイヤリティ
+              </Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.royalty}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>指導言語</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`skill-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.skill}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>対象年齢</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`age-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.age}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+            <Box sx={sxStyles.tableContentWrap}>
+              <Typography sx={sxStyles.tableContentTitle}>契約期間</Typography>
+              <Box sx={sxStyles.tableItemsWrap}>
+                {schoolInformation.map((info) => (
+                  <Box key={`period-${info.id}`} sx={sxStyles.tableContentText}>
+                    <Typography sx={commonSxStyles.typography.smallText}>
+                      {info.period}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Box>
-          <Box sx={sxStyles.tableContentWrap}>
-            <Typography sx={sxStyles.tableContentTitle}>
-              ロイヤリティ
-            </Typography>
-            <Box sx={sxStyles.tableItemsWrap}>
-              {schoolInformation.map((info) => (
-                <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
-                  <Typography sx={commonSxStyles.typography.smallText}>
-                    {info.royalty}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-          <Box sx={sxStyles.tableContentWrap}>
-            <Typography sx={sxStyles.tableContentTitle}>指導言語</Typography>
-            <Box sx={sxStyles.tableItemsWrap}>
-              {schoolInformation.map((info) => (
-                <Box key={`skill-${info.id}`} sx={sxStyles.tableContentText}>
-                  <Typography sx={commonSxStyles.typography.smallText}>
-                    {info.skill}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-          <Box sx={sxStyles.tableContentWrap}>
-            <Typography sx={sxStyles.tableContentTitle}>対象年齢</Typography>
-            <Box sx={sxStyles.tableItemsWrap}>
-              {schoolInformation.map((info) => (
-                <Box key={`age-${info.id}`} sx={sxStyles.tableContentText}>
-                  <Typography sx={commonSxStyles.typography.smallText}>
-                    {info.age}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-          <Box sx={sxStyles.tableContentWrap}>
-            <Typography sx={sxStyles.tableContentTitle}>契約期間</Typography>
-            <Box sx={sxStyles.tableItemsWrap}>
-              {schoolInformation.map((info) => (
-                <Box key={`period-${info.id}`} sx={sxStyles.tableContentText}>
-                  <Typography sx={commonSxStyles.typography.smallText}>
-                    {info.period}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </Box>
+          <Typography
+            component="p"
+            sx={[commonSxStyles.typography.smallText, sxStyles.note]}
+          >
+            ※A社、B社の情報は、各社公式ウェブサイト（2025年10月時点）に基づき作成しています。
+            <br />
+            ※比較対象は「子ども向けプログラミング教室」を軸とするフランチャイズの中から選定しています。
+            <br />
+            ※上記情報は、あくまで調査時点のものであり、各社の料金体系やサービス内容は予告なく変更される場合があります。最終的なご判断は、必ず各社へ直接お問い合わせの上、ご自身の責任で行ってください。
+          </Typography>
         </Box>
-        <Typography
-          component="p"
-          sx={[commonSxStyles.typography.smallText, sxStyles.note]}
-        >
-          ※A社、B社の情報は、各社公式ウェブサイト（2025年10月時点）に基づき作成しています。
-          <br />
-          ※比較対象は「子ども向けプログラミング教室」を軸とするフランチャイズの中から選定しています。
-          <br />
-          ※上記情報は、あくまで調査時点のものであり、各社の料金体系やサービス内容は予告なく変更される場合があります。最終的なご判断は、必ず各社へ直接お問い合わせの上、ご自身の責任で行ってください。
-        </Typography>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

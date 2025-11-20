@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import image from '../../../../public/image/school/fc/KeyVisual_image.webp';
 import { commonSxStyles } from '../components/Style';
+import FadeInOnView from '../components/FadeInOnView';
 
 const sxStyles = {
   wrap: {
@@ -144,27 +145,29 @@ const KeyVisual = () => {
   return (
     <Box sx={sxStyles.wrap}>
       <Box sx={sxStyles.contents}>
-        <Box sx={sxStyles.textWrap}>
-          <Typography sx={sxStyles.subCopy}>知識ゼロでも大丈夫！</Typography>
-          <Typography sx={sxStyles.mainCopy}>
-            プログラミング入門教材<strong>Scratch</strong>で
-          </Typography>
-          <Typography sx={sxStyles.mainCopyEmphasis}>
-            あなたの空き時間を
+        <FadeInOnView>
+          <Box sx={sxStyles.textWrap}>
+            <Typography sx={sxStyles.subCopy}>知識ゼロでも大丈夫！</Typography>
+            <Typography sx={sxStyles.mainCopy}>
+              プログラミング入門教材<strong>Scratch</strong>で
+            </Typography>
+            <Typography sx={sxStyles.mainCopyEmphasis}>
+              あなたの空き時間を
+              <br />
+              収益に変えよう
+            </Typography>
+            <Typography sx={sxStyles.pcTitle}>
+              プログラミング教室 Re:ProS | フランチャイズオーナー募集
+            </Typography>
+            <Typography sx={sxStyles.spTitle}>
+              プログラミング教室 Re:ProS
+            </Typography>
             <br />
-            収益に変えよう
-          </Typography>
-          <Typography sx={sxStyles.pcTitle}>
-            プログラミング教室 Re:ProS | フランチャイズオーナー募集
-          </Typography>
-          <Typography sx={sxStyles.spTitle}>
-            プログラミング教室 Re:ProS
-          </Typography>
-          <br />
-          <Typography sx={sxStyles.spTitle}>
-            フランチャイズオーナー募集
-          </Typography>
-        </Box>
+            <Typography sx={sxStyles.spTitle}>
+              フランチャイズオーナー募集
+            </Typography>
+          </Box>
+        </FadeInOnView>
         <Box sx={sxStyles.imageBox}>
           <Box sx={sxStyles.imageBg}></Box>
           <Box

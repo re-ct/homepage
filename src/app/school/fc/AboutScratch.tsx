@@ -1,8 +1,9 @@
-import { Box, colors, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import Link from '@mui/material/Link';
 import pcImage from '../../../../public/image/school/fc/aboutScratch_pcImage.webp';
 import manager from '../../../../public/image/school/fc/aboutScratch_manager.webp';
+import FadeInOnView from '../components/FadeInOnView';
 
 const sxStyles = {
   section: {
@@ -118,80 +119,82 @@ const sxStyles = {
 const AboutScratch = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.sectionWrap}>
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
-        >
-          Scratchに
-          <br />
-          特化している理由
-        </Typography>
-        <Box sx={sxStyles.contents}>
-          <Box sx={sxStyles.contentsText}>
-            <Typography component="p" sx={commonSxStyles.typography.normalText}>
-              Scratchは、アメリカのマサチューセッツ工科大学(MIT)メディアラボが開発したコーディング言語です。70以上の言語で利用可能で、
-              <Typography
-                component="strong"
-                sx={[sxStyles.strong, commonSxStyles.typography.normalText]}
-              >
-                世界中の教育機関で採用されています。
+      <FadeInOnView>
+        <Box sx={sxStyles.sectionWrap}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={[sxStyles.heading, commonSxStyles.typography.heading2]}
+          >
+            Scratchに
+            <br />
+            特化している理由
+          </Typography>
+          <Box sx={sxStyles.contents}>
+            <Box sx={sxStyles.contentsText}>
+              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+                Scratchは、アメリカのマサチューセッツ工科大学(MIT)メディアラボが開発したコーディング言語です。70以上の言語で利用可能で、
+                <Typography
+                  component="strong"
+                  sx={[sxStyles.strong, commonSxStyles.typography.normalText]}
+                >
+                  世界中の教育機関で採用されています。
+                </Typography>
+                ※
               </Typography>
-              ※
-            </Typography>
-            <Typography component="p" sx={commonSxStyles.typography.normalText}>
-              日本では2020年に小学校でのプログラミング必修化、2025年度からは大学入学共通テストへの「情報」科目が導入されました。
-            </Typography>
-            <Typography component="p" sx={commonSxStyles.typography.normalText}>
-              プログラミング教育が加速している中、プログラミング学習の最初の一歩としてScratchを習得してほしいと考えているからです。
-            </Typography>
-            <Typography
-              component="small"
-              sx={[sxStyles.textLink,commonSxStyles.typography.smallText]}
-            >
-              ※出典： Scratch公式サイト（{' '}
-              <Link
-                href="https://scratch.mit.edu/about"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+                日本では2020年に小学校でのプログラミング必修化、2025年度からは大学入学共通テストへの「情報」科目が導入されました。
+              </Typography>
+              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+                プログラミング教育が加速している中、プログラミング学習の最初の一歩としてScratchを習得してほしいと考えているからです。
+              </Typography>
+              <Typography
+                component="small"
+                sx={[sxStyles.textLink,commonSxStyles.typography.smallText]}
               >
-                https://scratch.mit.edu/about{' '}
-              </Link>{' '}
-              ）
-            </Typography>
-          </Box>
-          <Box
-            component="img"
-            src={pcImage.src}
-            alt=""
-            width={600}
-            height={376}
-          />
-        </Box>
-        <Box sx={sxStyles.voice}>
-          <Box sx={sxStyles.voiceWrap}>
-            <Typography component="p" sx={commonSxStyles.typography.normalText}>
-              Scratchを通して生徒自身の発想力や自発性が鍛えられます。
-            </Typography>
-            <Typography component="p" sx={commonSxStyles.typography.normalText}>
-              教室では、生徒自身が自分たちで「あれを作ってみたい！」「これを作ってみたい！」と試行錯誤しながら楽しくゲームを作っていく姿が見られています。
-            </Typography>
-          </Box>
-          <Box sx={sxStyles.voiceHuman}>
+                ※出典： Scratch公式サイト（{' '}
+                <Link
+                  href="https://scratch.mit.edu/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://scratch.mit.edu/about{' '}
+                </Link>{' '}
+                ）
+              </Typography>
+            </Box>
             <Box
               component="img"
-              src={manager.src}
+              src={pcImage.src}
               alt=""
-              width={160}
-              height={160}
+              width={600}
+              height={376}
             />
-            <Typography component="p" sx={commonSxStyles.typography.smallText}>
-              Re:ProS 塾長
-            </Typography>
+          </Box>
+          <Box sx={sxStyles.voice}>
+            <Box sx={sxStyles.voiceWrap}>
+              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+                Scratchを通して生徒自身の発想力や自発性が鍛えられます。
+              </Typography>
+              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+                教室では、生徒自身が自分たちで「あれを作ってみたい！」「これを作ってみたい！」と試行錯誤しながら楽しくゲームを作っていく姿が見られています。
+              </Typography>
+            </Box>
+            <Box sx={sxStyles.voiceHuman}>
+              <Box
+                component="img"
+                src={manager.src}
+                alt=""
+                width={160}
+                height={160}
+              />
+              <Typography component="p" sx={commonSxStyles.typography.smallText}>
+                Re:ProS 塾長
+              </Typography>
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

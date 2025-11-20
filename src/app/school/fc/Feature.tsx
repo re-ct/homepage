@@ -1,6 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import React from 'react';
+import FadeInOnView from '../components/FadeInOnView';
+
 import {
   CheckCircleOutlined,
   CoPresent,
@@ -370,59 +372,63 @@ const Feature = () => {
         </Box>
       </Box>
       <Box sx={sxStyles.content}>
-        <Box sx={sxStyles.contentWrap}>
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
-          >
-            <Typography component="span" sx={[sxStyles.subText]}>
-              Re:ProSなら
-            </Typography>
-            <Typography component="span" sx={[sxStyles.emphasisText]}>
-              プログラミング知識は
-              <br />
-              後からでOK！
-              <br />
-              教材作りゼロ！
-            </Typography>
-            <Typography component="span" sx={[sxStyles.mainText]}>
-              本部がサポートします。
-            </Typography>
-          </Typography>
-          <Box sx={sxStyles.ul} component="ul">
-            {point.map((item) => (
-              <React.Fragment key={item.id}>
-                <Box component="li" sx={sxStyles.li}>
-                  <CheckCircleOutlined sx={sxStyles.icon} />
-                  <Typography sx={[sxStyles.liNumber]}>
-                    POINT {item.id}
-                  </Typography>
-                  <Typography
-                    sx={[sxStyles.liTitle, commonSxStyles.typography.heading3]}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Box
-                    component="img"
-                    src={`../../../../image/school/fc/feature_point${item.id}.webp`}
-                    alt="開講準備から開講後まで本部がサポートいたします"
-                    width={900}
-                    height={600}
-                    sx={sxStyles.image}
-                  />
-                  <Typography
-                    sx={[
-                      sxStyles.liDetail,
-                      commonSxStyles.typography.normalText,
-                    ]}
-                  >
-                    {item.detail}
-                  </Typography>
-                </Box>
-              </React.Fragment>
-            ))}
-          </Box>
+          <Box sx={sxStyles.contentWrap}>
+            <FadeInOnView>
+              <Typography
+                variant="h2"
+                component="h2"
+                sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
+              >
+                <Typography component="span" sx={[sxStyles.subText]}>
+                  Re:ProSなら
+                </Typography>
+                <Typography component="span" sx={[sxStyles.emphasisText]}>
+                  プログラミング知識は
+                  <br />
+                  後からでOK！
+                  <br />
+                  教材作りゼロ！
+                </Typography>
+                <Typography component="span" sx={[sxStyles.mainText]}>
+                  本部がサポートします。
+                </Typography>
+              </Typography>
+            </FadeInOnView>
+            <FadeInOnView>
+            <Box sx={sxStyles.ul} component="ul">
+              {point.map((item) => (
+                <React.Fragment key={item.id}>
+                  <Box component="li" sx={sxStyles.li}>
+                    <CheckCircleOutlined sx={sxStyles.icon} />
+                    <Typography sx={[sxStyles.liNumber]}>
+                      POINT {item.id}
+                    </Typography>
+                    <Typography
+                      sx={[sxStyles.liTitle, commonSxStyles.typography.heading3]}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Box
+                      component="img"
+                      src={`../../../../image/school/fc/feature_point${item.id}.webp`}
+                      alt="開講準備から開講後まで本部がサポートいたします"
+                      width={900}
+                      height={600}
+                      sx={sxStyles.image}
+                    />
+                    <Typography
+                      sx={[
+                        sxStyles.liDetail,
+                        commonSxStyles.typography.normalText,
+                      ]}
+                    >
+                      {item.detail}
+                    </Typography>
+                  </Box>
+                </React.Fragment>
+              ))}
+            </Box>
+          </FadeInOnView>
           <Typography sx={[sxStyles.note, commonSxStyles.typography.smallText]}>
             ※契約内容およびサポート内容は、予告なく変更となる場合がございます。最終的な契約条件は、必ず個別面談および正式な契約書にてご確認ください。
           </Typography>

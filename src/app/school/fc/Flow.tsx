@@ -3,6 +3,7 @@ import { commonSxStyles } from '../components/Style';
 import image from '../../../../public/image/school/fc/flow_teaching.webp';
 import arrow from '../../../../public/image/school/fc/flow_arrow.svg';
 import React from 'react';
+import FadeInOnView from '../components/FadeInOnView';
 
 type Flow = {
   step: string;
@@ -154,55 +155,57 @@ const Arrow = () => {
 const Flow = () => {
   return (
     <Box sx={sxStyles.flowWrap}>
-      <Box sx={sxStyles.contentArea} id="flow">
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
-        >
-          加盟から
-          <br />
-          運営までの流れ
-        </Typography>
-        <Box sx={sxStyles.layoutGrid}>
-          <Box
-            sx={[sxStyles.list, commonSxStyles.typography.normalText]}
-            component="ol"
+      <FadeInOnView>
+        <Box sx={sxStyles.contentArea} id="flow">
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
           >
-            {flow.map((item, index) => (
-              <React.Fragment key={item.step}>
-                <Box component="li" sx={sxStyles.listItem}>
-                  <Typography
-                    sx={[
-                      sxStyles.stepTitle,
-                      commonSxStyles.typography.largeText,
-                    ]}
-                  >
-                    <Typography component="span" sx={[sxStyles.step]}>
-                      {item.step}
+            加盟から
+            <br />
+            運営までの流れ
+          </Typography>
+          <Box sx={sxStyles.layoutGrid}>
+            <Box
+              sx={[sxStyles.list, commonSxStyles.typography.normalText]}
+              component="ol"
+            >
+              {flow.map((item, index) => (
+                <React.Fragment key={item.step}>
+                  <Box component="li" sx={sxStyles.listItem}>
+                    <Typography
+                      sx={[
+                        sxStyles.stepTitle,
+                        commonSxStyles.typography.largeText,
+                      ]}
+                    >
+                      <Typography component="span" sx={[sxStyles.step]}>
+                        {item.step}
+                      </Typography>
+                      {item.title}
                     </Typography>
-                    {item.title}
-                  </Typography>
-                  {item.detail && (
-                    <Typography sx={[sxStyles.stepDetail]}>
-                      {item.detail}
-                    </Typography>
-                  )}
-                </Box>
-                {index < flow.length - 1 && <Arrow />}
-              </React.Fragment>
-            ))}
+                    {item.detail && (
+                      <Typography sx={[sxStyles.stepDetail]}>
+                        {item.detail}
+                      </Typography>
+                    )}
+                  </Box>
+                  {index < flow.length - 1 && <Arrow />}
+                </React.Fragment>
+              ))}
+            </Box>
+            <Box
+              component="img"
+              src={image.src}
+              alt="開講準備から開講後まで本部がサポートいたします"
+              width={600}
+              height={658}
+              sx={sxStyles.image}
+            />
           </Box>
-          <Box
-            component="img"
-            src={image.src}
-            alt="開講準備から開講後まで本部がサポートいたします"
-            width={600}
-            height={658}
-            sx={sxStyles.image}
-          />
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };
