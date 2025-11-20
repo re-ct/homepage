@@ -319,7 +319,9 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link href={item.url}>
+                  <Link
+                    href={item.url}
+                    onClick={toggleDrawer(false)}>
                     {item.title}
                     <KeyboardArrowRight />
                   </Link>

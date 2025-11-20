@@ -273,7 +273,7 @@ const Comparison = () => {
             variant="h2"
             component="h2"
             sx={[
-              sxStyles.tableHeading,
+              sxStyles.heading,
               commonSxStyles.typography.heading2,
             ]}
             >

@@ -16,7 +16,7 @@ const sxStyles = {
     },
   },
   heading: {
-    color: commonSxStyles.color.black,
+    color: commonSxStyles.color.white,
     textAlign: 'center',
     '& > br': {
       display: 'none',
