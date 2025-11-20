@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, colors, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import Link from '@mui/material/Link';
 import pcImage from '../../../../public/image/school/fc/aboutScratch_pcImage.webp';
@@ -29,6 +29,14 @@ const sxStyles = {
         display: 'block',
       },
     },
+  },
+  textLink: {
+    '& a': {
+      color: commonSxStyles.color.black,
+      '&:hover': {
+        color: commonSxStyles.color.black,
+      }
+    }
   },
   contents: {
     display: 'grid',
@@ -140,7 +148,7 @@ const AboutScratch = () => {
             </Typography>
             <Typography
               component="small"
-              sx={commonSxStyles.typography.smallText}
+              sx={[sxStyles.textLink,commonSxStyles.typography.smallText]}
             >
               ※出典： Scratch公式サイト（{' '}
               <Link

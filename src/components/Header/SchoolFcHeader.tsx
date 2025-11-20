@@ -126,8 +126,8 @@ const sxStyles = {
           fontSize: '12px',
         },
         '&:hover': {
-          color: '#407BFF',
-          borderBottom: 'solid 3px #407BFF',
+          color: '#24285B',
+          borderBottom: 'solid 3px #24285B',
         },
       },
     },

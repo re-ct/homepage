@@ -20,19 +20,40 @@ const sxStyles = {
       textAlign: 'left',
       display: 'flex',
       alignItems: 'center',
+      '@media screen and (max-width:450px)': {
+        p: '20px 16px',
+        fontSize: '14px',
+      },
+      '& > br': {
+        display: 'none',
+        '@media screen and (max-width:450px)': {
+          display: 'block',
+        },
+      },
     },
     '& td': {
       p: '20px',
       fontWeight: 'bold',
+      '@media screen and (max-width:450px)': {
+        fontSize: '16px',
+      },
       '& strong': {
         fontFamily: 'Arial,sans-serif',
         fontSize: '18px',
         fontWeight: 'bold',
       },
+      '& > span': {
+        '@media screen and (max-width:450px)': {
+          fontSize: '12px',
+        },
+      },
     },
     '& tr': {
       display: 'grid',
       gridTemplateColumns: '170px 1fr',
+      '@media screen and (max-width:450px)': {
+        gridTemplateColumns: '120px 1fr',
+      },
       '& + tr': {
         '& th': {
           borderTop: 'solid 1px' + commonSxStyles.color.white,
@@ -180,6 +201,7 @@ const sxStyles = {
       borderLeft: 'none',
       borderTop: 'dotted 1px #656565',
       minHeight: 'auto',
+      width: '100%',
     },
     '& > ul': {
       listStyle: 'none',
@@ -270,7 +292,7 @@ const Fee = () => {
               </Box>
             </Box>
             <Box component="tr">
-              <Box component="th">教室運営の裁量</Box>
+              <Box component="th">教室運営の<br/>裁量</Box>
               <Box component="td">
                 <Box component="span" sx={commonSxStyles.typography.normalText}>
                   授業料や生徒数、教室の稼働時間など

@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import { ReactNode } from 'react';
+import { common } from '@mui/material/colors';
 
 type SchoolInformation = {
   id: number;
@@ -237,6 +238,7 @@ const sxStyles = {
   tableItemsWrap: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3,1fr)',
+    backgroundColor: commonSxStyles.color.white,
   },
   tableHeadingWrap: {
     display: 'grid',
@@ -265,7 +267,7 @@ const sxStyles = {
   tableContentWrap: {
     marginTop: '14px',
     '& + &': {
-      marginTop: '8px',
+      marginTop: '12px',
     },
   },
   tableContentTitle: {
@@ -277,7 +279,6 @@ const sxStyles = {
     fontSize: '13px',
     letterSpacing: '0.05em',
     lineHeight: '1.7',
-    marginBottom: '8px',
   },
   tableContentText: {
     padding: '20px 10px',
