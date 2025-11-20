@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Link from '@mui/material/Link';
 import Image from 'next/image';
 import logoReprosImg from '../../../public/image/school/logo.png';
-import { Box, Typography, IconButton, Drawer, colors } from '@mui/material';
+import { Box, Typography, IconButton, Drawer } from '@mui/material';
 import React from 'react';
 import { commonSxStyles } from '@/app/school/components/Style';
 import { KeyboardArrowRight } from '@mui/icons-material';
