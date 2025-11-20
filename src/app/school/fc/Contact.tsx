@@ -68,7 +68,7 @@ const Contact = () => {
       sx={{
         width: '100%',
         backgroundColor: commonSxStyles.color.primary[400],
-        pt: 7,
+        pt: 8,
         pb: 10,
         '@media screen and (max-width:450px)': {},
       }}

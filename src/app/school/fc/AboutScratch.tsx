@@ -9,7 +9,7 @@ const sxStyles = {
   section: {
     width: '100%',
     backgroundColor: commonSxStyles.color.white,
-    pt: 7,
+    pt: 10,
     pb: 10,
     '@media screen and (max-width:450px)': {},
   },
