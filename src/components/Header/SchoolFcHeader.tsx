@@ -9,11 +9,13 @@ import { commonSxStyles } from '@/app/school/components/Style';
 import { KeyboardArrowRight } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 type Menu = {
   id: string;
   title: string;
   url: string;
+  targetBlank?: boolean;
 };
 
 const menu: Menu[] = [
@@ -46,6 +48,7 @@ const menu: Menu[] = [
     id: '6',
     title: '会社概要',
     url: '/',
+    targetBlank: true,
   },
 ];
 
@@ -291,7 +294,12 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link href={item.url}>{item.title}</Link>
+                  <Link href={item.url} target={item.targetBlank ? '_blank' : undefined} rel={item.targetBlank ? 'noopener noreferrer' : undefined}>
+                    {item.title}
+                    {item.targetBlank && ( // 💡 targetBlankがtrueの場合のみアイコンを表示
+                      <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} /> // アイコンのサイズと左マージンを調整
+                    )}
+                  </Link>
                 </Box>
               </React.Fragment>
             ))}
@@ -331,9 +339,18 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link href={item.url} onClick={toggleDrawer(false)}>
-                    {item.title}
-                    <KeyboardArrowRight />
+                  <Link
+                    href={item.url}
+                    onClick={toggleDrawer(false)}
+                    target={item.targetBlank ? '_blank' : undefined}
+                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                  >
+                    <Box component="span">{item.title}</Box>
+                    {item.targetBlank ? (
+                        <OpenInNewIcon sx={{ fontSize: '1.2rem' }} />
+                    ) : (
+                        <KeyboardArrowRight />
+                    )}
                   </Link>
                 </Box>
               </React.Fragment>

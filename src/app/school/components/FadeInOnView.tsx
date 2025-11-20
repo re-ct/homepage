@@ -41,6 +41,7 @@ const FadeInOnView: React.FC<FadeInOnViewProps> = ({ children }) => {
         transform: isActive ? 'translateY(0)' : 'translateY(20px)',
         opacity: isActive ? 1 : 0,
         transition: 'opacity 0.5s ease-in-out 0.1s, transform 0.5s ease-in-out 0.1s',
+        width: '100%',
       }}
     >
       {children}

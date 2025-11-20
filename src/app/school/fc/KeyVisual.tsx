@@ -23,6 +23,9 @@ const sxStyles = {
       flexDirection: 'column',
       px: 0,
     },
+    '&>div': {
+      width: 'auto',
+    }
   },
   imageBox: {
     width: '38%',
