@@ -86,7 +86,11 @@ const accordionData = [
     id: 'panel8',
     question: '教室を閉鎖（廃業）する場合、違約金などは発生しますか？',
     answer: (
-      <>いいえ、万が一運営が困難になった場合も、違約金なしで閉鎖が可能です。<br/>ただし、最低契約期間として6ヶ月間の運営を定めております。</>
+      <>
+        いいえ、万が一運営が困難になった場合も、違約金なしで閉鎖が可能です。
+        <br />
+        ただし、最低契約期間として6ヶ月間の運営を定めております。
+      </>
     ),
   },
 ];
@@ -202,7 +206,10 @@ const Faq = () => {
                   id={`${item.id}-header`}
                   sx={sxStyles.accordionSummary}
                 >
-                  <Typography sx={sxStyles.accordionSummaryText} component="span">
+                  <Typography
+                    sx={sxStyles.accordionSummaryText}
+                    component="span"
+                  >
                     Q
                   </Typography>
                   {item.question}

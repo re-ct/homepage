@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
-import {contact} from '../../lib/const/Link'
+import { contact } from '../../lib/const/Link';
 
 const sxStyles = {
   copy: {
@@ -128,23 +128,18 @@ const SchoolFooter = () => {
               <ListItem key={index} sx={sxStyles.linksItem}>
                 {link.href ? (
                   link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.text}
-                  </a>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.text}
+                    </a>
+                  ) : (
+                    <Link href={link.href}>{link.text}</Link>
+                  )
                 ) : (
-                  <Link
-                    href={link.href}
-                  >
-                    {link.text}
-                  </Link>
-                )
-                ) : (
-                  <ListItemText
-                  />
+                  <ListItemText />
                 )}
               </ListItem>
             ))}

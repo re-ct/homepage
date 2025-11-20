@@ -36,8 +36,8 @@ const sxStyles = {
       color: commonSxStyles.color.black,
       '&:hover': {
         color: commonSxStyles.color.black,
-      }
-    }
+      },
+    },
   },
   contents: {
     display: 'grid',
@@ -132,7 +132,10 @@ const AboutScratch = () => {
           </Typography>
           <Box sx={sxStyles.contents}>
             <Box sx={sxStyles.contentsText}>
-              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.normalText}
+              >
                 Scratchは、アメリカのマサチューセッツ工科大学(MIT)メディアラボが開発したコーディング言語です。70以上の言語で利用可能で、
                 <Typography
                   component="strong"
@@ -142,15 +145,21 @@ const AboutScratch = () => {
                 </Typography>
                 ※
               </Typography>
-              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.normalText}
+              >
                 日本では2020年に小学校でのプログラミング必修化、2025年度からは大学入学共通テストへの「情報」科目が導入されました。
               </Typography>
-              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.normalText}
+              >
                 プログラミング教育が加速している中、プログラミング学習の最初の一歩としてScratchを習得してほしいと考えているからです。
               </Typography>
               <Typography
                 component="small"
-                sx={[sxStyles.textLink,commonSxStyles.typography.smallText]}
+                sx={[sxStyles.textLink, commonSxStyles.typography.smallText]}
               >
                 ※出典： Scratch公式サイト（{' '}
                 <Link
@@ -173,10 +182,16 @@ const AboutScratch = () => {
           </Box>
           <Box sx={sxStyles.voice}>
             <Box sx={sxStyles.voiceWrap}>
-              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.normalText}
+              >
                 Scratchを通して生徒自身の発想力や自発性が鍛えられます。
               </Typography>
-              <Typography component="p" sx={commonSxStyles.typography.normalText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.normalText}
+              >
                 教室では、生徒自身が自分たちで「あれを作ってみたい！」「これを作ってみたい！」と試行錯誤しながら楽しくゲームを作っていく姿が見られています。
               </Typography>
             </Box>
@@ -188,7 +203,10 @@ const AboutScratch = () => {
                 width={160}
                 height={160}
               />
-              <Typography component="p" sx={commonSxStyles.typography.smallText}>
+              <Typography
+                component="p"
+                sx={commonSxStyles.typography.smallText}
+              >
                 Re:ProS 塾長
               </Typography>
             </Box>

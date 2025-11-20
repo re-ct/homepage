@@ -294,7 +294,11 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link href={item.url} target={item.targetBlank ? '_blank' : undefined} rel={item.targetBlank ? 'noopener noreferrer' : undefined}>
+                  <Link
+                    href={item.url}
+                    target={item.targetBlank ? '_blank' : undefined}
+                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                  >
                     {item.title}
                     {item.targetBlank && ( // 💡 targetBlankがtrueの場合のみアイコンを表示
                       <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} /> // アイコンのサイズと左マージンを調整
@@ -347,9 +351,9 @@ const SchoolFcHeader = () => {
                   >
                     <Box component="span">{item.title}</Box>
                     {item.targetBlank ? (
-                        <OpenInNewIcon sx={{ fontSize: '1.2rem' }} />
+                      <OpenInNewIcon sx={{ fontSize: '1.2rem' }} />
                     ) : (
-                        <KeyboardArrowRight />
+                      <KeyboardArrowRight />
                     )}
                   </Link>
                 </Box>

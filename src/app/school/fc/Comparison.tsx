@@ -411,7 +411,10 @@ const Comparison = () => {
               </Typography>
               <Box sx={sxStyles.tableItemsWrap}>
                 {schoolInformation.map((info) => (
-                  <Box key={`royalty-${info.id}`} sx={sxStyles.tableContentText}>
+                  <Box
+                    key={`royalty-${info.id}`}
+                    sx={sxStyles.tableContentText}
+                  >
                     <Typography sx={commonSxStyles.typography.smallText}>
                       {info.royalty}
                     </Typography>

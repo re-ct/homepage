@@ -263,7 +263,10 @@ const Fee = () => {
                 <Box component="th">初期費用</Box>
                 <Box component="td">
                   <Box component="strong">30</Box>万円
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  <Box
+                    component="span"
+                    sx={commonSxStyles.typography.normalText}
+                  >
                     {' '}
                     (税抜)
                   </Box>
@@ -272,12 +275,18 @@ const Fee = () => {
               <Box component="tr">
                 <Box component="th">ロイヤリティ</Box>
                 <Box component="td">
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  <Box
+                    component="span"
+                    sx={commonSxStyles.typography.normalText}
+                  >
                     生徒数に関わらず
                   </Box>
                   <br />
                   月額固定 <Box component="strong">1</Box>万円
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  <Box
+                    component="span"
+                    sx={commonSxStyles.typography.normalText}
+                  >
                     {' '}
                     (税抜)
                   </Box>
@@ -287,16 +296,26 @@ const Fee = () => {
                 <Box component="th">契約期間</Box>
                 <Box component="td">
                   最低 <Box component="strong">6</Box>ヶ月
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  <Box
+                    component="span"
+                    sx={commonSxStyles.typography.normalText}
+                  >
                     {' '}
                     (以降自動更新)
                   </Box>
                 </Box>
               </Box>
               <Box component="tr">
-                <Box component="th">教室運営の<br/>裁量</Box>
+                <Box component="th">
+                  教室運営の
+                  <br />
+                  裁量
+                </Box>
                 <Box component="td">
-                  <Box component="span" sx={commonSxStyles.typography.normalText}>
+                  <Box
+                    component="span"
+                    sx={commonSxStyles.typography.normalText}
+                  >
                     授業料や生徒数、教室の稼働時間など
                   </Box>
                   <br />
@@ -340,7 +359,13 @@ const Fee = () => {
                   <Box component="strong">21</Box>万円/月
                 </Box>
               </Box>
-              <Box component="img" src={equal.src} alt="" width={19} height={8} />
+              <Box
+                component="img"
+                src={equal.src}
+                alt=""
+                width={19}
+                height={8}
+              />
               <Box sx={sxStyles.dlWrapSales}>
                 <Box sx={sxStyles.dlWrapFeeBox}>
                   <Box component="dt" sx={commonSxStyles.typography.normalText}>
@@ -356,7 +381,13 @@ const Fee = () => {
                   </Box>
                 </Box>
               </Box>
-              <Box component="img" src={minus.src} alt="" width={19} height={2} />
+              <Box
+                component="img"
+                src={minus.src}
+                alt=""
+                width={19}
+                height={2}
+              />
               <Box sx={sxStyles.dlWrapFee}>
                 <Box sx={sxStyles.dlWrapFeeBox}>
                   <Box component="dt" sx={commonSxStyles.typography.normalText}>

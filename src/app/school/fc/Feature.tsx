@@ -45,11 +45,7 @@ const point: Point[] = [
         固定ロイヤリティで始めやすい<span>※</span>
       </>
     ),
-    detail: (
-      <>
-        生徒数や売上に関わらず一律の固定額です。
-      </>
-    ),
+    detail: <>生徒数や売上に関わらず一律の固定額です。</>,
   },
   {
     id: 3,
@@ -370,29 +366,29 @@ const Feature = () => {
         </Box>
       </Box>
       <Box sx={sxStyles.content}>
-          <Box sx={sxStyles.contentWrap}>
-            <FadeInOnView>
-              <Typography
-                variant="h2"
-                component="h2"
-                sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
-              >
-                <Typography component="span" sx={[sxStyles.subText]}>
-                  Re:ProSなら
-                </Typography>
-                <Typography component="span" sx={[sxStyles.emphasisText]}>
-                  プログラミング知識は
-                  <br />
-                  後からでOK！
-                  <br />
-                  教材作りゼロ！
-                </Typography>
-                <Typography component="span" sx={[sxStyles.mainText]}>
-                  本部がサポートします。
-                </Typography>
+        <Box sx={sxStyles.contentWrap}>
+          <FadeInOnView>
+            <Typography
+              variant="h2"
+              component="h2"
+              sx={[sxStyles.heading2, commonSxStyles.typography.heading2]}
+            >
+              <Typography component="span" sx={[sxStyles.subText]}>
+                Re:ProSなら
               </Typography>
-            </FadeInOnView>
-            <FadeInOnView>
+              <Typography component="span" sx={[sxStyles.emphasisText]}>
+                プログラミング知識は
+                <br />
+                後からでOK！
+                <br />
+                教材作りゼロ！
+              </Typography>
+              <Typography component="span" sx={[sxStyles.mainText]}>
+                本部がサポートします。
+              </Typography>
+            </Typography>
+          </FadeInOnView>
+          <FadeInOnView>
             <Box sx={sxStyles.ul} component="ul">
               {point.map((item) => (
                 <React.Fragment key={item.id}>
@@ -402,7 +398,10 @@ const Feature = () => {
                       POINT {item.id}
                     </Typography>
                     <Typography
-                      sx={[sxStyles.liTitle, commonSxStyles.typography.heading3]}
+                      sx={[
+                        sxStyles.liTitle,
+                        commonSxStyles.typography.heading3,
+                      ]}
                     >
                       {item.title}
                     </Typography>

@@ -14,7 +14,7 @@ const FadeInOnView: React.FC<FadeInOnViewProps> = ({ children }) => {
 
   useEffect(() => {
     if (!ref.current) return;
-    
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,7 +22,7 @@ const FadeInOnView: React.FC<FadeInOnViewProps> = ({ children }) => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: INTERSECTION_THRESHOLD } 
+      { threshold: INTERSECTION_THRESHOLD },
     );
 
     observer.observe(ref.current);
@@ -32,15 +32,16 @@ const FadeInOnView: React.FC<FadeInOnViewProps> = ({ children }) => {
         observer.unobserve(ref.current);
       }
     };
-  }, []); 
+  }, []);
 
   return (
-    <Box 
+    <Box
       ref={ref}
       sx={{
         transform: isActive ? 'translateY(0)' : 'translateY(20px)',
         opacity: isActive ? 1 : 0,
-        transition: 'opacity 0.5s ease-in-out 0.1s, transform 0.5s ease-in-out 0.1s',
+        transition:
+          'opacity 0.5s ease-in-out 0.1s, transform 0.5s ease-in-out 0.1s',
         width: '100%',
       }}
     >
