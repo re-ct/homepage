@@ -23,7 +23,12 @@ const Footer = () => {
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
     { text: 'プログラミング教室', href: '/school', nested: true },
-    { text: 'プログラミングメディア', href: '/articles/', nested: true }, //別リポジトリのサイトのため、ローカルでは見れない
+    {
+      text: 'プログラミングメディア',
+      href: '/articles/',
+      nested: true,
+      external: true,
+    }, //別リポジトリのサイトのため、ローカルでは見れない
     { text: '開発等の相談', href: '/demand', nested: true },
     {
       text: 'お問い合わせ',
@@ -61,22 +66,35 @@ const Footer = () => {
               }}
             >
               {link.href ? (
-                <Link
-                  style={{
-                    color: '#fff',
-                    textDecoration: 'underline',
-                    fontSize: '14px',
-                  }}
-                  href={link.href}
-                  rel={link.external ? 'noopener noreferrer' : undefined}
-                  target={link.external ? '_blank' : undefined}
-                >
-                  {link.text}
-                </Link>
+                link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: '#fff',
+                      textDecoration: 'underline',
+                      fontSize: '14px',
+                    }}
+                  >
+                    {link.text}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    style={{
+                      color: '#fff',
+                      textDecoration: 'underline',
+                      fontSize: '14px',
+                    }}
+                  >
+                    {link.text}
+                  </Link>
+                )
               ) : (
                 <ListItemText
                   primary={link.text}
-                  primaryTypographyProps={{
+                  style={{
                     color: '#fff',
                     fontSize: '14px',
                   }}
