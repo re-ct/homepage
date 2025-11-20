@@ -1,6 +1,6 @@
-import Header from './Header';
+import Header from '../components/Header/Header';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
-import Footer from './Footer';
+import Footer from '../components/Footer/Footer';
 import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata = {

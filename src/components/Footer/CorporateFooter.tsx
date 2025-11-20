@@ -1,6 +1,7 @@
+'use client';
 import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
-import { contact } from '../lib/const/Link';
+import { contact } from '../../lib/const/Link';
 
 const Copyright = () => {
   return (
@@ -18,7 +19,7 @@ const Copyright = () => {
   );
 };
 
-const Footer = () => {
+const CorporateFooter = () => {
   const footerContent = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
@@ -109,4 +110,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default CorporateFooter;
