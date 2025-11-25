@@ -1,9 +1,10 @@
 'use client';
 import Link from 'next/link';
-import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
+import { Box, List, Typography } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
 import { contact } from '../../lib/const/Link';
+import { FooterLinkItem, LinkItem } from './Footer'
 
 const sxStyles = {
   copy: {
@@ -96,7 +97,7 @@ const sxStyles = {
 };
 
 const SchoolFooter = () => {
-  const footerContent = [
+  const footerContent: LinkItem[] = [
     { text: '豊川市でプログラミングを学ぶならRe:ProS', href: '/school' },
     {
       text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア',
@@ -125,23 +126,12 @@ const SchoolFooter = () => {
           />
           <List sx={sxStyles.links}>
             {footerContent.map((link, index) => (
-              <ListItem key={index} sx={sxStyles.linksItem}>
-                {link.href ? (
-                  link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.text}
-                    </a>
-                  ) : (
-                    <Link href={link.href}>{link.text}</Link>
-                  )
-                ) : (
-                  <ListItemText />
-                )}
-              </ListItem>
+              <FooterLinkItem
+                key={index}
+                link={link}
+                index={index}
+                sxStyles={sxStyles}
+              />
             ))}
           </List>
         </Box>

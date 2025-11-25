@@ -1,7 +1,26 @@
 'use client';
-import Link from 'next/link';
-import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
+import { Box, List, Typography } from '@mui/material';
 import { contact } from '../../lib/const/Link';
+import { FooterLinkItem,LinkItem } from './Footer'
+
+const sxStyles = {
+  links: {
+    padding: 0,
+  },
+  linksItem: {
+    padding: 0,
+    marginTop: '12px',
+    '& > a': {
+      color: '#fff',
+      textDecoration: 'underline',
+      fontSize: '14px',
+    },
+    '& > div > span': {
+      color: '#fff',
+      fontSize: '14px',
+    }
+  }
+}
 
 const Copyright = () => {
   return (
@@ -20,7 +39,7 @@ const Copyright = () => {
 };
 
 const CorporateFooter = () => {
-  const footerContent = [
+  const footerContent: LinkItem[] = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
     { text: 'プログラミング教室', href: '/school', nested: true },
@@ -53,55 +72,14 @@ const CorporateFooter = () => {
           padding: '0 16px',
         }}
       >
-        <List sx={{ padding: 0 }}>
+        <List sx={sxStyles.links}>
           {footerContent.map((link, index) => (
-            <ListItem
+            <FooterLinkItem
               key={index}
-              sx={{
-                padding: 0,
-                marginTop: index !== 0 ? '12px' : 0,
-                ...(link.nested && {
-                  paddingLeft: '16px',
-                  listStyleType: 'disc',
-                }),
-              }}
-            >
-              {link.href ? (
-                link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </Link>
-                )
-              ) : (
-                <ListItemText
-                  primary={link.text}
-                  style={{
-                    color: '#fff',
-                    fontSize: '14px',
-                  }}
-                />
-              )}
-            </ListItem>
+              link={link}
+              index={index}
+              sxStyles={sxStyles}
+            />
           ))}
         </List>
         <Copyright />
