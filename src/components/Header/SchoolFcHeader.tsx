@@ -1,7 +1,7 @@
 'use client';
 import Toolbar from '@mui/material/Toolbar';
-import Link from '@mui/material/Link';
 import Image from 'next/image';
+import Link from '@mui/material/Link';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import { Box, Typography, IconButton, Drawer } from '@mui/material';
 import React from 'react';
@@ -10,6 +10,7 @@ import { KeyboardArrowRight } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import {fcRequestForDocument,fcContact} from '../../lib/const/Link';
 
 type Menu = {
   id: string;
@@ -294,16 +295,16 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link
+                  <a
                     href={item.url}
                     target={item.targetBlank ? '_blank' : undefined}
                     rel={item.targetBlank ? 'noopener noreferrer' : undefined}
                   >
                     {item.title}
-                    {item.targetBlank && ( // 💡 targetBlankがtrueの場合のみアイコンを表示
-                      <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} /> // アイコンのサイズと左マージンを調整
+                    {item.targetBlank && (
+                      <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} />
                     )}
-                  </Link>
+                  </a>
                 </Box>
               </React.Fragment>
             ))}
@@ -313,17 +314,15 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsMaterial]}
             >
-              <Link href="/school/fc">
-                {/* TODO：リンク入れる */}
+              <a href={fcRequestForDocument} target='_blank' rel='noopener noreferrer'>
                 資料請求
-              </Link>
+              </a>
             </Box>
             <Box
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
             >
-              {/* TODO：リンク入れる */}
-              <Link href="/school/fc">お問い合わせ</Link>
+              <a href={fcContact} target='_blank' rel='noopener noreferrer'>お問い合わせ</a>
             </Box>
           </Box>
         </Box>
@@ -343,7 +342,7 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link
+                  <a
                     href={item.url}
                     onClick={toggleDrawer(false)}
                     target={item.targetBlank ? '_blank' : undefined}
@@ -355,7 +354,7 @@ const SchoolFcHeader = () => {
                     ) : (
                       <KeyboardArrowRight />
                     )}
-                  </Link>
+                  </a>
                 </Box>
               </React.Fragment>
             ))}
@@ -368,10 +367,9 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsMaterial,
               ]}
             >
-              <Link href="/school/fc">
-                {/* TODO：リンク入れる */}
+              <a href={fcRequestForDocument} target='_blank' rel='noopener noreferrer'>
                 資料請求
-              </Link>
+              </a>
             </Box>
             <Box
               component="li"
@@ -380,8 +378,7 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsContact,
               ]}
             >
-              {/* TODO：リンク入れる */}
-              <Link href="/school/fc">お問い合わせ</Link>
+              <a href={fcContact} target='_blank' rel='noopener noreferrer'>お問い合わせ</a>
             </Box>
           </Box>
         </Drawer>

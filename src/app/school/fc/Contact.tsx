@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import CustomButton from '../components/Button';
 import FadeInOnView from '../components/FadeInOnView';
+import {fcRequestForDocument,fcContact} from '../../../lib/const/Link';
 
 const sxStyles = {
   list: {
@@ -111,8 +112,8 @@ const Contact = () => {
                   variant="primary"
                   label="資料請求フォームへ"
                   icon="keyboard-arrow-right"
-                  href="/"
-                  // TODO:URLを入れる
+                  href={fcRequestForDocument}
+                  isExternal={true}
                 />
               </Box>
             </Box>
@@ -130,8 +131,8 @@ const Contact = () => {
                   variant="primary"
                   label="お問い合わせフォームへ"
                   icon="keyboard-arrow-right"
-                  href="/"
-                  // TODO:URLを入れる
+                  href={fcContact}
+                  isExternal={true}
                 />
               </Box>
             </Box>

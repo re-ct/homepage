@@ -48,7 +48,6 @@ const BreadcrumbNavigation: React.FC<TBreadCrumbProps> = ({
         >
           株式会社レクト
         </Link>
-        ;
         {pathNames.map((link, index) => {
           const href = `/${pathNames.slice(0, index + 1).join('/')}/`;
           const title = titles ? titles[index] : link;
