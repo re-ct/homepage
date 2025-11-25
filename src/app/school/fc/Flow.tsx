@@ -48,7 +48,6 @@ const sxStyles = {
   list: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
     justifyContent: 'space-between',
     listStyle: 'none',
     alignItems: 'center',
@@ -66,7 +65,6 @@ const sxStyles = {
     position: 'relative',
     '&:not(:last-of-type)': {
       mb: 3,
-      pb: 3,
       '&::after': {
         content: '""',
         position: 'absolute',
