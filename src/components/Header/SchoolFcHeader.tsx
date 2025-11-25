@@ -53,6 +53,33 @@ const menu: Menu[] = [
   },
 ];
 
+
+type Button = {
+  href: string;
+  text: string;
+  sx?: object;
+};
+
+const Button = ({ href, text, sx}: Button) => {
+  return (
+    <Box
+      component="li"
+      sx={[
+        sxStyles.linksHamburgerButton,
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {text}
+      </a>
+    </Box>
+  )
+}
+
 const sxStyles = {
   wrap: {
     width: '1200px',
@@ -366,32 +393,16 @@ const SchoolFcHeader = () => {
             ))}
           </Box>
           <Box component="ul" sx={sxStyles.linksHamburgerButtons}>
-            <Box
-              component="li"
-              sx={[
-                sxStyles.linksHamburgerButton,
-                sxStyles.linksHamburgerButtonsMaterial,
-              ]}
-            >
-              <a
-                href={fcRequestForDocument}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                資料請求
-              </a>
-            </Box>
-            <Box
-              component="li"
-              sx={[
-                sxStyles.linksHamburgerButton,
-                sxStyles.linksHamburgerButtonsContact,
-              ]}
-            >
-              <a href={fcContact} target="_blank" rel="noopener noreferrer">
-                お問い合わせ
-              </a>
-            </Box>
+            <Button
+              href={fcRequestForDocument}
+              text="資料請求"
+              sx={sxStyles.linksHamburgerButtonsMaterial}
+              />
+            <Button
+              href={fcContact}
+              text="お問い合わせ"
+              sx={sxStyles.linksHamburgerButtonsContact}
+              />
           </Box>
         </Drawer>
       </Box>
