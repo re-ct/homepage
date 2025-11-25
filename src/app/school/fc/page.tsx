@@ -11,7 +11,8 @@ import Faq from './Faq';
 import Contact from './Contact';
 
 export const metadata = {
-  title: 'こども向けプログラミング教室のフランチャイズパートナー募集 | プログラミング教室 Re:ProS(レプロス repros)',
+  title:
+    'こども向けプログラミング教室のフランチャイズパートナー募集 | プログラミング教室 Re:ProS(レプロス repros)',
   description:
     'Re:Pros(レプロス repros)のFCはプログラミングの知識や経験がない未経験の方でも専門的な教材の導入が行えます。小学生・中学生向けこどもプログラミング教室のフランチャイズパートナーを募集しています。Scratch専門のため、たくさんの教材知識は必要ありません。まずはお気軽にご相談ください。',
   robots: 'index,follow',

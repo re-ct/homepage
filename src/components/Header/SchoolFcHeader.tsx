@@ -10,7 +10,7 @@ import { KeyboardArrowRight } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import {fcRequestForDocument,fcContact} from '../../lib/const/Link';
+import { fcRequestForDocument, fcContact } from '../../lib/const/Link';
 
 type Menu = {
   id: string;
@@ -314,7 +314,11 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsMaterial]}
             >
-              <a href={fcRequestForDocument} target='_blank' rel='noopener noreferrer'>
+              <a
+                href={fcRequestForDocument}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 資料請求
               </a>
             </Box>
@@ -322,7 +326,9 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
             >
-              <a href={fcContact} target='_blank' rel='noopener noreferrer'>お問い合わせ</a>
+              <a href={fcContact} target="_blank" rel="noopener noreferrer">
+                お問い合わせ
+              </a>
             </Box>
           </Box>
         </Box>
@@ -367,7 +373,11 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsMaterial,
               ]}
             >
-              <a href={fcRequestForDocument} target='_blank' rel='noopener noreferrer'>
+              <a
+                href={fcRequestForDocument}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 資料請求
               </a>
             </Box>
@@ -378,7 +388,9 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsContact,
               ]}
             >
-              <a href={fcContact} target='_blank' rel='noopener noreferrer'>お問い合わせ</a>
+              <a href={fcContact} target="_blank" rel="noopener noreferrer">
+                お問い合わせ
+              </a>
             </Box>
           </Box>
         </Drawer>

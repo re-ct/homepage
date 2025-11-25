@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import CustomButton from '../components/Button';
 import FadeInOnView from '../components/FadeInOnView';
-import {fcRequestForDocument,fcContact} from '../../../lib/const/Link';
+import { fcRequestForDocument, fcContact } from '../../../lib/const/Link';
 
 const sxStyles = {
   list: {
