@@ -18,7 +18,7 @@ const FadeInOnView: React.FC<FadeInOnViewProps> = ({ children }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsActive(true); // active状態にする
+          setIsActive(true);
           observer.unobserve(entry.target);
         }
       },
