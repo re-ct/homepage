@@ -1,7 +1,7 @@
 'use client';
 import { Box, List, Typography } from '@mui/material';
 import { contact } from '../../lib/const/Link';
-import { FooterLinkItem,LinkItem } from './Footer'
+import { FooterLinkItem, LinkItem } from './Footer';
 
 const sxStyles = {
   links: {
@@ -18,9 +18,9 @@ const sxStyles = {
     '& > div > span': {
       color: '#fff',
       fontSize: '14px',
-    }
-  }
-}
+    },
+  },
+};
 
 const Copyright = () => {
   return (

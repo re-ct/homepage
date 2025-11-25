@@ -53,32 +53,24 @@ const menu: Menu[] = [
   },
 ];
 
-
 type Button = {
   href: string;
   text: string;
   sx?: object;
 };
 
-const Button = ({ href, text, sx}: Button) => {
+const Button = ({ href, text, sx }: Button) => {
   return (
     <Box
       component="li"
-      sx={[
-        sxStyles.linksHamburgerButton,
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
+      sx={[sxStyles.linksHamburgerButton, ...(Array.isArray(sx) ? sx : [sx])]}
     >
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer">
         {text}
       </a>
     </Box>
-  )
-}
+  );
+};
 
 const sxStyles = {
   wrap: {
@@ -397,12 +389,12 @@ const SchoolFcHeader = () => {
               href={fcRequestForDocument}
               text="資料請求"
               sx={sxStyles.linksHamburgerButtonsMaterial}
-              />
+            />
             <Button
               href={fcContact}
               text="お問い合わせ"
               sx={sxStyles.linksHamburgerButtonsContact}
-              />
+            />
           </Box>
         </Drawer>
       </Box>

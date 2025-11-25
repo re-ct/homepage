@@ -18,7 +18,11 @@ type FooterLinkItemProps = {
   sxStyles: any;
 };
 
-export const FooterLinkItem = ({ link, index, sxStyles }: FooterLinkItemProps) => {
+export const FooterLinkItem = ({
+  link,
+  index,
+  sxStyles,
+}: FooterLinkItemProps) => {
   const itemStyles = {
     ...sxStyles.linksItem,
     ...(link.nested && {

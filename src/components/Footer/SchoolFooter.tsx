@@ -4,7 +4,7 @@ import { Box, List, Typography } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
 import { contact } from '../../lib/const/Link';
-import { FooterLinkItem, LinkItem } from './Footer'
+import { FooterLinkItem, LinkItem } from './Footer';
 
 const sxStyles = {
   copy: {
