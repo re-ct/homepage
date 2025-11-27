@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import { CommonLink } from '../CommonLink'
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import { contact } from '../../lib/const/Link';
 
@@ -67,31 +67,18 @@ const CorporateFooter = () => {
               }}
             >
               {link.href ? (
-                link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </Link>
-                )
+                <CommonLink
+                  link={{
+                    href: link.href,
+                    text: link.text,
+                    external: link.external || false,
+                  }}
+                  style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    textDecoration: 'none',
+                  }}
+                />
               ) : (
                 <ListItemText
                   primary={link.text}
