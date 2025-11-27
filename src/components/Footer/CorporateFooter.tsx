@@ -1,5 +1,5 @@
 'use client';
-import { CommonLink } from '../CommonLink'
+import { CommonLink } from '../CommonLink';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import { contact } from '../../lib/const/Link';
 
