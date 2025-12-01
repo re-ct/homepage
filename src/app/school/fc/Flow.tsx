@@ -48,7 +48,6 @@ const sxStyles = {
   list: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
     justifyContent: 'space-between',
     listStyle: 'none',
     alignItems: 'center',
@@ -63,19 +62,23 @@ const sxStyles = {
     borderRadius: '8px',
     width: '100%',
     flexWrap: 'wrap',
+    position: 'relative',
+    '&:not(:last-of-type)': {
+      mb: 3,
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        left: '50%',
+        bottom: '-20px',
+        transform: 'translateX(-50%)',
+        width: '27px',
+        height: '12px',
+        backgroundImage: `url(${arrow.src})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+      },
+    },
   },
-  icon: {
-    background: `url(${arrow.src})`,
-    maxWidth: '27px',
-    minWidth: '27px',
-    maxHeight: '12px',
-    minHeight: '12px',
-    content: '""',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    display: 'inline-block',
-  },
-
   flowWrap: {
     width: '100%',
     backgroundColor: commonSxStyles.color.primary[100],
@@ -148,10 +151,6 @@ const sxStyles = {
   },
 };
 
-const Arrow = () => {
-  return <Box component="span" sx={sxStyles.icon}></Box>;
-};
-
 const Flow = () => {
   return (
     <Box sx={sxStyles.flowWrap}>
@@ -171,28 +170,25 @@ const Flow = () => {
               sx={[sxStyles.list, commonSxStyles.typography.normalText]}
               component="ol"
             >
-              {flow.map((item, index) => (
-                <React.Fragment key={item.step}>
-                  <Box component="li" sx={sxStyles.listItem}>
-                    <Typography
-                      sx={[
-                        sxStyles.stepTitle,
-                        commonSxStyles.typography.largeText,
-                      ]}
-                    >
-                      <Typography component="span" sx={[sxStyles.step]}>
-                        {item.step}
-                      </Typography>
-                      {item.title}
+              {flow.map((item) => (
+                <Box component="li" sx={sxStyles.listItem} key={item.step}>
+                  <Typography
+                    sx={[
+                      sxStyles.stepTitle,
+                      commonSxStyles.typography.largeText,
+                    ]}
+                  >
+                    <Typography component="span" sx={[sxStyles.step]}>
+                      {item.step}
                     </Typography>
-                    {item.detail && (
-                      <Typography sx={[sxStyles.stepDetail]}>
-                        {item.detail}
-                      </Typography>
-                    )}
-                  </Box>
-                  {index < flow.length - 1 && <Arrow />}
-                </React.Fragment>
+                    {item.title}
+                  </Typography>
+                  {item.detail && (
+                    <Typography sx={[sxStyles.stepDetail]}>
+                      {item.detail}
+                    </Typography>
+                  )}
+                </Box>
               ))}
             </Box>
             <Box

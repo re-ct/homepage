@@ -1,8 +1,8 @@
 'use client';
 import Toolbar from '@mui/material/Toolbar';
-import Link from 'next/link';
 import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
+import Link from '@mui/material/Link';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import { Box, Typography, IconButton, Drawer } from '@mui/material';
 import React from 'react';
@@ -11,6 +11,7 @@ import { KeyboardArrowRight } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { fcRequestForDocument, fcContact } from '../../lib/const/Link';
 
 type Menu = {
   id: string;
@@ -52,6 +53,25 @@ const menu: Menu[] = [
     targetBlank: true,
   },
 ];
+
+type Button = {
+  href: string;
+  text: string;
+  sx?: object;
+};
+
+const Button = ({ href, text, sx }: Button) => {
+  return (
+    <Box
+      component="li"
+      sx={[sxStyles.linksHamburgerButton, ...(Array.isArray(sx) ? sx : [sx])]}
+    >
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {text}
+      </a>
+    </Box>
+  );
+};
 
 const sxStyles = {
   wrap: {
@@ -323,11 +343,10 @@ const SchoolFcHeader = () => {
             >
               <CommonLink
                 link={{
-                  href: '/',
+                  href: fcRequestForDocument,
                   external: false,
                 }}
               >
-                {/* TODO：リンク入れる */}
                 資料請求
               </CommonLink>
             </Box>
@@ -335,10 +354,9 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
             >
-              {/* TODO：リンク入れる */}
               <CommonLink
                 link={{
-                  href: '/',
+                  href: fcContact,
                   external: false,
                 }}
               >
@@ -375,7 +393,7 @@ const SchoolFcHeader = () => {
                     ) : (
                       <KeyboardArrowRight />
                     )}
-                  </Link>
+                  </a>
                 </Box>
               </React.Fragment>
             ))}
@@ -390,11 +408,10 @@ const SchoolFcHeader = () => {
             >
               <CommonLink
                 link={{
-                  href: '/',
+                  href: fcRequestForDocument,
                   external: false,
                 }}
               >
-                {/* TODO：リンク入れる */}
                 資料請求
               </CommonLink>
             </Box>
@@ -405,10 +422,9 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsContact,
               ]}
             >
-              {/* TODO：リンク入れる */}
               <CommonLink
                 link={{
-                  href: '/',
+                  href: fcContact,
                   external: false,
                 }}
               >お問い合わせ</CommonLink>

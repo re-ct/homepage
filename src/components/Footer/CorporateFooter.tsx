@@ -3,6 +3,25 @@ import { CommonLink } from '../CommonLink';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import { contact } from '../../lib/const/Link';
 
+const sxStyles = {
+  links: {
+    padding: 0,
+  },
+  linksItem: {
+    padding: 0,
+    marginTop: '12px',
+    '& > a': {
+      color: '#fff',
+      textDecoration: 'underline',
+      fontSize: '14px',
+    },
+    '& > div > span': {
+      color: '#fff',
+      fontSize: '14px',
+    },
+  },
+};
+
 const Copyright = () => {
   return (
     <Typography
@@ -20,7 +39,7 @@ const Copyright = () => {
 };
 
 const CorporateFooter = () => {
-  const footerContent = [
+  const footerContent: LinkItem[] = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
     { text: 'プログラミング教室', href: '/school', nested: true },
@@ -53,7 +72,7 @@ const CorporateFooter = () => {
           padding: '0 16px',
         }}
       >
-        <List sx={{ padding: 0 }}>
+        <List sx={sxStyles.links}>
           {footerContent.map((link, index) => (
             <ListItem
               key={index}
