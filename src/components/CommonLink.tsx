@@ -9,28 +9,22 @@ export const CommonLink: React.FC<{
   };
   style?: React.CSSProperties;
   children: React.ReactNode;
-}> = ({ link, style,children }) => {
-
+}> = ({ link, style, children }) => {
   const useAnchorTag = link.external || link.newTab;
   let target = undefined;
   let rel = undefined;
 
   if (link.external) {
-    target = "_blank";
-    rel = "noopener noreferrer";
+    target = '_blank';
+    rel = 'noopener noreferrer';
   } else if (link.newTab) {
-    target = "_blank";
+    target = '_blank';
     rel = undefined;
   }
 
   if (useAnchorTag) {
     return (
-      <a 
-        href={link.href} 
-        target={target} 
-        rel={rel} 
-        style={style}
-      >
+      <a href={link.href} target={target} rel={rel} style={style}>
         {children}
       </a>
     );

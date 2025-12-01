@@ -132,7 +132,9 @@ const SchoolFooter = () => {
                       href: link.href,
                       external: link.external || false,
                     }}
-                  >{link.text}</CommonLink>
+                  >
+                    {link.text}
+                  </CommonLink>
                 ) : (
                   <ListItemText />
                 )}
@@ -145,32 +147,40 @@ const SchoolFooter = () => {
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
               <CommonLink
-                  link={{
-                    href: '/',
-                    external: false,
-                    newTab: true,
-                  }}
-                >運営会社</CommonLink>
+                link={{
+                  href: '/',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                運営会社
+              </CommonLink>
               <CommonLink
-                  link={{
-                    href: contact,
-                    external: true,
-                  }}
-                >お問い合わせ</CommonLink>
+                link={{
+                  href: contact,
+                  external: true,
+                }}
+              >
+                お問い合わせ
+              </CommonLink>
               <CommonLink
-                  link={{
-                    href: '/privacy',
-                    external: false,
-                    newTab: true,
-                  }}
-                >プライバシーポリシー</CommonLink>
+                link={{
+                  href: '/privacy',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                プライバシーポリシー
+              </CommonLink>
               <CommonLink
-                  link={{
-                    href: '/announcement',
-                    external: false,
-                    newTab: true,
-                  }}
-                >電子広告</CommonLink>
+                link={{
+                  href: '/announcement',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                電子広告
+              </CommonLink>
             </Box>
           </Box>
         </Box>

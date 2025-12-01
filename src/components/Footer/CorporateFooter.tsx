@@ -39,7 +39,7 @@ const Copyright = () => {
 };
 
 const CorporateFooter = () => {
-  const footerContent: = [
+  const footerContent = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
     { text: 'プログラミング教室', href: '/school', nested: true },
@@ -96,7 +96,9 @@ const CorporateFooter = () => {
                     fontSize: '14px',
                     textDecoration: 'underline',
                   }}
-                >{link.text}</CommonLink>
+                >
+                  {link.text}
+                </CommonLink>
               ) : (
                 <ListItemText
                   primary={link.text}

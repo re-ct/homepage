@@ -8,11 +8,11 @@ const CorporateHeader = () => {
   return (
     <Toolbar sx={{ backgroundColor: 'rgba(255,255,255,0.8)' }} component="h1">
       <CommonLink
-          link={{
-            href: '/',
-            external: false,
-          }}
-        >
+        link={{
+          href: '/',
+          external: false,
+        }}
+      >
         <Image
           alt="RE:CT(レクト)"
           src={logoRectImg.src}

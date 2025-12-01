@@ -295,18 +295,22 @@ const SchoolFcHeader = () => {
       <Box sx={sxStyles.wrap}>
         <Box sx={sxStyles.schoolHeader} component="h1">
           <CommonLink
-              link={{
-                href: '/school/fc',
-                external: false,
-              }}
-            >
+            link={{
+              href: '/school/fc',
+              external: false,
+            }}
+          >
             <Image
               alt="豊川市でプログラミングを学ぶならRe:ProS(レプロス)"
               src={logoReprosImg.src}
               width={150}
               height={25}
               priority={true}
-              style={{ verticalAlign: 'bottom',width: '150px',height: 'auto' }}
+              style={{
+                verticalAlign: 'bottom',
+                width: '150px',
+                height: 'auto',
+              }}
             />
             <Typography component="p" sx={sxStyles.logoText}>
               フランチャイズオーナー
@@ -381,10 +385,10 @@ const SchoolFcHeader = () => {
               <React.Fragment key={item.id}>
                 <Box component="li">
                   <Link
-                      href={item.url}
-                      onClick={toggleDrawer(false)}
-                      target={item.targetBlank ? '_blank' : undefined}
-                      rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                    href={item.url}
+                    onClick={toggleDrawer(false)}
+                    target={item.targetBlank ? '_blank' : undefined}
+                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
                   >
                     <Box component="span">{item.title}</Box>
                     {item.targetBlank ? (
@@ -392,7 +396,7 @@ const SchoolFcHeader = () => {
                     ) : (
                       <KeyboardArrowRight />
                     )}
-                  </a>
+                  </Link>
                 </Box>
               </React.Fragment>
             ))}
@@ -426,7 +430,9 @@ const SchoolFcHeader = () => {
                   href: fcContact,
                   external: false,
                 }}
-              >お問い合わせ</CommonLink>
+              >
+                お問い合わせ
+              </CommonLink>
             </Box>
           </Box>
         </Drawer>
