@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
-import Link from '@mui/material/Link';
+import { CommonLink } from '../../../components/CommonLink';
 import pcImage from '../../../../public/image/school/fc/aboutScratch_pcImage.webp';
 import manager from '../../../../public/image/school/fc/aboutScratch_manager.webp';
 import FadeInOnView from '../components/FadeInOnView';
@@ -162,13 +162,14 @@ const AboutScratch = () => {
                 sx={[sxStyles.textLink, commonSxStyles.typography.smallText]}
               >
                 ※出典： Scratch公式サイト（{' '}
-                <Link
-                  href="https://scratch.mit.edu/about"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CommonLink
+                  link={{
+                    href: 'https://scratch.mit.edu/about',
+                    external: true,
+                  }}
                 >
                   https://scratch.mit.edu/about{' '}
-                </Link>{' '}
+                </CommonLink>{' '}
                 ）
               </Typography>
             </Box>

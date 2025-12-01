@@ -1,5 +1,6 @@
 'use client';
 import Toolbar from '@mui/material/Toolbar';
+import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
 import Link from '@mui/material/Link';
 import logoReprosImg from '../../../public/image/school/logo.png';
@@ -52,25 +53,6 @@ const menu: Menu[] = [
     targetBlank: true,
   },
 ];
-
-type Button = {
-  href: string;
-  text: string;
-  sx?: object;
-};
-
-const Button = ({ href, text, sx }: Button) => {
-  return (
-    <Box
-      component="li"
-      sx={[sxStyles.linksHamburgerButton, ...(Array.isArray(sx) ? sx : [sx])]}
-    >
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {text}
-      </a>
-    </Box>
-  );
-};
 
 const sxStyles = {
   wrap: {
@@ -293,37 +275,47 @@ const SchoolFcHeader = () => {
     >
       <Box sx={sxStyles.wrap}>
         <Box sx={sxStyles.schoolHeader} component="h1">
-          <Link href="/school/fc">
+          <CommonLink
+            link={{
+              href: '/school/fc',
+              external: false,
+            }}
+          >
             <Image
               alt="豊川市でプログラミングを学ぶならRe:ProS(レプロス)"
               src={logoReprosImg.src}
               width={150}
               height={25}
               priority={true}
-              style={{ verticalAlign: 'bottom' }}
+              style={{
+                verticalAlign: 'bottom',
+                width: '150px',
+                height: 'auto',
+              }}
             />
             <Typography component="p" sx={sxStyles.logoText}>
               フランチャイズオーナー
               <br />
               募集サイト
             </Typography>
-          </Link>
+          </CommonLink>
         </Box>
         <Box sx={sxStyles.links}>
           <Box component="ul" sx={sxStyles.linksMenu}>
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <a
-                    href={item.url}
-                    target={item.targetBlank ? '_blank' : undefined}
-                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                  <CommonLink
+                    link={{
+                      href: item.url,
+                      external: item.targetBlank ? true : false,
+                    }}
                   >
                     {item.title}
                     {item.targetBlank && (
                       <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} />
                     )}
-                  </a>
+                  </CommonLink>
                 </Box>
               </React.Fragment>
             ))}
@@ -333,21 +325,27 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsMaterial]}
             >
-              <a
-                href={fcRequestForDocument}
-                target="_blank"
-                rel="noopener noreferrer"
+              <CommonLink
+                link={{
+                  href: fcRequestForDocument,
+                  external: false,
+                }}
               >
                 資料請求
-              </a>
+              </CommonLink>
             </Box>
             <Box
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
             >
-              <a href={fcContact} target="_blank" rel="noopener noreferrer">
+              <CommonLink
+                link={{
+                  href: fcContact,
+                  external: false,
+                }}
+              >
                 お問い合わせ
-              </a>
+              </CommonLink>
             </Box>
           </Box>
         </Box>
@@ -367,7 +365,7 @@ const SchoolFcHeader = () => {
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <a
+                  <Link
                     href={item.url}
                     onClick={toggleDrawer(false)}
                     target={item.targetBlank ? '_blank' : undefined}
@@ -379,22 +377,44 @@ const SchoolFcHeader = () => {
                     ) : (
                       <KeyboardArrowRight />
                     )}
-                  </a>
+                  </Link>
                 </Box>
               </React.Fragment>
             ))}
           </Box>
           <Box component="ul" sx={sxStyles.linksHamburgerButtons}>
-            <Button
-              href={fcRequestForDocument}
-              text="資料請求"
-              sx={sxStyles.linksHamburgerButtonsMaterial}
-            />
-            <Button
-              href={fcContact}
-              text="お問い合わせ"
-              sx={sxStyles.linksHamburgerButtonsContact}
-            />
+            <Box
+              component="li"
+              sx={[
+                sxStyles.linksHamburgerButton,
+                sxStyles.linksHamburgerButtonsMaterial,
+              ]}
+            >
+              <CommonLink
+                link={{
+                  href: fcRequestForDocument,
+                  external: false,
+                }}
+              >
+                資料請求
+              </CommonLink>
+            </Box>
+            <Box
+              component="li"
+              sx={[
+                sxStyles.linksHamburgerButton,
+                sxStyles.linksHamburgerButtonsContact,
+              ]}
+            >
+              <CommonLink
+                link={{
+                  href: fcContact,
+                  external: false,
+                }}
+              >
+                お問い合わせ
+              </CommonLink>
+            </Box>
           </Box>
         </Drawer>
       </Box>

@@ -1,7 +1,7 @@
 'use client';
-import { Box, List, Typography } from '@mui/material';
+import { CommonLink } from '../CommonLink';
+import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import { contact } from '../../lib/const/Link';
-import { FooterLinkItem, LinkItem } from './Footer';
 
 const sxStyles = {
   links: {
@@ -39,7 +39,7 @@ const Copyright = () => {
 };
 
 const CorporateFooter = () => {
-  const footerContent: LinkItem[] = [
+  const footerContent = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
     { text: 'プログラミング教室', href: '/school', nested: true },
@@ -74,12 +74,41 @@ const CorporateFooter = () => {
       >
         <List sx={sxStyles.links}>
           {footerContent.map((link, index) => (
-            <FooterLinkItem
+            <ListItem
               key={index}
-              link={link}
-              index={index}
-              sxStyles={sxStyles}
-            />
+              sx={{
+                padding: 0,
+                marginTop: index !== 0 ? '12px' : 0,
+                ...(link.nested && {
+                  paddingLeft: '16px',
+                  listStyleType: 'disc',
+                }),
+              }}
+            >
+              {link.href ? (
+                <CommonLink
+                  link={{
+                    href: link.href,
+                    external: link.external || false,
+                  }}
+                  style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    textDecoration: 'underline',
+                  }}
+                >
+                  {link.text}
+                </CommonLink>
+              ) : (
+                <ListItemText
+                  primary={link.text}
+                  style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                  }}
+                />
+              )}
+            </ListItem>
           ))}
         </List>
         <Copyright />

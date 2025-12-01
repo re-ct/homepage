@@ -1,10 +1,9 @@
 'use client';
-import Link from 'next/link';
-import { Box, List, Typography } from '@mui/material';
+import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
 import { contact } from '../../lib/const/Link';
-import { FooterLinkItem, LinkItem } from './Footer';
+import { CommonLink } from '../CommonLink';
 
 const sxStyles = {
   copy: {
@@ -97,7 +96,7 @@ const sxStyles = {
 };
 
 const SchoolFooter = () => {
-  const footerContent: LinkItem[] = [
+  const footerContent = [
     { text: '豊川市でプログラミングを学ぶならRe:ProS', href: '/school' },
     {
       text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア',
@@ -126,12 +125,20 @@ const SchoolFooter = () => {
           />
           <List sx={sxStyles.links}>
             {footerContent.map((link, index) => (
-              <FooterLinkItem
-                key={index}
-                link={link}
-                index={index}
-                sxStyles={sxStyles}
-              />
+              <ListItem key={index} sx={sxStyles.linksItem}>
+                {link.href ? (
+                  <CommonLink
+                    link={{
+                      href: link.href,
+                      external: link.external || false,
+                    }}
+                  >
+                    {link.text}
+                  </CommonLink>
+                ) : (
+                  <ListItemText primary={link.text} />
+                )}
+              </ListItem>
             ))}
           </List>
         </Box>
@@ -139,10 +146,41 @@ const SchoolFooter = () => {
           <Box sx={sxStyles.copyWrap}>
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
-              <Link href="/">運営会社</Link>
-              <Link href={contact}>お問い合わせ</Link>
-              <Link href="/privacy">プライバシーポリシー</Link>
-              <Link href="/announcement">電子広告</Link>
+              <CommonLink
+                link={{
+                  href: '/',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                運営会社
+              </CommonLink>
+              <CommonLink
+                link={{
+                  href: contact,
+                  external: true,
+                }}
+              >
+                お問い合わせ
+              </CommonLink>
+              <CommonLink
+                link={{
+                  href: '/privacy',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                プライバシーポリシー
+              </CommonLink>
+              <CommonLink
+                link={{
+                  href: '/announcement',
+                  external: false,
+                  newTab: true,
+                }}
+              >
+                電子広告
+              </CommonLink>
             </Box>
           </Box>
         </Box>
