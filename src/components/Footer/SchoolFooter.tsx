@@ -1,9 +1,9 @@
 'use client';
-import Link from 'next/link';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Image from 'next/image';
 import { contact } from '../../lib/const/Link';
+import { CommonLink } from '../CommonLink';
 
 const sxStyles = {
   copy: {
@@ -127,17 +127,13 @@ const SchoolFooter = () => {
             {footerContent.map((link, index) => (
               <ListItem key={index} sx={sxStyles.linksItem}>
                 {link.href ? (
-                  link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.text}
-                    </a>
-                  ) : (
-                    <Link href={link.href}>{link.text}</Link>
-                  )
+                  <CommonLink
+                    link={{
+                      href: link.href,
+                      text: link.text,
+                      external: link.external || false,
+                    }}
+                  />
                 ) : (
                   <ListItemText />
                 )}
@@ -149,10 +145,37 @@ const SchoolFooter = () => {
           <Box sx={sxStyles.copyWrap}>
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
-              <Link href="/">運営会社</Link>
-              <Link href={contact}>お問い合わせ</Link>
-              <Link href="/privacy">プライバシーポリシー</Link>
-              <Link href="/announcement">電子広告</Link>
+              <CommonLink
+                  link={{
+                    href: '/',
+                    text: '運営会社',
+                    external: false,
+                    newTab: true,
+                  }}
+                />
+              <CommonLink
+                  link={{
+                    href: contact,
+                    text: 'お問い合わせ',
+                    external: true,
+                  }}
+                />
+              <CommonLink
+                  link={{
+                    href: '/privacy',
+                    text: 'プライバシーポリシー',
+                    external: false,
+                    newTab: true,
+                  }}
+                />
+              <CommonLink
+                  link={{
+                    href: '/announcement',
+                    text: '電子広告',
+                    external: false,
+                    newTab: true,
+                  }}
+                />
             </Box>
           </Box>
         </Box>

@@ -76,7 +76,7 @@ const CorporateFooter = () => {
                   style={{
                     color: '#fff',
                     fontSize: '14px',
-                    textDecoration: 'none',
+                    textDecoration: 'underline',
                   }}
                 />
               ) : (
