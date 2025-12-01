@@ -54,25 +54,6 @@ const menu: Menu[] = [
   },
 ];
 
-type Button = {
-  href: string;
-  text: string;
-  sx?: object;
-};
-
-const Button = ({ href, text, sx }: Button) => {
-  return (
-    <Box
-      component="li"
-      sx={[sxStyles.linksHamburgerButton, ...(Array.isArray(sx) ? sx : [sx])]}
-    >
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {text}
-      </a>
-    </Box>
-  );
-};
-
 const sxStyles = {
   wrap: {
     width: '1200px',
