@@ -136,7 +136,7 @@ const SchoolFooter = () => {
                     {link.text}
                   </CommonLink>
                 ) : (
-                  <ListItemText />
+                  <ListItemText primary={link.text} />
                 )}
               </ListItem>
             ))}
