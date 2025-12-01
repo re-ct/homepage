@@ -324,7 +324,6 @@ const SchoolFcHeader = () => {
                     link={{
                       href: item.url,
                       external: item.targetBlank ? true : false,
-                      newTab: item.targetBlank ? true : false,
                     }}
                   >
                     {item.title}

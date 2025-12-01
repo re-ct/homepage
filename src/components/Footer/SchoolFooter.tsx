@@ -96,7 +96,7 @@ const sxStyles = {
 };
 
 const SchoolFooter = () => {
-  const footerContent: LinkItem[] = [
+  const footerContent = [
     { text: '豊川市でプログラミングを学ぶならRe:ProS', href: '/school' },
     {
       text: 'プログラミング総合情報メディア Re:ProS(レプロス)メディア',
