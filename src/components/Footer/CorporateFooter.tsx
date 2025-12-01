@@ -70,7 +70,6 @@ const CorporateFooter = () => {
                 <CommonLink
                   link={{
                     href: link.href,
-                    text: link.text,
                     external: link.external || false,
                   }}
                   style={{
@@ -78,7 +77,7 @@ const CorporateFooter = () => {
                     fontSize: '14px',
                     textDecoration: 'underline',
                   }}
-                />
+                >{link.text}</CommonLink>
               ) : (
                 <ListItemText
                   primary={link.text}

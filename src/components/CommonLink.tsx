@@ -4,12 +4,12 @@ import Link from 'next/link';
 export const CommonLink: React.FC<{
   link: {
     href: string;
-    text: string;
     external: boolean;
     newTab?: boolean;
   };
   style?: React.CSSProperties;
-}> = ({ link, style }) => {
+  children: React.ReactNode;
+}> = ({ link, style,children }) => {
 
   const useAnchorTag = link.external || link.newTab;
   let target = undefined;
@@ -31,13 +31,13 @@ export const CommonLink: React.FC<{
         rel={rel} 
         style={style}
       >
-        {link.text}
+        {children}
       </a>
     );
   } else {
     return (
       <Link href={link.href} style={style}>
-        {link.text}
+        {children}
       </Link>
     );
   }

@@ -130,10 +130,9 @@ const SchoolFooter = () => {
                   <CommonLink
                     link={{
                       href: link.href,
-                      text: link.text,
                       external: link.external || false,
                     }}
-                  />
+                  >{link.text}</CommonLink>
                 ) : (
                   <ListItemText />
                 )}
@@ -148,34 +147,30 @@ const SchoolFooter = () => {
               <CommonLink
                   link={{
                     href: '/',
-                    text: '運営会社',
                     external: false,
                     newTab: true,
                   }}
-                />
+                >運営会社</CommonLink>
               <CommonLink
                   link={{
                     href: contact,
-                    text: 'お問い合わせ',
                     external: true,
                   }}
-                />
+                >お問い合わせ</CommonLink>
               <CommonLink
                   link={{
                     href: '/privacy',
-                    text: 'プライバシーポリシー',
                     external: false,
                     newTab: true,
                   }}
-                />
+                >プライバシーポリシー</CommonLink>
               <CommonLink
                   link={{
                     href: '/announcement',
-                    text: '電子広告',
                     external: false,
                     newTab: true,
                   }}
-                />
+                >電子広告</CommonLink>
             </Box>
           </Box>
         </Box>

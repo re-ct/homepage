@@ -1,6 +1,7 @@
 'use client';
 import Toolbar from '@mui/material/Toolbar';
-import Link from '@mui/material/Link';
+import Link from 'next/link';
+import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import { Box, Typography, IconButton, Drawer } from '@mui/material';
@@ -273,37 +274,44 @@ const SchoolFcHeader = () => {
     >
       <Box sx={sxStyles.wrap}>
         <Box sx={sxStyles.schoolHeader} component="h1">
-          <Link href="/school/fc">
+          <CommonLink
+              link={{
+                href: '/school/fc',
+                external: false,
+              }}
+            >
             <Image
               alt="豊川市でプログラミングを学ぶならRe:ProS(レプロス)"
               src={logoReprosImg.src}
               width={150}
               height={25}
               priority={true}
-              style={{ verticalAlign: 'bottom' }}
+              style={{ verticalAlign: 'bottom',width: '150px',height: 'auto' }}
             />
             <Typography component="p" sx={sxStyles.logoText}>
               フランチャイズオーナー
               <br />
               募集サイト
             </Typography>
-          </Link>
+          </CommonLink>
         </Box>
         <Box sx={sxStyles.links}>
           <Box component="ul" sx={sxStyles.linksMenu}>
             {menu.map((item) => (
               <React.Fragment key={item.id}>
                 <Box component="li">
-                  <Link
-                    href={item.url}
-                    target={item.targetBlank ? '_blank' : undefined}
-                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                  <CommonLink
+                    link={{
+                      href: item.url,
+                      external: item.targetBlank ? true : false,
+                      newTab: item.targetBlank ? true : false,
+                    }}
                   >
                     {item.title}
-                    {item.targetBlank && ( // 💡 targetBlankがtrueの場合のみアイコンを表示
-                      <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} /> // アイコンのサイズと左マージンを調整
+                    {item.targetBlank && (
+                      <OpenInNewIcon sx={{ fontSize: '0.9em', ml: 0.5 }} />
                     )}
-                  </Link>
+                  </CommonLink>
                 </Box>
               </React.Fragment>
             ))}
@@ -313,17 +321,29 @@ const SchoolFcHeader = () => {
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsMaterial]}
             >
-              <Link href="/school/fc">
+              <CommonLink
+                link={{
+                  href: '/',
+                  external: false,
+                }}
+              >
                 {/* TODO：リンク入れる */}
                 資料請求
-              </Link>
+              </CommonLink>
             </Box>
             <Box
               component="li"
               sx={[sxStyles.linksButton, sxStyles.linksButtonsContact]}
             >
               {/* TODO：リンク入れる */}
-              <Link href="/school/fc">お問い合わせ</Link>
+              <CommonLink
+                link={{
+                  href: '/',
+                  external: false,
+                }}
+              >
+                お問い合わせ
+              </CommonLink>
             </Box>
           </Box>
         </Box>
@@ -344,10 +364,10 @@ const SchoolFcHeader = () => {
               <React.Fragment key={item.id}>
                 <Box component="li">
                   <Link
-                    href={item.url}
-                    onClick={toggleDrawer(false)}
-                    target={item.targetBlank ? '_blank' : undefined}
-                    rel={item.targetBlank ? 'noopener noreferrer' : undefined}
+                      href={item.url}
+                      onClick={toggleDrawer(false)}
+                      target={item.targetBlank ? '_blank' : undefined}
+                      rel={item.targetBlank ? 'noopener noreferrer' : undefined}
                   >
                     <Box component="span">{item.title}</Box>
                     {item.targetBlank ? (
@@ -368,10 +388,15 @@ const SchoolFcHeader = () => {
                 sxStyles.linksHamburgerButtonsMaterial,
               ]}
             >
-              <Link href="/school/fc">
+              <CommonLink
+                link={{
+                  href: '/',
+                  external: false,
+                }}
+              >
                 {/* TODO：リンク入れる */}
                 資料請求
-              </Link>
+              </CommonLink>
             </Box>
             <Box
               component="li"
@@ -381,7 +406,12 @@ const SchoolFcHeader = () => {
               ]}
             >
               {/* TODO：リンク入れる */}
-              <Link href="/school/fc">お問い合わせ</Link>
+              <CommonLink
+                link={{
+                  href: '/',
+                  external: false,
+                }}
+              >お問い合わせ</CommonLink>
             </Box>
           </Box>
         </Drawer>
