@@ -328,7 +328,7 @@ const SchoolFcHeader = () => {
               <CommonLink
                 link={{
                   href: fcRequestForDocument,
-                  external: false,
+                  external: true,
                 }}
               >
                 資料請求
@@ -341,7 +341,7 @@ const SchoolFcHeader = () => {
               <CommonLink
                 link={{
                   href: fcContact,
-                  external: false,
+                  external: true,
                 }}
               >
                 お問い合わせ
@@ -393,7 +393,7 @@ const SchoolFcHeader = () => {
               <CommonLink
                 link={{
                   href: fcRequestForDocument,
-                  external: false,
+                  external: true,
                 }}
               >
                 資料請求
@@ -409,7 +409,7 @@ const SchoolFcHeader = () => {
               <CommonLink
                 link={{
                   href: fcContact,
-                  external: false,
+                  external: true,
                 }}
               >
                 お問い合わせ
