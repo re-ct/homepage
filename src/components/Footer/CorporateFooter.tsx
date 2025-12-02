@@ -1,6 +1,26 @@
-import Link from 'next/link';
+'use client';
+import { CommonLink } from '../CommonLink';
 import { Box, List, ListItem, Typography, ListItemText } from '@mui/material';
-import { contact } from '../lib/const/Link';
+import { contact } from '../../lib/const/Link';
+
+const sxStyles = {
+  links: {
+    padding: 0,
+  },
+  linksItem: {
+    padding: 0,
+    marginTop: '12px',
+    '& > a': {
+      color: '#fff',
+      textDecoration: 'underline',
+      fontSize: '14px',
+    },
+    '& > div > span': {
+      color: '#fff',
+      fontSize: '14px',
+    },
+  },
+};
 
 const Copyright = () => {
   return (
@@ -18,7 +38,7 @@ const Copyright = () => {
   );
 };
 
-const Footer = () => {
+const CorporateFooter = () => {
   const footerContent = [
     { text: '会社概要', href: '/' },
     { text: '事業内容' },
@@ -52,7 +72,7 @@ const Footer = () => {
           padding: '0 16px',
         }}
       >
-        <List sx={{ padding: 0 }}>
+        <List sx={sxStyles.links}>
           {footerContent.map((link, index) => (
             <ListItem
               key={index}
@@ -66,31 +86,19 @@ const Footer = () => {
               }}
             >
               {link.href ? (
-                link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    style={{
-                      color: '#fff',
-                      textDecoration: 'underline',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {link.text}
-                  </Link>
-                )
+                <CommonLink
+                  link={{
+                    href: link.href,
+                    external: link.external || false,
+                  }}
+                  style={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    textDecoration: 'underline',
+                  }}
+                >
+                  {link.text}
+                </CommonLink>
               ) : (
                 <ListItemText
                   primary={link.text}
@@ -109,4 +117,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default CorporateFooter;
