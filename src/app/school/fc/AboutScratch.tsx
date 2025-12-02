@@ -98,8 +98,7 @@ const sxStyles = {
       '@media screen and (max-width:450px)': {
         bottom: 'auto',
         top: '40px',
-
-      }
+      },
     },
   },
   voiceHuman: {
