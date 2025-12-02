@@ -1,13 +1,18 @@
 'use client';
 import Toolbar from '@mui/material/Toolbar';
-import Link from '@mui/material/Link';
+import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
 import logoRectImg from '../../../public/image/top/logo_rect.png';
 
 const CorporateHeader = () => {
   return (
     <Toolbar sx={{ backgroundColor: 'rgba(255,255,255,0.8)' }} component="h1">
-      <Link href="/">
+      <CommonLink
+        link={{
+          href: '/',
+          external: false,
+        }}
+      >
         <Image
           alt="RE:CT(レクト)"
           src={logoRectImg.src}
@@ -15,7 +20,7 @@ const CorporateHeader = () => {
           height={34}
           priority={true}
         />
-      </Link>
+      </CommonLink>
     </Toolbar>
   );
 };
