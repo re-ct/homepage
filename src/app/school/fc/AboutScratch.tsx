@@ -95,6 +95,11 @@ const sxStyles = {
       borderTop: 'solid 9px transparent',
       borderBottom: 'solid 9px transparent',
       borderLeft: 'solid 20px' + commonSxStyles.color.primary[100],
+      '@media screen and (max-width:450px)': {
+        bottom: 'auto',
+        top: '40px',
+
+      }
     },
   },
   voiceHuman: {
