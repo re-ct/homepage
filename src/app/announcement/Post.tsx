@@ -1,10 +1,11 @@
+import React from 'react';
 import Link from 'next/link';
 import { Announcement } from '../../lib/const/Announcement';
 import Divider from '@mui/material/Divider';
 
 const list = Announcement.map((post) => (
-  <>
-    <li key={post.link}>
+  <React.Fragment key={post.link}>
+    <li>
       <div>
         <div>
           <time dateTime={`${post.year}-${post.month}-${post.day}`}>
@@ -15,7 +16,7 @@ const list = Announcement.map((post) => (
       </div>
     </li>
     <Divider />
-  </>
+  </React.Fragment>
 ));
 
 const Post = () => {
