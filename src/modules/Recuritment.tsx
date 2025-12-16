@@ -21,7 +21,7 @@ const Recruitment = () => {
       </Typography>
       <Typography
         variant="caption"
-        align="center"
+        align="left"
         component="span"
         sx={{
           fontSize: '17px',
