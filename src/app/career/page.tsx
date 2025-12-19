@@ -1,4 +1,5 @@
 import '../globals.css';
+import Contact from './Contact';
 
 export const metadata = {
   title:
@@ -8,7 +9,7 @@ export const metadata = {
 const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
-      <p>ほげ</p>
+      <Contact />
     </main>
   );
 };
