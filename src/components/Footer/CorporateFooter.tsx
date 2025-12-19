@@ -8,7 +8,7 @@ import logoRectImg from '../../../public/image/top/logo_rect.png';
 const sxStyles = {
   footer: {
     background: '#fff',
-    borderTop:'solid 1px #E7E7E7',
+    borderTop: 'solid 1px #E7E7E7',
   },
   wrap: {
     maxWidth: '932px',
@@ -26,7 +26,7 @@ const sxStyles = {
       maxWidth: '100%',
       height: 'auto',
       '@media screen and (max-width:768px)': {
-        maxWidth: '130px'
+        maxWidth: '130px',
       },
     },
   },
@@ -53,13 +53,13 @@ const sxStyles = {
     },
     '& li:nth-child(2)': {
       gridColumn: '2 / 3',
-      gridRow: '1 / 10'
+      gridRow: '1 / 10',
     },
     '& li:nth-child(4)': {
-      gridColumn: '3 / 4'
+      gridColumn: '3 / 4',
     },
     '& li:nth-child(5)': {
-      gridColumn: '3 / 4'
+      gridColumn: '3 / 4',
     },
     '& li span': {
       fontSize: '14px !important',
@@ -69,9 +69,9 @@ const sxStyles = {
     '& a': {
       transition: 'all 0.3s ease-out',
       '&:hover': {
-          textDecoration: 'underline',
-      }
-    }
+        textDecoration: 'underline',
+      },
+    },
   },
   nestLink: {
     mt: '9px',
@@ -84,8 +84,8 @@ const sxStyles = {
       mt: '6px',
       display: 'list-item',
       marginLeft: '1.3em',
-      listStyle: 'disc'
-    }
+      listStyle: 'disc',
+    },
   },
   copyRight: {
     letterSpacing: '0.1em',
@@ -93,17 +93,13 @@ const sxStyles = {
     color: '#fff',
     py: 2,
     textAlign: 'center',
-    backgroundColor: '#00319F'
-  }
+    backgroundColor: '#00319F',
+  },
 };
 
 const Copyright = () => {
   return (
-    <Typography
-      variant="caption"
-      sx={sxStyles.copyRight}
-      component="p"
-    >
+    <Typography variant="caption" sx={sxStyles.copyRight} component="p">
       <>
         ©RECT
         {new Date().getFullYear()}
@@ -115,17 +111,18 @@ const Copyright = () => {
 const CorporateFooter = () => {
   const footerContent = [
     { text: '会社概要', href: '/' },
-    { text: '事業内容',
-      "children": [
-      { text: 'プログラミング教室 Re:ProS', href: '/school', },
-      {
-        text: 'プログラミングメディア Re:ProSメディア',
-        href: '/articles/',
-        external: true,
-      }, //別リポジトリのサイトのため、ローカルでは見れない
-      { text: 'Re:ProS Career', href: '/career', },
-      { text: '開発等の相談', href: '/demand', },
-      ]
+    {
+      text: '事業内容',
+      children: [
+        { text: 'プログラミング教室 Re:ProS', href: '/school' },
+        {
+          text: 'プログラミングメディア Re:ProSメディア',
+          href: '/articles/',
+          external: true,
+        }, //別リポジトリのサイトのため、ローカルでは見れない
+        { text: 'Re:ProS Career', href: '/career' },
+        { text: '開発等の相談', href: '/demand' },
+      ],
     },
     {
       text: 'お問い合わせ',
@@ -137,13 +134,8 @@ const CorporateFooter = () => {
   ];
 
   return (
-    <Box
-      component="footer"
-      sx={sxStyles.footer}
-    >
-      <Box
-        sx={sxStyles.wrap}
-      >
+    <Box component="footer" sx={sxStyles.footer}>
+      <Box sx={sxStyles.wrap}>
         <Image
           alt="RE:CT(レクト)"
           src={logoRectImg.src}
@@ -153,9 +145,7 @@ const CorporateFooter = () => {
         />
         <List sx={sxStyles.links}>
           {footerContent.map((link, index) => (
-            <ListItem
-              key={index}
-            >
+            <ListItem key={index}>
               {link.href ? (
                 <CommonLink
                   link={{
@@ -181,9 +171,7 @@ const CorporateFooter = () => {
               {link.children && link.children.length > 0 && (
                 <List sx={sxStyles.nestLink}>
                   {link.children.map((childLink, childIndex) => (
-                    <ListItem
-                      key={childIndex}
-                    >
+                    <ListItem key={childIndex}>
                       <CommonLink
                         link={{
                           href: childLink.href,

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -38,7 +38,7 @@ const BusinessList: Business[] = [
     img: 'service_soudan',
     href: '/demand',
   },
-]
+];
 
 const sxStyles = {
   section: {
@@ -46,8 +46,8 @@ const sxStyles = {
     background: '#00298A',
     paddingBlock: '100px 140px',
     '@media screen and (max-width:768px)': {
-      paddingBlock: '80px 100px'
-    }
+      paddingBlock: '80px 100px',
+    },
   },
   wrap: {
     maxWidth: '932px',
@@ -76,7 +76,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       mt: '36px',
-    }
+    },
   },
   list: {
     padding: 0,
@@ -101,14 +101,14 @@ const sxStyles = {
       },
       '&:hover': {
         opacity: '0.8',
-      }
+      },
     },
     '& > li + li > a': {
       paddingTop: '32px',
       '@media screen and (max-width:768px)': {
         paddingTop: '24px',
-      }
-    }
+      },
+    },
   },
   title: {
     fontSize: '24px',
@@ -117,16 +117,16 @@ const sxStyles = {
     gridRow: '1 / 2',
     '@media screen and (max-width:768px)': {
       fontSize: '20px',
-    }
+    },
   },
   detail: {
-    mt:'8px',
+    mt: '8px',
     fontSize: '14px',
     gridColumn: '1 / 2',
     gridRow: '2 / 3',
     '@media screen and (max-width:768px)': {
       fontSize: '12px',
-    }
+    },
   },
   listImage: {
     width: '100%',
@@ -144,7 +144,7 @@ const sxStyles = {
     },
     '@media screen and (max-width:768px)': {
       display: 'none',
-    }
+    },
   },
   listImageSp: {
     display: 'none',
@@ -152,38 +152,28 @@ const sxStyles = {
       display: 'block',
       width: '100%',
       height: 'auto',
-    }
+    },
   },
-}
+};
 
 const Business = () => {
   const [hoveredId, setHoveredId] = useState(BusinessList[0]?.id);
   return (
-    <Box
-      component="section"
-      sx={sxStyles.section}
-    >
-      <Box
-        component="section"
-        sx={sxStyles.wrap}
-      >
-        <Typography
-          variant="h2"
-          sx={sxStyles.heading}
-        >
+    <Box component="section" sx={sxStyles.section}>
+      <Box component="section" sx={sxStyles.wrap}>
+        <Typography variant="h2" sx={sxStyles.heading}>
           事業内容
         </Typography>
-        <Typography
-          variant="caption"
-          component="span"
-          sx={sxStyles.caption}
-        >
+        <Typography variant="caption" component="span" sx={sxStyles.caption}>
           Service
         </Typography>
         <Box sx={sxStyles.listWrap}>
           <List sx={sxStyles.list}>
             {BusinessList.map((item) => (
-              <ListItem key={item.id} onMouseEnter={() => setHoveredId(item.id)}>
+              <ListItem
+                key={item.id}
+                onMouseEnter={() => setHoveredId(item.id)}
+              >
                 <Link href={item.href} target="_blank" rel="noopener">
                   <Box
                     component="img"
@@ -202,12 +192,14 @@ const Business = () => {
                       {item.detail}
                     </Typography>
                   </Box>
-                  <OpenInNewIcon sx={{
-                    fontSize: '28px',
-                    '@media screen and (max-width:768px)': {
-                      fontSize: '20px',
-                    }
-                    }} />
+                  <OpenInNewIcon
+                    sx={{
+                      fontSize: '28px',
+                      '@media screen and (max-width:768px)': {
+                        fontSize: '20px',
+                      },
+                    }}
+                  />
                 </Link>
               </ListItem>
             ))}
