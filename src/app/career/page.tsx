@@ -2,7 +2,7 @@ import '../globals.css';
 
 export const metadata = {
   title:
-    'ソフトウェア開発の相談・依頼 | 開発実績多数！ソフトウェア開発の依頼は株式会社レクトへ',
+    'エンジニアのお悩みを無料でサポート Re:ProS Career',
 };
 
 const Demand = () => {
