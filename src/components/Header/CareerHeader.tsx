@@ -47,7 +47,7 @@ const sxStyles = {
   },
 };
 
-const CorporateHeader = () => {
+const CareerHeader = () => {
   return (
     <Toolbar
       sx={{
@@ -88,4 +88,4 @@ const CorporateHeader = () => {
   );
 };
 
-export default CorporateHeader;
+export default CareerHeader;
