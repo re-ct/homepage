@@ -13,10 +13,25 @@ const sxStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    py: 2,
     mx: 'auto',
+    '& > a': {
+      '@media screen and (max-width:768px)': {
+        width: '46.4%',
+        maxWidth: '259px',
+      },
+      '& img': {
+        width: '259px',
+        '@media screen and (max-width:768px)': {
+          width: '100%',
+        }
+      },
+    }
   },
   button: {
+    '@media screen and (max-width:768px)': {
+      width: '48%',
+      maxWidth: '162px',
+    },
     '& > a': {
       fontSize: 14,
       fontWeight: 'bold',
@@ -38,6 +53,18 @@ const sxStyles = {
         '& > :nth-of-type(1)': {
           fontSize: '16px',
         },
+      },
+      '@media screen and (max-width:768px)': {
+        paddingInline: '16px',
+        fontSize: 'min(12px,3vw)',
+        lineHight: '1',
+        columnGap: '4px',
+        '& > svg': {
+          fontSize: 'min(16px,4vw)',
+        },
+      },
+      '@media screen and (max-width:320px)': {
+        display: 'none',
       },
       '&:hover': {
         boxShadow: 'none',
@@ -66,8 +93,8 @@ const CareerHeader = () => {
           <Image
             alt="Re:ProS(レプロス)Careerのロゴ"
             src={logo.src}
-            width={259}
-            height={33}
+            width={518}
+            height={46}
             priority={true}
             style={{ verticalAlign: 'bottom' }}
           />
