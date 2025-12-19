@@ -23,7 +23,7 @@ const Company = () => {
     <Box
       component="section"
       sx={{
-        maxWidth: '800px',
+        maxWidth: '932px',
         width: '100%',
         margin: '0 auto',
         padding: '100px 16px',
@@ -32,7 +32,7 @@ const Company = () => {
     >
       <Typography
         variant="h2"
-        sx={{ fontWeight: 'bold', letterSpacing: '5px', fontSize: '40px' }}
+        sx={{ fontWeight: 'bold', letterSpacing: '0.1em', fontSize: '40px' }}
       >
         会社概要
       </Typography>
@@ -43,7 +43,7 @@ const Company = () => {
         sx={{
           fontSize: '17px',
           fontWeight: 'bold',
-          letterSpacing: '3px',
+          letterSpacing: '0.1em',
           color: '#C2C2C2',
         }}
       >
