@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import equal from '../../../../public/image/school/fc/fee_equal.svg';
 import minus from '../../../../public/image/school/fc/fee_minus.svg';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 const sxStyles = {
   table: {

@@ -3,7 +3,7 @@ import { commonSxStyles } from '../components/Style';
 import image from '../../../../public/image/school/fc/flow_teaching.webp';
 import arrow from '../../../../public/image/school/fc/flow_arrow.svg';
 import React from 'react';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 type Flow = {
   step: string;
