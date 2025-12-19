@@ -7,6 +7,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useState } from 'react';
+import FadeInOnView from '../components/FadeInOnView';
 
 type Business = {
   id: string;
@@ -160,67 +161,69 @@ const Business = () => {
   const [hoveredId, setHoveredId] = useState(BusinessList[0]?.id);
   return (
     <Box component="section" sx={sxStyles.section}>
-      <Box component="section" sx={sxStyles.wrap}>
-        <Typography variant="h2" sx={sxStyles.heading}>
-          事業内容
-        </Typography>
-        <Typography variant="caption" component="span" sx={sxStyles.caption}>
-          Service
-        </Typography>
-        <Box sx={sxStyles.listWrap}>
-          <List sx={sxStyles.list}>
-            {BusinessList.map((item) => (
-              <ListItem
-                key={item.id}
-                onMouseEnter={() => setHoveredId(item.id)}
-              >
-                <Link href={item.href} target="_blank" rel="noopener">
-                  <Box
-                    component="img"
-                    key={item.id}
-                    width="152"
-                    height="152"
-                    src={`/image/top/${item.img}_square.webp`}
-                    alt={item.title}
-                    sx={sxStyles.listImageSp}
-                  />
-                  <Box>
-                    <Typography variant="h3" sx={sxStyles.title}>
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" sx={sxStyles.detail}>
-                      {item.detail}
-                    </Typography>
-                  </Box>
-                  <OpenInNewIcon
-                    sx={{
-                      fontSize: '28px',
-                      '@media screen and (max-width:768px)': {
-                        fontSize: '20px',
-                      },
-                    }}
-                  />
-                </Link>
-              </ListItem>
-            ))}
-          </List>
-          <Box sx={sxStyles.listImage}>
-            {BusinessList.map((item) => (
-              <Box
-                component="img"
-                key={item.id}
-                width="580"
-                height="664"
-                src={`/image/top/${item.img}_rectangle.webp`}
-                alt={item.title}
-                style={{
-                  opacity: hoveredId === item.id ? 1 : 0,
-                }}
-              />
-            ))}
+      <FadeInOnView>
+        <Box component="section" sx={sxStyles.wrap}>
+          <Typography variant="h2" sx={sxStyles.heading}>
+            事業内容
+          </Typography>
+          <Typography variant="caption" component="span" sx={sxStyles.caption}>
+            Service
+          </Typography>
+          <Box sx={sxStyles.listWrap}>
+            <List sx={sxStyles.list}>
+              {BusinessList.map((item) => (
+                <ListItem
+                  key={item.id}
+                  onMouseEnter={() => setHoveredId(item.id)}
+                >
+                  <Link href={item.href} target="_blank" rel="noopener">
+                    <Box
+                      component="img"
+                      key={item.id}
+                      width="152"
+                      height="152"
+                      src={`/image/top/${item.img}_square.webp`}
+                      alt={item.title}
+                      sx={sxStyles.listImageSp}
+                    />
+                    <Box>
+                      <Typography variant="h3" sx={sxStyles.title}>
+                        {item.title}
+                      </Typography>
+                      <Typography variant="body2" sx={sxStyles.detail}>
+                        {item.detail}
+                      </Typography>
+                    </Box>
+                    <OpenInNewIcon
+                      sx={{
+                        fontSize: '28px',
+                        '@media screen and (max-width:768px)': {
+                          fontSize: '20px',
+                        },
+                      }}
+                    />
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+            <Box sx={sxStyles.listImage}>
+              {BusinessList.map((item) => (
+                <Box
+                  component="img"
+                  key={item.id}
+                  width="580"
+                  height="664"
+                  src={`/image/top/${item.img}_rectangle.webp`}
+                  alt={item.title}
+                  style={{
+                    opacity: hoveredId === item.id ? 1 : 0,
+                  }}
+                />
+              ))}
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };
