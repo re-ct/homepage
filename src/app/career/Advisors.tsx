@@ -57,7 +57,7 @@ const advisors: advisorProfile[] = [
 const sxStyles = {
     wrap: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: commonSxStyles.color.white,
     paddingBlock: '80px 110px',
   },
   contentArea: {
@@ -104,7 +104,7 @@ const sxStyles = {
   listItemProfile: {
     marginTop: '20px',
     boxShadow: '0 0 4px rgba(0, 0, 0, 0.25)',
-    border: 'solid 1px #fff',
+    border: 'solid 1px' + commonSxStyles.color.white,
     borderRadius: '3px',
     padding: '16px 16px 20px',
   },
@@ -135,7 +135,7 @@ const sxStyles = {
     }
   },
   contentsTitle :{
-    color: '#00298A',
+    color:commonSxStyles.color.primary,
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
@@ -144,7 +144,7 @@ const sxStyles = {
       content: '""',
       width: 'calc(100% - 40px)',
       height: '1px',
-      backgroundColor: '#00298A',
+      backgroundColor:commonSxStyles.color.primary,
       display: 'inline-block'
     }
   },

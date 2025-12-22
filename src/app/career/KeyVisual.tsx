@@ -1,9 +1,9 @@
 "use client";
 import { Button, Box, Typography } from '@mui/material';
 import { careerContact } from '../../lib/const/Link';
-import { commonSxStyles } from './components/Style';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { commonSxStyles } from './components/Style';
 
 const sxStyles = {
   wrap: {
@@ -21,7 +21,7 @@ const sxStyles = {
     maxWidth: 'calc(1000px + 32px)',
     px: 2,
     mx: 'auto',
-    color: '#fff',
+    color: commonSxStyles.color.white,
     textShadow: '0 0 10px rgba(0, 0, 0, 0.4)',
     '@media screen and (max-width:768px)': {
       textAlign: 'center',
@@ -48,8 +48,8 @@ const sxStyles = {
     },
   },
   button: {
-    backgroundColor: '#EF6C00',
-    color: '#fff',
+    backgroundColor: commonSxStyles.color.accent,
+    color: commonSxStyles.color.white,
     textTransform: 'none',
     padding: '16px 20px 16px 25px',
     borderRadius: '50px',
@@ -61,10 +61,20 @@ const sxStyles = {
     fontWeight: 'bold',
     letterSpacing: '0.06em',
     marginTop: '38px',
+    gap: '8px',
     '&:hover': {
       boxShadow: 'none',
       filter: 'brightness(0.8)',
     },
+  },
+  free: {
+    borderRadius: '4px',
+    px: '6px',
+    py: '2px',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    backgroundColor: commonSxStyles.color.white,
+    color: commonSxStyles.color.accent,
   },
 };
 
@@ -85,7 +95,7 @@ const KeyVisual = () => {
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
         >
-          無料相談に申し込む
+          <Typography component="span" sx={sxStyles.free}>無料</Typography>相談に申し込む
         </Button>
       </Box>
     </Box>

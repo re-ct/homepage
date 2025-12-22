@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from './components/Style';
 import { ReactNode } from 'react';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import FadeInOnView from '../../components/FadeInOnView';
 
 
 export type CaseStudy = {
@@ -122,7 +123,7 @@ const caseStudies: CaseStudy[] = [
 ];
 const sxStyles = {
   section: {
-    backgroundColor: '#EEF3FF',
+    backgroundColor: commonSxStyles.color.background,
     paddingBlock: '80px',
   },
   wrap: {
@@ -145,7 +146,7 @@ const sxStyles = {
     }
   },
   listItem: {
-    backgroundColor: '#fff',
+    backgroundColor: commonSxStyles.color.white,
     borderRadius: '4px',
     paddingTop: '36px',
     display: 'flex',
@@ -163,8 +164,8 @@ const sxStyles = {
     top: '-8px',
     left: '50%',
     transform: 'translateX(-50%)',
-    backgroundColor: '#000',
-    color: '#fff',
+    backgroundColor: commonSxStyles.color.black,
+    color: commonSxStyles.color.white,
     borderRadius: '50px',
     padding: '6px 20px 4px',
     fontSize: '12px',
@@ -195,7 +196,7 @@ const sxStyles = {
         maxWidth: '6px',
         minWidth: '6px',
         aspectRatio: '1 / 1',
-        backgroundColor: '#000',
+        backgroundColor: commonSxStyles.color.black,
         borderRadius: '30px',
       },
       '& + li': {
@@ -208,7 +209,7 @@ const sxStyles = {
     background: 'linear-gradient(to right, #407BFF 0%, #012D97 100%)',
     padding: '40px 24px',
     width: '100%',
-    color: '#fff',
+    color: commonSxStyles.color.white,
     fontWeight: 'bold',
     height: '100%',
     borderRadius: '0 0 4px 4px',
@@ -249,53 +250,55 @@ const sxStyles = {
 const Features = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.wrap}>
-        <Typography
-        variant="h2"
-        component="h2"
-        sx={[commonSxStyles.typography.heading2,sxStyles.heading2]}>こんなお悩みを<br/>サポートいたします</Typography>
-        <Box
-          sx={sxStyles.list}
-          component="ul"
-        >
-          {caseStudies.map((item) => (
-            <Box key={item.id} component="li" sx={sxStyles.listItem}>
-              <Typography component="p" sx={sxStyles.listPoint}>
-                事例 {item.id}
-              </Typography>
-              <Typography variant="h3" sx={[sxStyles.listTitle,commonSxStyles.typography.heading3]}>
-                {item.mainTitle}
-              </Typography>
-                <Box
-                  component="img"
-                  src={`/image/career/${item.image}.webp`}
-                  alt=""
-                  width={432}
-                  height={387}
-                  sx={sxStyles.listImage}
-                />
+      <FadeInOnView>
+        <Box sx={sxStyles.wrap}>
+          <Typography
+          variant="h2"
+          component="h2"
+          sx={[commonSxStyles.typography.heading2,sxStyles.heading2]}>こんなお悩みを<br/>サポートいたします</Typography>
+          <Box
+            sx={sxStyles.list}
+            component="ul"
+          >
+            {caseStudies.map((item) => (
+              <Box key={item.id} component="li" sx={sxStyles.listItem}>
+                <Typography component="p" sx={sxStyles.listPoint}>
+                  事例 {item.id}
+                </Typography>
+                <Typography variant="h3" sx={[sxStyles.listTitle,commonSxStyles.typography.heading3]}>
+                  {item.mainTitle}
+                </Typography>
+                  <Box
+                    component="img"
+                    src={`/image/career/${item.image}.webp`}
+                    alt=""
+                    width={432}
+                    height={387}
+                    sx={sxStyles.listImage}
+                  />
 
-              <Box component="ul" sx={[sxStyles.listTrouble,commonSxStyles.typography.normalText]}>
-                {item.troubles.map((trouble, index) => (
-                  <Box component="li" key={index}>
-                    {trouble}
-                  </Box>
-                ))}
+                <Box component="ul" sx={[sxStyles.listTrouble,commonSxStyles.typography.normalText]}>
+                  {item.troubles.map((trouble, index) => (
+                    <Box component="li" key={index}>
+                      {trouble}
+                    </Box>
+                  ))}
+                </Box>
+                <Box sx={sxStyles.listSolutions}>
+                  {item.solutions.map((solution, index) => (
+                    <Box key={index} sx={sxStyles.listSolutionItem}>
+                      <CheckBoxIcon />
+                      <Typography component="p" sx={commonSxStyles.typography.largeText}>
+                        {solution.content}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
               </Box>
-              <Box sx={sxStyles.listSolutions}>
-                {item.solutions.map((solution, index) => (
-                  <Box key={index} sx={sxStyles.listSolutionItem}>
-                    <CheckBoxIcon />
-                    <Typography component="p" sx={commonSxStyles.typography.largeText}>
-                      {solution.content}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

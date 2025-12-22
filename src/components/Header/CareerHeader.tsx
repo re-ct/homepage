@@ -30,7 +30,7 @@ const sxStyles = {
   button: {
     '@media screen and (max-width:768px)': {
       width: '48%',
-      maxWidth: '162px',
+      maxWidth: '160px',
     },
     '& > a': {
       fontSize: 14,
@@ -44,10 +44,12 @@ const sxStyles = {
       boxShadow: 'none',
       letterSpacing: '0.06em',
       transition: 'filter 0.3s',
-      lineHeight: '1.6',
+      lineHeight: '1',
       display: 'flex',
       alignItems: 'center',
       columnGap: '8px',
+      justifyContent: 'center',
+      minHeight: '36px',
       '& .MuiButton-endIcon': {
         marginLeft: '8px',
         '& > :nth-of-type(1)': {
@@ -96,7 +98,7 @@ const CareerHeader = () => {
             width={518}
             height={46}
             priority={true}
-            style={{ verticalAlign: 'bottom' }}
+            style={{ verticalAlign: 'bottom',width:'100%',height:'auto' }}
           />
         </CommonLink>
         <Box sx={sxStyles.button}>
@@ -106,7 +108,7 @@ const CareerHeader = () => {
               external: true,
             }}
           >
-            無料相談フォーム
+            <span>無料相談フォーム</span>
             <PlayCircle style={{fontSize: '16px'}}/>
           </CommonLink>
         </Box>

@@ -73,17 +73,17 @@ const sxStyles = {
       '&::before': {
         content: '""',
         position: 'absolute',
-        left: '28px',
+        left: '34px',
         bottom: '-24px',
         width: "1px",
         height: '24px',
-        backgroundColor: '#00298A'
+        backgroundColor: commonSxStyles.color.primary,
       },
     },
   },
   flowWrap: {
     width: '100%',
-    backgroundColor: '#EEF3FF',
+    backgroundColor: commonSxStyles.color.background,
     paddingBlock: '80px 110px',
   },
   contentArea: {
@@ -112,7 +112,7 @@ const sxStyles = {
     mr: '20px',
     fontSize: '18px',
     fontWeight: 'bold',
-    color: '#00298A',
+    color: commonSxStyles.color.primary,
   },
 };
 

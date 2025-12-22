@@ -16,11 +16,11 @@ const sxStyles = {
     paddingInline: '16px',
     marginInline: 'auto',
     textAlign: 'center',
-    color: '#fff',
+    color: commonSxStyles.color.white,
   },
   button: {
-    backgroundColor: '#EF6C00',
-    color: '#fff',
+    backgroundColor: commonSxStyles.color.accent,
+    color: commonSxStyles.color.white,
     textTransform: 'none',
     padding: '16px 20px 16px 25px',
     borderRadius: '50px',
@@ -32,10 +32,20 @@ const sxStyles = {
     fontWeight: 'bold',
     letterSpacing: '0.06em',
     marginTop: '38px',
+    gap: '8px',
     '&:hover': {
       boxShadow: 'none',
       filter: 'brightness(0.8)',
     },
+  },
+  free: {
+    borderRadius: '4px',
+    px: '6px',
+    py: '2px',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    backgroundColor: commonSxStyles.color.white,
+    color: commonSxStyles.color.accent,
   },
   text: {
     fontWeight: 'bold',
@@ -63,7 +73,7 @@ const Contact = () => {
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
         >
-          無料 相談フォームへ
+          <Typography component="span" sx={sxStyles.free}>無料</Typography>相談フォームへ
         </Button>
       </Box>
     </Box>

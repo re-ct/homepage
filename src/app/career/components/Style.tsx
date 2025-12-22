@@ -1,13 +1,5 @@
 export const commonSxStyles = {
   typography: {
-    headingSubText: {
-      fontWeight: 'bold',
-      letterSpacing: '0.07em',
-      fontSize: '18px',
-      '@media screen and (max-width:450px)': {
-        fontSize: '14px',
-      },
-    },
     heading2: {
       fontWeight: 'bold',
       letterSpacing: '0.05em',
@@ -38,18 +30,12 @@ export const commonSxStyles = {
       letterSpacing: '0.05em',
       lineHeight: '1.7',
     },
-    buttonNormalText: {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      letterSpacing: '0.06em',
-    },
   },
   color: {
-    primary: '#EF6C00',
+    primary: '#00298A',
+    accent: '#EF6C00',
     black: '#000',
     white: '#fff',
-    background: '#EFF7FF',
-    border: '#969696',
-    grayText: '#545454',
+    background: '#EEF3FF',
   },
 };
