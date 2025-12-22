@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { Button, Box, Typography } from '@mui/material';
 import { careerContact } from '../../lib/const/Link';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
@@ -7,12 +7,14 @@ import { commonSxStyles } from './components/Style';
 
 const sxStyles = {
   wrap: {
-    background: 'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background.webp")',
+    background:
+      'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'right center',
     paddingBlock: '74px 57px',
     '@media screen and (max-width:768px)': {
-      background: 'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background_sp.webp")',
+      background:
+        'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background_sp.webp")',
       paddingBlock: '80px',
       backgroundSize: 'cover',
     },
@@ -25,7 +27,7 @@ const sxStyles = {
     textShadow: '0 0 10px rgba(0, 0, 0, 0.4)',
     '@media screen and (max-width:768px)': {
       textAlign: 'center',
-    }
+    },
   },
   subCopy: {
     fontSize: 'min(1.38vw, 20px)',
@@ -83,19 +85,26 @@ const KeyVisual = () => {
   return (
     <Box sx={sxStyles.wrap}>
       <Box sx={sxStyles.contents}>
-        <Typography sx={sxStyles.subCopy}>エンジニアのお悩みを無料でサポート</Typography>
+        <Typography sx={sxStyles.subCopy}>
+          エンジニアのお悩みを無料でサポート
+        </Typography>
         <Typography sx={sxStyles.mainCopy}>
-          キャリアのモヤモヤ<br />現役エンジニアと{isSmallScreen && <br />}話してみませんか
+          キャリアのモヤモヤ
+          <br />
+          現役エンジニアと{isSmallScreen && <br />}話してみませんか
         </Typography>
         <Button
           variant="contained"
           href={careerContact}
-          rel='noopener noreferrer'
-          target='_blank'
+          rel="noopener noreferrer"
+          target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
         >
-          <Typography component="span" sx={sxStyles.free}>無料</Typography>相談に申し込む
+          <Typography component="span" sx={sxStyles.free}>
+            無料
+          </Typography>
+          相談に申し込む
         </Button>
       </Box>
     </Box>

@@ -6,8 +6,7 @@ import Features from './Features';
 import KeyVisual from './KeyVisual';
 
 export const metadata = {
-  title:
-    'エンジニアのお悩みを無料でサポート Re:ProS Career',
+  title: 'エンジニアのお悩みを無料でサポート Re:ProS Career',
 };
 
 const Demand = () => {

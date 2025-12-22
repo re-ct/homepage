@@ -5,7 +5,6 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { commonSxStyles } from './components/Style';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-
 const sxStyles = {
   section: {
     background: 'linear-gradient(to right, #407BFF 0%, #012D97 100%)',
@@ -50,7 +49,7 @@ const sxStyles = {
   text: {
     fontWeight: 'bold',
     marginTop: '12px',
-  }
+  },
 };
 
 const Contact = () => {
@@ -59,21 +58,36 @@ const Contact = () => {
     <Box sx={sxStyles.section}>
       <Box sx={sxStyles.wrap}>
         <Typography
-        variant="h2"
-        component="h2"
-        sx={commonSxStyles.typography.heading2}>ご相談の受付</Typography>
-        <Typography variant="body2"
-        component="p"
-        sx={[commonSxStyles.typography.normalText,sxStyles.text]}>ご相談いただいた内容や、{isSmallScreen && <br />}個人情報、現職での状況は<br/>ご本人様の許可なく第三者（企業含む）に{isSmallScreen && <br />}口外することは一切ありません。{isSmallScreen && <br />}安心してご相談ください。</Typography>
+          variant="h2"
+          component="h2"
+          sx={commonSxStyles.typography.heading2}
+        >
+          ご相談の受付
+        </Typography>
+        <Typography
+          variant="body2"
+          component="p"
+          sx={[commonSxStyles.typography.normalText, sxStyles.text]}
+        >
+          ご相談いただいた内容や、{isSmallScreen && <br />}
+          個人情報、現職での状況は
+          <br />
+          ご本人様の許可なく第三者（企業含む）に{isSmallScreen && <br />}
+          口外することは一切ありません。{isSmallScreen && <br />}
+          安心してご相談ください。
+        </Typography>
         <Button
           variant="contained"
           href={careerContact}
-          rel='noopener noreferrer'
-          target='_blank'
+          rel="noopener noreferrer"
+          target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
         >
-          <Typography component="span" sx={sxStyles.free}>無料</Typography>相談フォームへ
+          <Typography component="span" sx={sxStyles.free}>
+            無料
+          </Typography>
+          相談フォームへ
         </Button>
       </Box>
     </Box>

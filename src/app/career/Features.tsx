@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import FadeInOnView from '../../components/FadeInOnView';
 
-
 export type CaseStudy = {
   id: string | number;
   mainTitle: ReactNode;
@@ -28,16 +27,18 @@ const caseStudies: CaseStudy[] = [
     ),
     image: 'feature_case1',
     troubles: [
-      <>自分のスキルが市場で通用するのか<br/>分からない</>,
+      <>
+        自分のスキルが市場で通用するのか
+        <br />
+        分からない
+      </>,
       <>面接で、技術的な質問にうまく答えられるか不安</>,
     ],
     solutions: [
       {
         content: (
           <>
-            <Box component="strong">
-              エンジニア目線でスキルを評価し
-            </Box>
+            <Box component="strong">エンジニア目線でスキルを評価し</Box>
             <br />
             具体的な成長パスを提示します。
           </>
@@ -48,9 +49,7 @@ const caseStudies: CaseStudy[] = [
           <>
             書類添削だけでなく、
             <br />
-            <Box component="strong">
-              コードレビューや技術支援、
-            </Box>
+            <Box component="strong">コードレビューや技術支援、</Box>
             <br />
             技術面接の練習相手になります。
           </>
@@ -62,28 +61,38 @@ const caseStudies: CaseStudy[] = [
     id: 2,
     mainTitle: (
       <>
-        キャリアチェンジを<br />考えている
+        キャリアチェンジを
+        <br />
+        考えている
       </>
     ),
     image: 'feature_case2',
     troubles: [
-      <>バックエンドからフロントエンドへ<br/>移りたいが、必要なスキルが分からない</>,
-      <>デザイナーから、コーディングができる<br/>エンジニアになりたい</>,
+      <>
+        バックエンドからフロントエンドへ
+        <br />
+        移りたいが、必要なスキルが分からない
+      </>,
+      <>
+        デザイナーから、コーディングができる
+        <br />
+        エンジニアになりたい
+      </>,
     ],
     solutions: [
       {
         content: (
           <>
-          <Box component="strong">学習ロードマップの提示</Box>や、<br/><Box component="strong">スキル獲得の支援</Box>を行います。
+            <Box component="strong">学習ロードマップの提示</Box>や、
+            <br />
+            <Box component="strong">スキル獲得の支援</Box>を行います。
           </>
         ),
       },
       {
         content: (
           <>
-            <Box component="strong">
-              市場のリアルな情報
-            </Box>を
+            <Box component="strong">市場のリアルな情報</Box>を
             <br />
             具体的にお伝えします。
           </>
@@ -95,26 +104,42 @@ const caseStudies: CaseStudy[] = [
     id: 3,
     mainTitle: (
       <>
-        エンジニアスキルを<br />向上したい！
+        エンジニアスキルを
+        <br />
+        向上したい！
       </>
     ),
     image: 'feature_case3',
     troubles: [
-      <>今より裁量権のある開発環境で<br/>働きたい</>,
-      <>最新の技術スタックを使っている<br/>企業に転職したい</>,
+      <>
+        今より裁量権のある開発環境で
+        <br />
+        働きたい
+      </>,
+      <>
+        最新の技術スタックを使っている
+        <br />
+        企業に転職したい
+      </>,
     ],
     solutions: [
       {
         content: (
           <>
-            スキルや志向に合わせて、<br/><Box component="strong">成長できる企業を紹介</Box>できます。
+            スキルや志向に合わせて、
+            <br />
+            <Box component="strong">成長できる企業を紹介</Box>できます。
           </>
         ),
       },
       {
         content: (
           <>
-            求人票だけでは分からない、<br/>企業の開発文化や技術的な内容を<br/><Box component="strong">深く掘り下げて</Box>伝えられます。
+            求人票だけでは分からない、
+            <br />
+            企業の開発文化や技術的な内容を
+            <br />
+            <Box component="strong">深く掘り下げて</Box>伝えられます。
           </>
         ),
       },
@@ -143,7 +168,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       gap: '52px',
-    }
+    },
   },
   listItem: {
     backgroundColor: commonSxStyles.color.white,
@@ -187,7 +212,7 @@ const sxStyles = {
       '& br': {
         '@media screen and (max-width:768px)': {
           display: 'none',
-        }
+        },
       },
       '&::before': {
         content: '""',
@@ -201,8 +226,8 @@ const sxStyles = {
       },
       '& + li': {
         marginTop: '4px',
-      }
-    }
+      },
+    },
   },
   listSolutions: {
     marginTop: '30px',
@@ -226,7 +251,7 @@ const sxStyles = {
       borderRight: '11px solid transparent',
       borderBottom: '11px solid transparent',
       borderTop: '11px solid' + commonSxStyles.color.white,
-    }
+    },
   },
   listSolutionItem: {
     display: 'flex',
@@ -239,12 +264,12 @@ const sxStyles = {
       color: '#FFF652',
     },
     '& svg': {
-      width: '20px'
+      width: '20px',
     },
     '& + &': {
       marginTop: '16px',
-    }
-  }
+    },
+  },
 };
 
 const Features = () => {
@@ -253,31 +278,42 @@ const Features = () => {
       <FadeInOnView>
         <Box sx={sxStyles.wrap}>
           <Typography
-          variant="h2"
-          component="h2"
-          sx={[commonSxStyles.typography.heading2,sxStyles.heading2]}>こんなお悩みを<br/>サポートいたします</Typography>
-          <Box
-            sx={sxStyles.list}
-            component="ul"
+            variant="h2"
+            component="h2"
+            sx={[commonSxStyles.typography.heading2, sxStyles.heading2]}
           >
+            こんなお悩みを
+            <br />
+            サポートいたします
+          </Typography>
+          <Box sx={sxStyles.list} component="ul">
             {caseStudies.map((item) => (
               <Box key={item.id} component="li" sx={sxStyles.listItem}>
                 <Typography component="p" sx={sxStyles.listPoint}>
                   事例 {item.id}
                 </Typography>
-                <Typography variant="h3" sx={[sxStyles.listTitle,commonSxStyles.typography.heading3]}>
+                <Typography
+                  variant="h3"
+                  sx={[sxStyles.listTitle, commonSxStyles.typography.heading3]}
+                >
                   {item.mainTitle}
                 </Typography>
-                  <Box
-                    component="img"
-                    src={`/image/career/${item.image}.webp`}
-                    alt=""
-                    width={432}
-                    height={387}
-                    sx={sxStyles.listImage}
-                  />
+                <Box
+                  component="img"
+                  src={`/image/career/${item.image}.webp`}
+                  alt=""
+                  width={432}
+                  height={387}
+                  sx={sxStyles.listImage}
+                />
 
-                <Box component="ul" sx={[sxStyles.listTrouble,commonSxStyles.typography.normalText]}>
+                <Box
+                  component="ul"
+                  sx={[
+                    sxStyles.listTrouble,
+                    commonSxStyles.typography.normalText,
+                  ]}
+                >
                   {item.troubles.map((trouble, index) => (
                     <Box component="li" key={index}>
                       {trouble}
@@ -288,7 +324,10 @@ const Features = () => {
                   {item.solutions.map((solution, index) => (
                     <Box key={index} sx={sxStyles.listSolutionItem}>
                       <CheckBoxIcon />
-                      <Typography component="p" sx={commonSxStyles.typography.largeText}>
+                      <Typography
+                        component="p"
+                        sx={commonSxStyles.typography.largeText}
+                      >
                         {solution.content}
                       </Typography>
                     </Box>

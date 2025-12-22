@@ -15,31 +15,56 @@ const flow: Flow[] = [
     step: '01',
     title: 'お申し込み',
     detail: (
-      <>フォームから、現在の状況や抱えているお悩みをお送りいただきます。<br/>転職意欲の有無は問わず、今の率直な気持ちをお聞かせください。</>)
+      <>
+        フォームから、現在の状況や抱えているお悩みをお送りいただきます。
+        <br />
+        転職意欲の有無は問わず、今の率直な気持ちをお聞かせください。
+      </>
+    ),
   },
   {
     step: '02',
     title: '内容確認と日程調整',
     detail: (
-      <>アドバイザーが相談内容を確認した後に、<Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />オンラインまたはオフラインでの日程を調整します。</>)
+      <>
+        アドバイザーが相談内容を確認した後に、
+        <Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />
+        オンラインまたはオフラインでの日程を調整します。
+      </>
+    ),
   },
   {
     step: '03',
     title: 'キャリア相談',
     detail: (
-      <>あなたのスキル、経験、転職を迷っている背景にあるモヤモヤをヒアリングします。<br/>技術的な話もお任せください。（所要時間30分〜1時間を目安としております）</>)
+      <>
+        あなたのスキル、経験、転職を迷っている背景にあるモヤモヤをヒアリングします。
+        <br />
+        技術的な話もお任せください。（所要時間30分〜1時間を目安としております）
+      </>
+    ),
   },
   {
     step: '04',
     title: '次のアクション提案',
     detail: (
-      <>面談内容に基づき「スキルアップ」「キャリアチェンジ」「現職での経験積み」など、<Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />具体的なロードマップを提案します。</>)
+      <>
+        面談内容に基づき「スキルアップ」「キャリアチェンジ」「現職での経験積み」など、
+        <Box component="br" sx={{ display: { xs: 'none', md: 'block' } }} />
+        具体的なロードマップを提案します。
+      </>
+    ),
   },
   {
     step: '05',
     title: '終了または継続',
     detail: (
-      <>不安が解消されれば終了です。<br/>さらに深掘りした相談や継続的なサポートが必要であれば、次回の面談日程を調整します。</>)
+      <>
+        不安が解消されれば終了です。
+        <br />
+        さらに深掘りした相談や継続的なサポートが必要であれば、次回の面談日程を調整します。
+      </>
+    ),
   },
 ];
 
@@ -75,7 +100,7 @@ const sxStyles = {
         position: 'absolute',
         left: '34px',
         bottom: '-24px',
-        width: "1px",
+        width: '1px',
         height: '24px',
         backgroundColor: commonSxStyles.color.primary,
       },
@@ -135,10 +160,7 @@ const Flow = () => {
             {flow.map((item) => (
               <Box component="li" sx={sxStyles.listItem} key={item.step}>
                 <Typography
-                  sx={[
-                    sxStyles.stepTitle,
-                    commonSxStyles.typography.largeText,
-                  ]}
+                  sx={[sxStyles.stepTitle, commonSxStyles.typography.largeText]}
                 >
                   <Typography component="span" sx={[sxStyles.step]}>
                     {item.step}

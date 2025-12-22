@@ -23,9 +23,9 @@ const sxStyles = {
         width: '259px',
         '@media screen and (max-width:768px)': {
           width: '100%',
-        }
+        },
       },
-    }
+    },
   },
   button: {
     '@media screen and (max-width:768px)': {
@@ -72,7 +72,7 @@ const sxStyles = {
         boxShadow: 'none',
         filter: 'brightness(0.8)',
       },
-    }
+    },
   },
 };
 
@@ -98,7 +98,7 @@ const CareerHeader = () => {
             width={518}
             height={46}
             priority={true}
-            style={{ verticalAlign: 'bottom',width:'100%',height:'auto' }}
+            style={{ verticalAlign: 'bottom', width: '100%', height: 'auto' }}
           />
         </CommonLink>
         <Box sx={sxStyles.button}>
@@ -109,7 +109,7 @@ const CareerHeader = () => {
             }}
           >
             <span>無料相談フォーム</span>
-            <PlayCircle style={{fontSize: '16px'}}/>
+            <PlayCircle style={{ fontSize: '16px' }} />
           </CommonLink>
         </Box>
       </Box>
