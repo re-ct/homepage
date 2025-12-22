@@ -2,6 +2,7 @@ import '../globals.css';
 import Contact from './Contact';
 import Flow from './Flow';
 import Advisors from './Advisors';
+import Features from './Features';
 
 export const metadata = {
   title:
@@ -11,6 +12,7 @@ export const metadata = {
 const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
+      <Features />
       <Advisors />
       <Flow />
       <Contact />

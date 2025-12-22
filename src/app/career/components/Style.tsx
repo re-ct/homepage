@@ -12,6 +12,7 @@ export const commonSxStyles = {
       fontWeight: 'bold',
       letterSpacing: '0.05em',
       fontSize: '36px',
+      lineHeight: '1.5',
       '@media screen and (max-width:450px)': {
         fontSize: '32px',
       },
