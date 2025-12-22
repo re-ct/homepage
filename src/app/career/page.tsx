@@ -3,6 +3,7 @@ import Contact from './Contact';
 import Flow from './Flow';
 import Advisors from './Advisors';
 import Features from './Features';
+import KeyVisual from './KeyVisual';
 
 export const metadata = {
   title:
@@ -12,6 +13,7 @@ export const metadata = {
 const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
+      <KeyVisual />
       <Features />
       <Advisors />
       <Flow />

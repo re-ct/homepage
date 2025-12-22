@@ -9,7 +9,7 @@ import { careerContact } from '../../lib/const/Link';
 
 const sxStyles = {
   header: {
-    width: '980px',
+    width: '1000px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
