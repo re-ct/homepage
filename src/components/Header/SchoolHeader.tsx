@@ -16,6 +16,14 @@ const sxStyles = {
     alignItems: 'center',
     py: 2,
     mx: 'auto',
+    '& a': {
+      maxWidth: '150px',
+      width: '40%',
+      '&>img': {
+        width: '100%',
+        height: 'auto',
+      }
+    }
   },
   button: {
     fontSize: 14,
@@ -33,6 +41,9 @@ const sxStyles = {
       backgroundColor: '#D46000',
       boxShadow: 'none',
     },
+    '@media screen and (max-width:320px)': {
+      display: 'none',
+    }
   },
 };
 

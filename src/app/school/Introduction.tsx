@@ -20,6 +20,10 @@ const sxStyles = {
     display: 'flex',
     flexDirection: 'row-reverse',
     alignItems: 'center',
+    '& > img': {
+      maxWidth: '300px',
+      width: '100%',
+    },
     '@media screen and (max-width:450px)': {
       flexDirection: 'column',
       '& + &': {
@@ -119,7 +123,8 @@ const sxStyles = {
     },
     '@media screen and (max-width:450px)': {
       '& > img': {
-        width: '300px',
+        maxWidth: '300px',
+        width: '100%',
       },
     },
   },
