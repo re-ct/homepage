@@ -1,8 +1,13 @@
+"use client";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import headingCtaImg from '../../../public/image/school/heading_achievementList.png';
 import { commonSxStyles } from './components/Style';
-import { AspectRatio } from '@mui/icons-material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { useSwiper } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 const sxStyles = {
   contents: {
@@ -15,42 +20,55 @@ const sxStyles = {
       width: '134px',
       height: 'auto',
     },
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       '& > img': {
         width: '134px',
       },
     },
   },
   photos: {
-    display: 'flex',
-    gap: 2,
-    px: 2,
-    justifyContent: 'flex-start',
-    overflow: 'scroll',
-    overflowX: 'auto',
-    scrollSnapType: 'x mandatory',
-    maxWidth: '100%',
-    width: 'max-content',
-    mx: 'auto',
-    overflowY: 'hidden',
-    marginTop: '40px',
+    '& > .swiper': {
+      display: 'flex',
+      justifyContent: 'flex-start',
+      overflow: 'scroll',
+      overflowX: 'auto',
+      scrollSnapType: 'x mandatory',
+      maxWidth: '100%',
+      width: '1100px',
+      mx: 'auto',
+      overflowY: 'hidden',
+      marginTop: '40px',
+      px: '20px',
     '&::-webkit-scrollbar': {
-      display: 'none', // スクロールバーを非表示
+      display: 'none',
     },
+    '& .swiper-slide': {
+      '@media screen and (max-width:768px)': {
+        minWidth: '210px',
+        maxWidth: '210px',
+      }
+    },
+    '& .swiper-button-next, & .swiper-button-prev': {
+      background: commonSxStyles.color.white,
+      padding: '12px',
+      color: '#956A1D',
+      borderRadius: '100px',
+      border: 'solid 1px' + '#956A1D',
+      '@media screen and (max-width:768px)': {
+        display: 'none',
+      }
+    }
+    }
   },
   list: {
     borderRadius: '8px',
     border: 'solid 1px #956A1D',
     overflow: 'hidden',
-    minWidth: '350px',
-    maxWidth: '350px',
     display: 'grid',
     gridTemplateColumns: '80px 1fr',
     alignItems: 'center',
     padding: '16px 12px',
-    '@media screen and (max-width:450px)': {
-      minWidth: '210px',
-      maxWidth: '210px',
+    '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       padding: 0,
     },
@@ -58,7 +76,7 @@ const sxStyles = {
   wrap: {
     paddingInline: '12px',
     textAlign: 'left',
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       marginTop: '12px',
       marginBlock: '16px',
     }
@@ -88,7 +106,7 @@ const sxStyles = {
     aspectRatio: '1 / 1',
     overflow: 'hidden',
     borderRadius: '100px',
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       borderRadius: 0,
       aspectRatio: 'auto',
     },
@@ -96,7 +114,7 @@ const sxStyles = {
       objectFit: 'cover',
       height: '100%',
       width: 'auto',
-      '@media screen and (max-width:450px)': {
+      '@media screen and (max-width:768px)': {
         width: '100%',
         height: 'auto',
         verticalAlign: 'bottom',
@@ -182,6 +200,7 @@ const members: members[] = [
 ];
 
 const AchievementList = () => {
+  const swiper = useSwiper();
   return (
     <Box sx={sxStyles.contents}>
           <Typography variant="h2" sx={sxStyles.heading}>
@@ -189,25 +208,39 @@ const AchievementList = () => {
           </Typography>
           <Typography variant="body2" sx={[sxStyles.headingText,commonSxStyles.typography.normalText]}>開校以来、合格率100%を継続中！</Typography>
         <Box sx={sxStyles.photos}>
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={'auto'}
+            navigation={true}
+            modules={[Navigation]}
+            breakpoints={{
+              769: {
+                slidesPerView: 3,
+              },
+            }}
+          >
           {[...members].reverse().map((image, index) => (
-            <Box sx={sxStyles.list} key={index}>
-              <Box sx={sxStyles.imageWrap}>
-                <img src={`../../../image/school/${image.src}`} alt="" width="300" height="200" />
+            <SwiperSlide>
+              <Box sx={sxStyles.list} key={index}>
+                <Box sx={sxStyles.imageWrap}>
+                  <img src={`../../../image/school/${image.src}`} alt="" width="300" height="200" />
+                </Box>
+                <Box sx={sxStyles.wrap}>
+                  <Typography variant="body2" sx={sxStyles.date}>
+                    {image.date}
+                  </Typography>
+                  <Typography variant="body2" sx={sxStyles.grade}>
+                    <span>{image.examination}</span><br/>
+                    {image.grade}
+                  </Typography>
+                  <Typography variant="body2" sx={sxStyles.member}>
+                    {image.member}
+                  </Typography>
+                </Box>
               </Box>
-              <Box sx={sxStyles.wrap}>
-                <Typography variant="body2" sx={sxStyles.date}>
-                  {image.date}
-                </Typography>
-                <Typography variant="body2" sx={sxStyles.grade}>
-                  <span>{image.examination}</span><br/>
-                  {image.grade}
-                </Typography>
-                <Typography variant="body2" sx={sxStyles.member}>
-                  {image.member}
-                </Typography>
-              </Box>
-            </Box>
+            </SwiperSlide>
           ))}
+          </Swiper>
         </Box>
     </Box>
   );
