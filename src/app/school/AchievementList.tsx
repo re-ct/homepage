@@ -2,27 +2,15 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import headingCtaImg from '../../../public/image/school/heading_achievementList.png';
 import { commonSxStyles } from './components/Style';
+import { AspectRatio } from '@mui/icons-material';
 
 const sxStyles = {
   contents: {
     overflow: 'hidden',
-  },
-  contentsWrap: {
-    paddingTop: '50px',
-    display: 'grid',
-    gridTemplateColumns: '170px 1fr',
-    maxWidth: '900px',
-    marginInline: 'auto',
-    columnGap: '40px',
-    '@media screen and (max-width:450px)': {
-      gridTemplateColumns: '1fr',
-      columnGap: 0,
-    }
+    mt: 5,
   },
   heading: {
-    display: 'flex',
-    alignItem: 'flex-start',
-
+    marginInline: '24px',
     '& > img': {
       width: '134px',
       height: 'auto',
@@ -45,31 +33,35 @@ const sxStyles = {
     width: 'max-content',
     mx: 'auto',
     overflowY: 'hidden',
-    '@media screen and (max-width:450px)': {
-      marginTop: '40px',
-    }
+    marginTop: '40px',
+    '&::-webkit-scrollbar': {
+      display: 'none', // スクロールバーを非表示
+    },
   },
   list: {
     borderRadius: '8px',
     border: 'solid 1px #956A1D',
     overflow: 'hidden',
-    minWidth: '250px',
-    maxWidth: '250px',
+    minWidth: '350px',
+    maxWidth: '350px',
+    display: 'grid',
+    gridTemplateColumns: '80px 1fr',
+    alignItems: 'center',
+    padding: '16px 12px',
     '@media screen and (max-width:450px)': {
       minWidth: '210px',
       maxWidth: '210px',
-    },
-    '& > img': {
-      width: '100%',
-      height: 'auto',
-      verticalAlign: 'bottom',
+      gridTemplateColumns: '1fr',
+      padding: 0,
     },
   },
   wrap: {
-    marginTop: '12px',
-    marginBlock: '16px',
     paddingInline: '12px',
     textAlign: 'left',
+    '@media screen and (max-width:450px)': {
+      marginTop: '12px',
+      marginBlock: '16px',
+    }
   },
   date: {
     fontSize: '12px',
@@ -88,16 +80,28 @@ const sxStyles = {
     color: commonSxStyles.color.Gray[700],
   },
   headingText: {
-    marginTop: '12px',
-    textAlign: 'left',
+    marginTop: '4px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  imageWrap: {
+    aspectRatio: '1 / 1',
+    overflow: 'hidden',
+    borderRadius: '100px',
     '@media screen and (max-width:450px)': {
-      textAlign: 'center',
+      borderRadius: 0,
+      aspectRatio: 'auto',
     },
-    '& br': {
+    '& > img': {
+      objectFit: 'cover',
+      height: '100%',
+      width: 'auto',
       '@media screen and (max-width:450px)': {
-        display: 'none',
+        width: '100%',
+        height: 'auto',
+        verticalAlign: 'bottom',
       }
-    }
+    },
   }
 };
 
@@ -180,17 +184,16 @@ const members: members[] = [
 const AchievementList = () => {
   return (
     <Box sx={sxStyles.contents}>
-      <Box sx={sxStyles.contentsWrap}>
-        <Box>
           <Typography variant="h2" sx={sxStyles.heading}>
             <img src={headingCtaImg.src} alt="合格実績" width="532" height="122" />
           </Typography>
-          <Typography variant="body2" sx={[sxStyles.headingText,commonSxStyles.typography.normalText]}>開校以来、<br/>合格率100%を継続中！</Typography>
-        </Box>
+          <Typography variant="body2" sx={[sxStyles.headingText,commonSxStyles.typography.normalText]}>開校以来、合格率100%を継続中！</Typography>
         <Box sx={sxStyles.photos}>
           {[...members].reverse().map((image, index) => (
             <Box sx={sxStyles.list} key={index}>
-              <img src={`../../../image/school/${image.src}`} alt="" width="300" height="200" />
+              <Box sx={sxStyles.imageWrap}>
+                <img src={`../../../image/school/${image.src}`} alt="" width="300" height="200" />
+              </Box>
               <Box sx={sxStyles.wrap}>
                 <Typography variant="body2" sx={sxStyles.date}>
                   {image.date}
@@ -206,7 +209,6 @@ const AchievementList = () => {
             </Box>
           ))}
         </Box>
-      </Box>
     </Box>
   );
 };

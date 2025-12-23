@@ -19,7 +19,6 @@ const sxStyles = {
   pointWrap: {
     display: 'flex',
     flexDirection: 'row-reverse',
-    marginTop: '60px',
     alignItems: 'center',
     '@media screen and (max-width:450px)': {
       flexDirection: 'column',
