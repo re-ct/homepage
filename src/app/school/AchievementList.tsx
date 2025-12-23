@@ -70,7 +70,7 @@ const sxStyles = {
     border: 'solid 1px #956A1D',
     overflow: 'hidden',
     display: 'grid',
-    gridTemplateColumns: '80px 1fr',
+    gridTemplateColumns: '110px 1fr',
     alignItems: 'center',
     padding: '16px 12px',
     '@media screen and (max-width:768px)': {
@@ -108,20 +108,17 @@ const sxStyles = {
     fontWeight: 'bold',
   },
   imageWrap: {
-    aspectRatio: '1 / 1',
+    aspectRatio: '458 / 358',
     overflow: 'hidden',
-    borderRadius: '100px',
     '@media screen and (max-width:768px)': {
       borderRadius: 0,
       aspectRatio: 'auto',
     },
     '& > img': {
       objectFit: 'cover',
-      height: '100%',
-      width: 'auto',
+      width: '100%',
+      height: 'auto',
       '@media screen and (max-width:768px)': {
-        width: '100%',
-        height: 'auto',
         verticalAlign: 'bottom',
       },
     },
