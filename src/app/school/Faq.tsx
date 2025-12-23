@@ -18,6 +18,10 @@ const sxStyles = {
   accordionSummary: {
     fontWeight: 'bold',
     textAlign: 'left',
+    fontSize: '16px',
+    '& > span': {
+      marginBlock: '16px',
+    }
   },
   accordionSummaryText: {
     backgroundColor: '#24285B',
