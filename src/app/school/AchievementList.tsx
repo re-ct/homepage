@@ -56,6 +56,12 @@ const sxStyles = {
         '@media screen and (max-width:768px)': {
           display: 'none',
         },
+        '&.swiper-button-disabled': {
+          opacity: 1,
+          background: '#F5F5F5',
+          border: 'solid 1px' + commonSxStyles.color.Gray[300],
+          color: commonSxStyles.color.Gray[300],
+        }
       },
     },
   },
