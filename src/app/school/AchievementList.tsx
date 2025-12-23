@@ -1,11 +1,10 @@
-"use client";
+'use client';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import headingCtaImg from '../../../public/image/school/heading_achievementList.png';
 import { commonSxStyles } from './components/Style';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { useSwiper } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 
@@ -39,26 +38,26 @@ const sxStyles = {
       overflowY: 'hidden',
       marginTop: '40px',
       px: '20px',
-    '&::-webkit-scrollbar': {
-      display: 'none',
-    },
-    '& .swiper-slide': {
-      '@media screen and (max-width:768px)': {
-        minWidth: '210px',
-        maxWidth: '210px',
-      }
-    },
-    '& .swiper-button-next, & .swiper-button-prev': {
-      background: commonSxStyles.color.white,
-      padding: '12px',
-      color: '#956A1D',
-      borderRadius: '100px',
-      border: 'solid 1px' + '#956A1D',
-      '@media screen and (max-width:768px)': {
+      '&::-webkit-scrollbar': {
         display: 'none',
-      }
-    }
-    }
+      },
+      '& .swiper-slide': {
+        '@media screen and (max-width:768px)': {
+          minWidth: '210px',
+          maxWidth: '210px',
+        },
+      },
+      '& .swiper-button-next, & .swiper-button-prev': {
+        background: commonSxStyles.color.white,
+        padding: '12px',
+        color: '#956A1D',
+        borderRadius: '100px',
+        border: 'solid 1px' + '#956A1D',
+        '@media screen and (max-width:768px)': {
+          display: 'none',
+        },
+      },
+    },
   },
   list: {
     borderRadius: '8px',
@@ -79,7 +78,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       marginTop: '12px',
       marginBlock: '16px',
-    }
+    },
   },
   date: {
     fontSize: '12px',
@@ -90,7 +89,7 @@ const sxStyles = {
     marginTop: '4px',
     '& > span': {
       fontSize: '12px',
-    }
+    },
   },
   member: {
     fontSize: '12px',
@@ -118,9 +117,9 @@ const sxStyles = {
         width: '100%',
         height: 'auto',
         verticalAlign: 'bottom',
-      }
+      },
     },
-  }
+  },
 };
 
 export type members = {
@@ -130,7 +129,7 @@ export type members = {
   date: string;
   grade: string;
   member: string;
-}
+};
 
 const members: members[] = [
   {
@@ -200,37 +199,47 @@ const members: members[] = [
 ];
 
 const AchievementList = () => {
-  const swiper = useSwiper();
   return (
     <Box sx={sxStyles.contents}>
-          <Typography variant="h2" sx={sxStyles.heading}>
-            <img src={headingCtaImg.src} alt="合格実績" width="532" height="122" />
-          </Typography>
-          <Typography variant="body2" sx={[sxStyles.headingText,commonSxStyles.typography.normalText]}>開校以来、合格率100%を継続中！</Typography>
-        <Box sx={sxStyles.photos}>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={'auto'}
-            navigation={true}
-            modules={[Navigation]}
-            breakpoints={{
-              769: {
-                slidesPerView: 3,
-              },
-            }}
-          >
+      <Typography variant="h2" sx={sxStyles.heading}>
+        <img src={headingCtaImg.src} alt="合格実績" width="532" height="122" />
+      </Typography>
+      <Typography
+        variant="body2"
+        sx={[sxStyles.headingText, commonSxStyles.typography.normalText]}
+      >
+        開校以来、合格率100%を継続中！
+      </Typography>
+      <Box sx={sxStyles.photos}>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={'auto'}
+          navigation={true}
+          modules={[Navigation]}
+          breakpoints={{
+            769: {
+              slidesPerView: 3,
+            },
+          }}
+        >
           {[...members].reverse().map((image, index) => (
-            <SwiperSlide>
-              <Box sx={sxStyles.list} key={index}>
+            <SwiperSlide key={index}>
+              <Box sx={sxStyles.list}>
                 <Box sx={sxStyles.imageWrap}>
-                  <img src={`../../../image/school/${image.src}`} alt="" width="300" height="200" />
+                  <img
+                    src={`../../../image/school/${image.src}`}
+                    alt=""
+                    width="300"
+                    height="200"
+                  />
                 </Box>
                 <Box sx={sxStyles.wrap}>
                   <Typography variant="body2" sx={sxStyles.date}>
                     {image.date}
                   </Typography>
                   <Typography variant="body2" sx={sxStyles.grade}>
-                    <span>{image.examination}</span><br/>
+                    <span>{image.examination}</span>
+                    <br />
                     {image.grade}
                   </Typography>
                   <Typography variant="body2" sx={sxStyles.member}>
@@ -240,8 +249,8 @@ const AchievementList = () => {
               </Box>
             </SwiperSlide>
           ))}
-          </Swiper>
-        </Box>
+        </Swiper>
+      </Box>
     </Box>
   );
 };

@@ -21,7 +21,7 @@ const sxStyles = {
     fontSize: '16px',
     '& > span': {
       marginBlock: '16px',
-    }
+    },
   },
   accordionSummaryText: {
     backgroundColor: '#24285B',

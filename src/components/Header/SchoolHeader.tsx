@@ -22,8 +22,8 @@ const sxStyles = {
       '&>img': {
         width: '100%',
         height: 'auto',
-      }
-    }
+      },
+    },
   },
   button: {
     fontSize: 14,
@@ -43,7 +43,7 @@ const sxStyles = {
     },
     '@media screen and (max-width:320px)': {
       display: 'none',
-    }
+    },
   },
 };
 
