@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from './components/Style';
-import React from 'react';
 import FadeInOnView from '../../components/FadeInOnView';
 import { ReactNode } from 'react';
 

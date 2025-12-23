@@ -59,7 +59,7 @@ const sxStyles = {
       '@media screen and (max-width:768px)': {
         paddingInline: '16px',
         fontSize: 'min(12px,3vw)',
-        lineHight: '1',
+        lineHeight: '1',
         columnGap: '4px',
         '& > svg': {
           fontSize: 'min(16px,4vw)',
