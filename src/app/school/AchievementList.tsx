@@ -61,7 +61,7 @@ const sxStyles = {
           background: '#F5F5F5',
           border: 'solid 1px' + commonSxStyles.color.Gray[300],
           color: commonSxStyles.color.Gray[300],
-        }
+        },
       },
     },
   },
