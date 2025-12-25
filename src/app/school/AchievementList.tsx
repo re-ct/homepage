@@ -156,7 +156,11 @@ const AchievementList = () => {
               <Box sx={sxStyles.list}>
                 <Box sx={sxStyles.imageWrap}>
                   <img
-                    src={`../../../image/school/${image.src}`}
+                    src={
+                      image.src 
+                        ? `../../../image/school/${image.src}`
+                        : `../../../image/school/image_achievementList_noImage.webp`
+                    }
                     alt=""
                     width="300"
                     height="200"

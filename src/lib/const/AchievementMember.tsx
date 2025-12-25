@@ -1,6 +1,6 @@
 export type achievementMembers = {
   id: string | number;
-  src: string;
+  src?: string;
   examination: string;
   date: string;
   grade: string;
@@ -34,7 +34,6 @@ export const achievementMembers: achievementMembers[] = [
   },
   {
     id: '4',
-    src: 'image_achievementList2.webp',
     date: '2025年12月',
     examination: 'ジュニアプログラミング検定',
     grade: 'ブロンズ級',
@@ -42,7 +41,6 @@ export const achievementMembers: achievementMembers[] = [
   },
   {
     id: '5',
-    src: 'image_achievementList2.webp',
     date: '2025年12月',
     examination: 'ジュニアプログラミング検定',
     grade: 'ブロンズ級',
@@ -50,7 +48,6 @@ export const achievementMembers: achievementMembers[] = [
   },
   {
     id: '6',
-    src: 'image_achievementList2.webp',
     date: '2025年12月',
     examination: 'ジュニアプログラミング検定',
     grade: 'ブロンズ級',
@@ -58,7 +55,6 @@ export const achievementMembers: achievementMembers[] = [
   },
   {
     id: '7',
-    src: 'image_achievementList2.webp',
     date: '2025年12月',
     examination: 'ジュニアプログラミング検定',
     grade: 'ブロンズ級',
@@ -66,7 +62,6 @@ export const achievementMembers: achievementMembers[] = [
   },
   {
     id: '8',
-    src: 'image_achievementList2.webp',
     date: '2025年12月',
     examination: 'ジュニアプログラミング検定',
     grade: 'エントリー級',
