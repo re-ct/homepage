@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import image from '../../../../public/image/school/fc/KeyVisual_image.webp';
 import { commonSxStyles } from '../components/Style';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 const sxStyles = {
   wrap: {
