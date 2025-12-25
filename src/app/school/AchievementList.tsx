@@ -66,8 +66,13 @@ const sxStyles = {
         color: '#956A1D',
         borderRadius: '100px',
         border: 'solid 1px' + '#956A1D',
+        transition: 'filter 0.3s ease-out',
+        backgroundColor: '#fff',
         '@media screen and (max-width:768px)': {
           display: 'none',
+        },
+        '&:hover': {
+          filter: 'brightness(0.95)',
         },
         '&.swiper-button-disabled': {
           opacity: 1,
