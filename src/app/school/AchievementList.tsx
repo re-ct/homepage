@@ -28,25 +28,36 @@ const sxStyles = {
     },
   },
   photos: {
+    position: 'relative',
+    maxWidth: 'calc(100% - 32px)',
+    width: '1180px',
+    mx: 'auto',
+    marginTop: '20px',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
+    },
     '& > .swiper': {
       display: 'flex',
       justifyContent: 'flex-start',
       overflow: 'scroll',
       overflowX: 'auto',
       scrollSnapType: 'x mandatory',
-      maxWidth: '100%',
-      width: '1100px',
+      width: '90%',
       mx: 'auto',
       overflowY: 'hidden',
-      marginTop: '20px',
-      px: '20px',
+      px: '16px',
+      position: 'static',
+      '@media screen and (max-width:768px)': {
+        px: '20px',
+        width: '100%',
+      },
       '&::-webkit-scrollbar': {
         display: 'none',
       },
       '& .swiper-slide': {
         '@media screen and (max-width:768px)': {
-          minWidth: '210px',
-          maxWidth: '210px',
+          minWidth: '300px',
+          maxWidth: '300px',
         },
       },
       '& .swiper-button-next, & .swiper-button-prev': {
@@ -65,6 +76,12 @@ const sxStyles = {
           color: commonSxStyles.color.Gray[300],
         },
       },
+      '& .swiper-button-next' : {
+        right: 0,
+      },
+      '& .swiper-button-prev': {
+        left: 0,
+      }
     },
   },
   list: {
@@ -72,21 +89,16 @@ const sxStyles = {
     border: 'solid 1px #956A1D',
     overflow: 'hidden',
     display: 'grid',
-    gridTemplateColumns: '110px 1fr',
+    gridTemplateColumns: '1fr 70px',
     alignItems: 'center',
-    padding: '16px 12px',
+    padding: '16px 20px',
+    columnGap: '12px',
     '@media screen and (max-width:768px)': {
-      gridTemplateColumns: '1fr',
-      padding: 0,
+        gridTemplateColumns: '1fr 70px',
     },
   },
   wrap: {
-    paddingInline: '12px',
     textAlign: 'left',
-    '@media screen and (max-width:768px)': {
-      marginTop: '12px',
-      marginBlock: '16px',
-    },
   },
   date: {
     fontSize: '12px',
@@ -110,19 +122,13 @@ const sxStyles = {
     fontWeight: 'bold',
   },
   imageWrap: {
-    aspectRatio: '458 / 358',
+    aspectRatio: '1 / 1',
     overflow: 'hidden',
-    '@media screen and (max-width:768px)': {
-      borderRadius: 0,
-      aspectRatio: 'auto',
-    },
+    borderRadius: '100px',
     '& > img': {
       objectFit: 'cover',
-      width: '100%',
-      height: 'auto',
-      '@media screen and (max-width:768px)': {
-        verticalAlign: 'bottom',
-      },
+      width: 'auto',
+      height: '100%',
     },
   },
 };
@@ -146,26 +152,17 @@ const AchievementList = () => {
           navigation={true}
           modules={[Navigation]}
           breakpoints={{
-            769: {
+            1040: {
               slidesPerView: 3,
+            },
+            769: {
+              slidesPerView: 2,
             },
           }}
         >
           {[...achievementMembers].reverse().map((image, index) => (
             <SwiperSlide key={index}>
               <Box sx={sxStyles.list}>
-                <Box sx={sxStyles.imageWrap}>
-                  <img
-                    src={
-                      image.src 
-                        ? `../../../image/school/${image.src}`
-                        : `../../../image/school/image_achievementList_noImage.webp`
-                    }
-                    alt=""
-                    width="300"
-                    height="200"
-                  />
-                </Box>
                 <Box sx={sxStyles.wrap}>
                   <Typography variant="body2" sx={sxStyles.date}>
                     {image.date}
@@ -178,6 +175,18 @@ const AchievementList = () => {
                   <Typography variant="body2" sx={sxStyles.member}>
                     {image.member}
                   </Typography>
+                </Box>
+                <Box sx={sxStyles.imageWrap}>
+                  <img
+                    src={
+                      image.src 
+                        ? `../../../image/school/${image.src}`
+                        : `../../../image/school/image_achievementList_noImage.webp`
+                    }
+                    alt=""
+                    width="300"
+                    height="200"
+                  />
                 </Box>
               </Box>
             </SwiperSlide>
