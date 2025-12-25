@@ -114,14 +114,14 @@ const CorporateFooter = () => {
     {
       text: '事業内容',
       children: [
-        { text: 'プログラミング教室 Re:ProS', href: '/school' },
+        { text: 'プログラミング教室 Re:ProS', href: '/school/' },
         {
           text: 'プログラミングメディア Re:ProSメディア',
           href: '/articles/',
           external: true,
         }, //別リポジトリのサイトのため、ローカルでは見れない
-        { text: 'Re:ProS Career', href: '/career' },
-        { text: '開発等の相談', href: '/demand' },
+        { text: 'Re:ProS Career', href: '/career/' },
+        { text: '開発等の相談', href: '/demand/' },
       ],
     },
     {
@@ -129,8 +129,8 @@ const CorporateFooter = () => {
       href: contact,
       external: true,
     },
-    { text: 'プライバシーポリシー', href: '/privacy' },
-    { text: '電子公告', href: '/announcement' },
+    { text: 'プライバシーポリシー', href: '/privacy/' },
+    { text: '電子公告', href: '/announcement/' },
   ];
 
   return (
