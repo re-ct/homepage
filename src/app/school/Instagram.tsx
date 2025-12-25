@@ -16,7 +16,8 @@ const sxStyles = {
     },
     '@media screen and (max-width:450px)': {
       '& > img': {
-        width: '215px',
+        maxWidth: '215px',
+        width: '100%',
       },
     },
   },

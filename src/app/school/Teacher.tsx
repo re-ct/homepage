@@ -47,7 +47,8 @@ const sxStyles = {
       flexDirection: 'column',
     },
     '& > img': {
-      width: '327px',
+      maxWidth: '327px',
+      width: '100%',
       height: 'auto',
     },
   },
