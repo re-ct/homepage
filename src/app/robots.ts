@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+const siteUrl = 'https://re-ct.co.jp';
+
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
@@ -9,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/'
     },
-    sitemap: `https://re-ct.co.jp/sitemap.xml`
+    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/articles/wp-sitemap.xml`],
   }
 }

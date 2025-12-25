@@ -7,10 +7,6 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${url}/articles/wp-sitemap.xml`,
-      lastModified: new Date(),
-    },
-    {
       url: `${url}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -19,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${url}/school/`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 1,
     },
     {
@@ -41,22 +37,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${url}/school/scratch-beginner/`,
+      url: `${url}/demand/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${url}/school/privacy/`,
+      url: `${url}/announcement/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 0.1,
     },
     {
-      url: `${url}/school/announcement/`,
+      url: `${url}/privacy/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 0.5,
     },
   ]
 }
