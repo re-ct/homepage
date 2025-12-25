@@ -76,12 +76,12 @@ const sxStyles = {
           color: commonSxStyles.color.Gray[300],
         },
       },
-      '& .swiper-button-next' : {
+      '& .swiper-button-next': {
         right: 0,
       },
       '& .swiper-button-prev': {
         left: 0,
-      }
+      },
     },
   },
   list: {
@@ -94,7 +94,7 @@ const sxStyles = {
     padding: '16px 20px',
     columnGap: '12px',
     '@media screen and (max-width:768px)': {
-        gridTemplateColumns: '1fr 70px',
+      gridTemplateColumns: '1fr 70px',
     },
   },
   wrap: {
@@ -179,7 +179,7 @@ const AchievementList = () => {
                 <Box sx={sxStyles.imageWrap}>
                   <img
                     src={
-                      image.src 
+                      image.src
                         ? `../../../image/school/${image.src}`
                         : `../../../image/school/image_achievementList_noImage.webp`
                     }
