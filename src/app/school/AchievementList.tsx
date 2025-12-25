@@ -15,6 +15,7 @@ const sxStyles = {
   },
   heading: {
     marginInline: '24px',
+    display: 'inline-flex',
     '& > img': {
       width: '134px',
       height: 'auto',
@@ -36,7 +37,7 @@ const sxStyles = {
       width: '1100px',
       mx: 'auto',
       overflowY: 'hidden',
-      marginTop: '40px',
+      marginTop: '20px',
       px: '20px',
       '&::-webkit-scrollbar': {
         display: 'none',
@@ -103,7 +104,7 @@ const sxStyles = {
     color: commonSxStyles.color.Gray[700],
   },
   headingText: {
-    marginTop: '4px',
+    marginTop: "8px",
     textAlign: 'center',
     fontWeight: 'bold',
   },
