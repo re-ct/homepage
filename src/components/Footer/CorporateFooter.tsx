@@ -49,14 +49,14 @@ const CorporateFooter = () => {
       nested: true,
       external: true,
     }, //別リポジトリのサイトのため、ローカルでは見れない
-    { text: '開発等の相談', href: '/demand', nested: true },
+    { text: '開発等の相談', href: '/demand/', nested: true },
     {
       text: 'お問い合わせ',
       href: contact,
       external: true,
     },
-    { text: 'プライバシーポリシー', href: '/privacy' },
-    { text: '電子公告', href: '/announcement' },
+    { text: 'プライバシーポリシー', href: '/privacy/' },
+    { text: '電子公告', href: '/announcement/' },
   ];
 
   return (
