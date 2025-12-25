@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
+import { achievementMembers } from '../../lib/const/AchievementMember';
 
 const sxStyles = {
   contents: {
@@ -104,7 +105,7 @@ const sxStyles = {
     color: commonSxStyles.color.Gray[700],
   },
   headingText: {
-    marginTop: "8px",
+    marginTop: '8px',
     textAlign: 'center',
     fontWeight: 'bold',
   },
@@ -125,82 +126,6 @@ const sxStyles = {
     },
   },
 };
-
-export type members = {
-  id: string | number;
-  src: string;
-  examination: string;
-  date: string;
-  grade: string;
-  member: string;
-};
-
-const members: members[] = [
-  {
-    id: '1',
-    src: 'image_achievementList1.webp',
-    date: '2025年5月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'ブロンズ級',
-    member: '御油小学校 5年生',
-  },
-  {
-    id: '2',
-    src: 'image_achievementList2.webp',
-    date: '2025年5月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'エントリー級',
-    member: '前芝小学校 6年生',
-  },
-  {
-    id: '3',
-    src: 'image_achievementList2.webp',
-    date: '2025年5月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'エントリー級',
-    member: '前芝小学校 6年生',
-  },
-  {
-    id: '4',
-    src: 'image_achievementList2.webp',
-    date: '2025年12月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'ブロンズ級',
-    member: '御津南部小学校 5年生',
-  },
-  {
-    id: '5',
-    src: 'image_achievementList2.webp',
-    date: '2025年12月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'ブロンズ級',
-    member: '御津南部小学校 5年生',
-  },
-  {
-    id: '6',
-    src: 'image_achievementList2.webp',
-    date: '2025年12月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'ブロンズ級',
-    member: '御津南部小学校 4年生',
-  },
-  {
-    id: '7',
-    src: 'image_achievementList2.webp',
-    date: '2025年12月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'ブロンズ級',
-    member: '御油小学校 5年生',
-  },
-  {
-    id: '8',
-    src: 'image_achievementList2.webp',
-    date: '2025年12月',
-    examination: 'ジュニアプログラミング検定',
-    grade: 'エントリー級',
-    member: '小坂井西小学校 2年生',
-  },
-];
 
 const AchievementList = () => {
   return (
@@ -226,7 +151,7 @@ const AchievementList = () => {
             },
           }}
         >
-          {[...members].reverse().map((image, index) => (
+          {[...achievementMembers].reverse().map((image, index) => (
             <SwiperSlide key={index}>
               <Box sx={sxStyles.list}>
                 <Box sx={sxStyles.imageWrap}>
