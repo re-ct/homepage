@@ -165,7 +165,7 @@ const SchoolFooter = () => {
               </CommonLink>
               <CommonLink
                 link={{
-                  href: '/privacy',
+                  href: '/privacy/',
                   external: false,
                   newTab: true,
                 }}
@@ -174,7 +174,7 @@ const SchoolFooter = () => {
               </CommonLink>
               <CommonLink
                 link={{
-                  href: '/announcement',
+                  href: '/announcement/',
                   external: false,
                   newTab: true,
                 }}
