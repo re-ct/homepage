@@ -60,11 +60,11 @@ const SchoolHeader = () => {
         <Link href="/school">
           <Image
             alt="豊川市でプログラミングを学ぶならRe:ProS(レプロス)"
-            src={logoReprosImg.src}
-            width={150}
-            height={25}
-            priority={true}
-            style={{ verticalAlign: 'bottom' }}
+            src={logoReprosImg}
+            priority
+            unoptimized
+            sizes="150px"
+            style={{ verticalAlign: 'bottom', height: 'auto' }}
           />
         </Link>
         <Button
