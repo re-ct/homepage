@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
-import { achievementMembers } from '../../lib/const/AchievementMember';
+import { achievementMembers, examinations} from '../../lib/const/AchievementMember';
 
 const sxStyles = {
   contents: {
@@ -126,6 +126,9 @@ const sxStyles = {
     textAlign: 'center',
     fontWeight: 'bold',
   },
+  image: {
+    position: 'relative',
+  },
   imageWrap: {
     aspectRatio: '1 / 1',
     overflow: 'hidden',
@@ -136,7 +139,27 @@ const sxStyles = {
       height: '100%',
     },
   },
+  iconWrap: {
+    position: 'absolute',
+    top: '-6px',
+    right: '-10px',
+    '& > img': {
+      maxWidth: '30px',
+      height: '100%',
+    },
+  },
 };
+
+const detailedAchievements = achievementMembers.map((member) => {
+  const exam = examinations.find((e) => e.id === member.examinationId);
+  return {
+    ...member,
+    examinationName: exam?.name || "",
+    gradeName: exam?.grade || "",
+    gradeIcon: exam?.icon || "",
+  };
+});
+const displayItems = [...detailedAchievements].reverse();
 
 const AchievementList = () => {
   return (
@@ -165,33 +188,45 @@ const AchievementList = () => {
             },
           }}
         >
-          {[...achievementMembers].reverse().map((image, index) => (
-            <SwiperSlide key={index}>
+          {displayItems.map((item) => (
+            <SwiperSlide key={item.id}>
               <Box sx={sxStyles.list}>
                 <Box sx={sxStyles.wrap}>
                   <Typography variant="body2" sx={sxStyles.date}>
-                    {image.date}
+                    {item.date}
                   </Typography>
                   <Typography variant="body2" sx={sxStyles.grade}>
-                    <span>{image.examination}</span>
+                    <span>{item.examinationName}</span>
                     <br />
-                    {image.grade}
+                    {item.gradeName}
                   </Typography>
                   <Typography variant="body2" sx={sxStyles.member}>
-                    {image.member}
+                    {item.member}
                   </Typography>
                 </Box>
-                <Box sx={sxStyles.imageWrap}>
-                  <img
-                    src={
-                      image.src
-                        ? `../../../image/school/${image.src}`
-                        : `../../../image/school/image_achievementList_noImage.webp`
-                    }
-                    alt=""
-                    width="300"
-                    height="200"
-                  />
+                <Box sx={sxStyles.image}>
+                  <Box sx={sxStyles.imageWrap}>
+                    <img
+                      src={
+                        item.src
+                          ? `../../../image/school/${item.src}`
+                          : `../../../image/school/image_achievementList_noImage.webp`
+                      }
+                      alt=""
+                      width="300"
+                      height="200"
+                    />
+                  </Box>
+                  {item.gradeIcon && (
+                    <Box sx={sxStyles.iconWrap}>
+                      <img
+                        src={`../../../image/school/${item.gradeIcon}.svg`}
+                        alt={item.gradeName}
+                        width="60" 
+                        height="60"
+                      />
+                    </Box>
+                  )}
                 </Box>
               </Box>
             </SwiperSlide>
