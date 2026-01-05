@@ -7,7 +7,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
-import { achievementMembers, examinations} from '../../lib/const/AchievementMember';
+import {
+  achievementMembers,
+  examinations,
+} from '../../lib/const/AchievementMember';
 
 const sxStyles = {
   contents: {
@@ -154,9 +157,9 @@ const detailedAchievements = achievementMembers.map((member) => {
   const exam = examinations.find((e) => e.id === member.examinationId);
   return {
     ...member,
-    examinationName: exam?.name || "",
-    gradeName: exam?.grade || "",
-    gradeIcon: exam?.icon || "",
+    examinationName: exam?.name || '',
+    gradeName: exam?.grade || '',
+    gradeIcon: exam?.icon || '',
   };
 });
 const displayItems = [...detailedAchievements].reverse();
@@ -222,7 +225,7 @@ const AchievementList = () => {
                       <img
                         src={`../../../image/school/${item.gradeIcon}.svg`}
                         alt={item.gradeName}
-                        width="60" 
+                        width="60"
                         height="60"
                       />
                     </Box>
