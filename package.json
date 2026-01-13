@@ -8,7 +8,8 @@
     "start": "next start",
     "format": "prettier --check './{bin,lib,src,tests}/**/*.{ts,tsx}'",
     "format:auto": "prettier --write './{bin,lib,src,tests}/**/*.{ts,tsx}'",
-    "lint": "eslint './{bin,lib,src,tests}/**/*.{ts,tsx}' --max-warnings=0"
+    "lint": "eslint './{bin,lib,src,tests}/**/*.{ts,tsx}' --max-warnings=0",
+    "lint:filename": "node scripts/lint-filename.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -33,6 +34,7 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
+    "glob": "^13.0.0",
     "globals": "^16.5.0",
     "prettier": "^3.7.3",
     "typescript": "5.9.3",

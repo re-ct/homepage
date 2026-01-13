@@ -145,7 +145,7 @@ const Introduction = () => {
       <Box mt={5}>
         <Box sx={sxStyles.pointWrap}>
           <img
-            src="../../../image/school/image_howToTeach.webp"
+            src="../../../image/school/image_how_to_teach.webp"
             alt="PCで作業をしている様子"
             width="300"
             style={{ marginRight: 'auto' }}
@@ -189,7 +189,7 @@ const Introduction = () => {
         </Box>
         <Box sx={sxStyles.pointWrap}>
           <img
-            src="../../../image/school/image_workSituation.webp"
+            src="../../../image/school/image_work_situation.webp"
             alt="プログラミングを教えている様子"
             width="300"
             style={{ marginLeft: 'auto' }}
