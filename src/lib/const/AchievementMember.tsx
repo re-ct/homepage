@@ -45,12 +45,14 @@ export const achievementMembers: AchievementMember[] = [
   },
   {
     id: '3',
+    src: 'image_achievementList3.webp',
     date: '2025年12月',
     examinationId: 'exam_jr_bronze',
     member: '御津南部小学校 5年生',
   },
   {
     id: '4',
+    src: 'image_achievementList4.webp',
     date: '2025年12月',
     examinationId: 'exam_jr_bronze',
     member: '御津南部小学校 5年生',
@@ -63,12 +65,14 @@ export const achievementMembers: AchievementMember[] = [
   },
   {
     id: '6',
+    src: 'image_achievementList6.webp',
     date: '2025年12月',
     examinationId: 'exam_jr_bronze',
     member: '御油小学校 5年生',
   },
   {
     id: '7',
+    src: 'image_achievementList7.webp',
     date: '2025年12月',
     examinationId: 'exam_jr_entry',
     member: '小坂井西小学校 2年生',

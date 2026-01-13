@@ -53,6 +53,7 @@ const sxStyles = {
       '@media screen and (max-width:768px)': {
         px: '20px',
         width: '100%',
+        pb: '1px'
       },
       '&::-webkit-scrollbar': {
         display: 'none',
