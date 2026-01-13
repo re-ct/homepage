@@ -18,13 +18,13 @@ export const examinations: Examination[] = [
     id: 'exam_jr_bronze',
     name: 'ジュニアプログラミング検定',
     grade: 'ブロンズ級',
-    icon: 'image_achievementList_bronze',
+    icon: 'image_achievement_list_bronze',
   },
   {
     id: 'exam_jr_entry',
     name: 'ジュニアプログラミング検定',
     grade: 'エントリー級',
-    icon: 'image_achievementList_entry',
+    icon: 'image_achievement_list_entry',
   },
 ];
 
