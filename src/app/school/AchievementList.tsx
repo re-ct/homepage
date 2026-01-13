@@ -1,107 +1,241 @@
+'use client';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import headingCtaImg from '../../../public/image/school/heading_achievementList.png';
+import { commonSxStyles } from './components/Style';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
+import {
+  achievementMembers,
+  examinations,
+} from '../../lib/const/AchievementMember';
 
 const sxStyles = {
+  contents: {
+    overflow: 'hidden',
+    mt: 5,
+  },
   heading: {
     marginInline: '24px',
+    display: 'inline-flex',
     '& > img': {
       width: '134px',
       height: 'auto',
     },
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       '& > img': {
         width: '134px',
       },
     },
   },
   photos: {
-    display: 'flex',
-    gap: 2,
-    px: 2,
-    marginTop: '40px',
-    justifyContent: 'flex-start',
-    overflow: 'scroll',
-    overflowX: 'auto',
-    scrollSnapType: 'x mandatory',
-    maxWidth: '100%',
-    width: 'max-content',
+    position: 'relative',
+    maxWidth: 'calc(100% - 32px)',
+    width: '1180px',
     mx: 'auto',
-    overflowY: 'hidden',
+    marginTop: '20px',
+    '@media screen and (max-width:768px)': {
+      maxWidth: '100%',
+    },
+    '& > .swiper': {
+      display: 'flex',
+      justifyContent: 'flex-start',
+      overflow: 'scroll',
+      overflowX: 'auto',
+      scrollSnapType: 'x mandatory',
+      width: '90%',
+      mx: 'auto',
+      overflowY: 'hidden',
+      px: '16px',
+      position: 'static',
+      '@media screen and (max-width:768px)': {
+        px: '20px',
+        width: '100%',
+        pb: '1px',
+      },
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      '& .swiper-slide': {
+        '@media screen and (max-width:768px)': {
+          minWidth: '300px',
+          maxWidth: '300px',
+        },
+      },
+      '& .swiper-button-next, & .swiper-button-prev': {
+        background: commonSxStyles.color.white,
+        padding: '12px',
+        color: '#956A1D',
+        borderRadius: '100px',
+        border: 'solid 1px' + '#956A1D',
+        transition: 'filter 0.3s ease-out',
+        backgroundColor: '#fff',
+        '@media screen and (max-width:768px)': {
+          display: 'none',
+        },
+        '&:hover': {
+          filter: 'brightness(0.95)',
+        },
+        '&.swiper-button-disabled': {
+          opacity: 1,
+          background: '#F5F5F5',
+          border: 'solid 1px' + commonSxStyles.color.Gray[300],
+          color: commonSxStyles.color.Gray[300],
+        },
+      },
+      '& .swiper-button-next': {
+        right: 0,
+      },
+      '& .swiper-button-prev': {
+        left: 0,
+      },
+    },
   },
   list: {
     borderRadius: '8px',
     border: 'solid 1px #956A1D',
     overflow: 'hidden',
-    minWidth: '300px',
-    maxWidth: '300px',
-    '@media screen and (max-width:450px)': {
-      minWidth: '229px',
-      maxWidth: '229px',
-    },
-    '& > img': {
-      width: '100%',
-      height: 'auto',
-      verticalAlign: 'bottom',
+    display: 'grid',
+    gridTemplateColumns: '1fr 70px',
+    alignItems: 'center',
+    padding: '16px 20px',
+    columnGap: '12px',
+    '@media screen and (max-width:768px)': {
+      gridTemplateColumns: '1fr 70px',
     },
   },
   wrap: {
-    marginTop: '12px',
-    marginBlock: '16px',
-    paddingInline: '12px',
     textAlign: 'left',
   },
   date: {
-    fontSize: '14px',
+    fontSize: '12px',
+    color: commonSxStyles.color.Gray[700],
   },
   grade: {
     fontSize: '14px',
     marginTop: '4px',
+    '& > span': {
+      fontSize: '12px',
+    },
   },
   member: {
-    fontSize: '14px',
+    fontSize: '12px',
     marginTop: '4px',
+    color: commonSxStyles.color.Gray[700],
+  },
+  headingText: {
+    marginTop: '8px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  image: {
+    position: 'relative',
+  },
+  imageWrap: {
+    aspectRatio: '1 / 1',
+    overflow: 'hidden',
+    borderRadius: '100px',
+    '& > img': {
+      objectFit: 'cover',
+      width: 'auto',
+      height: '100%',
+    },
+  },
+  iconWrap: {
+    position: 'absolute',
+    top: '-6px',
+    right: '-10px',
+    '& > img': {
+      maxWidth: '30px',
+      height: '100%',
+    },
   },
 };
 
-const members = [
-  {
-    src: '../../../image/school/image_achievementList1.webp',
-    date: '2025年5月',
-    grade: 'ジュニアプログラミング検定 ブロンズ級',
-    member: '御油小学校 5年生',
-  },
-  {
-    src: '../../../image/school/image_achievementList2.webp',
-    date: '2025年5月',
-    grade: 'ジュニアプログラミング検定 エントリー級',
-    member: '前芝小学校 6年生',
-  },
-];
+const detailedAchievements = achievementMembers.map((member) => {
+  const exam = examinations.find((e) => e.id === member.examinationId);
+  return {
+    ...member,
+    examinationName: exam?.name || '',
+    gradeName: exam?.grade || '',
+    gradeIcon: exam?.icon || '',
+  };
+});
+const displayItems = [...detailedAchievements].reverse();
 
 const AchievementList = () => {
   return (
-    <Box pt={5}>
+    <Box sx={sxStyles.contents}>
       <Typography variant="h2" sx={sxStyles.heading}>
-        <img src={headingCtaImg.src} alt="合格実績" width="266" height="61" />
+        <img src={headingCtaImg.src} alt="合格実績" width="532" height="122" />
+      </Typography>
+      <Typography
+        variant="body2"
+        sx={[sxStyles.headingText, commonSxStyles.typography.normalText]}
+      >
+        開校以来、合格率100%を継続中！
       </Typography>
       <Box sx={sxStyles.photos}>
-        {members.map((image, index) => (
-          <Box sx={sxStyles.list} key={index}>
-            <img src={image.src} alt="" width="300" height="200" />
-            <Box sx={sxStyles.wrap}>
-              <Typography variant="body2" sx={sxStyles.date}>
-                {image.date}
-              </Typography>
-              <Typography variant="body2" sx={sxStyles.grade}>
-                {image.grade}
-              </Typography>
-              <Typography variant="body2" sx={sxStyles.member}>
-                {image.member}
-              </Typography>
-            </Box>
-          </Box>
-        ))}
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={'auto'}
+          navigation={true}
+          modules={[Navigation]}
+          breakpoints={{
+            1040: {
+              slidesPerView: 3,
+            },
+            769: {
+              slidesPerView: 2,
+            },
+          }}
+        >
+          {displayItems.map((item) => (
+            <SwiperSlide key={item.id}>
+              <Box sx={sxStyles.list}>
+                <Box sx={sxStyles.wrap}>
+                  <Typography variant="body2" sx={sxStyles.date}>
+                    {item.date}
+                  </Typography>
+                  <Typography variant="body2" sx={sxStyles.grade}>
+                    <span>{item.examinationName}</span>
+                    <br />
+                    {item.gradeName}
+                  </Typography>
+                  <Typography variant="body2" sx={sxStyles.member}>
+                    {item.member}
+                  </Typography>
+                </Box>
+                <Box sx={sxStyles.image}>
+                  <Box sx={sxStyles.imageWrap}>
+                    <img
+                      src={
+                        item.src
+                          ? `../../../image/school/${item.src}`
+                          : `../../../image/school/image_achievementList_noImage.webp`
+                      }
+                      alt=""
+                      width="300"
+                      height="200"
+                    />
+                  </Box>
+                  {item.gradeIcon && (
+                    <Box sx={sxStyles.iconWrap}>
+                      <img
+                        src={`../../../image/school/${item.gradeIcon}.svg`}
+                        alt={item.gradeName}
+                        width="60"
+                        height="60"
+                      />
+                    </Box>
+                  )}
+                </Box>
+              </Box>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
     </Box>
   );

@@ -19,8 +19,11 @@ const sxStyles = {
   pointWrap: {
     display: 'flex',
     flexDirection: 'row-reverse',
-    marginTop: '60px',
     alignItems: 'center',
+    '& > img': {
+      maxWidth: '300px',
+      width: '100%',
+    },
     '@media screen and (max-width:450px)': {
       flexDirection: 'column',
       '& + &': {
@@ -120,7 +123,8 @@ const sxStyles = {
     },
     '@media screen and (max-width:450px)': {
       '& > img': {
-        width: '300px',
+        maxWidth: '300px',
+        width: '100%',
       },
     },
   },
