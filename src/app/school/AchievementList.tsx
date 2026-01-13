@@ -1,7 +1,7 @@
 'use client';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import headingCtaImg from '../../../public/image/school/heading_achievementList.png';
+import headingCtaImg from '../../../public/image/school/heading_achievement_list.png';
 import { commonSxStyles } from './components/Style';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -214,7 +214,7 @@ const AchievementList = () => {
                       src={
                         item.src
                           ? `../../../image/school/${item.src}`
-                          : `../../../image/school/image_achievementList_noImage.webp`
+                          : `../../../image/school/image_achievement_list_no_image.webp`
                       }
                       alt=""
                       width="300"

@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import image from '../../../../public/image/school/fc/KeyVisual_image.webp';
+import image from '../../../../public/image/school/fc/key_visual_image.webp';
 import { commonSxStyles } from '../components/Style';
 import FadeInOnView from '../components/FadeInOnView';
 
