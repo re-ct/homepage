@@ -19,8 +19,11 @@ const sxStyles = {
   pointWrap: {
     display: 'flex',
     flexDirection: 'row-reverse',
-    marginTop: '60px',
     alignItems: 'center',
+    '& > img': {
+      maxWidth: '300px',
+      width: '100%',
+    },
     '@media screen and (max-width:450px)': {
       flexDirection: 'column',
       '& + &': {
@@ -120,7 +123,8 @@ const sxStyles = {
     },
     '@media screen and (max-width:450px)': {
       '& > img': {
-        width: '300px',
+        maxWidth: '300px',
+        width: '100%',
       },
     },
   },
@@ -141,7 +145,7 @@ const Introduction = () => {
       <Box mt={5}>
         <Box sx={sxStyles.pointWrap}>
           <img
-            src="../../../image/school/image_howToTeach.webp"
+            src="../../../image/school/image_how_to_teach.webp"
             alt="PCで作業をしている様子"
             width="300"
             style={{ marginRight: 'auto' }}
@@ -185,7 +189,7 @@ const Introduction = () => {
         </Box>
         <Box sx={sxStyles.pointWrap}>
           <img
-            src="../../../image/school/image_workSituation.webp"
+            src="../../../image/school/image_work_situation.webp"
             alt="プログラミングを教えている様子"
             width="300"
             style={{ marginLeft: 'auto' }}

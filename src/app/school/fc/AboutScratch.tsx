@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import { CommonLink } from '../../../components/CommonLink';
-import pcImage from '../../../../public/image/school/fc/aboutScratch_pcImage.webp';
-import manager from '../../../../public/image/school/fc/aboutScratch_manager.webp';
+import pcImage from '../../../../public/image/school/fc/about_scratch_pc_image.webp';
+import manager from '../../../../public/image/school/fc/about_scratch_manager.webp';
 import FadeInOnView from '../../../components/FadeInOnView';
 
 const sxStyles = {

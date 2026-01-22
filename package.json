@@ -8,7 +8,8 @@
     "start": "next start",
     "format": "prettier --check './{bin,lib,src,tests}/**/*.{ts,tsx}'",
     "format:auto": "prettier --write './{bin,lib,src,tests}/**/*.{ts,tsx}'",
-    "lint": "eslint './{bin,lib,src,tests}/**/*.{ts,tsx}' --max-warnings=0"
+    "lint": "eslint './{bin,lib,src,tests}/**/*.{ts,tsx}' --max-warnings=0",
+    "lint:filename": "node scripts/lint-filename.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -17,24 +18,26 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "@mui/material-nextjs": "^7.3.5",
-    "@next/third-parties": "^15.5.9",
-    "next": "15.5.9",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
-    "sharp": "^0.34.5"
+    "@next/third-parties": "^16.0.10",
+    "next": "16.0.10",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sharp": "^0.34.5",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "24.10.1",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "25.0.2",
     "@types/react": "19.2.7",
-    "@typescript-eslint/eslint-plugin": "^8.48.0",
-    "@typescript-eslint/parser": "8.49.0",
-    "eslint": "^9.39.1",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "8.50.0",
+    "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
+    "glob": "^13.0.0",
     "globals": "^16.5.0",
     "prettier": "^3.7.3",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.48.0"
+    "typescript-eslint": "^8.50.0"
   }
 }
