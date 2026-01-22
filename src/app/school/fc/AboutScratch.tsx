@@ -3,7 +3,7 @@ import { commonSxStyles } from '../components/Style';
 import { CommonLink } from '../../../components/CommonLink';
 import pcImage from '../../../../public/image/school/fc/about_scratch_pc_image.webp';
 import manager from '../../../../public/image/school/fc/about_scratch_manager.webp';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 const sxStyles = {
   section: {

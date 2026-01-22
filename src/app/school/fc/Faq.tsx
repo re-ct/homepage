@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ReactNode } from 'react';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 interface accordionData {
   id: string;
