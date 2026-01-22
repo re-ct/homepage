@@ -2,7 +2,7 @@
 import Toolbar from '@mui/material/Toolbar';
 import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
-import logo from '../../../public/image/career/logo_reprosCareer.svg';
+import logo from '../../../public/image/career/logo_repros_career.svg';
 import Box from '@mui/material/Box';
 import { PlayCircle } from '@mui/icons-material';
 import { careerContact } from '../../lib/const/Link';

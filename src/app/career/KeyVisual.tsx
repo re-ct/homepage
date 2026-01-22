@@ -8,13 +8,13 @@ import { commonSxStyles } from './components/Style';
 const sxStyles = {
   wrap: {
     background:
-      'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background.webp")',
+      'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/key_visual_background.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'right center',
     paddingBlock: '74px 57px',
     '@media screen and (max-width:768px)': {
       background:
-        'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/keyVisual_background_sp.webp")',
+        'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%), url("../../../../../image/career/key_visual_background_sp.webp")',
       paddingBlock: '80px',
       backgroundSize: 'cover',
     },
