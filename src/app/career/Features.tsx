@@ -180,7 +180,7 @@ const sxStyles = {
     position: 'relative',
   },
   listImage: {
-    maxWidth: '144px',
+    maxWidth: '160px',
     height: 'auto',
     marginTop: '8px',
   },
@@ -302,8 +302,8 @@ const Features = () => {
                   component="img"
                   src={`/image/career/${item.image}.webp`}
                   alt=""
-                  width={432}
-                  height={387}
+                  width={516}
+                  height={369}
                   sx={sxStyles.listImage}
                 />
 
