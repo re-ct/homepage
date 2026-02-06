@@ -25,7 +25,13 @@ export const CommonLink: React.FC<{
 
   if (useAnchorTag) {
     return (
-      <a href={link.href} target={target} rel={rel} style={style} data-ga={gaLabel}>
+      <a
+        href={link.href}
+        target={target}
+        rel={rel}
+        style={style}
+        data-ga={gaLabel}
+      >
         {children}
       </a>
     );
