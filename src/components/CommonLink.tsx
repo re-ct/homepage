@@ -9,7 +9,8 @@ export const CommonLink: React.FC<{
   };
   style?: React.CSSProperties;
   children: React.ReactNode;
-}> = ({ link, style, children }) => {
+  gaLabel?: string;
+}> = ({ link, style, children, gaLabel }) => {
   const useAnchorTag = link.external || link.newTab;
   let target = undefined;
   let rel = undefined;
@@ -24,7 +25,7 @@ export const CommonLink: React.FC<{
 
   if (useAnchorTag) {
     return (
-      <a href={link.href} target={target} rel={rel} style={style}>
+      <a href={link.href} target={target} rel={rel} style={style} data-ga={gaLabel}>
         {children}
       </a>
     );

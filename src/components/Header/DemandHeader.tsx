@@ -78,6 +78,7 @@ const DemandHeader = () => {
           sx={sxStyles.demandButton}
           endIcon={<ArrowForwardIcon />}
           onClick={demandHandleClick}
+          data-ga="demand_contact_form_header"
         >
           お問い合わせ
         </Button>
