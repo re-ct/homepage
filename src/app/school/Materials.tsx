@@ -1,5 +1,6 @@
 'use client';
 import headingMaterialsImg from '../../../public/image/school/heading_materials.png';
+import book from '../../../public/image/school/thumbnail_book_1.webp';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import List from '@mui/material/List';
@@ -22,27 +23,22 @@ const sxStyles = {
     },
   },
   list: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    gap: 3,
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+    gap: 2,
     justifyContent: 'center',
     alignItems: 'stretch',
-    px: 3,
-    '@media screen and (max-width:450px)': {
-      justifyContent: 'flex-start',
-    },
+    mt: 0,
   },
   listWrap: {
     boxShadow: 'none',
-    minWidth: '300px',
-    maxWidth: '300px',
     p: 0,
     '& > a': {
       height: '100%',
+      display: 'inline-block'
     },
   },
   listItemBox: {
-    width: '300px',
     pt: 2,
     pb: 5,
     px: 2,
@@ -52,9 +48,6 @@ const sxStyles = {
     '&:hover': {
       opacity: 0.8,
       backgroundColor: '#fff',
-    },
-    '&:last-child': {
-      marginRight: 3,
     },
   },
   textContent: {
@@ -92,7 +85,7 @@ const sxStyles = {
     },
   },
   listBox: {
-    mt: 4,
+    mt: 2,
     p: 0,
     maxWidth: '100%',
     overflowX: 'auto',
@@ -104,6 +97,56 @@ const sxStyles = {
       maxWidth: '100%',
     },
   },
+  wrap: {
+    maxWidth: '848px',
+    paddingInline: '24px',
+    marginInline: 'auto',
+  },
+  section: {
+    mt: 5,
+    '& + &': {
+      mt: 6,
+    }
+  },
+  subHeading: {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    textAlign: 'left'
+  },
+  introduction: {
+    fontSize: '14px',
+    textAlign: 'left',
+    mt:2,
+  },
+  bookWrap: {
+    mt:2,
+    '& > a': {
+      display: 'grid',
+      gridTemplateColumns: '120px 1fr',
+      backgroundColor: '#fff',
+      width: '100%',
+      borderRadius: '8px',
+      boxShadow: '0px 0px 5px rgba(34, 106, 170, 0.1)',
+      padding: 3,
+      columnGap: '24px',
+    },
+    'img': {
+      width: '100%',
+      height: 'auto',
+      boxShadow: '0px 0px 4px rgba(34, 106, 170, 0.2)',
+    }
+  },
+  bookText: {
+    textAlign: 'left',
+  },
+  bookTitle: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+  },
+  bookDetails: {
+    fontSize: '12px',
+    mt:1,
+  }
 };
 
 type Movie = {
@@ -147,63 +190,86 @@ const movieList: Movie[] = [
 const Movies = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
-    <>
-      <Box pt={7} pb={7} bgcolor="#F5F5F5">
-        <Typography variant="h2" sx={sxStyles.heading}>
-          <img
-            src={headingMaterialsImg.src}
-            alt="オリジナル動画教材"
-            width="556"
-            height="106"
-          />
-        </Typography>
-        <Typography variant="body2" color="#333" fontWeight="bold" mt={2}>
-          オンラインでも、楽しいゲームを題材に{isSmallScreen && <br />}
-          独自の教材をお届けしています。
-        </Typography>
-        <Container sx={sxStyles.listBox}>
-          <List sx={sxStyles.list}>
-            {movieList.map((item) => (
-              <ListItem key={item.id} sx={sxStyles.listWrap}>
-                <Link href={item.href} target="_blank" rel="noopener">
-                  <Box sx={sxStyles.listItemBox}>
-                    <img
-                      width="536"
-                      height="302"
-                      src={`../../../image/school/${item.img}`}
-                      alt={item.title}
-                      style={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                        borderRadius: 12,
-                      }}
-                    />
-                    <Box sx={sxStyles.textContent}>
-                      <Typography variant="body1" sx={sxStyles.title}>
-                        {item.title}
-                      </Typography>
-                      <Typography variant="body2" sx={sxStyles.text}>
-                        {item.summary}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Link>
-              </ListItem>
-            ))}
-          </List>
-        </Container>
-        <Button
-          variant="text"
-          href="https://www.udemy.com/user/ling-mu-you-ji-28/"
-          target="_blank"
-          rel="noopener noreferrer"
-          endIcon={<PlayCircle />}
-          sx={sxStyles.textLink}
-        >
-          動画教材をすべて見る
-        </Button>
+      <Box pt={7} pb={10} bgcolor="#F5F5F5">
+        <Box sx={sxStyles.wrap}>
+          <Typography variant="h2" sx={sxStyles.heading}>
+            <img
+              src={headingMaterialsImg.src}
+              alt="オリジナル教材"
+              width="556"
+              height="106"
+            />
+          </Typography>
+          <Box component="section" sx={sxStyles.section}>
+            <Typography variant="h3" sx={sxStyles.subHeading}>動画</Typography>
+            <Typography variant="body2" sx={sxStyles.introduction}>
+              楽しいゲームを題材に独自の教材をお届けしています！
+            </Typography>
+            <Container sx={sxStyles.listBox}>
+              <List sx={sxStyles.list}>
+                {movieList.map((item) => (
+                  <ListItem key={item.id} sx={sxStyles.listWrap}>
+                    <Link href={item.href} target="_blank" rel="noopener">
+                      <Box sx={sxStyles.listItemBox}>
+                        <img
+                          width="536"
+                          height="302"
+                          src={`../../../image/school/${item.img}`}
+                          alt={item.title}
+                          style={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                            borderRadius: 12,
+                          }}
+                        />
+                        <Box sx={sxStyles.textContent}>
+                          <Typography variant="body1" sx={sxStyles.title}>
+                            {item.title}
+                          </Typography>
+                          <Typography variant="body2" sx={sxStyles.text}>
+                            {item.summary}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </Container>
+            <Button
+              variant="text"
+              href="https://www.udemy.com/user/ling-mu-you-ji-28/"
+              target="_blank"
+              rel="noopener noreferrer"
+              endIcon={<PlayCircle />}
+              sx={sxStyles.textLink}
+            >
+              すべて見る
+            </Button>
+          </Box>
+          <Box component="section" sx={sxStyles.section}>
+            <Typography variant="h3" sx={sxStyles.subHeading}>書籍</Typography>
+            <Typography variant="body2" sx={sxStyles.introduction}>
+              ジュニア・プログラミング検定の合格を目指す方のために、対策模擬問題集を制作・販売しています！
+            </Typography>
+            <Box sx={sxStyles.bookWrap}>
+              <Link href='https://amzn.asia/d/09sHtK7E' target="_blank" rel="noopener">
+                <img
+                  src={book.src}
+                  alt="オリジナル教材"
+                  width="600"
+                  height="848"
+                />
+                <Box sx={sxStyles.bookText}>
+                  <Typography sx={sxStyles.bookTitle}>ジュニアプログラミング検定 Scratch部門 Ver3.0<br/>Bronze(3級) 模擬問題集</Typography>
+                  <Typography sx={sxStyles.bookDetails}>Re:ProSオリジナル！ジュニア・プログラミング検定の出題傾向を分析したオリジナル問題集です。</Typography>
+                  <Typography sx={sxStyles.bookDetails}>・本番を想定した5つの模擬問題を収録<br/>・すべて解説つき・模範回答あり<br/>・記述対策（説明文の書き方）にも対応</Typography>
+                </Box>
+              </Link>
+            </Box>
+          </Box>
+        </Box>
       </Box>
-    </>
   );
 };
 
