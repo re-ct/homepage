@@ -34,7 +34,7 @@ const sxStyles = {
       display: 'flex',
       flexWrap: 'nowrap',
       justifyContent: 'flex-start',
-    }
+    },
   },
   listWrap: {
     boxShadow: 'none',
@@ -45,17 +45,17 @@ const sxStyles = {
     },
     '&:first-child': {
       '@media screen and (max-width: 768px)': {
-        pl:3,
+        pl: 3,
         maxWidth: '324px',
         minWidth: '324px',
-      }
+      },
     },
     '&:last-child': {
       '@media screen and (max-width: 768px)': {
-        pr:3,
+        pr: 3,
         maxWidth: '324px',
         minWidth: '324px',
-      }
+      },
     },
     '& > a': {
       height: '100%',
@@ -123,13 +123,13 @@ const sxStyles = {
     marginInline: 'auto',
     '@media screen and (max-width: 768px)': {
       paddingInline: 0,
-    }
+    },
   },
   section: {
     mt: 5,
     '& + &': {
       mt: 6,
-    }
+    },
   },
   subHeading: {
     fontSize: '20px',
@@ -137,18 +137,18 @@ const sxStyles = {
     textAlign: 'left',
     '@media screen and (max-width: 768px)': {
       paddingInline: '24px',
-    }
+    },
   },
   introduction: {
     fontSize: '14px',
     textAlign: 'left',
-    mt:2,
+    mt: 2,
     '@media screen and (max-width: 768px)': {
       paddingInline: '24px',
-    }
+    },
   },
   bookWrap: {
-    mt:2,
+    mt: 2,
     cursor: 'pointer',
     '@media screen and (max-width: 768px)': {
       paddingInline: '24px',
@@ -174,7 +174,7 @@ const sxStyles = {
         backgroundColor: '#fff',
       },
     },
-    'img': {
+    img: {
       width: '100%',
       height: 'auto',
       boxShadow: '0px 0px 4px rgba(34, 106, 170, 0.2)',
@@ -182,23 +182,23 @@ const sxStyles = {
         height: '100%',
         width: 'auto',
         marginInline: 'auto',
-      }
-    }
+      },
+    },
   },
   bookText: {
     textAlign: 'left',
-        cursor: 'pointer',
+    cursor: 'pointer',
   },
   bookTitle: {
     fontSize: '16px',
     fontWeight: 'bold',
-        cursor: 'pointer',
+    cursor: 'pointer',
   },
   bookDetails: {
     fontSize: '12px',
-    mt:1,
-        cursor: 'pointer',
-  }
+    mt: 1,
+    cursor: 'pointer',
+  },
 };
 
 type Movie = {
@@ -242,86 +242,105 @@ const movieList: Movie[] = [
 const Movies = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
-      <Box pt={7} pb={10} bgcolor="#F5F5F5">
-        <Box sx={sxStyles.wrap}>
-          <Typography variant="h2" sx={sxStyles.heading}>
-            <img
-              src={headingMaterialsImg.src}
-              alt="オリジナル教材"
-              width="556"
-              height="106"
-            />
+    <Box pt={7} pb={10} bgcolor="#F5F5F5">
+      <Box sx={sxStyles.wrap}>
+        <Typography variant="h2" sx={sxStyles.heading}>
+          <img
+            src={headingMaterialsImg.src}
+            alt="オリジナル教材"
+            width="556"
+            height="106"
+          />
+        </Typography>
+        <Box component="section" sx={sxStyles.section}>
+          <Typography variant="h3" sx={sxStyles.subHeading}>
+            動画
           </Typography>
-          <Box component="section" sx={sxStyles.section}>
-            <Typography variant="h3" sx={sxStyles.subHeading}>動画</Typography>
-            <Typography variant="body2" sx={sxStyles.introduction}>
-              楽しいゲームを題材に独自の教材をお届けしています！
-            </Typography>
-            <Container sx={sxStyles.listBox}>
-              <List sx={sxStyles.list}>
-                {movieList.map((item) => (
-                  <ListItem key={item.id} sx={sxStyles.listWrap}>
-                    <Link href={item.href} target="_blank" rel="noopener">
-                      <Box sx={sxStyles.listItemBox}>
-                        <img
-                          width="536"
-                          height="302"
-                          src={`../../../image/school/${item.img}`}
-                          alt={item.title}
-                          style={{
-                            maxWidth: '100%',
-                            height: 'auto',
-                            borderRadius: 4,
-                          }}
-                        />
-                        <Box sx={sxStyles.textContent}>
-                          <Typography variant="body1" sx={sxStyles.title}>
-                            {item.title}
-                          </Typography>
-                          <Typography variant="body2" sx={sxStyles.text}>
-                            {item.summary}
-                          </Typography>
-                        </Box>
+          <Typography variant="body2" sx={sxStyles.introduction}>
+            楽しいゲームを題材に独自の教材をお届けしています！
+          </Typography>
+          <Container sx={sxStyles.listBox}>
+            <List sx={sxStyles.list}>
+              {movieList.map((item) => (
+                <ListItem key={item.id} sx={sxStyles.listWrap}>
+                  <Link href={item.href} target="_blank" rel="noopener">
+                    <Box sx={sxStyles.listItemBox}>
+                      <img
+                        width="536"
+                        height="302"
+                        src={`../../../image/school/${item.img}`}
+                        alt={item.title}
+                        style={{
+                          maxWidth: '100%',
+                          height: 'auto',
+                          borderRadius: 4,
+                        }}
+                      />
+                      <Box sx={sxStyles.textContent}>
+                        <Typography variant="body1" sx={sxStyles.title}>
+                          {item.title}
+                        </Typography>
+                        <Typography variant="body2" sx={sxStyles.text}>
+                          {item.summary}
+                        </Typography>
                       </Box>
-                    </Link>
-                  </ListItem>
-                ))}
-              </List>
-            </Container>
-            <Button
-              variant="text"
-              href="https://www.udemy.com/user/ling-mu-you-ji-28/"
+                    </Box>
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </Container>
+          <Button
+            variant="text"
+            href="https://www.udemy.com/user/ling-mu-you-ji-28/"
+            target="_blank"
+            rel="noopener noreferrer"
+            endIcon={<PlayCircle />}
+            sx={sxStyles.textLink}
+          >
+            すべて見る
+          </Button>
+        </Box>
+        <Box component="section" sx={sxStyles.section}>
+          <Typography variant="h3" sx={sxStyles.subHeading}>
+            書籍
+          </Typography>
+          <Typography variant="body2" sx={sxStyles.introduction}>
+            ジュニア・プログラミング検定の合格を目指す方のために、対策模擬問題集を制作・販売しています！
+          </Typography>
+          <Box sx={sxStyles.bookWrap}>
+            <Link
+              href="https://amzn.asia/d/09sHtK7E"
               target="_blank"
-              rel="noopener noreferrer"
-              endIcon={<PlayCircle />}
-              sx={sxStyles.textLink}
+              rel="noopener"
             >
-              すべて見る
-            </Button>
-          </Box>
-          <Box component="section" sx={sxStyles.section}>
-            <Typography variant="h3" sx={sxStyles.subHeading}>書籍</Typography>
-            <Typography variant="body2" sx={sxStyles.introduction}>
-              ジュニア・プログラミング検定の合格を目指す方のために、対策模擬問題集を制作・販売しています！
-            </Typography>
-            <Box sx={sxStyles.bookWrap}>
-              <Link href='https://amzn.asia/d/09sHtK7E' target="_blank" rel="noopener">
-                <img
-                  src={book.src}
-                  alt="オリジナル教材"
-                  width="600"
-                  height="848"
-                />
-                <Box sx={sxStyles.bookText}>
-                  <Typography sx={sxStyles.bookTitle}>ジュニアプログラミング検定 Scratch部門 Ver3.0{!isSmallScreen && <br />}Bronze(3級) 模擬問題集</Typography>
-                  <Typography sx={sxStyles.bookDetails}>Re:ProSオリジナル！ジュニア・プログラミング検定の出題傾向を分析したオリジナル問題集です。</Typography>
-                  <Typography sx={sxStyles.bookDetails}>・本番を想定した5つの模擬問題を収録<br/>・すべて解説つき・模範回答あり<br/>・記述対策（説明文の書き方）にも対応</Typography>
-                </Box>
-              </Link>
-            </Box>
+              <img
+                src={book.src}
+                alt="オリジナル教材"
+                width="600"
+                height="848"
+              />
+              <Box sx={sxStyles.bookText}>
+                <Typography sx={sxStyles.bookTitle}>
+                  ジュニアプログラミング検定 Scratch部門 Ver3.0
+                  {!isSmallScreen && <br />}Bronze(3級) 模擬問題集
+                </Typography>
+                <Typography sx={sxStyles.bookDetails}>
+                  Re:ProSオリジナル！ジュニア・プログラミング検定の出題傾向を分析したオリジナル問題集です。
+                </Typography>
+                <Typography sx={sxStyles.bookDetails}>
+                  ・本番を想定した5つの模擬問題を収録
+                  <br />
+                  ・すべて解説つき・模範回答あり
+                  <br />
+                  ・記述対策（説明文の書き方）にも対応
+                </Typography>
+              </Box>
+            </Link>
           </Box>
         </Box>
       </Box>
+    </Box>
   );
 };
 
