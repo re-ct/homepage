@@ -3,10 +3,16 @@ import headingMaterialsImg from '../../../public/image/school/heading_materials.
 import book from '../../../public/image/school/thumbnail_book_1.webp';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import { Box, Typography, Container, Button } from '@mui/material';
-import { PlayCircle } from '@mui/icons-material';
+import {
+  PlayCircle,
+  KeyboardArrowLeft,
+  KeyboardArrowRight,
+} from '@mui/icons-material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 const sxStyles = {
   heading: {
@@ -34,33 +40,6 @@ const sxStyles = {
       display: 'flex',
       flexWrap: 'nowrap',
       justifyContent: 'flex-start',
-    },
-  },
-  listWrap: {
-    boxShadow: 'none',
-    p: 0,
-    '@media screen and (max-width: 768px)': {
-      maxWidth: '300px',
-      minWidth: '300px',
-    },
-    '&:first-child': {
-      '@media screen and (max-width: 768px)': {
-        pl: 3,
-        maxWidth: '324px',
-        minWidth: '324px',
-      },
-    },
-    '&:last-child': {
-      '@media screen and (max-width: 768px)': {
-        pr: 3,
-        maxWidth: '324px',
-        minWidth: '324px',
-      },
-    },
-    '& > a': {
-      height: '100%',
-      display: 'inline-block',
-      cursor: 'pointer !important',
     },
   },
   listItemBox: {
@@ -115,6 +94,18 @@ const sxStyles = {
     overflowX: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',
+    },
+    '& > .swiper': {
+      '@media screen and (max-width:768px)': {
+        px: '20px',
+      },
+    },
+    '.swiper-slide': {
+      height: 'auto',
+      '@media screen and (max-width:768px)': {
+        minWidth: '300px',
+        maxWidth: '300px',
+      },
     },
   },
   wrap: {
@@ -199,6 +190,41 @@ const sxStyles = {
     mt: 1,
     cursor: 'pointer',
   },
+  menu: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  menuIcon: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 1,
+    '& .custom-prev-button, & .custom-next-button': {
+      aspectRatio: '1/1',
+      padding: '6px',
+      color: 'rgb(93, 93, 93)',
+      borderRadius: '100px',
+      border: 'solid 1px #5D5D5D',
+      transition: 'filter 0.3s ease-out',
+      display: 'flex',
+      background: '#f7f7f7',
+      cursor: 'pointer',
+      '@media screen and (max-width:768px)': {
+        display: 'none',
+      },
+      '&:hover': {
+        filter: 'brightness(0.95)',
+      },
+      '&.swiper-button-disabled': {
+        opacity: 1,
+        background: 'transparent',
+        border: 'solid 1px #CCCCCC',
+        color: '#CCCCCC',
+        cursor: 'not-allowed',
+      },
+    },
+  },
 };
 
 type Movie = {
@@ -253,16 +279,52 @@ const Movies = () => {
           />
         </Typography>
         <Box component="section" sx={sxStyles.section}>
-          <Typography variant="h3" sx={sxStyles.subHeading}>
-            動画
-          </Typography>
-          <Typography variant="body2" sx={sxStyles.introduction}>
-            楽しいゲームを題材に独自の教材をお届けしています！
-          </Typography>
+          <Box sx={sxStyles.menu}>
+            <Box>
+              <Typography variant="h3" sx={sxStyles.subHeading}>
+                動画
+              </Typography>
+              <Typography variant="body2" sx={sxStyles.introduction}>
+                楽しいゲームを題材に独自の教材をお届けしています！
+              </Typography>
+            </Box>
+            <Box sx={sxStyles.menuIcon}>
+              {movieList.length > 3 && (
+                <>
+                  <Box className="custom-prev-button">
+                    <KeyboardArrowLeft />
+                  </Box>
+                  <Box className="custom-next-button">
+                    <KeyboardArrowRight />
+                  </Box>
+                </>
+              )}
+            </Box>
+          </Box>
           <Container sx={sxStyles.listBox}>
-            <List sx={sxStyles.list}>
+            <Swiper
+              spaceBetween={12}
+              slidesPerView={'auto'}
+              navigation={
+                movieList.length > 3
+                  ? {
+                      prevEl: '.custom-prev-button',
+                      nextEl: '.custom-next-button',
+                    }
+                  : false
+              }
+              modules={[Navigation]}
+              breakpoints={{
+                1040: {
+                  slidesPerView: 3,
+                },
+                769: {
+                  slidesPerView: 2,
+                },
+              }}
+            >
               {movieList.map((item) => (
-                <ListItem key={item.id} sx={sxStyles.listWrap}>
+                <SwiperSlide key={item.id}>
                   <Link href={item.href} target="_blank" rel="noopener">
                     <Box sx={sxStyles.listItemBox}>
                       <img
@@ -286,9 +348,9 @@ const Movies = () => {
                       </Box>
                     </Box>
                   </Link>
-                </ListItem>
+                </SwiperSlide>
               ))}
-            </List>
+            </Swiper>
           </Container>
           <Button
             variant="text"
