@@ -133,7 +133,12 @@ const Curriculum = () => {
                   alt={`${course.name.category}${course.name.level}のイメージ`}
                   width="800"
                   height="500"
-                  style={{ marginTop: 32, width: '100%', height: 'auto',maxWidth: '500px' }}
+                  style={{
+                    marginTop: 32,
+                    width: '100%',
+                    height: 'auto',
+                    maxWidth: '500px',
+                  }}
                 />
                 <Typography variant="body1" sx={sxStyles.text}>
                   {course.summary}
