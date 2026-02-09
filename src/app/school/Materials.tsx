@@ -1,5 +1,5 @@
 'use client';
-import headingMoviesImg from '../../../public/image/school/heading_movies.png';
+import headingMaterialsImg from '../../../public/image/school/heading_materials.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import List from '@mui/material/List';
@@ -11,12 +11,12 @@ const sxStyles = {
   heading: {
     marginInline: '24px',
     '& > img': {
-      width: '375px',
+      width: '278px',
       height: 'auto',
     },
     '@media screen and (max-width:450px)': {
       '& > img': {
-        maxWidth: '294px',
+        maxWidth: '222px',
         width: '100%',
       },
     },
@@ -151,10 +151,10 @@ const Movies = () => {
       <Box pt={7} pb={7} bgcolor="#F5F5F5">
         <Typography variant="h2" sx={sxStyles.heading}>
           <img
-            src={headingMoviesImg.src}
+            src={headingMaterialsImg.src}
             alt="オリジナル動画教材"
-            width="721"
-            height="75"
+            width="556"
+            height="106"
           />
         </Typography>
         <Typography variant="body2" color="#333" fontWeight="bold" mt={2}>
