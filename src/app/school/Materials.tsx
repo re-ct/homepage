@@ -2,7 +2,7 @@
 import headingMaterialsImg from '../../../public/image/school/heading_materials.png';
 import book from '../../../public/image/school/thumbnail_book_1.webp';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Link from 'next/link';
+import { CommonLink } from '../../components/CommonLink';
 import { Box, Typography, Container, Button } from '@mui/material';
 import {
   PlayCircle,
@@ -325,7 +325,12 @@ const Movies = () => {
             >
               {movieList.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <Link href={item.href} target="_blank" rel="noopener">
+                  <CommonLink
+                    link={{
+                      href: item.href,
+                      external: true,
+                    }}
+                  >
                     <Box sx={sxStyles.listItemBox}>
                       <img
                         width="536"
@@ -347,7 +352,7 @@ const Movies = () => {
                         </Typography>
                       </Box>
                     </Box>
-                  </Link>
+                  </CommonLink>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -371,10 +376,11 @@ const Movies = () => {
             ジュニア・プログラミング検定の合格を目指す方のために、対策模擬問題集を制作・販売しています！
           </Typography>
           <Box sx={sxStyles.bookWrap}>
-            <Link
-              href="https://amzn.asia/d/09sHtK7E"
-              target="_blank"
-              rel="noopener"
+            <CommonLink
+              link={{
+                href: 'https://amzn.asia/d/09sHtK7E',
+                external: true,
+              }}
             >
               <img
                 src={book.src}
@@ -398,7 +404,7 @@ const Movies = () => {
                   ・記述対策（説明文の書き方）にも対応
                 </Typography>
               </Box>
-            </Link>
+            </CommonLink>
           </Box>
         </Box>
       </Box>
