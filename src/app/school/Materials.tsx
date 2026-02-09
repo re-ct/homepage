@@ -44,14 +44,18 @@ const sxStyles = {
       minWidth: '300px',
     },
     '&:first-child': {
-      pl:3,
-      maxWidth: '324px',
-      minWidth: '324px',
+      '@media screen and (max-width: 768px)': {
+        pl:3,
+        maxWidth: '324px',
+        minWidth: '324px',
+      }
     },
     '&:last-child': {
-      pr:3,
-      maxWidth: '324px',
-      minWidth: '324px',
+      '@media screen and (max-width: 768px)': {
+        pr:3,
+        maxWidth: '324px',
+        minWidth: '324px',
+      }
     },
     '& > a': {
       height: '100%',
@@ -106,15 +110,11 @@ const sxStyles = {
   },
   listBox: {
     mt: 2,
-    p: 0,
+    p: '0 !important',
     maxWidth: '100%',
     overflowX: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',
-    },
-    '@media screen and (min-width: 1200px)': {
-      p: 0,
-      maxWidth: '100%',
     },
   },
   wrap: {
@@ -167,6 +167,7 @@ const sxStyles = {
         gridTemplateColumns: '1fr',
         gridTemplateRows: '180px auto auto auto',
         rowGap: '16px',
+        paddingInline: 2,
       },
       '&:hover': {
         opacity: 0.8,
