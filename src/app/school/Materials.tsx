@@ -251,7 +251,7 @@ const movieList: Movie[] = [
   },
 ];
 
-const MOVIE_SLIDE_THRESHOLD = 3
+const MOVIE_SLIDE_THRESHOLD = 3;
 
 const Movies = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
