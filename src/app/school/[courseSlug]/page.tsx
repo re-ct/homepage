@@ -57,7 +57,7 @@ const CoursePage: React.FC<CoursePageProps> = async ({
   schoolTopTitle.push(`${course.name.category} ${course.name.level}コース`);
 
   return (
-    <main>
+    <main style={{ scrollMarginTop: '80px' }}>
       <Box
         component="section"
         sx={{
