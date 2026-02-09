@@ -28,20 +28,6 @@ const sxStyles = {
       },
     },
   },
-  list: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3,1fr)',
-    gap: 2,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    mt: 0,
-    p: 0,
-    '@media screen and (max-width: 768px)': {
-      display: 'flex',
-      flexWrap: 'nowrap',
-      justifyContent: 'flex-start',
-    },
-  },
   listItemBox: {
     backgroundColor: '#fff',
     borderRadius: '8px',
@@ -265,6 +251,8 @@ const movieList: Movie[] = [
   },
 ];
 
+const MOVIE_SLIDE_THRESHOLD = 3
+
 const Movies = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
@@ -289,7 +277,7 @@ const Movies = () => {
               </Typography>
             </Box>
             <Box sx={sxStyles.menuIcon}>
-              {movieList.length > 3 && (
+              {movieList.length > MOVIE_SLIDE_THRESHOLD && (
                 <>
                   <Box className="custom-prev-button">
                     <KeyboardArrowLeft />
@@ -306,7 +294,7 @@ const Movies = () => {
               spaceBetween={12}
               slidesPerView={'auto'}
               navigation={
-                movieList.length > 3
+                movieList.length > MOVIE_SLIDE_THRESHOLD
                   ? {
                       prevEl: '.custom-prev-button',
                       nextEl: '.custom-next-button',
@@ -330,6 +318,7 @@ const Movies = () => {
                       href: item.href,
                       external: true,
                     }}
+                    gaLabel={`school_${item.id}_link`}
                   >
                     <Box sx={sxStyles.listItemBox}>
                       <img
@@ -381,6 +370,7 @@ const Movies = () => {
                 href: 'https://amzn.asia/d/09sHtK7E',
                 external: true,
               }}
+              gaLabel="school_exambook_link"
             >
               <img
                 src={book.src}
