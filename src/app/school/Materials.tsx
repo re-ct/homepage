@@ -29,21 +29,41 @@ const sxStyles = {
     justifyContent: 'center',
     alignItems: 'stretch',
     mt: 0,
+    p: 0,
+    '@media screen and (max-width: 768px)': {
+      display: 'flex',
+      flexWrap: 'nowrap',
+      justifyContent: 'flex-start',
+    }
   },
   listWrap: {
     boxShadow: 'none',
     p: 0,
+    '@media screen and (max-width: 768px)': {
+      maxWidth: '300px',
+      minWidth: '300px',
+    },
+    '&:first-child': {
+      pl:3,
+      maxWidth: '324px',
+      minWidth: '324px',
+    },
+    '&:last-child': {
+      pr:3,
+      maxWidth: '324px',
+      minWidth: '324px',
+    },
     '& > a': {
       height: '100%',
-      display: 'inline-block'
+      display: 'inline-block',
+      cursor: 'pointer !important',
     },
   },
   listItemBox: {
-    pt: 2,
-    pb: 5,
-    px: 2,
     backgroundColor: '#fff',
-    borderRadius: 3,
+    borderRadius: '8px',
+    boxShadow: '0px 0px 5px rgba(34, 106, 170, 0.1)',
+    padding: '12px 12px 24px 12px',
     height: '100%',
     '&:hover': {
       opacity: 0.8,
@@ -57,7 +77,6 @@ const sxStyles = {
   },
   title: {
     fontWeight: 'bold',
-    mt: 2,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     display: '-webkit-box',
@@ -69,6 +88,7 @@ const sxStyles = {
   },
   text: {
     mt: 1,
+    fontSize: '12px',
     letterSpacing: '0.1px',
     lineHeight: '1.5',
     color: '#333',
@@ -77,7 +97,7 @@ const sxStyles = {
     fontSize: '14px',
     fontWeight: 'bold',
     color: '#333',
-    marginTop: '40px',
+    marginTop: '32px',
     display: 'inline-flex',
     '&:hover': {
       opacity: 0.8,
@@ -101,6 +121,9 @@ const sxStyles = {
     maxWidth: '848px',
     paddingInline: '24px',
     marginInline: 'auto',
+    '@media screen and (max-width: 768px)': {
+      paddingInline: 0,
+    }
   },
   section: {
     mt: 5,
@@ -111,41 +134,69 @@ const sxStyles = {
   subHeading: {
     fontSize: '20px',
     fontWeight: 'bold',
-    textAlign: 'left'
+    textAlign: 'left',
+    '@media screen and (max-width: 768px)': {
+      paddingInline: '24px',
+    }
   },
   introduction: {
     fontSize: '14px',
     textAlign: 'left',
     mt:2,
+    '@media screen and (max-width: 768px)': {
+      paddingInline: '24px',
+    }
   },
   bookWrap: {
     mt:2,
+    cursor: 'pointer',
+    '@media screen and (max-width: 768px)': {
+      paddingInline: '24px',
+    },
     '& > a': {
       display: 'grid',
-      gridTemplateColumns: '120px 1fr',
+      gridTemplateColumns: '130px 1fr',
       backgroundColor: '#fff',
       width: '100%',
       borderRadius: '8px',
       boxShadow: '0px 0px 5px rgba(34, 106, 170, 0.1)',
       padding: 3,
       columnGap: '24px',
+      cursor: 'pointer',
+      '@media screen and (max-width: 768px)': {
+        gridTemplateColumns: '1fr',
+        gridTemplateRows: '180px auto auto auto',
+        rowGap: '16px',
+      },
+      '&:hover': {
+        opacity: 0.8,
+        backgroundColor: '#fff',
+      },
     },
     'img': {
       width: '100%',
       height: 'auto',
       boxShadow: '0px 0px 4px rgba(34, 106, 170, 0.2)',
+      '@media screen and (max-width: 768px)': {
+        height: '100%',
+        width: 'auto',
+        marginInline: 'auto',
+      }
     }
   },
   bookText: {
     textAlign: 'left',
+        cursor: 'pointer',
   },
   bookTitle: {
     fontSize: '16px',
     fontWeight: 'bold',
+        cursor: 'pointer',
   },
   bookDetails: {
     fontSize: '12px',
     mt:1,
+        cursor: 'pointer',
   }
 };
 
@@ -219,7 +270,7 @@ const Movies = () => {
                           style={{
                             maxWidth: '100%',
                             height: 'auto',
-                            borderRadius: 12,
+                            borderRadius: 4,
                           }}
                         />
                         <Box sx={sxStyles.textContent}>
@@ -261,7 +312,7 @@ const Movies = () => {
                   height="848"
                 />
                 <Box sx={sxStyles.bookText}>
-                  <Typography sx={sxStyles.bookTitle}>ジュニアプログラミング検定 Scratch部門 Ver3.0<br/>Bronze(3級) 模擬問題集</Typography>
+                  <Typography sx={sxStyles.bookTitle}>ジュニアプログラミング検定 Scratch部門 Ver3.0{!isSmallScreen && <br />}Bronze(3級) 模擬問題集</Typography>
                   <Typography sx={sxStyles.bookDetails}>Re:ProSオリジナル！ジュニア・プログラミング検定の出題傾向を分析したオリジナル問題集です。</Typography>
                   <Typography sx={sxStyles.bookDetails}>・本番を想定した5つの模擬問題を収録<br/>・すべて解説つき・模範回答あり<br/>・記述対策（説明文の書き方）にも対応</Typography>
                 </Box>
