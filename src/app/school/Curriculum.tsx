@@ -14,16 +14,16 @@ const sxStyles = {
     px: 3,
   },
   list: {
-    display: 'flex',
-    columnGap: '20px',
+    display: 'grid',
+    columnGap: '12px',
     alignItems: 'stretch',
-    mt: 8,
-    width: '800px',
+    mt: 6,
+    width: '900px',
     maxWidth: '100%',
     mx: 'auto',
     p: 0,
-    flexWrap: 'wrap',
-    '@media screen and (max-width:450px)': {
+    gridTemplateColumns: 'repeat(3,1fr)',
+    '@media screen and (max-width:768px)': {
       mt: 4,
       display: 'block',
       width: '100%',
@@ -36,7 +36,7 @@ const sxStyles = {
     '& > a': {
       height: '100%',
     },
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       '& + &': {
         mt: 4,
       },
@@ -69,10 +69,10 @@ const sxStyles = {
     mt: 4,
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 4,
+    WebkitLineClamp: 5,
     overflow: 'hidden',
-    height: '84px',
-    '@media screen and (max-width:450px)': {
+    height: '108px',
+    '@media screen and (max-width:768px)': {
       display: 'block',
       height: 'auto',
     },
@@ -99,7 +99,7 @@ const sxStyles = {
       width: '204px',
       height: 'auto',
     },
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       '& > img': {
         width: '177px',
       },
@@ -133,7 +133,7 @@ const Curriculum = () => {
                   alt={`${course.name.category}${course.name.level}のイメージ`}
                   width="800"
                   height="500"
-                  style={{ marginTop: 32, width: '100%', height: 'auto' }}
+                  style={{ marginTop: 32, width: '100%', height: 'auto',maxWidth: '500px' }}
                 />
                 <Typography variant="body1" sx={sxStyles.text}>
                   {course.summary}

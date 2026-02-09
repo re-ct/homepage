@@ -35,7 +35,7 @@ const sxStyles = {
     mx: 'auto',
     p: 0,
     flexWrap: 'wrap',
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       display: 'block',
       width: '100%',
     },
@@ -47,7 +47,7 @@ const sxStyles = {
     '& > a': {
       height: '100%',
     },
-    '@media screen and (max-width:450px)': {
+    '@media screen and (max-width:768px)': {
       '& + &': {
         mt: 4,
       },
@@ -59,7 +59,7 @@ const sxStyles = {
     borderTop: 'solid 8px #24285B',
     backgroundColor: '#fff',
     width: '100%',
-    height: '400',
+    height: '100%',
     backgroundSize: 16,
     backgroundPosition: '50% 50%',
     backgroundImage:
