@@ -107,7 +107,7 @@ const Teacher = () => {
           </Typography>
           <Typography sx={sxStyles.subTitle}>経歴・資格について</Typography>
           <List sx={sxStyles.list}>
-            <ListItem>中部大学大学情報工学科卒</ListItem>
+            <ListItem>中部大学情報工学科卒</ListItem>
           </List>
         </Box>
       </Box>
