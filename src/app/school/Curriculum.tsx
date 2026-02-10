@@ -18,7 +18,7 @@ const sxStyles = {
     columnGap: '12px',
     alignItems: 'stretch',
     mt: 6,
-    width: '900px',
+    width: '1000px',
     maxWidth: '100%',
     mx: 'auto',
     p: 0,
@@ -44,7 +44,8 @@ const sxStyles = {
   },
   card: {
     px: 3,
-    py: 5,
+    pt: 4,
+    pb: 5,
     borderTop: 'solid 8px #24285B',
     backgroundColor: '#fff',
     width: '100%',
@@ -66,12 +67,12 @@ const sxStyles = {
   },
   text: {
     fontSize: 14,
-    mt: 4,
+    mt: 3,
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: 5,
     overflow: 'hidden',
-    height: '108px',
+    height: '84px',
     '@media screen and (max-width:768px)': {
       display: 'block',
       height: 'auto',
@@ -134,7 +135,7 @@ const Curriculum = () => {
                   width="800"
                   height="500"
                   style={{
-                    marginTop: 32,
+                    marginTop: 24,
                     width: '100%',
                     height: 'auto',
                     maxWidth: '500px',

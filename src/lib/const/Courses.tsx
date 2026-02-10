@@ -80,7 +80,7 @@ export const Courses: Course[] = [
       category: 'Roblox ゲーム開発',
       level: '中級',
     },
-    thumbnail: 'thumbnail_course_2.webp',
+    thumbnail: 'thumbnail_course_3.webp',
     summary:
       '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
     details:
