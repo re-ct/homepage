@@ -5,7 +5,6 @@ import watanabe from '../../../public/image/school/icon_watanabe.png';
 import suzuki from '../../../public/image/school/icon_suzuki.png';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { gridTemplateColumns } from '@mui/system';
 
 const sxStyles = {
   list: {
@@ -44,7 +43,7 @@ const sxStyles = {
   },
   body: {
     textAlign: 'left',
-    mt:2,
+    mt: 2,
   },
   name: {
     fontWeight: 'bold',
@@ -67,18 +66,18 @@ const sxStyles = {
     fontWeight: 'bold',
     mt: 3,
     textAlign: 'left',
-  }
+  },
 };
 
 const Teacher = () => {
   return (
-    <Box pt={6} pb={10} mx={3} id="school_teacher">
+    <Box pt={9} pb={10} mx={3} id="school_teacher">
       <Typography variant="h2" sx={sxStyles.heading}>
         <img src={headingTeacherImg.src} alt="講師" width="127" height="59" />
       </Typography>
       <Box component="ul" sx={sxStyles.teacherList}>
         <Box component="li" sx={sxStyles.teacher}>
-          <img src={watanabe.src} width="654" height="568" />
+          <img src={watanabe.src} width="500" height="416" />
           <Typography variant="h3" sx={sxStyles.name}>
             渡辺 優樹
           </Typography>
@@ -88,10 +87,7 @@ const Teacher = () => {
           <Typography variant="body2" sx={sxStyles.body}>
             プログラミングを通して、次の世代に残る何かを残したいと思い起業しました！とにかくまずはプログラミングを楽しいと思ってもらえるように頑張ります！
           </Typography>
-          <Typography sx={sxStyles.subTitle}
-          >
-            経歴・資格について
-          </Typography>
+          <Typography sx={sxStyles.subTitle}>経歴・資格について</Typography>
           <List sx={sxStyles.list}>
             <ListItem>名古屋大学大学院情報学研究科 修了</ListItem>
             <ListItem>高等学校教諭一種免許状「情報」 免許保有</ListItem>
@@ -99,7 +95,7 @@ const Teacher = () => {
           </List>
         </Box>
         <Box component="li" sx={sxStyles.teacher}>
-          <img src={suzuki.src} width="654" height="568" />
+          <img src={suzuki.src} width="500" height="416" />
           <Typography variant="h3" sx={sxStyles.name}>
             鈴木 佑基
           </Typography>
@@ -109,10 +105,7 @@ const Teacher = () => {
           <Typography variant="body2" sx={sxStyles.body}>
             生徒一人ひとりのペースに合わせた丁寧な解説とコミュニケーションで、お子様の「自分で考える力」をプログラミングを通して引き出していきます！
           </Typography>
-          <Typography sx={sxStyles.subTitle}
-          >
-            経歴・資格について
-          </Typography>
+          <Typography sx={sxStyles.subTitle}>経歴・資格について</Typography>
           <List sx={sxStyles.list}>
             <ListItem>中部大学大学情報工学科卒</ListItem>
           </List>
