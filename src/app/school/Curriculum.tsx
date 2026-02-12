@@ -174,8 +174,8 @@ const Curriculum = () => {
                   <img
                     src={`../../../image/school/${course.thumbnail}`}
                     alt={`${course.name.category}${course.name.level}のイメージ`}
-                    width="800"
-                    height="500"
+                    width="1104"
+                    height="632"
                     style={{
                       marginTop: 20,
                       maxWidth: '500px',
