@@ -10,7 +10,8 @@ type Course = {
   thumbnail: string;
   summary: string;
   details: string;
-  target: string | ReactNode;
+  note?: string;
+  target: string;
   sessionCount: string;
   duration: string;
   price: {
@@ -37,7 +38,7 @@ export const Courses: Course[] = [
       'マサチューセッツ工科大学で開発されたビジュアルプログラミング言語「Scratch」を用いてプログラミングの基礎概念を学びます。',
     details:
       '「Scratch」はマウス操作で行えるので、キーボード入力に慣れていなくても安心して学習することができます。',
-    target: <>小学2年生〜中学3年生</>,
+    target: '小学2年生〜中学3年生',
     sessionCount: '週1回',
     duration: '1回60分',
     price: {
@@ -62,7 +63,7 @@ export const Courses: Course[] = [
       '実際の開発で使用されているテキストプログラミング言語「JavaScript」を用いて決められたテーマに沿ってWebサイト開発を行い、プログラミングを学びます。',
     details:
       '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
-    target: <>中学1年生〜高校3年生</>,
+    target: '中学1年生〜高校3年生',
     sessionCount: '週1回',
     duration: '1回60分',
     price: {
@@ -87,14 +88,8 @@ export const Courses: Course[] = [
       '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
     details:
       '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
-    target: (
-      <>
-        小学5年生〜高校3年生
-        <br />
-        Scratch
-        初級を受講完了された方（ジュニア・プログラミング検定のシルバー以上を取得可能なレベル）
-      </>
-    ),
+    note: '※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
+    target: '小学5年生〜高校3年生',
     sessionCount: '週1回',
     duration: '1回60分',
     price: {
