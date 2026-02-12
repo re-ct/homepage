@@ -157,7 +157,7 @@ const sxStyles = {
     textAlign: 'left',
     fontSize: '12px',
     color: '#666',
-  }
+  },
 };
 
 const allDayOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
