@@ -5,7 +5,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { CheckCircle } from '@mui/icons-material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { ReactNode } from 'react';
 
 interface CourseDetailProps {
   course: {
@@ -17,7 +16,8 @@ interface CourseDetailProps {
     thumbnail: string;
     summary: string;
     details: string;
-    target: string | ReactNode;
+    note: string;
+    target: string;
     sessionCount: string;
     duration: string;
     price: {
