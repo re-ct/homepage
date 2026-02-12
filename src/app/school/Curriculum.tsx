@@ -109,12 +109,14 @@ const sxStyles = {
     },
   },
   target: {
-    padding: '4px 12px',
+    padding: '4px 12px 3px 12px',
     backgroundColor: '#D5DFF7',
     fontSize: '14px',
     fontWeight: 'bold',
     display: 'inlineBlock',
     width: 'fit-content',
+    color: '#24285B',
+    borderRadius: '2px',
   },
   price: {
     mt: 1,
