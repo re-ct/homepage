@@ -69,7 +69,7 @@ const sxStyles = {
   },
   text: {
     fontSize: 14,
-    mt: 4,
+    mt: '12px',
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: 4,
@@ -167,14 +167,14 @@ const Curriculum = () => {
                   <Typography sx={sxStyles.price}>
                     月額{course.price.tuition.toLocaleString()}円
                     <Typography component="span" sx={sxStyles.priceTax}>(税込)</Typography>
-                    <Typography component="span" sx={sxStyles.priceNote}>※1</Typography>
+                    <Typography component="span" sx={sxStyles.priceNote}>※</Typography>
                   </Typography>
                   <img
                     src={`../../../image/school/${course.thumbnail}`}
                     alt={`${course.name.category}${course.name.level}のイメージ`}
                     width="800"
                     height="500"
-                    style={{ marginTop: 32, maxWidth: '500px', width: '100%', height: 'auto' }}
+                    style={{ marginTop: 20, maxWidth: '500px', width: '100%', height: 'auto' }}
                   />
                   <Typography variant="body1" sx={sxStyles.text}>
                     {course.summary}
@@ -189,7 +189,7 @@ const Curriculum = () => {
           ))}
         </List>
         <Typography sx={sxStyles.note}>
-          ※1 別途、入会費10,000円（初回のみ）、教材費500円（月額）かかります。
+          ※ 別途、入会費10,000円（初回のみ）、教材費500円（月額）かかります。
         </Typography>
       </Box>
     </Box>
