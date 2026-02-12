@@ -17,7 +17,7 @@ interface CourseDetailProps {
     thumbnail: string;
     summary: string;
     details: string;
-    target: string| ReactNode;
+    target: string | ReactNode;
     sessionCount: string;
     duration: string;
     price: {
