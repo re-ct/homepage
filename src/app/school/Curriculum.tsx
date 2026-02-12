@@ -47,8 +47,11 @@ const sxStyles = {
       alignItems: 'center',
       justifyContent: 'flex-start',
       boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
+      transition: 'all 0.3s ease-out',
       '&:hover': {
-        boxShadow: 'none',
+        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
+        transform: 'translateY(-4px)',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
       },
     },
     '@media screen and (max-width:768px)': {
@@ -178,7 +181,6 @@ const Curriculum = () => {
                     height="632"
                     style={{
                       marginTop: 20,
-                      maxWidth: '500px',
                       width: '100%',
                       height: 'auto',
                     }}
