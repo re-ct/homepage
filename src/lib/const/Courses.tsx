@@ -8,6 +8,7 @@ type Course = {
   thumbnail: string;
   summary: string;
   details: string;
+  note?: string;
   target: string;
   sessionCount: string;
   duration: string;
@@ -80,11 +81,12 @@ export const Courses: Course[] = [
       category: 'Roblox ゲーム開発',
       level: '中級',
     },
-    thumbnail: 'thumbnail_course_3.webp',
+    thumbnail: 'thumbnail_course_3.png',
     summary:
       '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
     details:
-      '主に、キーボードを使用する本格的なプログラミングを行うコースです。※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
+      '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
+    note: '※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
     target: '小学5年生〜高校3年生',
     sessionCount: '週1回',
     duration: '1回60分',
