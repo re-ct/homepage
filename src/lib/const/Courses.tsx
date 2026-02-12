@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type Course = {
   id: number;
   slug: string;
@@ -8,7 +10,7 @@ type Course = {
   thumbnail: string;
   summary: string;
   details: string;
-  target: string | React.ReactNode;
+  target: string | ReactNode;
   sessionCount: string;
   duration: string;
   price: {
