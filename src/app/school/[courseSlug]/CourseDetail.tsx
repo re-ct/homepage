@@ -152,12 +152,6 @@ const sxStyles = {
     width: '100%',
     maxWidth: '800px',
   },
-  noteText: {
-    mt: 1,
-    textAlign: 'left',
-    fontSize: '12px',
-    color: '#666',
-  },
 };
 
 const allDayOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
@@ -213,9 +207,6 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
             {course.summary}
             <br />
             {course.details}
-          </Typography>
-          <Typography variant="body2" sx={sxStyles.noteText}>
-            {course.note && course.note}
           </Typography>
         </Item>
         <Item title="対象">
