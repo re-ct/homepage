@@ -120,11 +120,11 @@ const sxStyles = {
   },
   priceTax: {
     fontSize: '12px',
-    ml: '2px'
+    ml: '2px',
   },
   priceNote: {
     fontSize: '10px',
-    ml: '2px'
+    ml: '2px',
   },
   note: {
     mt: '20px',
@@ -138,7 +138,7 @@ const sxStyles = {
   container: {
     maxWidth: '1000px',
     marginInline: 'auto',
-  }
+  },
 };
 
 const Curriculum = () => {
@@ -158,23 +158,30 @@ const Curriculum = () => {
             <ListItem sx={sxStyles.listItem} key={index}>
               <Link href={`/school/${course.slug}/`}>
                 <Box sx={sxStyles.card}>
-                  <Typography sx={sxStyles.target}>
-                    {course.target}
-                  </Typography>
+                  <Typography sx={sxStyles.target}>{course.target}</Typography>
                   <Typography sx={sxStyles.title}>
                     {course.name.category} {course.name.level}
                   </Typography>
                   <Typography sx={sxStyles.price}>
                     月額{course.price.tuition.toLocaleString()}円
-                    <Typography component="span" sx={sxStyles.priceTax}>(税込)</Typography>
-                    <Typography component="span" sx={sxStyles.priceNote}>※</Typography>
+                    <Typography component="span" sx={sxStyles.priceTax}>
+                      (税込)
+                    </Typography>
+                    <Typography component="span" sx={sxStyles.priceNote}>
+                      ※
+                    </Typography>
                   </Typography>
                   <img
                     src={`../../../image/school/${course.thumbnail}`}
                     alt={`${course.name.category}${course.name.level}のイメージ`}
                     width="800"
                     height="500"
-                    style={{ marginTop: 20, maxWidth: '500px', width: '100%', height: 'auto' }}
+                    style={{
+                      marginTop: 20,
+                      maxWidth: '500px',
+                      width: '100%',
+                      height: 'auto',
+                    }}
                   />
                   <Typography variant="body1" sx={sxStyles.text}>
                     {course.summary}
