@@ -199,8 +199,8 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
         <img
           src={`../../../../image/school/${course.thumbnail}`}
           alt={`${course.name.category}${course.name.level}のイメージ`}
-          width="800"
-          height="500"
+          width="1104"
+          height="632"
           style={{
             marginTop: 32,
             width: '100%',
