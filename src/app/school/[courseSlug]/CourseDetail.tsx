@@ -84,9 +84,15 @@ const sxStyles = {
     textAlign: 'center',
     fontWeight: 'bold',
   },
+  priceTax: {
+    fontSize: '12px',
+    ml: '4px',
+  },
   annotation: {
     fontSize: 12,
     textAlign: 'center',
+    lineHeight: '1.7',
+    mt: 1,
   },
   dayOfWeek: {
     mt: 2,
@@ -233,12 +239,15 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
             受講料
           </Typography>
           <Typography variant="subtitle2" sx={sxStyles.price}>
-            {course.price.tuition}円
+            {course.price.tuition.toLocaleString()}円
+            <Typography component="span" sx={sxStyles.priceTax}>
+              (税込)
+            </Typography>
           </Typography>
           <Typography variant="body2" sx={sxStyles.annotation}>
-            別途、教材費{course.price.materials}円/月
+            別途、教材費{course.price.materials}円(税込)/月
             <br />
-            入会時に、入会費 {course.price.admission}円が発生いたします。
+            入会時に、入会費 {course.price.admission.toLocaleString()}円(税込)が発生いたします。
           </Typography>
         </Item>
         <Item title="開催日程">
