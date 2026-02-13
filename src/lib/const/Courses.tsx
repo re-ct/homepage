@@ -30,7 +30,7 @@ export const Courses: Course[] = [
       category: 'Scratch',
       level: '初級',
     },
-    thumbnail: 'thumbnail_course_1.webp',
+    thumbnail: 'thumbnail_course_scratch_beginner.webp',
     summary:
       'マサチューセッツ工科大学で開発されたビジュアルプログラミング言語「Scratch」を用いてプログラミングの基礎概念を学びます。',
     details:
@@ -55,7 +55,7 @@ export const Courses: Course[] = [
       category: 'ソフトウェア開発',
       level: '中級',
     },
-    thumbnail: 'thumbnail_course_2.webp',
+    thumbnail: 'thumbnail_course_software_intermediate.webp',
     summary:
       '実際の開発で使用されているテキストプログラミング言語「JavaScript」を用いて決められたテーマに沿ってWebサイト開発を行い、プログラミングを学びます。',
     details:
