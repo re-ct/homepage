@@ -15,11 +15,10 @@ const sxStyles = {
   },
   list: {
     display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
     columnGap: '12px',
     alignItems: 'stretch',
     mt: 6,
-    width: '800px',
-    maxWidth: '100%',
     mx: 'auto',
     p: 0,
     flexWrap: 'wrap',
@@ -135,10 +134,7 @@ const sxStyles = {
     mt: '20px',
     fontSize: '12px',
     color: '#fff',
-    textAlign: 'center',
-    '@media screen and (max-width:768px)': {
-      textAlign: 'left',
-    },
+    textAlign: 'left',
   },
   container: {
     maxWidth: '1000px',

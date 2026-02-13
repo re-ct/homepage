@@ -50,18 +50,19 @@ export const Courses: Course[] = [
     },
   },
   {
-    id: 2,
-    slug: 'software-intermediate',
+    id: 3,
+    slug: 'roblox-intermediate',
     name: {
-      category: 'ソフトウェア開発',
+      category: 'Roblox ゲーム開発',
       level: '中級',
     },
-    thumbnail: 'thumbnail_course_software_intermediate.webp',
+    thumbnail: 'thumbnail_course_roblox_intermediate.webp',
     summary:
-      '実際の開発で使用されているテキストプログラミング言語「JavaScript」を用いて決められたテーマに沿ってWebサイト開発を行い、プログラミングを学びます。',
+      '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
     details:
       '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
-    target: '中学1年生〜高校3年生',
+    note: '※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
+    target: '小学5年生〜高校3年生',
     sessionCount: '週1回',
     duration: '1回60分',
     price: {
@@ -75,19 +76,18 @@ export const Courses: Course[] = [
     },
   },
   {
-    id: 3,
-    slug: 'roblox-intermediate',
+    id: 2,
+    slug: 'software-intermediate',
     name: {
-      category: 'Roblox ゲーム開発',
+      category: 'ソフトウェア開発',
       level: '中級',
     },
-    thumbnail: 'thumbnail_course_3.png',
+    thumbnail: 'thumbnail_course_software_intermediate.webp',
     summary:
-      '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
+      '実際の開発で使用されているテキストプログラミング言語「JavaScript」を用いて決められたテーマに沿ってWebサイト開発を行い、プログラミングを学びます。',
     details:
       '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
-    note: '※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
-    target: '小学5年生〜高校3年生',
+    target: '中学1年生〜高校3年生',
     sessionCount: '週1回',
     duration: '1回60分',
     price: {
