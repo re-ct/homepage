@@ -44,13 +44,16 @@ const sxStyles = {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'flex-start',
+      justifyContent: 'space-between',
       boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
       transition: 'all 0.3s ease-out',
       '&:hover': {
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
         transform: 'translateY(-4px)',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        '@media screen and (max-width:768px)': {
+          transform: 'none',
+        },
       },
     },
     '@media screen and (max-width:768px)': {
