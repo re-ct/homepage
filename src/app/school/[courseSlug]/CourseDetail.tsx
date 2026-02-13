@@ -247,7 +247,8 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
           <Typography variant="body2" sx={sxStyles.annotation}>
             別途、教材費{course.price.materials}円(税込)/月
             <br />
-            入会時に、入会費 {course.price.admission.toLocaleString()}円(税込)が発生いたします。
+            入会時に、入会費 {course.price.admission.toLocaleString()}
+            円(税込)が発生いたします。
           </Typography>
         </Item>
         <Item title="開催日程">
