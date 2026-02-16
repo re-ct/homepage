@@ -5,8 +5,7 @@ import { downloadTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
   title: '資料一覧 | 株式会社レクト',
-  description:
-    '株式会社レクトのサービスや活動に関する資料をご覧いただけます。',
+  description: '株式会社レクトのサービスや活動に関する資料をご覧いただけます。',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://re-ct.co.jp/download/',

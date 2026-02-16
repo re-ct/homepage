@@ -1,6 +1,6 @@
 import '../../globals.css';
 import Box from '@mui/material/Box';
-import { Download } from '../../../lib/const/Download'
+import { Download } from '../../../lib/const/Download';
 import { notFound } from 'next/navigation';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { downloadTitle } from '@/lib/const/BreadCrumbTitle';
@@ -17,8 +17,7 @@ export async function generateMetadata({ params }: DownloadDetailsPageProps) {
 
   if (!course) {
     return {
-      title:
-        '資料が見つかりません | 株式会社レクト',
+      title: '資料が見つかりません | 株式会社レクト',
     };
   }
 
@@ -42,9 +41,6 @@ const DownloadDetailsPage: React.FC<DownloadDetailsPageProps> = async ({
 }: DownloadDetailsPageProps) => {
   const { downloadSlug } = await params;
   const course = Download.find((course) => `${course.slug}` === downloadSlug);
-  const unreleasedCourses = Download.filter(
-    (course) => `${course.slug}` !== downloadSlug,
-  );
 
   if (!course) {
     return notFound();
