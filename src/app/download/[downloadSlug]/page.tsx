@@ -8,23 +8,23 @@ import Typography from '@mui/material/Typography';
 import { ArrowForward } from '@mui/icons-material';
 
 export async function generateStaticParams() {
-  return Download.map((course) => ({
-    downloadSlug: `${course.slug}`,
+  return Download.map((item) => ({
+    downloadSlug: `${item.slug}`,
   }));
 }
 
 export async function generateMetadata({ params }: DownloadDetailsPageProps) {
   const { downloadSlug } = await params;
-  const course = Download.find((course) => course.slug === downloadSlug);
+  const item = Download.find((item) => item.slug === downloadSlug);
 
-  if (!course) {
+  if (!item) {
     return {
       title: '資料が見つかりません | 株式会社レクト',
     };
   }
 
   return {
-    title: `${course.name} | 株式会社レクト`,
+    title: `${item.name} | 株式会社レクト`,
   };
 }
 
@@ -134,14 +134,14 @@ interface DownloadDetailsPageProps {
 
 const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
   const { downloadSlug } = await params;
-  const course = Download.find((course) => `${course.slug}` === downloadSlug);
+  const item = Download.find((item) => `${item.slug}` === downloadSlug);
 
-  if (!course) {
+  if (!item) {
     return notFound();
   }
 
-  const currentBreadcrumbs = [...downloadTitle, course.name];
-  const otherCourses = Download
+  const currentBreadcrumbs = [...downloadTitle, item.name];
+  const otherItems = Download
   .filter((item) => `${item.slug}` !== downloadSlug)
   .slice(0, 3);
   return (
@@ -164,10 +164,10 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
         <Box sx={sxStyles.wrap}>
           <Box>
             <Typography variant="h2" sx={sxStyles.name}>
-              {course.name}
+              {item.name}
             </Typography>
             <img
-              src={`../../../image/download/${course.thumbnail}`}
+              src={`../../../image/download/${item.thumbnail}`}
               alt=""
               width="500"
               height="300"
@@ -178,7 +178,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
                 marginTop: '20px',
               }}
             />
-            <Typography sx={sxStyles.text}>{course.details}</Typography>
+            <Typography sx={sxStyles.text}>{item.details}</Typography>
           </Box>
           <Box sx={sxStyles.form}>
             <iframe
@@ -197,7 +197,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
         </Typography>
         <Box sx={sxStyles.listWrap}>
           <Box component="ul" sx={sxStyles.list}>
-            {otherCourses.map((item) => (
+            {otherItems.map((item) => (
               <Box component="li" key={item.slug}>
                 <a href={`/download/${item.slug}`}>
                   <img
