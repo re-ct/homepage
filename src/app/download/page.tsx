@@ -20,6 +20,9 @@ const sxStyles = {
   heading: {
     fontSize: '38px',
     fontWeight: 'bold',
+    '@media screen and (max-width:768px)': {
+      fontSize: '32px',
+    }
   },
   text: {
     fontSize: '14px',

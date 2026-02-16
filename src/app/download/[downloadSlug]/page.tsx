@@ -32,6 +32,9 @@ const sxStyles = {
   heading: {
     fontSize: '38px',
     fontWeight: 'bold',
+    '@media screen and (max-width:768px)': {
+      fontSize: '32px',
+    }
   },
   text: {
     fontSize: '14px',
@@ -44,7 +47,16 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       rowGap: '40px',
+      mt: '52px',
     },
+  },
+  otherTitle: {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    lineHeight: '1.6',
+    maxWidth: '940px',
+    mx: 'auto',
+    px: '20px',
   },
   name: {
     fontSize: '24px',
@@ -59,6 +71,16 @@ const sxStyles = {
   },
   other: {
     mt: '80px',
+    pb: '100px',
+  },
+  listWrap: {
+    maxWidth: '940px',
+    mx: 'auto',
+    px: '20px',
+    '@media screen and (max-width:768px)': {
+      overflowX: 'scroll',
+      px: '0',
+    }
   },
   list: {
     display: 'grid',
@@ -67,12 +89,19 @@ const sxStyles = {
     gap: '62px 10px',
     mt: 3,
     '@media screen and (max-width:768px)': {
-      gridTemplateColumns: '1fr',
+      gridTemplateColumns: 'repeat(3,90%)',
     },
-    '>li >a': {
-      display: 'flex',
-      flexDirection: 'column',
-    },
+    '>li' :{
+      '>a': {
+        display: 'flex',
+        flexDirection: 'column',
+      },
+      '&:first-child': {
+        '@media screen and (max-width:768px)': {
+          pl: '20px',
+        }
+      }
+    }
   },
   button: {
     color: '#00298A',
@@ -124,7 +153,6 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
           mx: 'auto',
           px: '20px',
           pt: '70px',
-          pb: '100px',
         }}
       >
         <Typography variant="h1" sx={sxStyles.heading}>
@@ -162,34 +190,36 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
             </iframe>
           </Box>
         </Box>
-        <Box sx={sxStyles.other}>
-          <Typography variant="h2" sx={sxStyles.name}>
-            その他の関連資料
-          </Typography>
+      </Box>
+      <Box sx={sxStyles.other}>
+        <Typography variant="h2" sx={sxStyles.otherTitle}>
+          その他の関連資料
+        </Typography>
+        <Box sx={sxStyles.listWrap}>
           <Box component="ul" sx={sxStyles.list}>
-              {otherCourses.map((item) => (
-                <Box component="li" key={item.slug}>
-                  <a href={`/download/${item.slug}`}>
-                    <img
-                      src={`../../../image/download/${item.thumbnail}`}
-                      alt=""
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                        aspectRatio: '16/9',
-                        objectFit: 'cover',
-                        borderRadius: '8px',
-                      }}
-                    />
-                    <Typography sx={sxStyles.title}>{item.name}</Typography>
-                    <Box className="btn-container" sx={sxStyles.button}>
-                      ダウンロード
-                      <ArrowForward className="arrow-icon" />
-                    </Box>
-                  </a>
-                </Box>
-              ))}
-            </Box>
+            {otherCourses.map((item) => (
+              <Box component="li" key={item.slug}>
+                <a href={`/download/${item.slug}`}>
+                  <img
+                    src={`../../../image/download/${item.thumbnail}`}
+                    alt=""
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      aspectRatio: '500/300',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                    }}
+                  />
+                  <Typography sx={sxStyles.title}>{item.name}</Typography>
+                  <Box className="btn-container" sx={sxStyles.button}>
+                    ダウンロード
+                    <ArrowForward className="arrow-icon" />
+                  </Box>
+                </a>
+              </Box>
+            ))}
+          </Box>
         </Box>
       </Box>
       <BreadcrumbsNavigation titles={currentBreadcrumbs} />
