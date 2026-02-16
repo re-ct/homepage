@@ -202,6 +202,7 @@ const Contact = () => {
             maxWidth: '100%',
             height: 'auto',
             aspectRatio: '1.7777777',
+            border: 'none',
           }}
           src="https://speakerdeck.com/player/0daa6cfb0d2543f6a30d706c68886a76"
           title="Re:proS_案内資料"
