@@ -102,3 +102,7 @@ a {
 footer {
   background-color: #fff;
 }
+
+main {
+  scroll-margin-top: 80px;
+}
