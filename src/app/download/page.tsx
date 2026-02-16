@@ -8,7 +8,7 @@ import { CommonLink } from '../../components/CommonLink';
 import { ArrowForward } from '@mui/icons-material';
 
 export const metadata = {
-  title: '資料一覧 | 株式会社レクト',
+  title: 'お役立ち資料一覧 | 株式会社レクト',
   description: '株式会社レクトのサービスや活動に関する資料をご覧いただけます。',
   robots: 'index,follow',
   alternates: {
@@ -86,7 +86,7 @@ const DownloadPage = () => {
         }}
       >
         <Typography variant="h1" sx={sxStyles.heading}>
-          資料一覧
+          お役立ち資料一覧
         </Typography>
         <Typography sx={sxStyles.text}>
           弊社のサービスや活動に関する資料をご覧いただけます。
