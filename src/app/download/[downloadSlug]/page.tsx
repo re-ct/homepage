@@ -34,7 +34,7 @@ const sxStyles = {
     fontWeight: 'bold',
     '@media screen and (max-width:768px)': {
       fontSize: '32px',
-    }
+    },
   },
   text: {
     fontSize: '14px',
@@ -80,7 +80,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       overflowX: 'scroll',
       px: '0',
-    }
+    },
   },
   list: {
     display: 'grid',
@@ -91,7 +91,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: 'repeat(3,90%)',
     },
-    '>li' :{
+    '>li': {
       '>a': {
         display: 'flex',
         flexDirection: 'column',
@@ -99,9 +99,9 @@ const sxStyles = {
       '&:first-child': {
         '@media screen and (max-width:768px)': {
           pl: '20px',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   button: {
     color: '#00298A',
@@ -141,9 +141,9 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
   }
 
   const currentBreadcrumbs = [...downloadTitle, item.name];
-  const otherItems = Download
-  .filter((item) => `${item.slug}` !== downloadSlug)
-  .slice(0, 3);
+  const otherItems = Download.filter(
+    (item) => `${item.slug}` !== downloadSlug,
+  ).slice(0, 3);
   return (
     <main>
       <Box

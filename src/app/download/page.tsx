@@ -22,7 +22,7 @@ const sxStyles = {
     fontWeight: 'bold',
     '@media screen and (max-width:768px)': {
       fontSize: '32px',
-    }
+    },
   },
   text: {
     fontSize: '14px',
