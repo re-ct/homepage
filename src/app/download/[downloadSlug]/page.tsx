@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { downloadTitle } from '@/lib/const/BreadCrumbTitle';
 import Typography from '@mui/material/Typography';
+import { ArrowForward } from '@mui/icons-material';
 
 export async function generateStaticParams() {
   return Download.map((course) => ({
@@ -56,6 +57,44 @@ const sxStyles = {
       border: 'none',
     },
   },
+  other: {
+    mt: '80px',
+  },
+  list: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+    listStyle: 'none',
+    gap: '62px 10px',
+    mt: 3,
+    '@media screen and (max-width:768px)': {
+      gridTemplateColumns: '1fr',
+    },
+    '>li >a': {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  },
+  button: {
+    color: '#00298A',
+    border: 'solid 1px #00298A',
+    borderRadius: '50px',
+    padding: '8px 20px',
+    width: 'fit-content',
+    fontSize: '12px',
+    fontWeight: 'bold',
+    mt: '18px',
+    columnsGap: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    '.arrow-icon': {
+      fontSize: '14px',
+    },
+  },
+  title: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    mt: 2,
+  },
 };
 
 interface DownloadDetailsPageProps {
@@ -73,7 +112,9 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
   }
 
   const currentBreadcrumbs = [...downloadTitle, course.name];
-
+  const otherCourses = Download
+  .filter((item) => `${item.slug}` !== downloadSlug)
+  .slice(0, 3);
   return (
     <main>
       <Box
@@ -94,7 +135,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
         </Typography>
         <Box sx={sxStyles.wrap}>
           <Box>
-            <Typography variant="h1" sx={sxStyles.name}>
+            <Typography variant="h2" sx={sxStyles.name}>
               {course.name}
             </Typography>
             <img
@@ -120,6 +161,35 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
               読み込んでいます…
             </iframe>
           </Box>
+        </Box>
+        <Box sx={sxStyles.other}>
+          <Typography variant="h2" sx={sxStyles.name}>
+            その他の関連資料
+          </Typography>
+          <Box component="ul" sx={sxStyles.list}>
+              {otherCourses.map((item) => (
+                <Box component="li" key={item.slug}>
+                  <a href={`/download/${item.slug}`}>
+                    <img
+                      src={`../../../image/download/${item.thumbnail}`}
+                      alt=""
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        aspectRatio: '16/9',
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                      }}
+                    />
+                    <Typography sx={sxStyles.title}>{item.name}</Typography>
+                    <Box className="btn-container" sx={sxStyles.button}>
+                      ダウンロード
+                      <ArrowForward className="arrow-icon" />
+                    </Box>
+                  </a>
+                </Box>
+              ))}
+            </Box>
         </Box>
       </Box>
       <BreadcrumbsNavigation titles={currentBreadcrumbs} />

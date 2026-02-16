@@ -20,8 +20,8 @@ export const Download: Download[] = [
   },
   {
     id: 2,
-    slug: 'download3',
-    name: '実践！モダンJavaScript/TypeScript開発ガイド',
+    slug: 'download2',
+    name: '2こめ',
     thumbnail: 'thumbnail_example.webp',
     summary:
       'プログラミングに初めて触れる方へ向けた、ビジュアル重視の解説資料です。「コードを書く＝魔法を唱える」をコンセプトに、簡単なゲームを作りながら基本の「き」を楽しく学べます。お子様と一緒に進めたい保護者の方にも最適です。',
@@ -30,8 +30,8 @@ export const Download: Download[] = [
   },
   {
     id: 3,
-    slug: 'download4',
-    name: '実践！モダンJavaScript/TypeScript開発ガイド',
+    slug: 'download3',
+    name: '3こめ：TypeScript開発ガイド',
     thumbnail: 'thumbnail_example.webp',
     summary:
       'プログラミングに初めて触れる方へ向けた、ビジュアル重視の解説資料です。「コードを書く＝魔法を唱える」をコンセプトに、簡単なゲームを作りながら基本の「き」を楽しく学べます。お子様と一緒に進めたい保護者の方にも最適です。',
@@ -40,8 +40,18 @@ export const Download: Download[] = [
   },
   {
     id: 4,
-    slug: 'download2',
-    name: '実践！モダンJavaScript/TypeScript開発ガイド',
+    slug: 'download4',
+    name: '4個目：実践！モダンJavaScript/TypeScript開発ガイド',
+    thumbnail: 'thumbnail_example.webp',
+    summary:
+      'プログラミングに初めて触れる方へ向けた、ビジュアル重視の解説資料です。「コードを書く＝魔法を唱える」をコンセプトに、簡単なゲームを作りながら基本の「き」を楽しく学べます。お子様と一緒に進めたい保護者の方にも最適です。',
+    details:
+      'プログラミングに初めて触れる方へ向けた、ビジュアル重視の解説資料です。「コードを書く＝魔法を唱える」をコンセプトに、簡単なゲームを作りながら基本の「き」を楽しく学べます。お子様と一緒に進めたい保護者の方にも最適です。',
+  },
+  {
+    id: 5,
+    slug: 'download5',
+    name: '5こめ',
     thumbnail: 'thumbnail_example.webp',
     summary:
       'プログラミングに初めて触れる方へ向けた、ビジュアル重視の解説資料です。「コードを書く＝魔法を唱える」をコンセプトに、簡単なゲームを作りながら基本の「き」を楽しく学べます。お子様と一緒に進めたい保護者の方にも最適です。',
