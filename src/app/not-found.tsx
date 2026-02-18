@@ -65,7 +65,7 @@ export default function NotFound() {
             marginTop: '72px',
           }}
         >
-          ページトップへ戻る
+          サイトトップへ戻る
           <ArrowForwardIcon />
         </CommonLink>
       </Box>
