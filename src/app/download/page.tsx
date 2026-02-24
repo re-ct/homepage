@@ -61,7 +61,7 @@ const sxStyles = {
     fontSize: '12px',
     fontWeight: 'bold',
     mt: '18px',
-    columnsGap: '8px',
+    columnGap: '8px',
     display: 'flex',
     alignItems: 'center',
     '.arrow-icon': {

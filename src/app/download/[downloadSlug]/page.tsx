@@ -6,6 +6,7 @@ import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { downloadTitle } from '@/lib/const/BreadCrumbTitle';
 import Typography from '@mui/material/Typography';
 import { ArrowForward } from '@mui/icons-material';
+import { CommonLink } from '../../../components/CommonLink';
 
 export async function generateStaticParams() {
   return Download.map((item) => ({
@@ -112,7 +113,7 @@ const sxStyles = {
     fontSize: '12px',
     fontWeight: 'bold',
     mt: '18px',
-    columnsGap: '8px',
+    columnGap: '8px',
     display: 'flex',
     alignItems: 'center',
     '.arrow-icon': {
@@ -199,7 +200,12 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
           <Box component="ul" sx={sxStyles.list}>
             {otherItems.map((item) => (
               <Box component="li" key={item.slug}>
-                <a href={`/download/${item.slug}`}>
+                <CommonLink
+                  link={{
+                    href: `/download/${item.slug}`,
+                    external: false,
+                  }}
+                >
                   <img
                     src={`../../../image/download/${item.thumbnail}`}
                     alt=""
@@ -216,7 +222,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
                     ダウンロード
                     <ArrowForward className="arrow-icon" />
                   </Box>
-                </a>
+                </CommonLink>
               </Box>
             ))}
           </Box>
