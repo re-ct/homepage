@@ -31,7 +31,7 @@ const sxStyles = {
   box: {
     mt: '52px',
     '& + &': {
-      mt: '72px,',
+      mt: '72px',
     },
   },
   category: {
