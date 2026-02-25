@@ -50,6 +50,12 @@ const sxStyles = {
     '>li >a': {
       display: 'flex',
       flexDirection: 'column',
+      '&:hover': {
+        '> p': {
+          backgroundColor: '#00298A',
+          color: '#fff',
+        }
+      }
     },
   },
   button: {
@@ -64,6 +70,7 @@ const sxStyles = {
     columnGap: '8px',
     display: 'flex',
     alignItems: 'center',
+    transition: 'all 0.3s ease-out',
     '.arrow-icon': {
       fontSize: '14px',
     },

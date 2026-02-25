@@ -35,20 +35,24 @@ const sxStyles = {
     fontWeight: 'bold',
     '@media screen and (max-width:768px)': {
       fontSize: '32px',
+      px: '20px',
     },
   },
   text: {
     fontSize: '14px',
     mt: '8px',
+    '@media screen and (max-width:768px)': {
+      px: '20px',
+    },
   },
   wrap: {
     display: 'grid',
     gridTemplateColumns: '1fr 550px',
-    mt: '72px',
+    mt: '52px',
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       rowGap: '40px',
-      mt: '52px',
+      mt: '16px',
     },
   },
   otherTitle: {
@@ -60,14 +64,16 @@ const sxStyles = {
     px: '20px',
   },
   name: {
-    fontSize: '24px',
+    fontSize: '18px',
     fontWeight: 'bold',
     lineHeight: '1.6',
+    marginTop: '20px',
   },
   form: {
     iframe: {
       width: '100%',
       border: 'none',
+      minHeight: '1500px',
     },
   },
   other: {
@@ -125,6 +131,24 @@ const sxStyles = {
     fontWeight: 'bold',
     mt: 2,
   },
+  section: {
+    maxWidth: '940px',
+    mx: 'auto',
+    px: '20px',
+    pt: '70px',
+    '@media screen and (max-width:768px)': {
+      px: 0,
+    }
+  },
+  summary: {
+    '@media screen and (max-width:768px)': {
+      px: '20px',
+    }
+  },
+  details: {
+    fontSize: '14px',
+    mt: '8px',
+  }
 };
 
 interface DownloadDetailsPageProps {
@@ -149,12 +173,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
     <main>
       <Box
         component="section"
-        sx={{
-          maxWidth: '940px',
-          mx: 'auto',
-          px: '20px',
-          pt: '70px',
-        }}
+        sx={sxStyles.section}
       >
         <Typography variant="h1" sx={sxStyles.heading}>
           資料のお問い合わせ
@@ -163,71 +182,73 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
           資料を閲覧したい方は、お申し込みフォームからお問い合わせください。
         </Typography>
         <Box sx={sxStyles.wrap}>
-          <Box>
-            <Typography variant="h2" sx={sxStyles.name}>
-              {item.name}
-            </Typography>
+          <Box sx={sxStyles.summary}>
             <img
               src={`../../../image/download/${item.thumbnail}`}
               alt=""
-              width="500"
-              height="300"
+              width="1500"
+              height="900"
               style={{
                 width: '100%',
                 height: 'auto',
                 borderRadius: '8px',
-                marginTop: '20px',
+                marginTop: '12px',
               }}
             />
-            <Typography sx={sxStyles.text}>{item.details}</Typography>
+            <Typography variant="h2" sx={sxStyles.name}>
+              {item.name}
+            </Typography>
+            <Typography sx={sxStyles.details}>{item.details}</Typography>
           </Box>
           <Box sx={sxStyles.form}>
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSexsVLTHkqbV6XYvG_5X8PBckIWwYf3mXybYD7PKg0YU9IL5A/viewform"
+              src={item.form}
               width="640"
-              height="1300"
+              height="auto"
             >
               読み込んでいます…
             </iframe>
           </Box>
         </Box>
       </Box>
-      <Box sx={sxStyles.other}>
-        <Typography variant="h2" sx={sxStyles.otherTitle}>
-          その他の関連資料
-        </Typography>
-        <Box sx={sxStyles.listWrap}>
-          <Box component="ul" sx={sxStyles.list}>
-            {otherItems.map((item) => (
-              <Box component="li" key={item.slug}>
-                <CommonLink
-                  link={{
-                    href: `/download/${item.slug}`,
-                    external: false,
-                  }}
-                >
-                  <img
-                    src={`../../../image/download/${item.thumbnail}`}
-                    alt=""
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      aspectRatio: '500/300',
-                      objectFit: 'cover',
-                      borderRadius: '8px',
+      {otherItems && otherItems.length > 0 && (
+        <Box sx={sxStyles.other}>
+          <Typography variant="h2" sx={sxStyles.otherTitle}>
+            その他の関連資料
+          </Typography>
+          <Box sx={sxStyles.listWrap}>
+            <Box component="ul" sx={sxStyles.list}>
+              {otherItems.map((item) => (
+                <Box component="li" key={item.slug}>
+                  <CommonLink
+                    link={{
+                      href: `/download/${item.slug}`,
+                      external: false,
                     }}
-                  />
-                  <Typography sx={sxStyles.title}>{item.name}</Typography>
-                  <Box className="btn-container" sx={sxStyles.button}>
-                    ダウンロード
-                    <ArrowForward className="arrow-icon" />
-                  </Box>
-                </CommonLink>
-              </Box>
-            ))}
+                  >
+                    <img
+                      src={`../../../image/download/${item.thumbnail}`}
+                      alt=""
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        aspectRatio: '500/300',
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                      }}
+                    />
+                    <Typography sx={sxStyles.title}>{item.name}</Typography>
+                    <Box className="btn-container" sx={sxStyles.button}>
+                      ダウンロード
+                      <ArrowForward className="arrow-icon" />
+                    </Box>
+                  </CommonLink>
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
-      </Box>
+      )}
       <BreadcrumbsNavigation titles={currentBreadcrumbs} />
     </main>
   );
