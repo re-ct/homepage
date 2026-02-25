@@ -77,6 +77,7 @@ const Contact = () => {
           icon="arrow-right"
           href={contact}
           isExternal={true}
+          gaLabel="demand_contact_form"
         />
       </Box>
       <Box

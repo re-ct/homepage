@@ -114,6 +114,7 @@ const Contact = () => {
                   icon="keyboard-arrow-right"
                   href={fcRequestForDocument}
                   isExternal={true}
+                  gaLabel="fc_request_for_document"
                 />
               </Box>
             </Box>
@@ -133,6 +134,7 @@ const Contact = () => {
                   icon="keyboard-arrow-right"
                   href={fcContact}
                   isExternal={true}
+                  gaLabel="fc_contact_form"
                 />
               </Box>
             </Box>

@@ -131,6 +131,7 @@ const CorporateFooter = () => {
     },
     { text: 'プライバシーポリシー', href: '/privacy/' },
     { text: '電子公告', href: '/announcement/' },
+    { text: 'お役立ち資料', href: '/download/' },
   ];
 
   return (

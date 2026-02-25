@@ -330,6 +330,7 @@ const SchoolFcHeader = () => {
                   href: fcRequestForDocument,
                   external: true,
                 }}
+                data-ga="fc_request_for_document_header"
               >
                 資料請求
               </CommonLink>
@@ -343,6 +344,7 @@ const SchoolFcHeader = () => {
                   href: fcContact,
                   external: true,
                 }}
+                data-ga="fc_contact_form_header"
               >
                 お問い合わせ
               </CommonLink>
@@ -395,6 +397,7 @@ const SchoolFcHeader = () => {
                   href: fcRequestForDocument,
                   external: true,
                 }}
+                data-ga="fc_request_for_document_hamburger"
               >
                 資料請求
               </CommonLink>
@@ -411,6 +414,7 @@ const SchoolFcHeader = () => {
                   href: fcContact,
                   external: true,
                 }}
+                data-ga="fc_contact_form_hamburger"
               >
                 お問い合わせ
               </CommonLink>

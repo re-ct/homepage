@@ -72,6 +72,7 @@ const SchoolHeader = () => {
           sx={sxStyles.button}
           endIcon={<PlayCircle />}
           onClick={schoolHandleClick}
+          data-ga="school_free_trial_header"
         >
           無料体験受付中
         </Button>

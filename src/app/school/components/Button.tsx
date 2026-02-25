@@ -10,6 +10,7 @@ interface CustomButtonProps {
   icon?: 'keyboard-arrow-right' | 'new-tab';
   href: string;
   isExternal?: boolean;
+  gaLabel?: string;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -18,6 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   icon,
   href,
   isExternal = false,
+  gaLabel,
 }) => {
   const getIcon = () => {
     switch (icon) {
@@ -79,6 +81,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
         commonSxStyles.typography.buttonNormalText,
       ]}
       endIcon={getIcon()}
+      data-ga={gaLabel}
     >
       {label}
     </Button>
