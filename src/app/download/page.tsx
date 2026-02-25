@@ -6,6 +6,7 @@ import { Download } from '../../lib/const/Download';
 import Typography from '@mui/material/Typography';
 import { CommonLink } from '../../components/CommonLink';
 import { ArrowForward } from '@mui/icons-material';
+import { ArrowDownward } from '@mui/icons-material';
 
 export const metadata = {
   title: 'お役立ち資料一覧 | 株式会社レクト',
@@ -80,9 +81,34 @@ const sxStyles = {
     fontWeight: 'bold',
     mt: 2,
   },
+  nav: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '12px 20px',
+    color: '#00298A',
+    mt: '52px',
+    fontWeight: 'bold',
+    'a': {
+      borderBottom: 'solid 1px #00298A',
+      lineHeight: '1.6',
+      paddingBottom: '3px',
+      display: 'flex',
+      columnGap: '4px',
+      alignItems: 'center',
+      fontSize: '16px',
+      '.arrow-icon': {
+        fontSize: '18px',
+      },
+    }
+  },
+  section: {
+    mt: '72px',
+    scrollMarginTop: '100px',
+  }
 };
 
 const DownloadPage = () => {
+  const categories = Array.from(new Set(Download.map((item) => item.category)));
   return (
     <main>
       <Box
@@ -101,12 +127,32 @@ const DownloadPage = () => {
         <Typography sx={sxStyles.text}>
           弊社のサービスや活動に関する資料をご覧いただけます。
         </Typography>
-        <Box component="section" sx={sxStyles.box}>
+        <Box 
+          component="nav" 
+          sx={sxStyles.nav}
+        >
+          {categories.map((category) => (
+            <a 
+              key={category} 
+              href={`#${category}`} 
+            >
+              {category}
+              <ArrowDownward className="arrow-icon"/>
+            </a>
+          ))}
+        </Box>
+        {categories.map((category) => (
+          <Box 
+            component="section" 
+            key={category} 
+            id={category}
+            sx={sxStyles.section}
+          >
           <Typography variant="h2" sx={sxStyles.category}>
-            ノウハウ
+            {category}
           </Typography>
           <Box component="ul" sx={sxStyles.list}>
-            {Download.map((item) => (
+            {Download.filter((item) => item.category === category).map((item) => (
               <Box component="li" key={item.slug}>
                 <CommonLink
                   link={{
@@ -137,6 +183,7 @@ const DownloadPage = () => {
             ))}
           </Box>
         </Box>
+        ))}
       </Box>
       <BreadcrumbsNavigation titles={downloadTitle} />
     </main>

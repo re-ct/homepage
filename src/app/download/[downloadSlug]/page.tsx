@@ -102,6 +102,12 @@ const sxStyles = {
       '>a': {
         display: 'flex',
         flexDirection: 'column',
+        '&:hover': {
+          '> .btn-container': {
+            backgroundColor: '#00298A',
+            color: '#fff',
+          }
+        }
       },
       '&:first-child': {
         '@media screen and (max-width:768px)': {
@@ -122,6 +128,7 @@ const sxStyles = {
     columnGap: '8px',
     display: 'flex',
     alignItems: 'center',
+    transition: 'all 0.3s ease-out',
     '.arrow-icon': {
       fontSize: '14px',
     },
@@ -148,6 +155,12 @@ const sxStyles = {
   details: {
     fontSize: '14px',
     mt: '8px',
+  },
+  category: {
+    color: '#00298A',
+    mt: '24px',
+    fontSize: '14px',
+    fontWeight: 'bold',
   }
 };
 
@@ -199,6 +212,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
               {item.name}
             </Typography>
             <Typography sx={sxStyles.details}>{item.details}</Typography>
+            <Typography sx={sxStyles.category}># {item.category}</Typography>
           </Box>
           <Box sx={sxStyles.form}>
             <iframe
@@ -214,7 +228,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
       {otherItems && otherItems.length > 0 && (
         <Box sx={sxStyles.other}>
           <Typography variant="h2" sx={sxStyles.otherTitle}>
-            その他の関連資料
+            その他の資料
           </Typography>
           <Box sx={sxStyles.listWrap}>
             <Box component="ul" sx={sxStyles.list}>
