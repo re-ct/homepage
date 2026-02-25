@@ -55,10 +55,7 @@ const sxStyles = {
       gridColumn: '2 / 3',
       gridRow: '1 / 10',
     },
-    '& li:nth-child(4)': {
-      gridColumn: '3 / 4',
-    },
-    '& li:nth-child(5)': {
+    '& li:nth-child(n+4)': {
       gridColumn: '3 / 4',
     },
     '& li span': {
