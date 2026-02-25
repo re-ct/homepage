@@ -55,8 +55,8 @@ const sxStyles = {
         '> p': {
           backgroundColor: '#00298A',
           color: '#fff',
-        }
-      }
+        },
+      },
     },
   },
   button: {
@@ -88,7 +88,7 @@ const sxStyles = {
     color: '#00298A',
     mt: '52px',
     fontWeight: 'bold',
-    'a': {
+    a: {
       borderBottom: 'solid 1px #00298A',
       lineHeight: '1.6',
       paddingBottom: '3px',
@@ -99,12 +99,12 @@ const sxStyles = {
       '.arrow-icon': {
         fontSize: '18px',
       },
-    }
+    },
   },
   section: {
     mt: '72px',
     scrollMarginTop: '100px',
-  }
+  },
 };
 
 const DownloadPage = () => {
@@ -127,62 +127,58 @@ const DownloadPage = () => {
         <Typography sx={sxStyles.text}>
           弊社のサービスや活動に関する資料をご覧いただけます。
         </Typography>
-        <Box 
-          component="nav" 
-          sx={sxStyles.nav}
-        >
+        <Box component="nav" sx={sxStyles.nav}>
           {categories.map((category) => (
-            <a 
-              key={category} 
-              href={`#${category}`} 
-            >
+            <a key={category} href={`#${category}`}>
               {category}
-              <ArrowDownward className="arrow-icon"/>
+              <ArrowDownward className="arrow-icon" />
             </a>
           ))}
         </Box>
         {categories.map((category) => (
-          <Box 
-            component="section" 
-            key={category} 
+          <Box
+            component="section"
+            key={category}
             id={category}
             sx={sxStyles.section}
           >
-          <Typography variant="h2" sx={sxStyles.category}>
-            {category}
-          </Typography>
-          <Box component="ul" sx={sxStyles.list}>
-            {Download.filter((item) => item.category === category).map((item) => (
-              <Box component="li" key={item.slug}>
-                <CommonLink
-                  link={{
-                    href: `/download/${item.slug}`,
-                    external: false,
-                  }}
-                >
-                  <img
-                    src={`../../../image/download/${item.thumbnail}`}
-                    alt=""
-                    width="500"
-                    height="300"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      borderRadius: '8px',
-                    }}
-                  />
-                  <Typography component="h3" sx={sxStyles.title}>
-                    {item.name}
-                  </Typography>
-                  <Typography sx={sxStyles.button}>
-                    ダウンロード
-                    <ArrowForward className="arrow-icon" />
-                  </Typography>
-                </CommonLink>
-              </Box>
-            ))}
+            <Typography variant="h2" sx={sxStyles.category}>
+              {category}
+            </Typography>
+            <Box component="ul" sx={sxStyles.list}>
+              {Download.filter((item) => item.category === category).map(
+                (item) => (
+                  <Box component="li" key={item.slug}>
+                    <CommonLink
+                      link={{
+                        href: `/download/${item.slug}`,
+                        external: false,
+                      }}
+                    >
+                      <img
+                        src={`../../../image/download/${item.thumbnail}`}
+                        alt=""
+                        width="500"
+                        height="300"
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                          borderRadius: '8px',
+                        }}
+                      />
+                      <Typography component="h3" sx={sxStyles.title}>
+                        {item.name}
+                      </Typography>
+                      <Typography sx={sxStyles.button}>
+                        ダウンロード
+                        <ArrowForward className="arrow-icon" />
+                      </Typography>
+                    </CommonLink>
+                  </Box>
+                ),
+              )}
+            </Box>
           </Box>
-        </Box>
         ))}
       </Box>
       <BreadcrumbsNavigation titles={downloadTitle} />

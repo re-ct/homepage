@@ -21,8 +21,15 @@ export const Download: Download[] = [
     form: 'https://docs.google.com/forms/d/e/1FAIpQLSeKSi_nvIWPHFyoszwjmWGCLZRW01kfaWEUL60-zYeBt4lKew/viewform?embedded=true',
     category: '事業概要',
     details: (
-      <>Re:ProSプログラミング教室のフランチャイズ加盟に関する詳細資料です。<br/><br/>事業の強みから、ビジネスモデルと収益性、本部のサポート体制までを収録。加盟から運営開始までの流れもステップごとに解説しています。<br/><br/>プログラミング教室事業への参入を検討されている方は、まずはこちらの資料をご覧ください。</>
-      ),
+      <>
+        Re:ProSプログラミング教室のフランチャイズ加盟に関する詳細資料です。
+        <br />
+        <br />
+        事業の強みから、ビジネスモデルと収益性、本部のサポート体制までを収録。加盟から運営開始までの流れもステップごとに解説しています。
+        <br />
+        <br />
+        プログラミング教室事業への参入を検討されている方は、まずはこちらの資料をご覧ください。
+      </>
+    ),
   },
 ];
-

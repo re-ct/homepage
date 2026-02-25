@@ -106,8 +106,8 @@ const sxStyles = {
           '> .btn-container': {
             backgroundColor: '#00298A',
             color: '#fff',
-          }
-        }
+          },
+        },
       },
       '&:first-child': {
         '@media screen and (max-width:768px)': {
@@ -145,12 +145,12 @@ const sxStyles = {
     pt: '70px',
     '@media screen and (max-width:768px)': {
       px: 0,
-    }
+    },
   },
   summary: {
     '@media screen and (max-width:768px)': {
       px: '20px',
-    }
+    },
   },
   details: {
     fontSize: '14px',
@@ -161,7 +161,7 @@ const sxStyles = {
     mt: '24px',
     fontSize: '14px',
     fontWeight: 'bold',
-  }
+  },
 };
 
 interface DownloadDetailsPageProps {
@@ -184,10 +184,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
   ).slice(0, 3);
   return (
     <main>
-      <Box
-        component="section"
-        sx={sxStyles.section}
-      >
+      <Box component="section" sx={sxStyles.section}>
         <Typography variant="h1" sx={sxStyles.heading}>
           資料のお問い合わせ
         </Typography>
@@ -215,11 +212,7 @@ const DownloadDetailsPage = async ({ params }: DownloadDetailsPageProps) => {
             <Typography sx={sxStyles.category}># {item.category}</Typography>
           </Box>
           <Box sx={sxStyles.form}>
-            <iframe
-              src={item.form}
-              width="640"
-              height="auto"
-            >
+            <iframe src={item.form} width="640" height="auto">
               読み込んでいます…
             </iframe>
           </Box>
