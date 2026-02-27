@@ -21,6 +21,12 @@ export default function Home() {
     <main>
       <Kv />
       <Business />
+      <iframe
+        src="/sample/sample.html"
+        width="500"
+        height="300"
+        style={{ border: 'none' }}
+        title="GWD Content" />
       <Company />
       <Recruitment />
       <Contact />
