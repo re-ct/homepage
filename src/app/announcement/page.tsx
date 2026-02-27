@@ -3,12 +3,10 @@ import Box from '@mui/material/Box';
 import Post from './Post';
 import { Typography } from '@mui/material';
 
-
 export const metadata = {
   title: '電子公告 | 株式会社レクト',
   description: '株式会社レクトの電子公告に関する資料をご覧いただけます。',
 };
-
 
 const sxStyles = {
   heading: {
@@ -18,7 +16,7 @@ const sxStyles = {
       fontSize: '32px',
     },
   },
-}
+};
 
 const Announcement = () => {
   return (
