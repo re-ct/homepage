@@ -22,7 +22,7 @@ const sxStyles = {
       borderBottom: '1px solid rgb(217, 217, 217)',
       transition: 'all 0.2s ease-in-out',
       '@media screen and (max-width:768px)': {
-        gridTemplateColumns: '1fr 12px',
+        gridTemplateColumns: '1fr 20px',
         alignItems: 'center',
         rowGap: '8px',
       },
@@ -45,7 +45,7 @@ const sxStyles = {
       '>span': {
         '@media screen and (max-width:768px)': {
           gridRow: '2/3',
-          columnGap: '1/2',
+          gridColumn: '1/2',
         },
       },
       '&:hover': {
