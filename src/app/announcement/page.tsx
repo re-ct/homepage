@@ -7,7 +7,7 @@ import { announcementTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
   title: '電子公告 | 株式会社レクト',
-  description: '株式会社レクトの電子公告に関する資料をご覧いただけます。',
+  description: '株式会社レクトの電子公告をご覧いただけます。',
 };
 
 const sxStyles = {
