@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { Typography, Box } from '@mui/material';
 import { Announcement } from '../../lib/const/Announcement';
 import { CommonLink } from '../../components/CommonLink';
@@ -62,13 +61,18 @@ const sxStyles = {
 const list = Announcement.map((post) => (
   <React.Fragment key={post.link}>
     <li>
-      <Link href={`${post.link}`}>
+      <CommonLink
+        link={{
+          href: post.link,
+          external: false,
+        }}
+      >
         <time dateTime={`${post.year}-${post.month}-${post.day}`}>
           {post.year}年{post.month}月{post.day}日
         </time>
         <span>{post.title}</span>
         <ArrowForwardIcon />
-      </Link>
+      </CommonLink>
     </li>
   </React.Fragment>
 ));
