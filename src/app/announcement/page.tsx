@@ -2,6 +2,8 @@ import '../globals.css';
 import Box from '@mui/material/Box';
 import Post from './Post';
 import { Typography } from '@mui/material';
+import BreadcrumbsNavigation from '../BreadcrumbsNavigation';
+import { announcementTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
   title: '電子公告 | 株式会社レクト',
@@ -36,6 +38,7 @@ const Announcement = () => {
         </Typography>
         <Post />
       </Box>
+      <BreadcrumbsNavigation titles={announcementTitle} />
     </main>
   );
 };
