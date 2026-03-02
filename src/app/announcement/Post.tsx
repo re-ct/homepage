@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Announcement } from '../../lib/const/Announcement';
 import { CommonLink } from '../../components/CommonLink';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const sxStyles = {
   ul: {
@@ -61,6 +61,7 @@ const list = Announcement.map((post) => (
         link={{
           href: post.link,
           external: false,
+          newTab: true,
         }}
       >
         <time
@@ -69,7 +70,7 @@ const list = Announcement.map((post) => (
           {post.year}年{post.month}月{post.day}日
         </time>
         <span>{post.title}</span>
-        <ArrowForwardIcon />
+        <OpenInNewIcon />
       </CommonLink>
     </li>
   </React.Fragment>
