@@ -1,7 +1,7 @@
-import Heading2 from './components/Heading2';
-import CustomButton from './components/Button';
+import Heading2 from '../../components/Heading2';
+import CustomButton from '../../components/Button';
 import { Box, Typography } from '@mui/material';
-import { commonSxStyles } from './components/Style';
+import { commonSxStyles } from '../../components/Style';
 
 const sxStyles = {
   text: {

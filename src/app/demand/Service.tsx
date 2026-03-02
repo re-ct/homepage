@@ -1,8 +1,8 @@
-import Heading2 from './components/Heading2';
+import Heading2 from '../../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import skill from '../../../public/image/demand/service_skill.webp';
 import React from 'react';
-import { commonSxStyles } from './components/Style';
+import { commonSxStyles } from '../../components/Style';
 
 type SkillData = {
   id: string;

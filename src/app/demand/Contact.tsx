@@ -1,8 +1,8 @@
-import Heading2 from './components/Heading2';
-import CustomButton from './components/Button';
+import Heading2 from '../../components/Heading2';
+import CustomButton from '../../components/Button';
 import { Box, Typography } from '@mui/material';
 import img from '../../../public/image/demand/contact_image.webp';
-import { commonSxStyles } from './components/Style';
+import { commonSxStyles } from '../../components/Style';
 import { contact } from '../../lib/const/Link';
 
 const sxStyles = {
