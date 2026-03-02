@@ -1,8 +1,8 @@
-import Heading2 from '../../components/Heading2';
+import Heading2 from './components/Heading2';
 import { Box, Typography } from '@mui/material';
 import arrow from '../../../public/image/demand/flow_arrow.svg';
 import React from 'react';
-import { commonSxStyles } from '../../components/Style';
+import { commonSxStyles } from './components/Style';
 import { alpha } from '@mui/system';
 
 type Flow = {
