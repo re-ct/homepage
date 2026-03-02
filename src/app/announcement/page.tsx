@@ -1,8 +1,24 @@
 import '../globals.css';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Post from './Post';
 import { Typography } from '@mui/material';
+import BreadcrumbsNavigation from '../BreadcrumbsNavigation';
+import { announcementTitle } from '@/lib/const/BreadCrumbTitle';
+
+export const metadata = {
+  title: '電子公告 | 株式会社レクト',
+  description: '株式会社レクトの電子公告をご覧いただけます。',
+};
+
+const sxStyles = {
+  heading: {
+    fontSize: '38px',
+    fontWeight: 'bold',
+    '@media screen and (max-width:768px)': {
+      fontSize: '32px',
+    },
+  },
+};
 
 const Announcement = () => {
   return (
@@ -10,17 +26,19 @@ const Announcement = () => {
       <Box
         component="section"
         sx={{
-          textAlign: 'center',
+          maxWidth: '940px',
+          mx: 'auto',
+          px: '20px',
+          pt: '70px',
+          pb: '100px',
         }}
-        position="relative"
       >
-        <Container sx={{ mt: 8 }}>
-          <Typography variant="h1" fontSize={24} fontWeight={700} gutterBottom>
-            電子公告
-          </Typography>
-          <Post />
-        </Container>
+        <Typography variant="h1" sx={sxStyles.heading}>
+          電子公告
+        </Typography>
+        <Post />
       </Box>
+      <BreadcrumbsNavigation titles={announcementTitle} />
     </main>
   );
 };
