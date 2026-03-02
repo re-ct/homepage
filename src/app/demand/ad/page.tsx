@@ -1,6 +1,7 @@
 import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import KeyVisual from './KeyVisual';
+import Example from './Example';
 import Case from './Case';
 import Plan from './Plan';
 import Contact from '../components/Contact';
@@ -16,6 +17,7 @@ const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
       <KeyVisual />
+      <Example />
       <Case />
       <Plan />
       <Contact />

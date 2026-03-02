@@ -79,7 +79,7 @@ const sxStyles = {
   },
 };
 
-const Plan = () => {
+const Case = () => {
   return (
     <Box
       sx={{
@@ -135,4 +135,4 @@ const Plan = () => {
     </Box>
   );
 };
-export default Plan;
+export default Case;
