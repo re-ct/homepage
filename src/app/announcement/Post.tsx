@@ -63,7 +63,9 @@ const list = Announcement.map((post) => (
           external: false,
         }}
       >
-        <time dateTime={`${post.year}-${post.month}-${post.day}`}>
+        <time
+          dateTime={`${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`}
+        >
           {post.year}年{post.month}月{post.day}日
         </time>
         <span>{post.title}</span>
