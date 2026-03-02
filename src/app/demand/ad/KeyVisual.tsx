@@ -82,7 +82,9 @@ const KeyVisual = () => {
             }}
           >
             <Typography sx={commonSxStyles.typography.largeText}>
-              複雑な企画やデザインもプロにお任せ。<br/>今すぐ使えるインタラクティブ広告を制作します。
+              複雑な企画やデザインもプロにお任せ。
+              <br />
+              今すぐ使えるインタラクティブ広告を制作します。
             </Typography>
           </Box>
           <img src={img.src} alt="" width="828" height="640" />
