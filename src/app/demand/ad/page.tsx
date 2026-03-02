@@ -2,6 +2,8 @@ import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import KeyVisual from './KeyVisual';
 import Plan from './Plan';
+import Contact from '../components/Contact';
+import Company from '../components/Company';
 import { adTopTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
@@ -14,6 +16,8 @@ const Demand = () => {
     <main style={{ color: '#000' }}>
       <KeyVisual />
       <Plan />
+      <Contact />
+      <Company />
       <BreadcrumbsNavigation titles={adTopTitle} />
     </main>
   );

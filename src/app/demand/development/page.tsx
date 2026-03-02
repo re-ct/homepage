@@ -6,8 +6,8 @@ import Case from './Case';
 import Point from './Point';
 import Flow from './Flow';
 import Faq from './Faq';
-import Contact from './Contact';
-import Company from './Company';
+import Contact from '../components/Contact';
+import Company from '../components/Company';
 import { demandTopTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
