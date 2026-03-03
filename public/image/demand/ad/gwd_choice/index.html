@@ -528,10 +528,14 @@ var common = (function() {
    * Increments the current feed item index.
    */
   function setCurrentItemNext() {
-    var items = adData_.Product;
-    var index =
-        currentItemIndex_ < items.length - 1 ? currentItemIndex_ + 1 : 0;
-    setCurrentItemIndex(index);
+    var dataProvider = document.getElementById('gpa-data-provider');
+    var data = dataProvider ? dataProvider.getData() : null;
+  
+    if (data && data.Product) {
+      var items = data.Product;
+      var index = currentItemIndex_ < items.length - 1 ? currentItemIndex_ + 1 : 0;
+      setCurrentItemIndex(index);
+    }
   }
 
   /**
@@ -793,16 +797,21 @@ var custom = (function() {
    * Highlight item (replaces mouseOver)
    */
   function itemHighlight(item) {
+    var dataProvider = document.getElementById('gpa-data-provider');
+    var data = dataProvider ? dataProvider.getData() : null;
+    var items = (data && data.Product) ? data.Product : [];
+
     var itemDetails = item.querySelector('.' + elementClass_.itemDetails);
     var itemBorder = item.querySelector('.' + elementClass_.itemBorder);
-    itemDetails.style.opacity = 1;
-    itemBorder.style.opacity = 1;
+    if (itemDetails) itemDetails.style.opacity = 1;
+    if (itemBorder) itemBorder.style.opacity = 1;
 
-    // Revert other items.
     for (var i = 0; i < items.length; i++) {
       var current = items[i];
       if (item != current) {
-        itemMouseOut(current);
+        if (typeof itemMouseOut === 'function') {
+          itemMouseOut(current);
+        }
       }
     }
   }
@@ -1055,7 +1064,7 @@ m("gwd.textfitting.setMinFontSizePx",function(a){w.i=a});m("gwd.textfitting.setT
               </div>
               <div class="js-item-details transition-opacity" id="item-details">
               </div>
-              <div class="js-item-border transition-opacity" id="item-border"></div>
+              <div class="js-item-border transition-opacity" id="item-border" style="opacity: 0;"></div>
             </div>
           </gwd-taparea>
           <gwd-taparea id="item-01" class="gwd-taparea-1w1a js-item" data-product-index="1">
@@ -1067,7 +1076,7 @@ m("gwd.textfitting.setMinFontSizePx",function(a){w.i=a});m("gwd.textfitting.setT
               </div>
               <div class="js-item-details transition-opacity" id="item-details">
               </div>
-              <div class="js-item-border transition-opacity" id="item-border"></div>
+              <div class="js-item-border transition-opacity" id="item-border" style="opacity: 0;"></div>
             </div>
           </gwd-taparea>
           <div class="custom-border" id="border"></div>
