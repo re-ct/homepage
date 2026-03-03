@@ -71,7 +71,7 @@ const Business = () => {
             <MediaCard
               heading="開発等の相談"
               text="どんな案件でもまずはご相談ください！"
-              href="/demand"
+              href="/demand/development"
               imgSrc={soudanImg.src}
               imgAlt="開発の相談"
             />
