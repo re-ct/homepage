@@ -28,7 +28,9 @@ const service: Service[] = [
     title: 'Webアプリ開発',
     detail: (
       <>
-        Webサービスの機能開発やCMSの構築・カスタマイズなど、<br/>バックエンドからフロントエンドまで一貫した実装を請け負います。
+        Webサービスの機能開発やCMSの構築・カスタマイズなど、
+        <br />
+        バックエンドからフロントエンドまで一貫した実装を請け負います。
       </>
     ),
   },
@@ -38,11 +40,13 @@ const service: Service[] = [
     title: 'インタラクティブ広告制作',
     detail: (
       <>
-        HTMLを利用した、スワイプやタップなどに応じることができる<br/>インタラクティブ広告を制作します。
+        HTMLを利用した、スワイプやタップなどに応じることができる
+        <br />
+        インタラクティブ広告を制作します。
       </>
     ),
   },
-]
+];
 
 const sxStyles = {
   heading: {
@@ -71,7 +75,7 @@ const sxStyles = {
     },
     '>li + li': {
       mt: '52px',
-    }
+    },
   },
   title: {
     fontWeight: 'bold',
@@ -80,10 +84,10 @@ const sxStyles = {
   details: {
     mt: '16px',
     '@media screen and (max-width:768px)': {
-      'br': {
+      br: {
         display: 'none',
-      }
-    }
+      },
+    },
   },
   category: {
     fontWeight: 'bold',
@@ -91,7 +95,7 @@ const sxStyles = {
   },
   button: {
     color: commonSxStyles.color.primary,
-    border: 'solid 1px'+commonSxStyles.color.primary,
+    border: 'solid 1px' + commonSxStyles.color.primary,
     borderRadius: '50px',
     padding: '8px 20px',
     width: 'fit-content',
@@ -115,9 +119,9 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       aspectRatio: '300/150',
       height: '150px',
-    }
-  }
-}
+    },
+  },
+};
 
 const Demand = () => {
   return (
@@ -138,22 +142,40 @@ const Demand = () => {
         <Typography sx={sxStyles.text}>
           私たちの持つITの力で、お客様のあらゆるビジネス課題を解決へと導きます。
         </Typography>
-        <Box component='ul' sx={sxStyles.list}>
+        <Box component="ul" sx={sxStyles.list}>
           {service.map((item) => (
             <Box component="li" key={item.id}>
               <CommonLink
-                  link={{
-                    href: `/demand/${item.id}`,
-                    external: false,
-                  }}
-                >
+                link={{
+                  href: `/demand/${item.id}`,
+                  external: false,
+                }}
+              >
                 <Box sx={sxStyles.image}>
-                  <img src={item.id} width="800" height="800"/>
+                  <img src={item.id} width="800" height="800" />
                 </Box>
                 <Box>
-                  <Typography sx={[commonSxStyles.typography.normalText,sxStyles.category]}>{item.category}</Typography>
-                  <Typography sx={[commonSxStyles.typography.heading3,sxStyles.title]}>{item.title}</Typography>
-                  <Typography sx={[commonSxStyles.typography.normalText,sxStyles.details]}>{item.detail}</Typography>
+                  <Typography
+                    sx={[
+                      commonSxStyles.typography.normalText,
+                      sxStyles.category,
+                    ]}
+                  >
+                    {item.category}
+                  </Typography>
+                  <Typography
+                    sx={[commonSxStyles.typography.heading3, sxStyles.title]}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={[
+                      commonSxStyles.typography.normalText,
+                      sxStyles.details,
+                    ]}
+                  >
+                    {item.detail}
+                  </Typography>
                   <Typography sx={sxStyles.button}>
                     詳細へ
                     <ArrowForward className="arrow-icon" />
@@ -164,8 +186,8 @@ const Demand = () => {
           ))}
         </Box>
       </Box>
-    <Contact />
-    <BreadcrumbsNavigation titles={demandTopTitle} />
+      <Contact />
+      <BreadcrumbsNavigation titles={demandTopTitle} />
     </main>
   );
 };
