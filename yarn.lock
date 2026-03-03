@@ -426,6 +426,18 @@
   dependencies:
     "@isaacs/balanced-match" "^4.0.1"
 
+"@lottiefiles/dotlottie-react@^0.18.3":
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/dotlottie-react/-/dotlottie-react-0.18.3.tgz#96431ef0f95fce371d74b37075fbc580b64594a7"
+  integrity sha512-/6iVC4y9KCyPKS2gDUFp+omYndo3KPombAsZXB0h5sSyEO/+ydVppd5fIoHg2ogGAPOCPK97Y5Eos65JnyTjww==
+  dependencies:
+    "@lottiefiles/dotlottie-web" "0.65.0"
+
+"@lottiefiles/dotlottie-web@0.65.0":
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/dotlottie-web/-/dotlottie-web-0.65.0.tgz#8b769275b5f2d69885309e585dc22e5dff549e2b"
+  integrity sha512-D5ALEwZerjy+MkOv9mMjY7bxRfe7rQPWMtDl8hlNYLnrDKj4AzTaRztZ2u5hBHHiSfSc7TnA4MJgq+ktNZPpIg==
+
 "@mui/core-downloads-tracker@^7.3.6":
   version "7.3.6"
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-7.3.6.tgz#e7e3a4dc161a377be8224aa988410e89571ab40a"

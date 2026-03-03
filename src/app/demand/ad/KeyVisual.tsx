@@ -1,56 +1,73 @@
 import { Box, Typography } from '@mui/material';
 import CustomButton from '../components/Button';
-import img from '../../../../public/image/demand/key_visual_image.webp';
 import { commonSxStyles } from '../components/Style';
 import { contact } from '../../../lib/const/Link';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import image from '../../../../public/image/demand/ad/advertise.json';
+
+const sxStyles = {
+  imageBox: {
+    maxWidth: '414px',
+    width: 'calc(100% - 485px)',
+    aspectRatio: '1/1',
+    height: 'auto',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    '@media screen and (max-width:768px)': {
+      display: 'none',
+    },
+    '>div': {
+      width: '200% !important',
+      height: '100% !important',
+      marginInline: 'auto',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+    }
+  },
+  subText: {
+    '@media screen and (max-width:768px)': {
+      textAlign: 'center',
+    }
+  }
+}
+
 
 const KeyVisual = () => {
   return (
     <Box
       sx={{
-        py: 6,
-        '@media screen and (max-width:460px)': {
-          py: 5,
-        },
+        pt: 0,
+        pb: 1,
       }}
     >
       <Box
         sx={{
-          maxWidth: '900px',
+          maxWidth: '1000px',
+          px: '20px',
           width: '100%',
           mx: 'auto',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           flexWrap: 'wrap',
           rowGap: 3,
           columnGap: 1,
-          '@media screen and (max-width:460px)': {
+          minHeight: '414px',
+          '@media screen and (max-width:768px)': {
             flexDirection: 'column',
-            px: 2.5,
-          },
-          '& > img': {
-            maxWidth: '414px',
-            height: 'auto',
-            '@media screen and (max-width:460px)': {
-              display: 'none',
-            },
+            pt: 7,
+            pb: 3,
           },
         }}
       >
         <Box
           sx={{
-            '& > img': {
-              display: 'none',
-              '@media screen and (max-width:460px)': {
-                display: 'block',
-                maxWidth: '100%',
-                height: 'auto',
-                mt: 2,
-                mx: 'auto',
-                px: 2.5,
-              },
-            },
             '@media screen and (max-width:460px)': {
               textAlign: 'center',
               width: '100%',
@@ -64,11 +81,9 @@ const KeyVisual = () => {
               letterSpacing: '0.04em',
               lineHeight: '1.4',
               fontWeight: 'bold',
-              '@media screen and (max-width:460px)': {
-                fontSize: '34px',
-              },
-              '@media screen and (max-width:360px)': {
-                fontSize: '29px',
+              '@media screen and (max-width:768px)': {
+                fontSize: 'clamp(34px, 9.06vw, 50px)',
+                textAlign: 'center',
               },
             }}
           >
@@ -81,19 +96,18 @@ const KeyVisual = () => {
               mt: 2,
             }}
           >
-            <Typography sx={commonSxStyles.typography.largeText}>
+            <Typography sx={[sxStyles.subText,commonSxStyles.typography.largeText]}>
               複雑な企画やデザインもプロにお任せ。
               <br />
               今すぐ使えるインタラクティブ広告を制作します。
             </Typography>
           </Box>
-          <img src={img.src} alt="" width="828" height="640" />
           <Box
             mt={4}
             sx={{
               width: '100%',
               '& > a': {
-                '@media screen and (max-width:890px)': {
+                '@media screen and (max-width:768px)': {
                   width: '100%',
                 },
               },
@@ -108,7 +122,12 @@ const KeyVisual = () => {
             />
           </Box>
         </Box>
-        <img src={img.src} alt="" width="828" height="640" />
+        <Box sx={sxStyles.imageBox}>
+          <DotLottieReact
+            data={image}
+            autoplay
+          />
+        </Box>
       </Box>
     </Box>
   );
