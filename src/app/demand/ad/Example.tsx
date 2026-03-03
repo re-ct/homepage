@@ -40,7 +40,7 @@ const sxStyles = {
     listStyle: 'none',
     flexWrap: 'wrap',
     '>li': {
-      maxWidth:'300px',
+      maxWidth: '300px',
       minWidth: '300px',
     },
     iframe: {
@@ -51,7 +51,7 @@ const sxStyles = {
       boxShadow: '0px 1px 5px rgba(0,0,0,0.25)',
       '>': {
         border: 'none !important',
-      }
+      },
     },
   },
 };
