@@ -49,7 +49,7 @@ const CorporateFooter = () => {
       nested: true,
       external: true,
     }, //別リポジトリのサイトのため、ローカルでは見れない
-    { text: '開発等の相談', href: '/demand/', nested: true },
+    { text: '開発等の相談', href: '/demand/development/', nested: true },
     {
       text: 'お問い合わせ',
       href: contact,
