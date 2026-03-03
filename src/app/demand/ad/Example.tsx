@@ -11,18 +11,18 @@ type list = {
 const list: list[] = [
   {
     id: 1,
-    banner: '',
+    banner: 'gwd_choice',
     detail:
       'バナー内に2つの選択肢を配置し、ユーザーがその場で選ぶことができます。',
   },
   {
     id: 2,
-    banner: '',
+    banner: 'gwd_slider',
     detail: '指やマウスをスライドさせることで、2つの画像を自由に比較できます。',
   },
   {
     id: 3,
-    banner: '',
+    banner: 'gwd_scratch',
     detail:
       '指やマウスでこすることで、プレゼントや特典を表示させることができます。',
   },
@@ -30,20 +30,28 @@ const list: list[] = [
 
 const sxStyles = {
   text: {
-    mt: '16px',
+    mt: '8px',
   },
   ul: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3,1fr)',
+    display: 'flex',
+    justifyContent: 'center',
     mt: '36px',
-    gap: '24px 16px',
+    gap: '36px 16px',
     listStyle: 'none',
-    '@media screen and (max-width:768px)': {
-      gridTemplateColumns: '1fr',
+    flexWrap: 'wrap',
+    '>li': {
+      maxWidth:'300px',
+      minWidth: '300px',
     },
     iframe: {
       maxWidth: '100%',
-      aspectRatio: '500/250',
+      aspectRatio: '300/250',
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0px 1px 5px rgba(0,0,0,0.25)',
+      '>': {
+        border: 'none !important',
+      }
     },
   },
 };
@@ -59,8 +67,6 @@ const Example = () => {
     >
       <Box
         sx={{
-          maxWidth: '940px',
-          width: '100%',
           mx: 'auto',
           px: 2.5,
         }}
@@ -70,9 +76,9 @@ const Example = () => {
           {list.map((item) => (
             <Box component="li" key={item.id}>
               <iframe
-                src={`/sample/${item.banner}.html`}
-                width="500"
-                height="250"
+                src={`/image/demand/ad/${item.banner}/index.html`}
+                width="600"
+                height="500"
                 style={{ border: 'none' }}
                 title={`サンプル${item.id}`}
               />
