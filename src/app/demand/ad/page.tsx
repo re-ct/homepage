@@ -10,7 +10,7 @@ import { adTopTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
   title:
-    'インタラクティブ広告の制作代行 | 開発実績多数！ソフトウェア開発の依頼は株式会社レクトへ',
+    'インタラクティブ広告の制作承ります | 株式会社レクト',
 };
 
 const Demand = () => {

@@ -23,6 +23,7 @@ const sxStyles = {
       gridRow: '3/4',
       gridColumn: '1/2',
       marginInline: 'auto',
+      maxWidth: '300px',
     },
     '>div': {
       width: '200% !important',
