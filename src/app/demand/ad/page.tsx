@@ -9,8 +9,7 @@ import Company from '../components/Company';
 import { adTopTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
-  title:
-    'インタラクティブ広告の制作承ります | 株式会社レクト',
+  title: 'インタラクティブ広告の制作承ります | 株式会社レクト',
 };
 
 const Demand = () => {
