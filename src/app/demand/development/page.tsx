@@ -9,6 +9,7 @@ import Faq from './Faq';
 import Contact from '../components/Contact';
 import Company from '../components/Company';
 import { demandDevelopmentTitle } from '@/lib/const/BreadCrumbTitle';
+import { contact } from '../../../lib/const/Link';
 
 export const metadata = {
   title:
@@ -24,7 +25,7 @@ const Demand = () => {
       <Point />
       <Flow />
       <Faq />
-      <Contact />
+      <Contact url={contact}/>
       <Company />
       <BreadcrumbsNavigation titles={demandDevelopmentTitle} />
     </main>

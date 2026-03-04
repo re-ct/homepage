@@ -7,7 +7,7 @@ import logoRectImg from '../../../public/image/top/logo_rect.png';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useRouter } from 'next/navigation';
-import { contact } from '../../lib/const/Link';
+import { contact,adContact } from '../../lib/const/Link';
 
 const sxStyles = {
   demandHeader: {
@@ -48,7 +48,9 @@ const DemandHeader = () => {
   const router = useRouter();
   const demandHandleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    router.push(contact);
+    const isAdPage = window.location.pathname.includes('/demand/ad/');
+    const targetUrl = isAdPage ? adContact : contact;
+    router.push(targetUrl);
   };
   return (
     <Toolbar

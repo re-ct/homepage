@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import CustomButton from '../components/Button';
 import { commonSxStyles } from '../components/Style';
-import { contact } from '../../../lib/const/Link';
+import { adContact } from '../../../lib/const/Link';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import image from '../../../../public/image/demand/ad/advertise.json';
 
@@ -133,7 +133,7 @@ const KeyVisual = () => {
           <CustomButton
             label="お問い合わせ"
             icon="arrow-right"
-            href={contact}
+            href={adContact}
             isExternal={true}
             gaLabel="demand_contact_form_keyvisual"
           />

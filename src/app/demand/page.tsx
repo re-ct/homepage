@@ -8,6 +8,7 @@ import { ReactNode } from 'react';
 import { CommonLink } from '../../components/CommonLink';
 import { commonSxStyles } from './components/Style';
 import { ArrowForward } from '@mui/icons-material';
+import { contact } from '../../lib/const/Link';
 
 export const metadata = {
   title: '開発支援事業 | 開発実績多数！株式会社レクト',
@@ -204,7 +205,7 @@ const Demand = () => {
           ))}
         </Box>
       </Box>
-      <Contact />
+      <Contact url={contact}/>
       <BreadcrumbsNavigation titles={demandTopTitle} />
     </main>
   );
