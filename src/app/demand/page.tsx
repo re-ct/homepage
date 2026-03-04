@@ -10,8 +10,7 @@ import { commonSxStyles } from './components/Style';
 import { ArrowForward } from '@mui/icons-material';
 
 export const metadata = {
-  title:
-    '開発支援事業 | 開発実績多数！株式会社レクト',
+  title: '開発支援事業 | 開発実績多数！株式会社レクト',
 };
 
 type Service = {
@@ -195,7 +194,7 @@ const Demand = () => {
                   >
                     {item.detail}
                   </Typography>
-                  <Typography sx={sxStyles.button} className='button'>
+                  <Typography sx={sxStyles.button} className="button">
                     詳細へ
                     <ArrowForward className="arrow-icon" />
                   </Typography>
