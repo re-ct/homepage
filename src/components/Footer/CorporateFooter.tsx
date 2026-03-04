@@ -50,6 +50,7 @@ const CorporateFooter = () => {
       external: true,
     }, //別リポジトリのサイトのため、ローカルでは見れない
     { text: '開発等の相談', href: '/demand/development/', nested: true },
+    { text: 'インタラクティブ広告の制作', href: '/demand/ad/', nested: true },
     {
       text: 'お問い合わせ',
       href: contact,
