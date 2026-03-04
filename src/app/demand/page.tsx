@@ -115,11 +115,20 @@ const sxStyles = {
     aspectRatio: '1/1',
     height: 'auto',
     overflow: 'hidden',
-    objectFit: 'cover',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     '@media screen and (max-width:768px)': {
       aspectRatio: '300/150',
-      height: '150px',
+      width: '100%',
     },
+    '> img': {
+      width: '120%',
+      height: 'auto',
+      '@media screen and (max-width:768px)': {
+        width: '100%',
+      }
+    }
   },
 };
 
@@ -152,7 +161,7 @@ const Demand = () => {
                 }}
               >
                 <Box sx={sxStyles.image}>
-                  <img src={item.id} width="800" height="800" />
+                  <img src={`../../../../image/demand/thumbnail_${item.id}.webp`} width="1026" height="1026" />
                 </Box>
                 <Box>
                   <Typography
