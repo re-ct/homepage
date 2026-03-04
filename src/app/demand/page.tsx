@@ -205,7 +205,7 @@ const Demand = () => {
           ))}
         </Box>
       </Box>
-      <Contact url={contact}/>
+      <Contact url={contact} />
       <BreadcrumbsNavigation titles={demandTopTitle} />
     </main>
   );

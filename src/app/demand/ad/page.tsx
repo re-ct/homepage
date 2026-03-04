@@ -20,7 +20,7 @@ const Demand = () => {
       <Example />
       <Case />
       <Plan />
-      <Contact url={adContact}/>
+      <Contact url={adContact} />
       <Company />
       <BreadcrumbsNavigation titles={adTopTitle} />
     </main>

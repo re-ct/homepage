@@ -25,7 +25,7 @@ const Demand = () => {
       <Point />
       <Flow />
       <Faq />
-      <Contact url={contact}/>
+      <Contact url={contact} />
       <Company />
       <BreadcrumbsNavigation titles={demandDevelopmentTitle} />
     </main>

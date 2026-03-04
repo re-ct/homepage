@@ -4,7 +4,6 @@ import { Box, Typography } from '@mui/material';
 import img from '../../../../public/image/demand/contact_image.webp';
 import { commonSxStyles } from '../components/Style';
 
-
 const sxStyles = {
   text: {
     color: commonSxStyles.color.white,
@@ -28,7 +27,7 @@ interface ContactProps {
   url: string;
 }
 
-const Contact:React.FC<ContactProps> = ({url}) => {
+const Contact: React.FC<ContactProps> = ({ url }) => {
   return (
     <Box
       sx={{

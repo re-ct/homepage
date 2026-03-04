@@ -7,7 +7,7 @@ import logoRectImg from '../../../public/image/top/logo_rect.png';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useRouter } from 'next/navigation';
-import { contact,adContact } from '../../lib/const/Link';
+import { contact, adContact } from '../../lib/const/Link';
 
 const sxStyles = {
   demandHeader: {
