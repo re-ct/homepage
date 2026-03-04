@@ -1,5 +1,5 @@
-import '../globals.css';
-import BreadcrumbsNavigation from '../BreadcrumbsNavigation';
+import '../../globals.css';
+import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import KeyVisual from './KeyVisual';
 import Service from './Service';
 import Case from './Case';
