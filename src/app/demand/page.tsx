@@ -11,7 +11,7 @@ import { ArrowForward } from '@mui/icons-material';
 
 export const metadata = {
   title:
-    'ソフトウェア開発の相談・依頼 | 開発実績多数！ソフトウェア開発の依頼は株式会社レクトへ',
+    '開発支援事業 | 開発実績多数！株式会社レクト',
 };
 
 type Service = {
@@ -71,6 +71,12 @@ const sxStyles = {
       '@media screen and (max-width:768px)': {
         gridTemplateColumns: '1fr',
         rowGap: '24px',
+      },
+      '&:hover': {
+        '.button': {
+          backgroundColor: '#00298A',
+          color: '#fff',
+        },
       },
     },
     '>li + li': {
@@ -189,7 +195,7 @@ const Demand = () => {
                   >
                     {item.detail}
                   </Typography>
-                  <Typography sx={sxStyles.button}>
+                  <Typography sx={sxStyles.button} className='button'>
                     詳細へ
                     <ArrowForward className="arrow-icon" />
                   </Typography>
