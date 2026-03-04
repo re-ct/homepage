@@ -11,18 +11,18 @@ type list = {
 const list: list[] = [
   {
     id: 1,
-    banner: 'gwd_choice',
+    banner: 'choice',
     detail:
       'バナー内に2つの選択肢を配置し、ユーザーがその場で選ぶことができます。',
   },
   {
     id: 2,
-    banner: 'gwd_slider',
+    banner: 'slider',
     detail: '指やマウスをスライドさせることで、2つの画像を自由に比較できます。',
   },
   {
     id: 3,
-    banner: 'gwd_scratch',
+    banner: 'scratch',
     detail:
       '指やマウスでこすることで、プレゼントや特典を表示させることができます。',
   },
@@ -76,7 +76,7 @@ const Example = () => {
           {list.map((item) => (
             <Box component="li" key={item.id}>
               <iframe
-                src={`/image/demand/ad/${item.banner}/index.html`}
+                src={`/image/demand/ad/gwd/${item.banner}/index.html`}
                 width="600"
                 height="500"
                 style={{ border: 'none' }}
