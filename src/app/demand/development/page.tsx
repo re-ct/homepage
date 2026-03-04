@@ -6,9 +6,9 @@ import Case from './Case';
 import Point from './Point';
 import Flow from './Flow';
 import Faq from './Faq';
-import Contact from './Contact';
-import Company from './Company';
-import { demandTopTitle } from '@/lib/const/BreadCrumbTitle';
+import Contact from '../components/Contact';
+import Company from '../components/Company';
+import { demandDevelopmentTitle } from '@/lib/const/BreadCrumbTitle';
 
 export const metadata = {
   title:
@@ -26,7 +26,7 @@ const Demand = () => {
       <Faq />
       <Contact />
       <Company />
-      <BreadcrumbsNavigation titles={demandTopTitle} />
+      <BreadcrumbsNavigation titles={demandDevelopmentTitle} />
     </main>
   );
 };
