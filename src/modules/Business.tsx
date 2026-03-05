@@ -69,7 +69,7 @@ const Business = () => {
             }}
           >
             <MediaCard
-              heading="開発等の相談"
+              heading="開発支援事業"
               text="どんな案件でもまずはご相談ください！"
               href="/demand"
               imgSrc={soudanImg.src}
