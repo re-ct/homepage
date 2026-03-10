@@ -54,6 +54,10 @@ const sxStyles = {
       gridTemplateColumns: '250px 1fr',
       columnGap: '20px',
       flexDirection: 'column',
+      '@media screen and (max-width:768px)': {
+        gridTemplateColumns: '1fr',
+        rowGap: '20px',
+      }
     },
   },
   title: {
@@ -105,12 +109,19 @@ const sxStyles = {
     display: 'grid',
     gridTemplateColumns: '100px 1fr',
     columnGap: '32px',
+    '@media screen and (max-width:768px)': {
+      gridTemplateColumns: '1fr',
+      rowGap: '8px',
+    }
   },
   sortTitle: {
     fontSize: '16px',
     fontWeight: 'bold',
     mt: '8px',
   },
+  sortCheckText: {
+    fontSize: '14px',
+  }
 };
 
 const Seminar = () => {
@@ -185,7 +196,7 @@ const Seminar = () => {
                     />
                   }
                   label={
-                    <Typography sx={{ fontSize: '14px' }}>{status}</Typography>
+                    <Typography sx={sxStyles.sortCheckText}>{status}</Typography>
                   }
                 />
               ))}
@@ -210,7 +221,7 @@ const Seminar = () => {
                     />
                   }
                   label={
-                    <Typography sx={{ fontSize: '14px' }}>{cat}</Typography>
+                    <Typography sx={sxStyles.sortCheckText}>{cat}</Typography>
                   }
                 />
               ))}
