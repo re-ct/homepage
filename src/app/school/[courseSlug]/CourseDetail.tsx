@@ -16,7 +16,7 @@ interface CourseDetailProps {
     thumbnail: string;
     summary: string;
     details: string;
-    note: string;
+    note?: string;
     target: string;
     sessionCount: string;
     duration: string;
