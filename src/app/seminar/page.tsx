@@ -57,7 +57,7 @@ const sxStyles = {
       '@media screen and (max-width:768px)': {
         gridTemplateColumns: '1fr',
         rowGap: '20px',
-      }
+      },
     },
   },
   title: {
@@ -112,7 +112,7 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
       rowGap: '8px',
-    }
+    },
   },
   sortTitle: {
     fontSize: '16px',
@@ -121,7 +121,7 @@ const sxStyles = {
   },
   sortCheckText: {
     fontSize: '14px',
-  }
+  },
 };
 
 const Seminar = () => {
@@ -196,7 +196,9 @@ const Seminar = () => {
                     />
                   }
                   label={
-                    <Typography sx={sxStyles.sortCheckText}>{status}</Typography>
+                    <Typography sx={sxStyles.sortCheckText}>
+                      {status}
+                    </Typography>
                   }
                 />
               ))}
