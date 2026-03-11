@@ -48,6 +48,9 @@ const sxStyles = {
   },
   wrap: {
     mt: '52px',
+    '@media screen and (max-width:768px)': {
+      px: '20px',
+    },
     h3: {
       fontWeight: 'bold',
       paddingLeft: '12px',
@@ -319,46 +322,46 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
               </Box>
             </Box>
           </Box>
-          <Box sx={sxStyles.wrap}>
-            <Typography component="h3">登壇者</Typography>
-            {item.speakers.map((speaker, index) => {
-              const imageSrc = speaker.icon
-                ? `../../../image/seminar/${speaker.icon}.webp`
-                : `../../../image/seminar/no-icon.webp`;
-              return (
-                <Box key={index} sx={sxStyles.speaker}>
-                  <Box
-                    component="img"
-                    src={imageSrc}
-                    alt={speaker.name}
-                    width="60"
-                    height="60"
-                  />
-                  <Box>
-                    <Typography sx={sxStyles.speakerName}>
-                      {speaker.name}
-                    </Typography>
-                    <Typography sx={sxStyles.speakerAffiliation}>
-                      {speaker.affiliation}
-                    </Typography>
-                  </Box>
+        </Box>
+        <Box sx={sxStyles.wrap}>
+          <Typography component="h3">登壇者</Typography>
+          {item.speakers.map((speaker, index) => {
+            const imageSrc = speaker.icon
+              ? `../../../image/seminar/${speaker.icon}.webp`
+              : `../../../image/seminar/no-icon.webp`;
+            return (
+              <Box key={index} sx={sxStyles.speaker}>
+                <Box
+                  component="img"
+                  src={imageSrc}
+                  alt={speaker.name}
+                  width="60"
+                  height="60"
+                />
+                <Box>
+                  <Typography sx={sxStyles.speakerName}>
+                    {speaker.name}
+                  </Typography>
+                  <Typography sx={sxStyles.speakerAffiliation}>
+                    {speaker.affiliation}
+                  </Typography>
                 </Box>
-              );
-            })}
-          </Box>
-          <Box sx={sxStyles.wrap}>
-            <Typography component="h3">注意事項</Typography>
-            <Box component="ul" sx={sxStyles.note}>
-              <Typography component="li">
-                講演内容、時間、登壇者は、予告なく変更になる場合がございます。あらかじめご了承ください。
-              </Typography>
-              <Typography component="li">
-                反社会的勢力に該当する方、およびその関係者の方のご参加はお断りいたします。
-              </Typography>
-              <Typography component="li">
-                本セミナーの目的と異なる、他参加者への過度な勧誘や営業行為は固くお断りいたします。発見次第、ご退場いただく場合がございます。
-              </Typography>
-            </Box>
+              </Box>
+            );
+          })}
+        </Box>
+        <Box sx={sxStyles.wrap}>
+          <Typography component="h3">注意事項</Typography>
+          <Box component="ul" sx={sxStyles.note}>
+            <Typography component="li">
+              講演内容、時間、登壇者は、予告なく変更になる場合がございます。あらかじめご了承ください。
+            </Typography>
+            <Typography component="li">
+              反社会的勢力に該当する方、およびその関係者の方のご参加はお断りいたします。
+            </Typography>
+            <Typography component="li">
+              本セミナーの目的と異なる、他参加者への過度な勧誘や営業行為は固くお断りいたします。発見次第、ご退場いただく場合がございます。
+            </Typography>
           </Box>
         </Box>
       </Box>
