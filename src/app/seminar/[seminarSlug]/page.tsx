@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: SeminarDetailsPageProps) {
   const item = SeminarData.find((item) => String(item.id) === seminarSlug);
 
   if (!item) {
-    return { title: 'セミナーが見つかりません' };
+    return { title: 'セミナーが見つかりません | 株式会社レクト' };
   }
 
-  return { title: `${item.name} | 株式会社` };
+  return { title: `${item.name} | 株式会社レクト` };
 }
 
 const sxStyles = {
@@ -71,13 +71,6 @@ const sxStyles = {
     fontWeight: 'bold',
     lineHeight: '1.6',
     marginTop: '16px',
-  },
-  form: {
-    iframe: {
-      width: '100%',
-      border: 'none',
-      minHeight: '1500px',
-    },
   },
   other: {
     pb: '100px',
@@ -137,6 +130,12 @@ const sxStyles = {
   details: {
     fontSize: '14px',
     mt: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: '16px',
+    h3: {
+      mt: '24px',
+    },
   },
   category: {
     color: '#00298A',
@@ -235,8 +234,8 @@ const sxStyles = {
       '@media screen and (max-width:768px)': {
         marginInline: 'auto',
       },
-    }
-  }
+    },
+  },
 };
 
 const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
@@ -289,11 +288,13 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
               }}
             />
             <Box sx={sxStyles.details}>
-              {typeof item.details === 'string' ? (
-                <Typography>{item.details || item.description}</Typography>
-              ) : (
-                item.details
-              )}
+              <Typography>{item.description}</Typography>
+              {item.details &&
+                (typeof item.details === 'string' ? (
+                  <Typography>{item.details}</Typography>
+                ) : (
+                  item.details
+                ))}
             </Box>
             <Box sx={sxStyles.content}>
               <Typography component="h3">セミナー概要</Typography>
@@ -314,10 +315,6 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
                 <Box component="div" sx={sxStyles.informationWrap}>
                   <Typography component="dt">場所</Typography>
                   <Typography component="dd">{item.location}</Typography>
-                </Box>
-                <Box component="div" sx={sxStyles.informationWrap}>
-                  <Typography component="dt">定員</Typography>
-                  <Typography component="dd"></Typography>
                 </Box>
                 <Box component="div" sx={sxStyles.informationWrap}>
                   <Typography component="dt">参加費</Typography>
@@ -381,8 +378,12 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
           </Box>
           <Box sx={sxStyles.button}>
             <CommonLink
-              link={{ href: `/seminar/${item.applicationLink}`, external: true }}
-              >参加を申し込む
+              link={{
+                href: `/seminar/${item.applicationLink}`,
+                external: true,
+              }}
+            >
+              参加を申し込む
               <ArrowForwardIcon />
             </CommonLink>
           </Box>
