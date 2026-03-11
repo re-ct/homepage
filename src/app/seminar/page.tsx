@@ -241,7 +241,7 @@ const Seminar = () => {
                     link={{ href: `/seminar/${item.id}`, external: false }}
                   >
                     <img
-                      src={`../../../image/download/${item.thumbnail}`}
+                      src={`../../../image/seminar/${item.thumbnail}`}
                       alt=""
                       width="500"
                       height="300"

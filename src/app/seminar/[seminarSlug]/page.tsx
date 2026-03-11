@@ -260,7 +260,7 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
             {item.name}
           </Typography>
           <img
-            src={`../../../image/download/${item.thumbnail}`}
+            src={`../../../image/seminar/${item.thumbnail}`}
             alt=""
             width="1500"
             height="900"
@@ -380,7 +380,7 @@ const SeminarDetailsPage = async ({ params }: SeminarDetailsPageProps) => {
                   >
                     <Typography sx={sxStyles.otherLabel}>受付中</Typography>
                     <img
-                      src={`../../../image/download/${other.thumbnail}`}
+                      src={`../../../image/seminar/${other.thumbnail}`}
                       alt=""
                       style={{
                         width: '100%',
