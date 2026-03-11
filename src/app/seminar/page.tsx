@@ -58,11 +58,17 @@ const sxStyles = {
         gridTemplateColumns: '1fr',
         rowGap: '20px',
       },
+      '&:hover': {
+        'p': {
+          color: '#00298A',
+        },
+      },
     },
   },
   title: {
     fontSize: '16px',
     fontWeight: 'bold',
+    transition: 'all 0.3s ease-out',
   },
   section: {
     mt: '72px',
