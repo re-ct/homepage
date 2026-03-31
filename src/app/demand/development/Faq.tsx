@@ -1,6 +1,6 @@
-import Heading2 from './components/Heading2';
+import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
-import { commonSxStyles } from './components/Style';
+import { commonSxStyles } from '../components/Style';
 
 const questionData = [
   {

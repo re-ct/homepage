@@ -96,7 +96,7 @@ const CareerFooter = () => {
               newTab: true,
             }}
           >
-            電子広告
+            電子公告
           </CommonLink>
         </Box>
       </Box>

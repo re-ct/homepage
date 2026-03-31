@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import CustomButton from './components/Button';
-import img from '../../../public/image/demand/key_visual_image.webp';
-import { commonSxStyles } from './components/Style';
-import { contact } from '../../lib/const/Link';
+import CustomButton from '../components/Button';
+import img from '../../../../public/image/demand/key_visual_image.webp';
+import { commonSxStyles } from '../components/Style';
+import { contact } from '../../../lib/const/Link';
 
 const KeyVisual = () => {
   return (

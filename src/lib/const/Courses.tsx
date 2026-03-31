@@ -8,6 +8,7 @@ type Course = {
   thumbnail: string;
   summary: string;
   details: string;
+  note?: string;
   target: string;
   sessionCount: string;
   duration: string;
@@ -40,6 +41,32 @@ export const Courses: Course[] = [
     duration: '1回60分',
     price: {
       tuition: 6500,
+      materials: 500,
+      admission: 10000,
+    },
+    schedule: {
+      dayOfWeeks: ['月', '火', '水', '木', '金'],
+      times: ['17:00〜18:00', '18:30〜19:30', '19:40〜20:40'],
+    },
+  },
+  {
+    id: 3,
+    slug: 'roblox-intermediate',
+    name: {
+      category: 'Roblox ゲーム開発',
+      level: '中級',
+    },
+    thumbnail: 'thumbnail_course_roblox_intermediate.webp',
+    summary:
+      '実際の開発で使用されているテキストプログラミング言語「Luau」を用いて、Roblox(ロブロックス)の世界でゲーム開発をしながらプログラミングを学びます。',
+    details:
+      '主に、キーボードを使用する本格的なプログラミングを行うコースです。',
+    note: '※受講生はScratch 初級を受講完了したレベルを想定しています。(ジュニア・プログラミング検定のシルバー以上を取得可能なレベル)',
+    target: '小学5年生〜高校3年生',
+    sessionCount: '週1回',
+    duration: '1回60分',
+    price: {
+      tuition: 8500,
       materials: 500,
       admission: 10000,
     },

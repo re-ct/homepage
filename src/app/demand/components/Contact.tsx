@@ -1,9 +1,8 @@
-import Heading2 from './components/Heading2';
-import CustomButton from './components/Button';
+import Heading2 from '../components/Heading2';
+import CustomButton from '../components/Button';
 import { Box, Typography } from '@mui/material';
-import img from '../../../public/image/demand/contact_image.webp';
-import { commonSxStyles } from './components/Style';
-import { contact } from '../../lib/const/Link';
+import img from '../../../../public/image/demand/contact_image.webp';
+import { commonSxStyles } from '../components/Style';
 
 const sxStyles = {
   text: {
@@ -24,7 +23,11 @@ const sxStyles = {
   },
 };
 
-const Contact = () => {
+interface ContactProps {
+  url: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ url }) => {
   return (
     <Box
       sx={{
@@ -75,7 +78,7 @@ const Contact = () => {
           isPrimary={false}
           showFreeLabel={false}
           icon="arrow-right"
-          href={contact}
+          href={url}
           isExternal={true}
           gaLabel="demand_contact_form"
         />

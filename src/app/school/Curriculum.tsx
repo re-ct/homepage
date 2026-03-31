@@ -14,12 +14,11 @@ const sxStyles = {
     px: 3,
   },
   list: {
-    display: 'flex',
-    columnGap: '20px',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+    columnGap: '12px',
     alignItems: 'stretch',
     mt: 6,
-    width: '800px',
-    maxWidth: '100%',
     mx: 'auto',
     p: 0,
     flexWrap: 'wrap',
@@ -45,13 +44,16 @@ const sxStyles = {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'flex-start',
+      justifyContent: 'space-between',
       boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
       transition: 'all 0.3s ease-out',
       '&:hover': {
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
         transform: 'translateY(-4px)',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        '@media screen and (max-width:768px)': {
+          transform: 'none',
+        },
       },
     },
     '@media screen and (max-width:768px)': {
@@ -75,7 +77,7 @@ const sxStyles = {
     mt: '12px',
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 4,
+    WebkitLineClamp: 5,
     overflow: 'hidden',
     height: '84px',
     '@media screen and (max-width:768px)': {
@@ -135,10 +137,7 @@ const sxStyles = {
     mt: '20px',
     fontSize: '12px',
     color: '#fff',
-    textAlign: 'center',
-    '@media screen and (max-width:768px)': {
-      textAlign: 'left',
-    },
+    textAlign: 'left',
   },
   container: {
     maxWidth: '1000px',
