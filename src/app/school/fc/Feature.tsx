@@ -335,7 +335,7 @@ const sxStyles = {
       alignItems: 'flex-start',
       rowGap: '12px',
       mt: '24px',
-    }
+    },
   },
   liDetail: {
     a: {
