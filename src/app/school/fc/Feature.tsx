@@ -270,7 +270,7 @@ const sxStyles = {
     gridTemplateColumns: '24px 1fr 200px',
     columnGap: '12px',
     backgroundColor: commonSxStyles.color.white,
-    borderRadius: '12px',
+    borderRadius: '4px',
     boxShadow: '0 0 16px rgba(0, 0, 0, 0.15)',
     '@media screen and (max-width:768px)': {
       display: 'flex',
