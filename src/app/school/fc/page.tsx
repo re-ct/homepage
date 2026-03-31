@@ -1,7 +1,7 @@
 import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
-import AboutScratch from './AboutScratch';
+import Curriculum from './Curriculum';
 import KeyVisual from './KeyVisual';
 import Feature from './Feature';
 import Fee from './Fee';
@@ -28,7 +28,7 @@ const School = () => {
       <Feature />
       <Fee />
       <Comparison />
-      <AboutScratch />
+      <Curriculum />
       <Flow />
       <Faq />
       <Contact />
