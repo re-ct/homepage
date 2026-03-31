@@ -46,6 +46,7 @@ const point: Point[] = [
             href: '#curriculum',
             external: false,
           }}
+          gaLabel="feature_curriculum"
         >
           教材について詳しく見る
           <KeyboardArrowDown />
@@ -73,6 +74,7 @@ const point: Point[] = [
             href: '#fee',
             external: false,
           }}
+          gaLabel="feature_fee"
         >
           契約内容について詳しく見る
           <KeyboardArrowDown />
@@ -342,7 +344,7 @@ const sxStyles = {
       color: commonSxStyles.color.primary[900],
       textDecoration: 'underline',
       display: 'flex',
-      alignItem: 'center',
+      alignItems: 'center',
       fontSize: '12px',
       fontWeight: 'bold',
       '&:hover': {

@@ -185,7 +185,7 @@ const sxStyles = {
   },
 };
 
-const AboutScratch = () => {
+const Curriculum = () => {
   return (
     <Box sx={sxStyles.section}>
       <FadeInOnView>
@@ -304,4 +304,4 @@ const AboutScratch = () => {
     </Box>
   );
 };
-export default AboutScratch;
+export default Curriculum;
