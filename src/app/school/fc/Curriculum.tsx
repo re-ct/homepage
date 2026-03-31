@@ -46,6 +46,8 @@ const sxStyles = {
     maxWidth: '948px',
     px: '24px',
     mx: 'auto',
+    paddingTop: '120px',
+    marginTop: '-120px',
     '@media screen and (max-width:450px)': {
       maxWidth: '100%',
     },
