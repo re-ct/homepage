@@ -275,7 +275,9 @@ const sxStyles = {
     '@media screen and (max-width:768px)': {
       display: 'flex',
       flexDirection: 'column',
-      py: 3,
+      pt: 3,
+      pb: 4,
+      alignItems: 'center',
     },
     '& + &': {
       marginTop: '20px',
@@ -329,12 +331,13 @@ const sxStyles = {
     flexDirection: 'column',
     rowGap: '4px',
     mt: '16px',
+    '@media screen and (max-width:768px)': {
+      alignItems: 'flex-start',
+      rowGap: '12px',
+      mt: '24px',
+    }
   },
   liDetail: {
-    '@media screen and (max-width:768px)': {
-      marginTop: '16px',
-      textAlign: 'center',
-    },
     a: {
       color: commonSxStyles.color.primary[900],
       textDecoration: 'underline',
