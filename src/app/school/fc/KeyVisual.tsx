@@ -155,7 +155,7 @@ const KeyVisual = () => {
           <Box sx={sxStyles.textWrap}>
             <Typography sx={sxStyles.subCopy}>知識ゼロでも大丈夫！</Typography>
             <Typography sx={sxStyles.mainCopy}>
-              プログラミング入門教材<strong>Scratch</strong>で
+              プログラミング講師になって
             </Typography>
             <Typography sx={sxStyles.mainCopyEmphasis}>
               あなたの空き時間を
