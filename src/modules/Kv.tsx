@@ -10,6 +10,7 @@ const Kv = () => {
       <Box
         sx={{
           textAlign: 'center',
+          overflow: 'hidden',
           '@media screen and (max-width:800px)': {
             display: 'none',
           },

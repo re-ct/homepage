@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import manager from '../../../../public/image/school/fc/about_manager.webp';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 const courses = [
   {
