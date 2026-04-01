@@ -2,19 +2,21 @@ import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import React from 'react';
 import FadeInOnView from '../components/FadeInOnView';
+import { CommonLink } from '../../../components/CommonLink';
 
 import {
   CheckCircleOutlined,
   CoPresent,
   CurrencyYen,
   ImportContacts,
+  KeyboardArrowDown,
 } from '@mui/icons-material';
 import { ReactNode } from 'react';
 
 type Point = {
   id: number;
   title: string | ReactNode;
-  detail: string | ReactNode;
+  detail: React.ReactNode[];
 };
 
 type Worries = {
@@ -26,16 +28,31 @@ type Worries = {
 const point: Point[] = [
   {
     id: 1,
-    title: <>プログラミング知識ゼロでOK</>,
-    detail: (
+    title: <>授業は教材の内容に沿うだけ</>,
+    detail: [
       <>
-        視覚的で直感的なScratchを使用するため、
+        現役エンジニア講師が開発した教材を一式提供しています。
         <br />
-        難しいコードは不要。
-        <br />
-        教える側もすぐに慣れます。
-      </>
-    ),
+        動画教材では、生徒が動画に沿って自分のペースで受講するスタイルなので
+        <strong>教える側の手間がありません。</strong>
+      </>,
+      <>
+        教材の内容からサポートするだけなので、
+        <strong>特別な指導スキルが必要ない</strong>のもポイントです。
+      </>,
+      <>
+        <CommonLink
+          link={{
+            href: '#curriculum',
+            external: false,
+          }}
+          gaLabel="feature_curriculum"
+        >
+          教材について詳しく見る
+          <KeyboardArrowDown />
+        </CommonLink>
+      </>,
+    ],
   },
   {
     id: 2,
@@ -45,35 +62,36 @@ const point: Point[] = [
         固定ロイヤリティで始めやすい<span>※</span>
       </>
     ),
-    detail: <>生徒数や売上に関わらず一律の固定額です。</>,
+    detail: [
+      <>
+        ロイヤリティは、生徒数や売上に関わらず月額固定。
+        <br />
+        低リスクで高収益を目指せます。
+      </>,
+      <>
+        <CommonLink
+          link={{
+            href: '#fee',
+            external: false,
+          }}
+          gaLabel="feature_fee"
+        >
+          契約内容について詳しく見る
+          <KeyboardArrowDown />
+        </CommonLink>
+      </>,
+    ],
   },
   {
     id: 3,
-    title: <>教材・指導マニュアル完備</>,
-    detail: (
+    title: <>ライフスタイルに合わせて開講可能</>,
+    detail: [
       <>
-        本部が開発したScratch教材、指導マニュアルを
+        週末の数時間や平日の夜のみの稼働でもOKです。
         <br />
-        一式提供。授業準備の負担を軽減します。
-      </>
-    ),
-  },
-  {
-    id: 4,
-    title: (
-      <>
-        ライフスタイルに合わせて
-        <br />
-        開講可能
-      </>
-    ),
-    detail: (
-      <>
-        週末の数時間や
-        <br />
-        平日の夜のみの稼働でもOKです。
-      </>
-    ),
+        本業や家事と両立しながら、無理なく教室を続けられます。
+      </>,
+    ],
   },
 ];
 
@@ -245,33 +263,32 @@ const sxStyles = {
     },
   },
   ul: {
-    backgroundColor: commonSxStyles.color.white,
-    borderRadius: '12px',
-    boxShadow: '0 0 16px rgba(0, 0, 0, 0.15)',
     mt: 4,
     listStyle: 'none',
-    py: '10px',
-    px: '30px',
   },
   li: {
     display: 'grid',
-    alignItems: 'center',
-    borderBottom: 'solid 1px' + commonSxStyles.color.Gray[200],
-    py: 2,
-    gridTemplateColumns: '24px 1fr 150px',
-    columnGap: '16px',
-    '&:last-child': {
-      borderBottom: 'none',
-    },
+    p: '32px',
+    gridTemplateColumns: '24px 1fr 200px',
+    columnGap: '12px',
+    backgroundColor: commonSxStyles.color.white,
+    borderRadius: '4px',
+    boxShadow: '0 0 16px rgba(0, 0, 0, 0.15)',
     '@media screen and (max-width:768px)': {
       display: 'flex',
       flexDirection: 'column',
-      py: 3,
+      pt: 3,
+      pb: 4,
+      alignItems: 'center',
+    },
+    '& + &': {
+      marginTop: '20px',
     },
   },
   icon: {
     gridColumn: '1 / 2',
     gridRow: '1 / 4',
+    mt: '4px',
     color: commonSxStyles.color.Orange[400],
     '@media screen and (max-width:768px)': {
       display: 'none',
@@ -295,7 +312,6 @@ const sxStyles = {
   },
   liTitle: {
     gridColumn: '2 / 3',
-    marginTop: '20px',
     '& > br': {
       display: 'none',
       '@media screen and (max-width:768px)': {
@@ -310,18 +326,30 @@ const sxStyles = {
       fontSize: '16px',
     },
   },
-  liDetail: {
-    gridColumn: '2 / 3',
-    color: commonSxStyles.color.Gray[700],
-    '& > br': {
-      display: 'none',
-      '@media screen and (max-width:768px)': {
-        display: 'block',
-      },
-    },
+  liDetailWrap: {
+    gridColumn: '1 / 3',
+    gridRow: '2/3',
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: '4px',
+    mt: '16px',
     '@media screen and (max-width:768px)': {
-      marginTop: '16px',
-      textAlign: 'center',
+      alignItems: 'flex-start',
+      rowGap: '12px',
+      mt: '24px',
+    },
+  },
+  liDetail: {
+    a: {
+      color: commonSxStyles.color.primary[900],
+      textDecoration: 'underline',
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: '12px',
+      fontWeight: 'bold',
+      '&:hover': {
+        opacity: '0.8',
+      },
     },
   },
   image: {
@@ -408,19 +436,26 @@ const Feature = () => {
                     <Box
                       component="img"
                       src={`../../../../image/school/fc/feature_point${item.id}.webp`}
-                      alt="開講準備から開講後まで本部がサポートいたします"
+                      alt=""
                       width={900}
                       height={600}
                       sx={sxStyles.image}
                     />
-                    <Typography
-                      sx={[
-                        sxStyles.liDetail,
-                        commonSxStyles.typography.normalText,
-                      ]}
-                    >
-                      {item.detail}
-                    </Typography>
+                    <Box sx={sxStyles.liDetailWrap}>
+                      {item.detail.map(
+                        (text: React.ReactNode, index: number) => (
+                          <Typography
+                            key={index}
+                            sx={[
+                              sxStyles.liDetail,
+                              commonSxStyles.typography.normalText,
+                            ]}
+                          >
+                            {text}
+                          </Typography>
+                        ),
+                      )}
+                    </Box>
                   </Box>
                 </React.Fragment>
               ))}
