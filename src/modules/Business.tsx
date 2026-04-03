@@ -23,21 +23,21 @@ const BusinessList: Business[] = [
     title: 'プログラミング教室 Re:ProS',
     detail: '学生向けのプログラミングスクール',
     img: 'service_programming',
-    href: '/school',
+    href: '/school/',
   },
   {
     id: '2',
     title: 'Re:ProS Career',
     detail: 'エンジニアのキャリア支援',
     img: 'service_career',
-    href: '/career',
+    href: '/career/',
   },
   {
     id: '3',
     title: '開発等の相談',
     detail: 'どんな案件でもまずはご相談ください！',
     img: 'service_soudan',
-    href: '/demand',
+    href: '/demand/',
   },
 ];
 
