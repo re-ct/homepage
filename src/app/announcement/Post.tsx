@@ -61,7 +61,6 @@ const list = Announcement.map((post) => (
         link={{
           href: post.link,
           external: false,
-          newTab: true,
         }}
       >
         <time

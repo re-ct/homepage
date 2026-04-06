@@ -67,7 +67,6 @@ const CareerFooter = () => {
             link={{
               href: '/',
               external: false,
-              newTab: true,
             }}
           >
             運営会社
@@ -84,7 +83,6 @@ const CareerFooter = () => {
             link={{
               href: '/privacy',
               external: false,
-              newTab: true,
             }}
           >
             プライバシーポリシー
@@ -93,7 +91,6 @@ const CareerFooter = () => {
             link={{
               href: '/announcement',
               external: false,
-              newTab: true,
             }}
           >
             電子公告
