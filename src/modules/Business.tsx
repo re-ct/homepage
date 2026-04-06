@@ -176,7 +176,7 @@ const Business = () => {
                   key={item.id}
                   onMouseEnter={() => setHoveredId(item.id)}
                 >
-                  <Link href={item.href} target="_blank" rel="noopener">
+                  <Link href={item.href}>
                     <Box
                       component="img"
                       key={item.id}

@@ -106,7 +106,6 @@ const SchoolFooter = () => {
     {
       text: 'Re:ProS フランチャイズオーナー募集サイト',
       href: '/school/fc/',
-      external: true,
     },
   ];
   return (
@@ -150,7 +149,6 @@ const SchoolFooter = () => {
                 link={{
                   href: '/',
                   external: false,
-                  newTab: true,
                 }}
               >
                 運営会社
@@ -167,7 +165,6 @@ const SchoolFooter = () => {
                 link={{
                   href: '/privacy/',
                   external: false,
-                  newTab: true,
                 }}
               >
                 プライバシーポリシー
@@ -176,7 +173,6 @@ const SchoolFooter = () => {
                 link={{
                   href: '/announcement/',
                   external: false,
-                  newTab: true,
                 }}
               >
                 電子公告
