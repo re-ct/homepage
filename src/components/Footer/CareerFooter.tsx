@@ -36,10 +36,10 @@ const sxStyles = {
     color: '#fff',
     letterSpacing: '1px',
     fontSize: '12px',
+    fontFeatureSettings: '"palt"',
     '@media screen and (max-width:450px)': {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gridTemplateRows: '1fr 1fr',
+      gridTemplateColumns: '1fr',
       gap: '16px 20px',
       width: '100%',
     },
@@ -65,6 +65,14 @@ const CareerFooter = () => {
         <Box sx={sxStyles.list}>
           <CommonLink
             link={{
+              href: '/career/regulations/',
+              external: false,
+            }}
+          >
+            求職者・求人者の皆様へのご案内
+          </CommonLink>
+          <CommonLink
+            link={{
               href: '/',
               external: false,
             }}
@@ -81,7 +89,7 @@ const CareerFooter = () => {
           </CommonLink>
           <CommonLink
             link={{
-              href: '/privacy',
+              href: '/privacy/',
               external: false,
             }}
           >
@@ -89,7 +97,7 @@ const CareerFooter = () => {
           </CommonLink>
           <CommonLink
             link={{
-              href: '/announcement',
+              href: '/announcement/',
               external: false,
             }}
           >
