@@ -10,7 +10,10 @@ import {
 const OperatingRules = () => {
   return (
     <Box component="section">
-      <Typography variant="h2">業務の運営に関する規程</Typography>
+      <Box>
+        <Typography variant="h2">業務の運営に関する規程</Typography>
+        <Typography variant="body2">事業所名 株式会社レクト 事務所</Typography>
+      </Box>
       <Box component="section">
         <Typography variant="h3">第１ 求人</Typography>
         <List component="ul">
@@ -20,7 +23,8 @@ const OperatingRules = () => {
                 1.
               </Typography>
             </ListItemIcon>
-            <ListItemText primary="本所は、取扱職種の範囲等（※）に関する限り、いかなる求人の申込みについてもこれを受理します。ただし、その申込みの内容が法令に違反したり、賃金、労働時間等の労働条件が通常の労働条件と比べて著しく不適当である場合、一定の労働関係法令（労働基準法及び職業安定法等）違反のある場合及び暴力団員などによる求人である場合には受理しません。" />
+            <ListItemText primary="本所は、取扱職種の範囲等（※）に関する限り、いかなる求人の申込みについてもこれを受理します。" />
+            <ListItemText primary="ただし、その申込みの内容が法令に違反したり、賃金、労働時間等の労働条件が通常の労働条件と比べて著しく不適当である場合、一定の労働関係法令（労働基準法及び職業安定法等）違反のある場合及び暴力団員などによる求人である場合には受理しません。" />
           </ListItem>
           <ListItem component="li">
             <ListItemIcon>
@@ -28,7 +32,8 @@ const OperatingRules = () => {
                 2.
               </Typography>
             </ListItemIcon>
-            <ListItemText primary="求人の申込みは、求人者又はその代理人が直接来所されて、所定の求人票により、お申込みください。直接来所できないときは、郵便、電話、ファックス又は電子メールでも差し支えありません。" />
+            <ListItemText primary="求人の申込みは、求人者又はその代理人が直接来所されて、所定の求人票により、お申込みください。" />
+            <ListItemText primary="直接来所できないときは、郵便、電話、ファックス又は電子メールでも差し支えありません。" />
           </ListItem>
           <ListItem component="li">
             <ListItemIcon>
@@ -119,7 +124,7 @@ const OperatingRules = () => {
                 6.
               </Typography>
             </ListItemIcon>
-            <ListItemText primary="本所は、労働争議に対する中立の立場をとるため、同盟罷業又は作業閉鎖の行われている間は求人者に、紹介を致しません" />
+            <ListItemText primary="本所は、労働争議に対する中立の立場をとるため、同盟罷業又は作業閉鎖の行われている間は求人者に、紹介を致しません。" />
           </ListItem>
           <ListItem component="li">
             <ListItemIcon>

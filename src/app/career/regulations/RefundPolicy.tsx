@@ -19,50 +19,28 @@ const DataProtectionPolicy = () => {
         <Typography variant="body1">
           採用決定者が就業開始後（入社日起算日とします）、自己都合による退職もしくは、採用決定者の責による解雇（退職日もしくは解雇日を算定日とします）となった場合（以下「退社等」という）、当社は求人者に、報酬の一部を下記のとおり返還するものとします。ただし、退社等が求人者の責に帰すべき事由に起因する場合はこの限りではありません。
         </Typography>
-        <TableContainer component={Paper} variant="outlined">
-          <Table aria-label="fee table">
-            <TableHead>
-              <TableRow>
-                <TableCell>サービスの種類及び内容</TableCell>
-                <TableCell>手数料の額及び負担者</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell>
-                  退社等が入社後３か月以内の場合
-                  <br />
-                  <span>（報酬には消費税および地方消費税を含みます）</span>
-                </TableCell>
-                <TableCell>紹介手数料（成功報酬）の50%</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  求人受理後、求人者に求職者を紹介するサービス【職業紹介サービス】
-                </TableCell>
-                <TableCell>
-                  成功報酬
-                  <br />
-                  (期間の定めのない雇用契約の紹介の場合)
-                  <br />
-                  当該求職者の就職後1年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%
-                  (または500,000円)
-                  <br />
-                  上記のうちどちらか高い方とする
-                  <br />
-                  (期間の定めのある雇用契約の紹介の場合)
-                  <br />
-                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%(または500,000円)
-                  <br />
-                  上記のうちどちらか高い方とする
-                  <br />
-                  <br />
-                  手数料負担者は求人者とします。
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <Box>
+          <Typography variant="body1">
+            記
+          </Typography>
+          <TableContainer component={Paper} variant="outlined">
+            <Table aria-label="fee table">
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    退社等が入社後３か月以内の場合
+                    <br />
+                    <span>（報酬には消費税および地方消費税を含みます）</span>
+                  </TableCell>
+                  <TableCell>紹介手数料（成功報酬）の50%</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Typography variant="body2">
+            以上
+          </Typography>
+        </Box>
         <Box component="dl">
           <Box component="div">
             <Box component="dt">許可番号</Box>
