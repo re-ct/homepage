@@ -89,7 +89,7 @@ const CareerFooter = () => {
           </CommonLink>
           <CommonLink
             link={{
-              href: '/privacy',
+              href: '/privacy/',
               external: false,
             }}
           >
@@ -97,7 +97,7 @@ const CareerFooter = () => {
           </CommonLink>
           <CommonLink
             link={{
-              href: '/announcement',
+              href: '/announcement/',
               external: false,
             }}
           >
