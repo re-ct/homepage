@@ -24,6 +24,7 @@ const sxStyles = {
     mt: '8px',
   },
   contents: {
+    color: '#000',
     display: 'flex',
     flexDirection: 'column',
     rowGap: '52px',
@@ -64,7 +65,6 @@ const sxStyles = {
         flexDirection: 'column',
         alignItems: 'flex-start',
         '& .MuiListItemIcon-root': {
-          color: '#000',
           position: 'absolute',
           top: '0',
           left: '0',
@@ -72,7 +72,6 @@ const sxStyles = {
           maxWidth: '2em',
         },
         '& .MuiListItemText-root': {
-          color: '#000',
           margin: '0',
           display: 'flex',
           flex: 'none',
@@ -115,6 +114,9 @@ const sxStyles = {
         },
       },
       table: {
+        '& .MuiTableCell-root': {
+          color: '#000',
+        },
         '& .MuiTableCell-head': {
           backgroundColor: '#f5f5f5',
           '&:first-child': {
