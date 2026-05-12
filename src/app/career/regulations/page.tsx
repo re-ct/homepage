@@ -7,7 +7,8 @@ import FeeSchedule from './FeeSchedule';
 
 export const metadata = {
   title: '求職者・求人者の皆様へのご案内 | Re:ProS Career',
-  description: '株式会社レクトが運営する職業紹介事業Re:ProS Careerに係る情報を掲載しております。',
+  description:
+    '株式会社レクトが運営する職業紹介事業Re:ProS Careerに係る情報を掲載しております。',
 };
 
 const sxStyles = {
