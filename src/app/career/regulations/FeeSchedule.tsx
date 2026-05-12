@@ -10,7 +10,7 @@ import {
   Box,
 } from '@mui/material';
 
-const DataProtectionPolicy = () => {
+const FeeSchedule = () => {
   return (
     <Box component="section">
       <Typography variant="h2">手数料</Typography>
@@ -220,4 +220,4 @@ const DataProtectionPolicy = () => {
   );
 };
 
-export default DataProtectionPolicy;
+export default FeeSchedule;

@@ -9,7 +9,7 @@ import {
   Box,
 } from '@mui/material';
 
-const DataProtectionPolicy = () => {
+const RefundPolicy = () => {
   return (
     <Box component="section">
       <Typography variant="h2">返戻金制度について</Typography>
@@ -53,4 +53,4 @@ const DataProtectionPolicy = () => {
   );
 };
 
-export default DataProtectionPolicy;
+export default RefundPolicy;

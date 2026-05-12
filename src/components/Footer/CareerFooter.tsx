@@ -65,7 +65,7 @@ const CareerFooter = () => {
         <Box sx={sxStyles.list}>
           <CommonLink
             link={{
-              href: '/career/regulations',
+              href: '/career/regulations/',
               external: false,
             }}
           >
