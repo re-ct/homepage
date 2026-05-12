@@ -3,7 +3,6 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   Paper,
   Typography,
@@ -20,9 +19,7 @@ const DataProtectionPolicy = () => {
           採用決定者が就業開始後（入社日起算日とします）、自己都合による退職もしくは、採用決定者の責による解雇（退職日もしくは解雇日を算定日とします）となった場合（以下「退社等」という）、当社は求人者に、報酬の一部を下記のとおり返還するものとします。ただし、退社等が求人者の責に帰すべき事由に起因する場合はこの限りではありません。
         </Typography>
         <Box>
-          <Typography variant="body1">
-            記
-          </Typography>
+          <Typography variant="body1">記</Typography>
           <TableContainer component={Paper} variant="outlined">
             <Table aria-label="fee table">
               <TableBody>
@@ -37,9 +34,7 @@ const DataProtectionPolicy = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          <Typography variant="body2">
-            以上
-          </Typography>
+          <Typography variant="body2">以上</Typography>
         </Box>
         <Box component="dl">
           <Box component="div">

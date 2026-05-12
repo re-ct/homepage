@@ -35,7 +35,7 @@ const sxStyles = {
       fontSize: '14px',
       letterSpacing: '0.05em',
       lineHeight: '1.7',
-      'h2': {
+      h2: {
         fontSize: '20px',
         paddingLeft: '16px',
         borderLeft: 'solid 4px #00298A',
