@@ -62,9 +62,6 @@ const sxStyles = {
           position: 'absolute',
           top: '0',
           left: '0',
-          fontSize: '14px',
-          letterSpacing: '0.05em',
-          lineHeight: '1.7',
           minWidth: '2em',
           maxWidth: '2em',
         },
@@ -78,6 +75,11 @@ const sxStyles = {
           paddingLeft: '2em',
         },
       },
+      '& .MuiTypography-body1': {
+        fontSize: '14px',
+        letterSpacing: '0.01em',
+        lineHeight: '1.6',
+      },
       dl: {
         marginTop: '8px',
         '>div': {
@@ -90,6 +92,24 @@ const sxStyles = {
           justifyContent: 'space-between',
           '&::after': {
             content: '":"',
+          },
+        },
+      },
+      table: {
+        '& .MuiTableCell-head': {
+          backgroundColor: '#f5f5f5',
+          '&:first-child': {
+            maxWidth: '250px',
+            minWidth: '250px',
+          },
+          '&:nth-child(2)': {
+            maxWidth: '600px',
+            minWidth: '600px',
+          },
+        },
+        '& .MuiTableCell-body': {
+          span: {
+            fontSize: '12px',
           },
         },
       },

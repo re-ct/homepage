@@ -21,21 +21,18 @@ const DataProtectionPolicy = () => {
         </Typography>
         <TableContainer component={Paper} variant="outlined">
           <Table aria-label="fee table">
-            <TableHead sx={{ backgroundColor: '#f5f5f5' }}>
+            <TableHead>
               <TableRow>
-                <TableCell sx={{ fontWeight: 'bold' }}>
-                  サービスの種類及び内容
-                </TableCell>
-                <TableCell sx={{ fontWeight: 'bold' }}>
-                  手数料の額及び負担者
-                </TableCell>
+                <TableCell>サービスの種類及び内容</TableCell>
+                <TableCell>手数料の額及び負担者</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
                 <TableCell>
                   退社等が入社後３か月以内の場合
-                  （報酬には消費税および地方消費税を含みます）
+                  <br />
+                  <span>（報酬には消費税および地方消費税を含みます）</span>
                 </TableCell>
                 <TableCell>紹介手数料（成功報酬）の５０％</TableCell>
               </TableRow>
@@ -44,9 +41,23 @@ const DataProtectionPolicy = () => {
                   求人受理後、求人者に求職者を紹介するサービス【職業紹介サービス】
                 </TableCell>
                 <TableCell>
-                  成功報酬(期間の定めのない雇用契約の紹介の場合)当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％
-                  (または500,000円)上記のうちどちらか高い方とする(期間の定めのある雇用契約の紹介の場合)当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％
-                  (または500,000円)上記のうちどちらか高い方とする手数料負担者は求人者とします。
+                  成功報酬
+                  <br />
+                  (期間の定めのない雇用契約の紹介の場合)
+                  <br />
+                  当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％
+                  (または500,000円)
+                  <br />
+                  上記のうちどちらか高い方とする
+                  <br />
+                  (期間の定めのある雇用契約の紹介の場合)
+                  <br />
+                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％(または500,000円)
+                  <br />
+                  上記のうちどちらか高い方とする
+                  <br />
+                  <br />
+                  手数料負担者は求人者とします。
                 </TableCell>
               </TableRow>
             </TableBody>
