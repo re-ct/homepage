@@ -78,6 +78,21 @@ const sxStyles = {
           paddingLeft: '2em',
         },
       },
+      dl: {
+        marginTop: '8px',
+        '>div': {
+          display: 'grid',
+          gridTemplateColumns: '200px 1fr',
+          columnGap: '8px',
+        },
+        dt: {
+          display: 'flex',
+          justifyContent: 'space-between',
+          '&::after': {
+            content: '":"',
+          },
+        },
+      },
     },
   },
 };
