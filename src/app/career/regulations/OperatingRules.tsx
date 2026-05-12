@@ -202,9 +202,7 @@ const OperatingRules = () => {
         <Typography variant="body2">
           2025年12月10日
           <br />
-          代表者 株式会社レクト
-          <br />
-          代表取締役 渡辺 優樹
+          代表者 株式会社レクト 代表取締役 渡辺 優樹
         </Typography>
       </Box>
     </Box>
