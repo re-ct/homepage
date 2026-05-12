@@ -53,9 +53,11 @@ const DataProtectionPolicy = () => {
           </Table>
         </TableContainer>
         <Typography variant="body1">
-        許可番号：23-ユ-303247<br/>事業所の名称及び所在地：株式会社レクト
-        事務所（愛知県豊川市御津町西方日暮50番地9 2F）
-      </Typography>
+          許可番号：23-ユ-303247
+          <br />
+          事業所の名称及び所在地：株式会社レクト
+          事務所（愛知県豊川市御津町西方日暮50番地9 2F）
+        </Typography>
       </Box>
     </Box>
   );
