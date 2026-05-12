@@ -1,0 +1,101 @@
+import '../../globals.css';
+import { Box, Typography } from '@mui/material';
+import OperatingRules from './OperatingRules';
+import DataProtectionPolicy from './DataProtectionPolicy';
+import RefundPolicy from './RefundPolicy';
+import FeeSchedule from './FeeSchedule';
+
+const sxStyles = {
+  heading: {
+    fontSize: '38px',
+    fontWeight: 'bold',
+    '@media screen and (max-width:768px)': {
+      fontSize: '32px',
+    },
+  },
+  text: {
+    fontSize: '14px',
+    mt: '8px',
+  },
+  contents: {
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: '52px',
+    mt: '52px',
+    '>section': {
+      display: 'flex',
+      flexDirection: 'column',
+      rowGap: '28px',
+      fontSize: '14px',
+      letterSpacing: '0.05em',
+      lineHeight: '1.7',
+      '>h2': {
+        fontSize: '20px',
+        paddingLeft: '16px',
+        borderLeft: 'solid 4px #00298A',
+        lineHeight: '1.4',
+        fontWeight: 'bold',
+      },
+      h3: {
+        fontSize: '16px',
+        lineHeight: '1.4',
+        fontWeight: 'bold',
+      },
+      section: {
+        display: 'flex',
+        flexDirection: 'column',
+        rowGap: '16px',
+      },
+      ul: {
+        padding: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        rowGap: '8px',
+      },
+      li: {
+        padding: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        '>div': {
+          margin: '0',
+          display: 'flex',
+          flex: 'none',
+          flexDirection: 'column',
+          width: '100%',
+        },
+      },
+    },
+  },
+};
+
+const regulations = () => {
+  return (
+    <main>
+      <Box
+        component="section"
+        sx={{
+          maxWidth: '940px',
+          mx: 'auto',
+          px: '20px',
+          pt: '70px',
+          pb: '100px',
+        }}
+      >
+        <Typography variant="h1" sx={sxStyles.heading}>
+          求職者・求人者の皆様へのご案内
+        </Typography>
+        <Typography sx={sxStyles.text}>
+          職業紹介事業に係る情報を掲載しております。
+        </Typography>
+        <Box sx={sxStyles.contents}>
+          <OperatingRules />
+          <DataProtectionPolicy />
+          <FeeSchedule />
+          <RefundPolicy />
+        </Box>
+      </Box>
+    </main>
+  );
+};
+
+export default regulations;
