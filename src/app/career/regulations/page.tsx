@@ -80,16 +80,29 @@ const sxStyles = {
         letterSpacing: '0.01em',
         lineHeight: '1.6',
       },
+      '& .MuiTypography-body2': {
+        fontSize: '14px',
+        letterSpacing: '0.01em',
+        lineHeight: '1.6',
+        textAlign: 'right',
+        marginTop: '20px',
+      },
       dl: {
         marginTop: '8px',
         '>div': {
           display: 'grid',
           gridTemplateColumns: '200px 1fr',
           columnGap: '8px',
+          '@media screen and (max-width:450px)': {
+            gridTemplateColumns: '1fr',
+          },
         },
         dt: {
           display: 'flex',
           justifyContent: 'space-between',
+          '@media screen and (max-width:450px)': {
+            justifyContent: 'flex-start',
+          },
           '&::after': {
             content: '":"',
           },

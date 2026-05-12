@@ -47,7 +47,7 @@ const DataProtectionPolicy = () => {
             <ListItemText primary="求職者等の個人情報に関して、当該情報に係る本人からの苦情の申出があった場合については、苦情処理担当者は誠意を持って適切な処理をすることとする。なお、個人情報の取扱いに係る苦情処理の担当者は、職業紹介責任者鈴木佑基とする。" />
           </ListItem>
         </List>
-        <Typography variant="body1">株式会社レクト事務所</Typography>
+        <Typography variant="body2">株式会社レクト事務所</Typography>
       </Box>
     </Box>
   );

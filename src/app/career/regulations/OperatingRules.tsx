@@ -199,8 +199,8 @@ const OperatingRules = () => {
           <br />
           地域：国内
         </Typography>
-        <Typography variant="body1">
-          2025年 12月 10日
+        <Typography variant="body2">
+          2025年12月10日
           <br />
           代表者 株式会社レクト
           <br />

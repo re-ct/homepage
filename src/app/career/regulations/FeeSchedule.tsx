@@ -14,23 +14,6 @@ const DataProtectionPolicy = () => {
   return (
     <Box component="section">
       <Typography variant="h2">手数料</Typography>
-      <Box>
-        <Typography variant="body1">
-          手数料には、消費税は含まれておりません。別途加算となります。
-        </Typography>
-        <Box component="dl">
-          <Box component="div">
-            <Box component="dt">許可番号</Box>
-            <Box component="dd">23-ユ-303247</Box>
-          </Box>
-          <Box component="div">
-            <Box component="dt">事業所の名称及び所在地</Box>
-            <Box component="dd">
-              株式会社レクト 事務所（愛知県豊川市御津町西方日暮50番地9 2F）
-            </Box>
-          </Box>
-        </Box>
-      </Box>
       <Box component="section">
         <Typography variant="h3">手数料表(一般登録型)</Typography>
         <TableContainer component={Paper} variant="outlined">
@@ -53,11 +36,11 @@ const DataProtectionPolicy = () => {
                   <br />
                   （期間の定めのない雇用契約の紹介の場合）
                   <br />
-                  当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の100％
+                  当該求職者の就職後1年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の100%
                   <br />
                   （期間の定めのある雇用契約の紹介の場合）
                   <br />
-                  当該求職者の就職後、雇用契約期間中（雇用期間が１年を超える場合は最大１年間分）に支払われる賃金（内定書や労働条件通知書等に記載されている額）の50％
+                  当該求職者の就職後、雇用契約期間中（雇用期間が1年を超える場合は最大1年間分）に支払われる賃金（内定書や労働条件通知書等に記載されている額）の50%
                   <br />
                   <br />
                   手数料負担者は求人者とします。
@@ -77,7 +60,7 @@ const DataProtectionPolicy = () => {
                 <TableCell>
                   成功報酬
                   <br />
-                  当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の30％
+                  当該求職者の就職後1年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の30%
                   <br />
                   <br />
                   手数料負担者は求人者とします。
@@ -86,6 +69,23 @@ const DataProtectionPolicy = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <Box>
+          <Typography variant="body1">
+            上記手数料には、消費税は含まれておりません。別途加算となります。
+          </Typography>
+          <Box component="dl">
+            <Box component="div">
+              <Box component="dt">許可番号</Box>
+              <Box component="dd">23-ユ-303247</Box>
+            </Box>
+            <Box component="div">
+              <Box component="dt">事業所の名称及び所在地</Box>
+              <Box component="dd">
+                株式会社レクト 事務所（愛知県豊川市御津町西方日暮50番地9 2F）
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
       <Box component="section">
         <Typography variant="h3">手数料表(サーチ/スカウト型)</Typography>
@@ -111,13 +111,13 @@ const DataProtectionPolicy = () => {
                   <br />
                   (期間の定めのない雇用契約の紹介の場合)
                   <br />
-                  当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％(または500,000円)
+                  当該求職者の就職後1年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%(または500,000円)
                   <br />
                   上記のうちどちらか高い方とする
                   <br />
                   (期間の定めのある雇用契約の紹介の場合)
                   <br />
-                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％(または500,000円)
+                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%(または500,000円)
                   <br />
                   上記のうちどちらか高い方とする
                   <br />
@@ -128,6 +128,23 @@ const DataProtectionPolicy = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <Box>
+          <Typography variant="body1">
+            上記手数料には、消費税は含まれておりません。別途加算となります。
+          </Typography>
+          <Box component="dl">
+            <Box component="div">
+              <Box component="dt">許可番号</Box>
+              <Box component="dd">23-ユ-303247</Box>
+            </Box>
+            <Box component="div">
+              <Box component="dt">事業所の名称及び所在地</Box>
+              <Box component="dd">
+                株式会社レクト 事務所（愛知県豊川市御津町西方日暮50番地9 2F）
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
       <Box component="section">
         <Typography variant="h3">手数料表(再就職支援型)</Typography>
@@ -164,13 +181,13 @@ const DataProtectionPolicy = () => {
                   <br />
                   (期間の定めのない雇用契約の紹介の場合)
                   <br />
-                  当該求職者の就職後１年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％(または500,000円)
+                  当該求職者の就職後1年間に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%(または500,000円)
                   <br />
                   上記のうちどちらか高い方とする
                   <br />
                   (期間の定めのある雇用契約の紹介の場合)
                   <br />
-                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35％(または500,000円)
+                  当該求職者の就職後、雇用契約期間中(雇用期間が1年を超える場合は最大1年間分)に支払われる賃金（内定書や労働条件通知書等に記載されている額）の35%(または500,000円)
                   <br />
                   上記のうちどちらか高い方とする
                   <br />
@@ -181,6 +198,23 @@ const DataProtectionPolicy = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <Box>
+          <Typography variant="body1">
+            上記手数料には、消費税は含まれておりません。別途加算となります。
+          </Typography>
+          <Box component="dl">
+            <Box component="div">
+              <Box component="dt">許可番号</Box>
+              <Box component="dd">23-ユ-303247</Box>
+            </Box>
+            <Box component="div">
+              <Box component="dt">事業所の名称及び所在地</Box>
+              <Box component="dd">
+                株式会社レクト 事務所（愛知県豊川市御津町西方日暮50番地9 2F）
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
