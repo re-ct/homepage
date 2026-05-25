@@ -16,6 +16,7 @@ const sxStyles = {
       background:
         'linear-gradient(to right, rgba(64, 123, 255, 0.9) 0%, rgba(1, 45, 151, 0.9) 100%)',
       paddingBlock: '72px',
+      paddingInline: '16px',
     },
     '&::before, &::after': {
       position: 'absolute',

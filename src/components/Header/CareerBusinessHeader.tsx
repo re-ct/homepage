@@ -4,7 +4,7 @@ import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
 import logo from '../../../public/image/career/logo_repros_career.svg';
 import { Box, Typography, IconButton, Drawer } from '@mui/material';
-import { careerContact,careerBusinessContact } from '../../lib/const/Link';
+import { careerContact, careerBusinessContact } from '../../lib/const/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
@@ -72,8 +72,8 @@ const sxStyles = {
     '& > a': {
       fontSize: 14,
       fontWeight: 'bold',
-      pl: 4,
-      pr: 3,
+      pl: 3,
+      pr: 2,
       py: 1,
       borderRadius: 8,
       bgcolor: '#EF6C00',

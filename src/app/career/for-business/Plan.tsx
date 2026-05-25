@@ -68,6 +68,8 @@ const sxStyles = {
     maxWidth: '932px',
     px: '16px',
     mx: 'auto',
+    paddingTop: '120px',
+    marginTop: '-120px',
     '@media screen and (max-width:768px)': {
       maxWidth: '100%',
     },
@@ -115,6 +117,9 @@ const sxStyles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media screen and (max-width:450px)': {
+      aspectRatio: '160/140',
+    },
     '& > svg': {
       fill: commonSxStyles.color.accent,
     },

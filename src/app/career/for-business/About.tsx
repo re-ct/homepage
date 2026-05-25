@@ -22,6 +22,8 @@ const sxStyles = {
     maxWidth: '932px',
     px: '16px',
     mx: 'auto',
+    paddingTop: '120px',
+    marginTop: '-120px',
     '@media screen and (max-width:768px)': {
       maxWidth: '100%',
     },
@@ -49,9 +51,9 @@ const sxStyles = {
       },
     },
     '>span': {
-      marginTop: '11px',
+      marginTop: '3px',
       '@media screen and (max-width:768px)': {
-        marginTop: '14px',
+        marginTop: '2px',
       },
     },
   },
@@ -136,8 +138,13 @@ const sxStyles = {
     fontWeight: 'bold',
     '@media screen and (max-width:768px)': {
       flexDirection: 'column',
-      rowGap: '2px',
+      rowGap: '8px',
       textAlign: 'center',
+    },
+  },
+  listText: {
+    '@media screen and (max-width:768px)': {
+      fontSize: '12px',
     },
   },
   advisor: {
@@ -165,7 +172,6 @@ const sxStyles = {
     marginBottom: '4px',
     '@media screen and (max-width:768px)': {},
   },
-  detail: {},
   link: {
     textDecoration: 'underline',
     display: 'flex',
@@ -205,6 +211,7 @@ const About = () => {
                 height={46}
                 priority={true}
                 className="logo"
+                style={{ width: '100%', height: 'auto' }}
               />
               <span>は</span>
             </Typography>
@@ -242,7 +249,12 @@ const About = () => {
                     <CheckCircle style={{ fontSize: '18px' }} />
                     実技レベルでの{isSmallScreen && <br />}技術査定
                   </Typography>
-                  <Typography sx={commonSxStyles.typography.normalText}>
+                  <Typography
+                    sx={[
+                      commonSxStyles.typography.normalText,
+                      sxStyles.listText,
+                    ]}
+                  >
                     候補者の実務における役割、コード品質などを多角的に評価。
                     {!isSmallScreen && <br />}
                     書類だけでは判別できない、実技レベルの情報を精査します。
@@ -253,7 +265,12 @@ const About = () => {
                     <CheckCircle style={{ fontSize: '18px' }} />
                     現場の期待値に{isSmallScreen && <br />}沿ったマッチング
                   </Typography>
-                  <Typography sx={commonSxStyles.typography.normalText}>
+                  <Typography
+                    sx={[
+                      commonSxStyles.typography.normalText,
+                      sxStyles.listText,
+                    ]}
+                  >
                     貴社の開発文化やチーム構成まで考慮し、相性を確認。
                     <br />
                     採用に関わる現場の負担を最小限に抑えます。
@@ -267,8 +284,8 @@ const About = () => {
                 src={advisor.src}
                 width={219}
                 height={219}
-                priority={true}
                 className="advisorImage"
+                style={{ width: '100%', height: 'auto' }}
               />
               <Box>
                 <Typography
@@ -281,9 +298,7 @@ const About = () => {
                 >
                   現役フルスタックエンジニア
                 </Typography>
-                <Typography
-                  sx={[commonSxStyles.typography.smallText, sxStyles.detail]}
-                >
+                <Typography sx={commonSxStyles.typography.smallText}>
                   ・エンジニア歴： 通算7年以上(現在も開発に従事)
                   <br />
                   ・経験領域：インフラ・バックエンド・フロントエンド(Web全般)、マネジメント、エンジニア採用(新卒・中途)

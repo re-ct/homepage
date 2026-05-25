@@ -79,6 +79,8 @@ const sxStyles = {
     maxWidth: '932px',
     px: '16px',
     mx: 'auto',
+    paddingTop: '120px',
+    marginTop: '-120px',
     '@media screen and (max-width:768px)': {
       maxWidth: '100%',
     },
@@ -168,14 +170,14 @@ const Advisor = () => {
               <Box>
                 <Box component="picture" sx={sxStyles.listItemImage}>
                   <source
-                    srcSet={`../../../../../image/career/advisors_${advisor.image}_sp.webp`}
+                    srcSet={`../../../../../image/career/advisor_sp.webp`}
                     media="(max-width: 768px)"
                     width="700"
                     height="400"
                   />
                   <Box
                     component="img"
-                    src={`../../../../../image/career/advisors_${advisor.image}_pc.webp`}
+                    src={`../../../../../image/career/advisor_pc.webp`}
                     alt={`${advisor.nameKanji}のプロフィール写真`}
                     width="444"
                     height="444"
