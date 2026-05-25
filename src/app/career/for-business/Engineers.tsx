@@ -78,11 +78,6 @@ const sxStyles = {
   },
   heading2: {
     textAlign: 'center',
-    fontSize: '24px',
-    fontWeight: 'bold',
-    '@media screen and (max-width:768px)': {
-      fontSize: '20px',
-    },
   },
   headingText: {
     marginTop: '12px',
