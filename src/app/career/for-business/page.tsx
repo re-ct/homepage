@@ -4,6 +4,7 @@ import Advisor from './Advisor';
 import Plan from './Plan';
 import Engineers from './Engineers';
 import KeyVisual from './KeyVisual';
+import About from './About';
 
 export const metadata = {
   title: '【法人向け】Re:ProS Career',
@@ -18,6 +19,7 @@ const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
       <KeyVisual />
+      <About />
       <Engineers />
       <Plan />
       <Advisor />
