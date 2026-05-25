@@ -60,7 +60,8 @@ const Contact = () => {
           component="p"
           sx={[commonSxStyles.typography.normalText, sxStyles.text]}
         >
-          エンジニア採用のお悩み・情報収集など、{isSmallScreen && <br />}ライトなご相談も大歓迎です。
+          エンジニア採用のお悩み・情報収集など、{isSmallScreen && <br />}
+          ライトなご相談も大歓迎です。
         </Typography>
         <Button
           variant="contained"
