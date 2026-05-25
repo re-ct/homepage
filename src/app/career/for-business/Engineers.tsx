@@ -112,7 +112,7 @@ const Engineers = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
 
   return (
-    <Box sx={sxStyles.wrap}>
+    <Box sx={sxStyles.wrap} id="engineers">
       <FadeInOnView>
         <Box sx={sxStyles.contentArea}>
           <Typography

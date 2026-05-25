@@ -177,7 +177,7 @@ const sxStyles = {
 const Plan = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
-    <Box sx={sxStyles.wrap}>
+    <Box sx={sxStyles.wrap} id="plan">
       <FadeInOnView>
         <Box sx={sxStyles.contentArea}>
           <Typography

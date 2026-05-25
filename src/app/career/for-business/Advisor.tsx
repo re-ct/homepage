@@ -155,7 +155,7 @@ const Advisor = () => {
   return (
     <Box sx={sxStyles.wrap}>
       <FadeInOnView>
-        <Box sx={sxStyles.contentArea} id="advisors">
+        <Box sx={sxStyles.contentArea} id="advisor">
           <Typography
             variant="h2"
             component="h2"
