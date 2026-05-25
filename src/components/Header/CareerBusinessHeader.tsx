@@ -17,7 +17,7 @@ const sxStyles = {
     '& > a': {
       textDecoration: 'none',
       display: 'flex',
-      columnGap: '12px',
+      columnGap: '8px',
       alignItems: 'center',
       '& img': {
         width: '259px',

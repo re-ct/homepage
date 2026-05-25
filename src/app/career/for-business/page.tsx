@@ -1,4 +1,5 @@
 import '../../globals.css';
+import Contact from './Contact';
 
 export const metadata = {
   title: '【法人向け】Re:ProS Career',
@@ -12,7 +13,7 @@ export const metadata = {
 const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
-      <p>ほげ</p>
+      <Contact/>
     </main>
   );
 };
