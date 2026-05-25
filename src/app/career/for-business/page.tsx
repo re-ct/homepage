@@ -1,6 +1,7 @@
 import '../../globals.css';
 import Contact from './Contact';
 import Advisor from './Advisor';
+import Plan from './Plan';
 
 export const metadata = {
   title: '【法人向け】Re:ProS Career',
@@ -14,6 +15,7 @@ export const metadata = {
 const Demand = () => {
   return (
     <main style={{ color: '#000' }}>
+      <Plan />
       <Advisor />
       <Contact />
     </main>
