@@ -5,7 +5,7 @@ import FadeInOnView from '../../../components/FadeInOnView';
 import { ReactNode } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { careerContact } from '../../../lib/const/Link';
+import { careerBusinessContact } from '../../../lib/const/Link';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 export type merit = {
@@ -217,7 +217,7 @@ const Plan = () => {
             </Typography>
             <Button
               variant="contained"
-              href={careerContact}
+              href={careerBusinessContact}
               rel="noopener noreferrer"
               target="_blank"
               sx={sxStyles.button}

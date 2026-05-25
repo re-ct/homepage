@@ -1,6 +1,6 @@
 'use client';
 import { Button, Box, Typography } from '@mui/material';
-import { careerContact } from '../../../lib/const/Link';
+import { careerBusinessContact } from '../../../lib/const/Link';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { commonSxStyles } from '../components/Style';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -65,7 +65,7 @@ const Contact = () => {
         </Typography>
         <Button
           variant="contained"
-          href={careerContact}
+          href={careerBusinessContact}
           rel="noopener noreferrer"
           target="_blank"
           sx={sxStyles.button}

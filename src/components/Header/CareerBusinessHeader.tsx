@@ -4,8 +4,7 @@ import { CommonLink } from '../CommonLink';
 import Image from 'next/image';
 import logo from '../../../public/image/career/logo_repros_career.svg';
 import { Box, Typography, IconButton, Drawer } from '@mui/material';
-import { PlayCircle } from '@mui/icons-material';
-import { careerContact } from '../../lib/const/Link';
+import { careerContact,careerBusinessContact } from '../../lib/const/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
@@ -241,7 +240,7 @@ const CareerBusinessHeader = () => {
       <Box sx={sxStyles.header} component="h1">
         <CommonLink
           link={{
-            href: '/career',
+            href: '/career/for-business/',
             external: false,
           }}
         >
@@ -269,15 +268,14 @@ const CareerBusinessHeader = () => {
             </CommonLink>
           </Box>
           <Box sx={sxStyles.button}>
-            {/* TODO：リンクさしかえ */}
             <CommonLink
               link={{
-                href: careerContact,
+                href: careerBusinessContact,
                 external: true,
               }}
             >
               <span>お問い合わせ</span>
-              <PlayCircle style={{ fontSize: '16px' }} />
+              <KeyboardArrowRight style={{ fontSize: '16px' }} />
             </CommonLink>
           </Box>
         </Box>
