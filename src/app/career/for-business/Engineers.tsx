@@ -16,7 +16,7 @@ export type TechCategory = {
 const techCategories: TechCategory[] = [
   {
     title: 'バックエンドエンジニア',
-    skills: ['Go', 'Ruby on Rails', 'Python', 'PHP', 'Java', 'Symfony'],
+    skills: ['Go', 'Ruby on Rails', 'Python', 'PHP', 'Java'],
     styles: {
       backgroundColor: '#EFF7FF',
       color: '#00298A',
@@ -32,7 +32,7 @@ const techCategories: TechCategory[] = [
   },
   {
     title: 'インフラエンジニア',
-    skills: ['AWS', 'Google Cloud', 'Pulumi', 'Terraform'],
+    skills: ['AWS', 'Google Cloud', 'Terraform'],
     styles: {
       backgroundColor: '#E8FDDA',
       color: '#02401F',
