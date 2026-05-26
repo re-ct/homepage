@@ -72,11 +72,11 @@ const sxStyles = {
     '& > span': {
       fontSize: '44px',
       '@media screen and (max-width:768px)': {
-        fontSize: '36px',
+        fontSize: 'min(8.47vw, 36px)',
       },
     },
     '@media screen and (max-width:768px)': {
-      fontSize: '36px',
+      fontSize: 'min(8.47vw, 36px)',
     },
   },
   subCopy: {
