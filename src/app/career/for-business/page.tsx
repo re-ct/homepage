@@ -16,7 +16,7 @@ export const metadata = {
   },
 };
 
-const Demand = () => {
+const CareerForBusiness = () => {
   return (
     <main style={{ color: '#000' }}>
       <KeyVisual />
@@ -29,4 +29,4 @@ const Demand = () => {
   );
 };
 
-export default Demand;
+export default CareerForBusiness;
