@@ -124,7 +124,7 @@ const CareerFooter = () => {
                 <CommonLink
                   link={{
                     href: link.href,
-                    external: link.external || false,
+                    external: false,
                   }}
                 >
                   {link.text}
