@@ -141,7 +141,7 @@ const SchoolFooter = () => {
             ))}
           </List>
         </Box>
-        <Box component="footer" sx={sxStyles.copy}>
+        <Box sx={sxStyles.copy}>
           <Box sx={sxStyles.copyWrap}>
             <Typography sx={sxStyles.copyText}>©RECT 2025</Typography>
             <Box sx={sxStyles.list}>
