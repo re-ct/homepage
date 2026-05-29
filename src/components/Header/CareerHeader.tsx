@@ -27,7 +27,7 @@ const menu: Menu[] = [
   {
     id: '2',
     title: 'アドバイザーの紹介',
-    url: '#advisor',
+    url: '#advisors',
   },
   {
     id: '3',
@@ -289,7 +289,7 @@ const CareerHeader = () => {
                   href: careerContact,
                   external: true,
                 }}
-                data-ga="career_request_for_document_hamburger"
+                data-ga="career_request_hamburger"
               >
                 お問い合わせ
                 <KeyboardArrowRight />
