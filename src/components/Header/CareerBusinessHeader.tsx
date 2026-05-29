@@ -74,7 +74,7 @@ const sxStyles = {
       fontWeight: 'bold',
       pl: 3,
       pr: 2,
-      py: 1,
+      py: '12px',
       borderRadius: 8,
       bgcolor: '#EF6C00',
       color: '#fff',

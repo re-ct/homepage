@@ -155,6 +155,8 @@ const sxStyles = {
     maxWidth: '1132px',
     paddingInline: '16px',
     marginInline: 'auto',
+    paddingTop: '120px',
+    marginTop: '-120px',
   },
   heading2: {
     textAlign: 'center',
@@ -276,7 +278,7 @@ const Features = () => {
   return (
     <Box sx={sxStyles.section}>
       <FadeInOnView>
-        <Box sx={sxStyles.wrap}>
+        <Box sx={sxStyles.wrap} id="about">
           <Typography
             variant="h2"
             component="h2"
