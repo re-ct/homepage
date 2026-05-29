@@ -246,6 +246,7 @@ const CareerHeader = () => {
                 href: careerContact,
                 external: true,
               }}
+              data-ga="career_request_header"
             >
               <span>無料相談フォーム</span>
               <KeyboardArrowRight style={{ fontSize: '16px' }} />

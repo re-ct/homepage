@@ -83,6 +83,7 @@ const Contact = () => {
           target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
+          data-ga="career_request_contact"
         >
           <Typography component="span" sx={sxStyles.free}>
             無料

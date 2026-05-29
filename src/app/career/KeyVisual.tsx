@@ -100,6 +100,7 @@ const KeyVisual = () => {
           target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
+          data-ga="career_request_keyVisual"
         >
           <Typography component="span" sx={sxStyles.free}>
             無料
