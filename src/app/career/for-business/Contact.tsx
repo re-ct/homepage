@@ -1,9 +1,9 @@
 'use client';
-import { Button, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { careerBusinessContact } from '../../../lib/const/Link';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { commonSxStyles } from '../components/Style';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CustomButton from '../components/Button';
 
 const sxStyles = {
   section: {
@@ -18,24 +18,7 @@ const sxStyles = {
     color: commonSxStyles.color.white,
   },
   button: {
-    backgroundColor: commonSxStyles.color.accent,
-    color: commonSxStyles.color.white,
-    textTransform: 'none',
-    padding: '16px 20px 16px 25px',
-    borderRadius: '50px',
-    boxShadow: 'none',
-    width: '300px',
-    maxWidth: '100%',
-    transition: 'filter 0.3s',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    letterSpacing: '0.06em',
     marginTop: '32px',
-    gap: '8px',
-    '&:hover': {
-      boxShadow: 'none',
-      filter: 'brightness(0.8)',
-    },
   },
   text: {
     fontWeight: 'bold',
@@ -63,17 +46,17 @@ const Contact = () => {
           エンジニア採用のお悩み・情報収集など、{isSmallScreen && <br />}
           ライトなご相談も大歓迎です。
         </Typography>
-        <Button
-          variant="contained"
-          href={careerBusinessContact}
-          rel="noopener noreferrer"
-          target="_blank"
-          sx={sxStyles.button}
-          endIcon={<KeyboardArrowRight />}
-          data-ga="careerForBusiness_request_contact"
-        >
-          お問い合わせはこちら
-        </Button>
+        <Box sx={sxStyles.button}>
+          <CustomButton
+            label="お問い合わせはこちら"
+            variant="primary"
+            icon="keyboard-arrow-right"
+            href={careerBusinessContact}
+            isExternal={true}
+            showFreeLabel={false}
+            gaLabel="careerForBusiness_request_contact"
+          />
+        </Box>
       </Box>
     </Box>
   );

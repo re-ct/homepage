@@ -1,9 +1,9 @@
 'use client';
-import { Button, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { careerBusinessContact } from '../../../lib/const/Link';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { commonSxStyles } from '../components/Style';
+import CustomButton from '../components/Button';
 
 const sxStyles = {
   wrap: {
@@ -94,27 +94,7 @@ const sxStyles = {
     },
   },
   button: {
-    backgroundColor: commonSxStyles.color.accent,
-    color: commonSxStyles.color.white,
-    textTransform: 'none',
-    padding: '16px 20px 16px 25px',
-    borderRadius: '50px',
-    boxShadow: 'none',
-    width: '300px',
-    maxWidth: '100%',
-    transition: 'filter 0.3s',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    letterSpacing: '0.06em',
     marginTop: '38px',
-    gap: '8px',
-    '&:hover': {
-      boxShadow: 'none',
-      filter: 'brightness(0.8)',
-    },
-    '@media screen and (max-width:768px)': {
-      width: '100%',
-    },
   },
 };
 
@@ -133,17 +113,17 @@ const KeyVisual = () => {
           <br />
           完全成功報酬<span>で</span>ご紹介いたします。
         </Typography>
-        <Button
-          variant="contained"
-          href={careerBusinessContact}
-          rel="noopener noreferrer"
-          target="_blank"
-          sx={sxStyles.button}
-          endIcon={<KeyboardArrowRight />}
-          data-ga="careerForBusiness_request_keyVisual"
-        >
-          お問い合わせ
-        </Button>
+        <Box sx={sxStyles.button}>
+          <CustomButton
+            label="お問い合わせ"
+            variant="primary"
+            icon="keyboard-arrow-right"
+            href={careerBusinessContact}
+            isExternal={true}
+            showFreeLabel={false}
+            gaLabel="careerForBusiness_request_keyVisual"
+          />
+        </Box>
       </Box>
     </Box>
   );

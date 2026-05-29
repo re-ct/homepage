@@ -30,6 +30,11 @@ export const commonSxStyles = {
       letterSpacing: '0.05em',
       lineHeight: '1.7',
     },
+    buttonNormalText: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      letterSpacing: '0.06em',
+    },
   },
   color: {
     primary: '#00298A',
