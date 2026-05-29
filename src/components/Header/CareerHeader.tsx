@@ -246,7 +246,7 @@ const CareerHeader = () => {
                 href: careerContact,
                 external: true,
               }}
-              data-ga="career_request_header"
+              gaLabel="career_request_header"
             >
               <span>無料相談フォーム</span>
               <KeyboardArrowRight style={{ fontSize: '16px' }} />
@@ -290,7 +290,7 @@ const CareerHeader = () => {
                   href: careerContact,
                   external: true,
                 }}
-                data-ga="career_request_hamburger"
+                gaLabel="career_request_hamburger"
               >
                 お問い合わせ
                 <KeyboardArrowRight />

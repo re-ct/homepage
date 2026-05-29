@@ -273,7 +273,7 @@ const CareerBusinessHeader = () => {
                 href: careerBusinessContact,
                 external: true,
               }}
-              data-ga="careerForBusiness_request_header"
+              gaLabel="careerForBusiness_request_header"
             >
               <span>お問い合わせ</span>
               <KeyboardArrowRight style={{ fontSize: '16px' }} />
@@ -317,7 +317,7 @@ const CareerBusinessHeader = () => {
                   href: careerBusinessContact,
                   external: true,
                 }}
-                data-ga="careerForBusiness_request_hamburger"
+                gaLabel="careerForBusiness_request_hamburger"
               >
                 お問い合わせ
                 <KeyboardArrowRight />
