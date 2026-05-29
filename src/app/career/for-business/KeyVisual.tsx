@@ -140,6 +140,7 @@ const KeyVisual = () => {
           target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
+          data-ga="careerForBusiness_request_keyVisual"
         >
           お問い合わせ
         </Button>

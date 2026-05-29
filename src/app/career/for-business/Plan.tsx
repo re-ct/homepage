@@ -227,6 +227,7 @@ const Plan = () => {
               target="_blank"
               sx={sxStyles.button}
               endIcon={<KeyboardArrowRight />}
+              data-ga="careerForBusiness_request_plan"
             >
               お問い合わせはこちら
             </Button>

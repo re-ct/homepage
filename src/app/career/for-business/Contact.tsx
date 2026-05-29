@@ -70,6 +70,7 @@ const Contact = () => {
           target="_blank"
           sx={sxStyles.button}
           endIcon={<KeyboardArrowRight />}
+          data-ga="careerForBusiness_request_contact"
         >
           お問い合わせはこちら
         </Button>
