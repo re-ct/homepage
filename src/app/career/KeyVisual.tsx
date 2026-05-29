@@ -64,6 +64,7 @@ const sxStyles = {
     letterSpacing: '0.06em',
     marginTop: '38px',
     gap: '8px',
+    textShadow: 'none',
     '&:hover': {
       boxShadow: 'none',
       filter: 'brightness(0.8)',
