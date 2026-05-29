@@ -1,12 +1,12 @@
 'use client';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import FadeInOnView from '../../../components/FadeInOnView';
 import { ReactNode } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { careerBusinessContact } from '../../../lib/const/Link';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CustomButton from '../components/Button';
 
 export type merit = {
   id: string | number;
@@ -158,25 +158,6 @@ const sxStyles = {
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  button: {
-    backgroundColor: commonSxStyles.color.accent,
-    color: commonSxStyles.color.white,
-    textTransform: 'none',
-    padding: '16px 20px 16px 25px',
-    borderRadius: '50px',
-    boxShadow: 'none',
-    width: '300px',
-    maxWidth: '100%',
-    transition: 'filter 0.3s',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    letterSpacing: '0.06em',
-    gap: '8px',
-    '&:hover': {
-      boxShadow: 'none',
-      filter: 'brightness(0.8)',
-    },
-  },
 };
 
 const Plan = () => {
@@ -220,16 +201,15 @@ const Plan = () => {
             >
               詳細はお問い合わせください
             </Typography>
-            <Button
-              variant="contained"
+            <CustomButton
+              label="お問い合わせはこちら"
+              variant="primary"
+              icon="keyboard-arrow-right"
               href={careerBusinessContact}
-              rel="noopener noreferrer"
-              target="_blank"
-              sx={sxStyles.button}
-              endIcon={<KeyboardArrowRight />}
-            >
-              お問い合わせはこちら
-            </Button>
+              isExternal={true}
+              showFreeLabel={false}
+              gaLabel="careerForBusiness_request_plan"
+            />
           </Box>
         </Box>
       </FadeInOnView>

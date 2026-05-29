@@ -74,7 +74,7 @@ const sxStyles = {
       fontWeight: 'bold',
       pl: 3,
       pr: 2,
-      py: 1,
+      py: '12px',
       borderRadius: 8,
       bgcolor: '#EF6C00',
       color: '#fff',
@@ -273,6 +273,7 @@ const CareerBusinessHeader = () => {
                 href: careerBusinessContact,
                 external: true,
               }}
+              gaLabel="careerForBusiness_request_header"
             >
               <span>お問い合わせ</span>
               <KeyboardArrowRight style={{ fontSize: '16px' }} />
@@ -316,7 +317,7 @@ const CareerBusinessHeader = () => {
                   href: careerBusinessContact,
                   external: true,
                 }}
-                data-ga="fc_request_for_document_hamburger"
+                gaLabel="careerForBusiness_request_hamburger"
               >
                 お問い合わせ
                 <KeyboardArrowRight />
@@ -334,7 +335,6 @@ const CareerBusinessHeader = () => {
                   href: '/career/',
                   external: true,
                 }}
-                data-ga="fc_contact_form_hamburger"
               >
                 求職者の方はこちら
                 <KeyboardArrowRight />

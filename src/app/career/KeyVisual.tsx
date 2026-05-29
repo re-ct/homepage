@@ -1,9 +1,9 @@
 'use client';
-import { Button, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { careerContact } from '../../lib/const/Link';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { commonSxStyles } from './components/Style';
+import CustomButton from './components/Button';
 
 const sxStyles = {
   wrap: {
@@ -50,33 +50,7 @@ const sxStyles = {
     },
   },
   button: {
-    backgroundColor: commonSxStyles.color.accent,
-    color: commonSxStyles.color.white,
-    textTransform: 'none',
-    padding: '16px 20px 16px 25px',
-    borderRadius: '50px',
-    boxShadow: 'none',
-    width: '300px',
-    maxWidth: '100%',
-    transition: 'filter 0.3s',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    letterSpacing: '0.06em',
     marginTop: '38px',
-    gap: '8px',
-    '&:hover': {
-      boxShadow: 'none',
-      filter: 'brightness(0.8)',
-    },
-  },
-  free: {
-    borderRadius: '4px',
-    px: '6px',
-    py: '2px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    backgroundColor: commonSxStyles.color.white,
-    color: commonSxStyles.color.accent,
   },
 };
 
@@ -93,19 +67,16 @@ const KeyVisual = () => {
           <br />
           現役エンジニアと{isSmallScreen && <br />}話してみませんか
         </Typography>
-        <Button
-          variant="contained"
-          href={careerContact}
-          rel="noopener noreferrer"
-          target="_blank"
-          sx={sxStyles.button}
-          endIcon={<KeyboardArrowRight />}
-        >
-          <Typography component="span" sx={sxStyles.free}>
-            無料
-          </Typography>
-          相談に申し込む
-        </Button>
+        <Box sx={sxStyles.button}>
+          <CustomButton
+            label="相談に申し込む"
+            variant="primary"
+            icon="keyboard-arrow-right"
+            href={careerContact}
+            isExternal={true}
+            gaLabel="career_request_keyVisual"
+          />
+        </Box>
       </Box>
     </Box>
   );
