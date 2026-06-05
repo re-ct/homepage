@@ -88,14 +88,6 @@ const sxStyles = {
       },
     },
   },
-  linkContent: {
-    position: 'relative',
-    zIndex: 1,
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    color: 'inherit',
-  },
   linkIcon: {
     fontSize: '24px',
     color: 'inherit',
@@ -122,10 +114,8 @@ const Contact = () => {
                 external: true,
               }}
             >
-              <Box component="span" sx={sxStyles.linkContent}>
-                お問い合わせフォームへ
-                <ArrowForwardIcon sx={sxStyles.linkIcon} />
-              </Box>
+              お問い合わせフォームへ
+              <ArrowForwardIcon sx={sxStyles.linkIcon} />
             </CommonLink>
           </Box>
         </Box>

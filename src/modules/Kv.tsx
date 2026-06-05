@@ -25,7 +25,6 @@ export type KvSlide = {
   height: number;
 };
 
-// 画像を追加したら配列にスライドを登録してください（PC / SP で別々に設定）
 export const KV_PC_SLIDES: KvSlide[] = [
   { src: kvPcImg1, alt: 'スライド1', width: 3127, height: 1277 },
   { src: kvPcImg2, alt: 'スライド2', width: 3127, height: 1277 },
@@ -52,13 +51,13 @@ const sxStyles = {
   pcWrap: {
     textAlign: 'center',
     overflow: 'hidden',
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       display: 'none',
     },
   },
   spWrap: {
     display: 'none',
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       display: 'block',
     },
   },
@@ -141,7 +140,7 @@ const sxStyles = {
     maxWidth: '1372px',
     px: '16px',
     transform: 'translateX(-50%)',
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       px: '16px',
     },
   },
@@ -151,40 +150,35 @@ const sxStyles = {
     m: 0,
   },
   line1: {
-    fontSize: '31px',
+    fontSize: 'clamp(18px, 2.26vw, 31px)',
     fontWeight: 700,
     lineHeight: 1.4,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
     overflow: 'hidden',
-    '@media screen and (max-width:800px)': {
-      fontSize: '18px',
-    },
   },
   line2: {
-    fontSize: '68px',
+    fontSize: 'clamp(43px, 4.96vw, 68px)',
     fontWeight: 700,
     lineHeight: 1.2,
     mt: 0.5,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
     overflow: 'hidden',
-    '@media screen and (max-width:800px)': {
-      fontSize: '43px',
+    '@media screen and (max-width:768px)': {
       mt: '6px',
     },
   },
   line3: {
     fontFamily: lato.style.fontFamily,
-    fontSize: '19px',
+    fontSize: 'clamp(14px, 1.38vw, 19px)',
     fontWeight: 400,
     lineHeight: 1.2,
     mt: 1,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
     overflow: 'hidden',
-    '@media screen and (max-width:800px)': {
-      fontSize: '14px',
+    '@media screen and (max-width:768px)': {
       mt: '14px',
     },
   },
@@ -206,7 +200,7 @@ const sxStyles = {
   },
   copyLineText3: {
     animationDelay: '1.1s',
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       animationDelay: '1.45s',
     },
   },
@@ -215,13 +209,13 @@ const sxStyles = {
     overflow: 'hidden',
   },
   pcOnlyLine: {
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       display: 'none',
     },
   },
   spOnlyLine: {
     display: 'none',
-    '@media screen and (max-width:800px)': {
+    '@media screen and (max-width:768px)': {
       display: 'block',
     },
   },
