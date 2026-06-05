@@ -74,6 +74,16 @@ const sxStyles = {
         transform: `scale(${SLIDE_ZOOM_SCALE})`,
       },
     },
+    '@keyframes kvCopyLineRise': {
+      from: {
+        opacity: 0,
+        transform: 'translateY(100%)',
+      },
+      to: {
+        opacity: 1,
+        transform: 'translateY(0)',
+      },
+    },
   },
   sectionAspectRatio: (slides: KvSlide[]) => ({
     aspectRatio: getSlideAspectRatio(slides),
@@ -146,6 +156,7 @@ const sxStyles = {
     lineHeight: 1.4,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
+    overflow: 'hidden',
     '@media screen and (max-width:800px)': {
       fontSize: '18px',
     },
@@ -157,15 +168,10 @@ const sxStyles = {
     mt: 0.5,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
+    overflow: 'hidden',
     '@media screen and (max-width:800px)': {
       fontSize: '43px',
       mt: '6px',
-    },
-  },
-  spOnlyBreak: {
-    display: 'none',
-    '@media screen and (max-width:800px)': {
-      display: 'inline',
     },
   },
   line3: {
@@ -176,9 +182,47 @@ const sxStyles = {
     mt: 1,
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
+    overflow: 'hidden',
     '@media screen and (max-width:800px)': {
       fontSize: '14px',
       mt: '14px',
+    },
+  },
+  copyLineText: {
+    display: 'inline-block',
+    opacity: 0,
+    transform: 'translateY(100%)',
+    animation: 'kvCopyLineRise 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+    willChange: 'opacity, transform',
+  },
+  copyLineText1: {
+    animationDelay: '0.35s',
+  },
+  copyLineText2: {
+    animationDelay: '0.75s',
+  },
+  copyLineText2SpSecond: {
+    animationDelay: '1.1s',
+  },
+  copyLineText3: {
+    animationDelay: '1.1s',
+    '@media screen and (max-width:800px)': {
+      animationDelay: '1.45s',
+    },
+  },
+  copyLineMask: {
+    display: 'inline-block',
+    overflow: 'hidden',
+  },
+  pcOnlyLine: {
+    '@media screen and (max-width:800px)': {
+      display: 'none',
+    },
+  },
+  spOnlyLine: {
+    display: 'none',
+    '@media screen and (max-width:800px)': {
+      display: 'block',
     },
   },
 };
@@ -188,17 +232,54 @@ const KvMainCopy = () => {
     <Box sx={sxStyles.copyWrap}>
       <Box component="h1" sx={sxStyles.textBlock}>
         <Typography component="p" sx={sxStyles.line1}>
-          社会のコミュニケーションを
+          <Box
+            component="span"
+            sx={[sxStyles.copyLineText, sxStyles.copyLineText1]}
+          >
+            社会のコミュニケーションを
+          </Box>
         </Typography>
         <Typography component="p" sx={sxStyles.line2}>
-          ITの力で
-          <Box component="span" sx={sxStyles.spOnlyBreak}>
-            <br />
+          <Box
+            component="span"
+            sx={[
+              sxStyles.copyLineText,
+              sxStyles.copyLineText2,
+              sxStyles.pcOnlyLine,
+            ]}
+          >
+            ITの力でもっと活発に
           </Box>
-          もっと活発に
+          <Box
+            component="span"
+            sx={[sxStyles.copyLineMask, sxStyles.spOnlyLine]}
+          >
+            <Box
+              component="span"
+              sx={[sxStyles.copyLineText, sxStyles.copyLineText2]}
+            >
+              ITの力で
+            </Box>
+          </Box>
+          <Box
+            component="span"
+            sx={[sxStyles.copyLineMask, sxStyles.spOnlyLine]}
+          >
+            <Box
+              component="span"
+              sx={[sxStyles.copyLineText, sxStyles.copyLineText2SpSecond]}
+            >
+              もっと活発に
+            </Box>
+          </Box>
         </Typography>
         <Typography component="p" sx={sxStyles.line3}>
-          RE:Communication Technology
+          <Box
+            component="span"
+            sx={[sxStyles.copyLineText, sxStyles.copyLineText3]}
+          >
+            RE:Communication Technology
+          </Box>
         </Typography>
       </Box>
     </Box>

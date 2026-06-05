@@ -224,8 +224,8 @@ const Business = () => {
   const [hoveredId, setHoveredId] = useState(BusinessList[0]?.id);
   return (
     <Box component="section" sx={sxStyles.section}>
-      <FadeInOnView>
-        <Box component="section" sx={sxStyles.wrap}>
+      <Box component="section" sx={sxStyles.wrap}>
+        <FadeInOnView>
           <Box component="section" sx={sxStyles.box}>
             <Box sx={sxStyles.headingBox}>
               <Typography variant="h2" sx={sxStyles.heading}>
@@ -296,8 +296,8 @@ const Business = () => {
               </Box>
             </Box>
           </Box>
-        </Box>
-      </FadeInOnView>
+        </FadeInOnView>
+      </Box>
     </Box>
   );
 };

@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import { Lato } from 'next/font/google';
+import FadeInOnView from '../components/FadeInOnView';
 
 const createData = (title: string, description: string) => {
   return { title, description };
@@ -97,14 +98,16 @@ const sxStyles = {
 const Company = () => {
   return (
     <Box component="section" sx={sxStyles.section}>
-      <Box sx={sxStyles.headingBox}>
-        <Typography variant="h2" sx={sxStyles.heading}>
-          Company
-        </Typography>
-        <Typography variant="caption" component="span" sx={sxStyles.caption}>
-          会社情報
-        </Typography>
-      </Box>
+      <FadeInOnView>
+        <Box sx={sxStyles.headingBox}>
+          <Typography variant="h2" sx={sxStyles.heading}>
+            Company
+          </Typography>
+          <Typography variant="caption" component="span" sx={sxStyles.caption}>
+            会社情報
+          </Typography>
+        </Box>
+      </FadeInOnView>
       <TableContainer sx={sxStyles.tableContainer}>
         <Table size="medium">
           <TableBody>

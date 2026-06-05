@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import img from '../../public/image/top/recruit_pc.webp';
 import { Lato } from 'next/font/google';
 import Image from 'next/image';
+import FadeInOnView from '../components/FadeInOnView';
 
 const lato = Lato({
   weight: ['400', '700', '900'],
@@ -76,18 +77,20 @@ const Recruitment = () => {
           style={{ width: '100%', height: 'auto' }}
         />
         <Box>
-          <Box sx={sxStyles.headingBox}>
-            <Typography variant="h2" sx={sxStyles.heading}>
-              Recruit
-            </Typography>
-            <Typography
-              variant="caption"
-              component="span"
-              sx={sxStyles.caption}
-            >
-              採用情報
-            </Typography>
-          </Box>
+          <FadeInOnView>
+            <Box sx={sxStyles.headingBox}>
+              <Typography variant="h2" sx={sxStyles.heading}>
+                Recruit
+              </Typography>
+              <Typography
+                variant="caption"
+                component="span"
+                sx={sxStyles.caption}
+              >
+                採用情報
+              </Typography>
+            </Box>
+          </FadeInOnView>
           <Typography variant="caption" component="p" sx={sxStyles.text}>
             現在、募集は行っておりません。
           </Typography>

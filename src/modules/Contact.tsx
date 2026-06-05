@@ -4,6 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Lato } from 'next/font/google';
 import { contact } from '../lib/const/Link';
 import { CommonLink } from '../components/CommonLink';
+import FadeInOnView from '../components/FadeInOnView';
 
 const lato = Lato({
   weight: ['400', '700', '900'],
@@ -104,29 +105,31 @@ const sxStyles = {
 const Contact = () => {
   return (
     <Box component="section" sx={sxStyles.section}>
-      <Box sx={sxStyles.wrap}>
-        <Box sx={sxStyles.headingContainer}>
-          <Typography variant="h2" sx={sxStyles.heading}>
-            Contact
-          </Typography>
-          <Typography variant="body2" sx={sxStyles.text}>
-            お問い合わせはこちらよりお願いいたします
-          </Typography>
+      <FadeInOnView>
+        <Box sx={sxStyles.wrap}>
+          <Box sx={sxStyles.headingContainer}>
+            <Typography variant="h2" sx={sxStyles.heading}>
+              Contact
+            </Typography>
+            <Typography variant="body2" sx={sxStyles.text}>
+              お問い合わせはこちらよりお願いいたします
+            </Typography>
+          </Box>
+          <Box sx={sxStyles.link}>
+            <CommonLink
+              link={{
+                href: contact,
+                external: true,
+              }}
+            >
+              <Box component="span" sx={sxStyles.linkContent}>
+                お問い合わせフォームへ
+                <ArrowForwardIcon sx={sxStyles.linkIcon} />
+              </Box>
+            </CommonLink>
+          </Box>
         </Box>
-        <Box sx={sxStyles.link}>
-          <CommonLink
-            link={{
-              href: contact,
-              external: true,
-            }}
-          >
-            <Box component="span" sx={sxStyles.linkContent}>
-              お問い合わせフォームへ
-              <ArrowForwardIcon sx={sxStyles.linkIcon} />
-            </Box>
-          </CommonLink>
-        </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };
