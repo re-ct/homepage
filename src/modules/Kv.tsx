@@ -13,7 +13,7 @@ import kvSpImg3 from '../../public/image/top/fv_3_sp.webp';
 import { Lato } from 'next/font/google';
 
 const lato = Lato({
-  weight: ['400', '700', '900'],
+  weight: ['400'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -26,15 +26,30 @@ export type KvSlide = {
 };
 
 export const KV_PC_SLIDES: KvSlide[] = [
-  { src: kvPcImg1, alt: 'スライド1', width: 3127, height: 1277 },
-  { src: kvPcImg2, alt: 'スライド2', width: 3127, height: 1277 },
-  { src: kvPcImg3, alt: 'スライド3', width: 3127, height: 1277 },
+  {
+    src: kvPcImg1,
+    alt: 'プログラミングを学生に教えている様子',
+    width: 3127,
+    height: 1277,
+  },
+  {
+    src: kvPcImg2,
+    alt: 'パソコンの画面を指さしながら、プログラミングを教えている様子',
+    width: 3127,
+    height: 1277,
+  },
+  {
+    src: kvPcImg3,
+    alt: 'パソコンを操作している様子',
+    width: 3127,
+    height: 1277,
+  },
 ];
 
 export const KV_SP_SLIDES: KvSlide[] = [
-  { src: kvSpImg1, alt: 'スライド1', width: 878, height: 1319 },
-  { src: kvSpImg2, alt: 'スライド2', width: 878, height: 1319 },
-  { src: kvSpImg3, alt: 'スライド3', width: 878, height: 1319 },
+  { src: kvSpImg1, alt: '', width: 878, height: 1319 },
+  { src: kvSpImg2, alt: '', width: 878, height: 1319 },
+  { src: kvSpImg3, alt: '', width: 878, height: 1319 },
 ];
 
 const SLIDE_INTERVAL_MS = 5000;
@@ -148,6 +163,10 @@ const sxStyles = {
     textAlign: 'left',
     color: '#fff',
     m: 0,
+    h1: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
   },
   line1: {
     fontSize: 'clamp(18px, 2.26vw, 31px)',
@@ -156,6 +175,7 @@ const sxStyles = {
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
     overflow: 'hidden',
+    display: 'inline-block',
   },
   line2: {
     fontSize: 'clamp(43px, 4.96vw, 68px)',
@@ -165,6 +185,7 @@ const sxStyles = {
     fontFeatureSettings: '"palt"',
     letterSpacing: '0.03em',
     overflow: 'hidden',
+    display: 'inline-block',
     '@media screen and (max-width:768px)': {
       mt: '6px',
     },
@@ -224,29 +245,32 @@ const sxStyles = {
 const KvMainCopy = () => {
   return (
     <Box sx={sxStyles.copyWrap}>
-      <Box component="h1" sx={sxStyles.textBlock}>
-        <Typography component="p" sx={sxStyles.line1}>
-          <Box
-            component="span"
-            sx={[sxStyles.copyLineText, sxStyles.copyLineText1]}
-          >
-            社会のコミュニケーションを
-          </Box>
-        </Typography>
-        <Typography component="p" sx={sxStyles.line2}>
-          <Box
-            component="span"
-            sx={[
-              sxStyles.copyLineText,
-              sxStyles.copyLineText2,
-              sxStyles.pcOnlyLine,
-            ]}
-          >
-            ITの力でもっと活発に
-          </Box>
+      <Box sx={sxStyles.textBlock}>
+        <Typography component="h1">
+          <Typography component="span" sx={sxStyles.line1}>
+            <Box
+              component="span"
+              sx={[sxStyles.copyLineText, sxStyles.copyLineText1]}
+            >
+              社会のコミュニケーションを
+            </Box>
+          </Typography>
+          <Typography component="span" sx={sxStyles.line2}>
+            <Box
+              component="span"
+              sx={[
+                sxStyles.copyLineText,
+                sxStyles.copyLineText2,
+                sxStyles.pcOnlyLine,
+              ]}
+            >
+              ITの力でもっと活発に
+            </Box>
+          </Typography>
           <Box
             component="span"
             sx={[sxStyles.copyLineMask, sxStyles.spOnlyLine]}
+            aria-hidden="true"
           >
             <Box
               component="span"
@@ -258,6 +282,7 @@ const KvMainCopy = () => {
           <Box
             component="span"
             sx={[sxStyles.copyLineMask, sxStyles.spOnlyLine]}
+            aria-hidden="true"
           >
             <Box
               component="span"

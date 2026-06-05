@@ -21,7 +21,7 @@ const rows = [
 ];
 
 const lato = Lato({
-  weight: ['400', '700', '900'],
+  weight: ['900'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -99,21 +99,21 @@ const Company = () => {
   return (
     <Box component="section" sx={sxStyles.section}>
       <FadeInOnView>
-        <Box sx={sxStyles.headingBox}>
-          <Typography variant="h2" sx={sxStyles.heading}>
+        <Typography component="h2" sx={sxStyles.headingBox}>
+          <Typography component="span" sx={sxStyles.heading}>
             Company
           </Typography>
-          <Typography variant="caption" component="span" sx={sxStyles.caption}>
+          <Typography component="span" sx={sxStyles.caption}>
             会社情報
           </Typography>
-        </Box>
+        </Typography>
       </FadeInOnView>
       <TableContainer sx={sxStyles.tableContainer}>
         <Table size="medium">
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.title} sx={sxStyles.tableRow}>
-                <TableCell align="left" sx={sxStyles.titleCell}>
+                <TableCell align="left" sx={sxStyles.titleCell} component="th">
                   {row.title}
                 </TableCell>
                 <TableCell align="left" sx={sxStyles.descriptionCell}>

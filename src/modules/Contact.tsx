@@ -7,7 +7,7 @@ import { CommonLink } from '../components/CommonLink';
 import FadeInOnView from '../components/FadeInOnView';
 
 const lato = Lato({
-  weight: ['400', '700', '900'],
+  weight: ['900'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -62,6 +62,7 @@ const sxStyles = {
       width: '100%',
     },
     '> a': {
+      width: '100%',
       position: 'relative',
       overflow: 'hidden',
       borderRadius: '6px',
@@ -80,7 +81,6 @@ const sxStyles = {
       transition: 'background-color 0.35s ease, color 0.35s ease',
       '@media screen and (max-width:768px)': {
         px: '16px',
-        width: '100%',
       },
       '&:hover': {
         backgroundColor: '#fff',
@@ -100,10 +100,10 @@ const Contact = () => {
       <FadeInOnView>
         <Box sx={sxStyles.wrap}>
           <Box sx={sxStyles.headingContainer}>
-            <Typography variant="h2" sx={sxStyles.heading}>
+            <Typography component="h2" sx={sxStyles.heading}>
               Contact
             </Typography>
-            <Typography variant="body2" sx={sxStyles.text}>
+            <Typography component="p" sx={sxStyles.text}>
               お問い合わせはこちらよりお願いいたします
             </Typography>
           </Box>

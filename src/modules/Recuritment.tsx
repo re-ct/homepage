@@ -6,7 +6,7 @@ import Image from 'next/image';
 import FadeInOnView from '../components/FadeInOnView';
 
 const lato = Lato({
-  weight: ['400', '700', '900'],
+  weight: ['900'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -78,18 +78,14 @@ const Recruitment = () => {
         />
         <Box>
           <FadeInOnView>
-            <Box sx={sxStyles.headingBox}>
-              <Typography variant="h2" sx={sxStyles.heading}>
+            <Typography component="h2" sx={sxStyles.headingBox}>
+              <Typography component="span" sx={sxStyles.heading}>
                 Recruit
               </Typography>
-              <Typography
-                variant="caption"
-                component="span"
-                sx={sxStyles.caption}
-              >
+              <Typography component="span" sx={sxStyles.caption}>
                 採用情報
               </Typography>
-            </Box>
+            </Typography>
           </FadeInOnView>
           <Typography variant="caption" component="p" sx={sxStyles.text}>
             現在、募集は行っておりません。

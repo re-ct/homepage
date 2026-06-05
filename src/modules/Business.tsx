@@ -11,7 +11,7 @@ import FadeInOnView from '../components/FadeInOnView';
 import { Lato } from 'next/font/google';
 
 const lato = Lato({
-  weight: ['400', '700', '900'],
+  weight: ['900'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -154,8 +154,24 @@ const sxStyles = {
       boxSizing: 'border-box',
       position: 'relative',
       overflow: 'hidden',
-      transition:
-        'background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding-left 0.35s ease',
+      transition: 'color 0.35s ease',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: '1px',
+        backgroundColor: '#fff',
+        transform: 'scaleX(0)',
+        transformOrigin: 'left center',
+        transition: 'transform 0.35s ease',
+        zIndex: 1,
+      },
+      '& > *': {
+        position: 'relative',
+        zIndex: 2,
+      },
       '& > svg': {
         flexShrink: 0,
       },
@@ -165,10 +181,8 @@ const sxStyles = {
         columnGap: '20px',
         paddingBlock: '24px',
       },
-      '&:hover': {
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-        borderBottomColor: 'rgba(255, 255, 255, 0.58)',
-        boxShadow: '0 16px 32px rgba(0, 0, 0, 0.12)',
+      '&:hover::before': {
+        transform: 'scaleX(1)',
       },
     },
   },
@@ -227,18 +241,14 @@ const Business = () => {
       <Box component="section" sx={sxStyles.wrap}>
         <FadeInOnView>
           <Box component="section" sx={sxStyles.box}>
-            <Box sx={sxStyles.headingBox}>
-              <Typography variant="h2" sx={sxStyles.heading}>
+            <Typography component="h2" sx={sxStyles.headingBox}>
+              <Typography component="span" sx={sxStyles.heading}>
                 Service
               </Typography>
-              <Typography
-                variant="caption"
-                component="span"
-                sx={sxStyles.caption}
-              >
+              <Typography component="span" sx={sxStyles.caption}>
                 事業内容
               </Typography>
-            </Box>
+            </Typography>
             <Typography component="p" sx={sxStyles.text}>
               高い技術力を強みに、エンジニアリングに関する事業を運営しております。
             </Typography>
