@@ -215,8 +215,14 @@ const sxStyles = {
   },
   copyLineText2: {
     animationDelay: '0.75s',
+    fontSize: 'clamp(43px, 4.96vw, 68px)',
+    fontWeight: 700,
+    lineHeight: 1.2,
   },
   copyLineText2SpSecond: {
+    fontSize: 'clamp(43px, 4.96vw, 68px)',
+    fontWeight: 700,
+    lineHeight: 1.2,
     animationDelay: '1.1s',
   },
   copyLineText3: {

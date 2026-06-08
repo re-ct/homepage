@@ -46,7 +46,7 @@ const sxStyles = {
   },
   box: {
     display: 'grid',
-    gridTemplateColumns: '540px 1fr',
+    gridTemplateColumns: '540fr 424fr',
     alignItems: 'center',
     gap: '36px',
     mt: '56px',
