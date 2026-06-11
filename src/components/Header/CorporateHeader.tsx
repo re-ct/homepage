@@ -7,11 +7,11 @@ import Box from '@mui/material/Box';
 
 const sxStyles = {
   header: {
-    width: '980px',
+    width: '1372px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    py: 2,
+    py: '10px',
     mx: 'auto',
   },
   button: {
