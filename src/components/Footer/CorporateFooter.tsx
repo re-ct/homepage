@@ -35,7 +35,7 @@ const sxStyles = {
     mt: '12px',
     display: 'grid',
     gridTemplateColumns: 'repeat(3,auto)',
-    columnGap: 'min(111px,7vw)',
+    columnGap: 'min(95px,7vw)',
     rowGap: '16px',
     '@media screen and (max-width:768px)': {
       display: 'flex',
@@ -51,11 +51,19 @@ const sxStyles = {
     '& li>div': {
       flex: 'none',
     },
-    '& li:nth-child(2)': {
+    '& > li:nth-child(1)': {
+      gridColumn: '1 / 2',
+      gridRow: '1 / 2',
+    },
+    '& > li:nth-child(2)': {
+      gridColumn: '1 / 2',
+      gridRow: '2 / 3',
+    },
+    '& > li:nth-child(3)': {
       gridColumn: '2 / 3',
       gridRow: '1 / 10',
     },
-    '& li:nth-child(n+4)': {
+    '& > li:nth-child(n+4)': {
       gridColumn: '3 / 4',
     },
     '& li span': {
@@ -108,6 +116,7 @@ const Copyright = () => {
 const CorporateFooter = () => {
   const footerContent = [
     { text: '会社概要', href: '/' },
+    { text: '社内の取り組み', href: '/initiatives/' },
     {
       text: '事業内容',
       children: [
