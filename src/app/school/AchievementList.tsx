@@ -125,11 +125,6 @@ const sxStyles = {
     marginTop: '4px',
     color: commonSxStyles.color.Gray[700],
   },
-  headingText: {
-    marginTop: '8px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
   image: {
     position: 'relative',
   },
@@ -170,12 +165,6 @@ const AchievementList = () => {
     <Box sx={sxStyles.contents}>
       <Typography variant="h2" sx={sxStyles.heading}>
         <img src={headingCtaImg.src} alt="合格実績" width="532" height="122" />
-      </Typography>
-      <Typography
-        variant="body2"
-        sx={[sxStyles.headingText, commonSxStyles.typography.normalText]}
-      >
-        開校以来、合格率100%を継続中！
       </Typography>
       <Box sx={sxStyles.photos}>
         <Swiper

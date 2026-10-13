@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
 import { ReactNode } from 'react';
-import FadeInOnView from '../components/FadeInOnView';
+import FadeInOnView from '../../../components/FadeInOnView';
 
 type SchoolInformation = {
   id: number;
@@ -29,8 +29,8 @@ const schoolInformation: SchoolInformation[] = [
         <strong>1</strong>万円(税抜)
       </>
     ),
-    skill: <>Scratchのみ</>,
-    age: <>小学生〜中学生 </>,
+    skill: <>Roblox、Scratch</>,
+    age: <>小学生〜高校生 </>,
     period: (
       <>
         <strong>6</strong>ヶ月<span> ※以降自動更新</span>

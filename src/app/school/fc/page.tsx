@@ -1,7 +1,7 @@
 import '../../globals.css';
 import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
-import AboutScratch from './AboutScratch';
+import Curriculum from './Curriculum';
 import KeyVisual from './KeyVisual';
 import Feature from './Feature';
 import Fee from './Fee';
@@ -14,7 +14,7 @@ export const metadata = {
   title:
     'こども向けプログラミング教室のフランチャイズパートナー募集 | プログラミング教室 Re:ProS(レプロス repros)',
   description:
-    'Re:Pros(レプロス repros)のFCはプログラミングの知識や経験がない未経験の方でも専門的な教材の導入が行えます。小学生・中学生向けこどもプログラミング教室のフランチャイズパートナーを募集しています。Scratch専門のため、たくさんの教材知識は必要ありません。まずはお気軽にご相談ください。',
+    'Re:Pros(レプロス repros)のFCはプログラミングの知識や経験がない未経験の方でも専門的な教材の導入が行えます。小学生・中学生・高校生向けこどもプログラミング教室のフランチャイズパートナーを募集しています。授業の流れや解説がすべて教材にまとまっているため、たくさんのプログラミング知識は必要ありません。まずはお気軽にご相談ください。',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://re-ct.co.jp/school/fc',
@@ -28,7 +28,7 @@ const School = () => {
       <Feature />
       <Fee />
       <Comparison />
-      <AboutScratch />
+      <Curriculum />
       <Flow />
       <Faq />
       <Contact />

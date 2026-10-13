@@ -26,6 +26,12 @@ export const examinations: Examination[] = [
     grade: 'エントリー級',
     icon: 'image_achievement_list_entry',
   },
+  {
+    id: 'exam_jr_silver',
+    name: 'ジュニアプログラミング検定',
+    grade: 'シルバー級',
+    icon: 'image_achievement_list_silver',
+  },
 ];
 
 export const achievementMembers: AchievementMember[] = [
@@ -76,5 +82,64 @@ export const achievementMembers: AchievementMember[] = [
     date: '2025年12月',
     examinationId: 'exam_jr_entry',
     member: '小坂井西小学校 2年生',
+  },
+  {
+    id: '8',
+    date: '2026年9月',
+    examinationId: 'exam_jr_silver',
+    member: '御津南部小学校 5年生',
+  },
+  {
+    id: '9',
+    date: '2026年9月',
+    examinationId: 'exam_jr_bronze',
+    member: '八南小学校 6年生',
+  },
+  {
+    id: '10',
+    date: '2026年9月',
+    examinationId: 'exam_jr_entry',
+    member: '御津南部小学校 3年生',
+  },
+  {
+    id: '11',
+    date: '2026年9月',
+    examinationId: 'exam_jr_entry',
+    member: '桜町小学校 4年生',
+  },
+  {
+    id: '12',
+    src: 'image_achievement_list12.webp',
+    date: '2026年9月',
+    examinationId: 'exam_jr_silver',
+    member: '御津南部小学校 6年生',
+  },
+  {
+    id: '13',
+    src: 'image_achievement_list13.webp',
+    date: '2026年9月',
+    examinationId: 'exam_jr_silver',
+    member: '御油小学校 6年生',
+  },
+  {
+    id: '14',
+    src: 'image_achievement_list14.webp',
+    date: '2026年9月',
+    examinationId: 'exam_jr_silver',
+    member: '御津南部小学校 6年生',
+  },
+  {
+    id: '15',
+    src: 'image_achievement_list15.webp',
+    date: '2026年9月',
+    examinationId: 'exam_jr_bronze',
+    member: '御油小学校 6年生',
+  },
+  {
+    id: '16',
+    src: 'image_achievement_list16.webp',
+    date: '2026年9月',
+    examinationId: 'exam_jr_entry',
+    member: '大塚小学校 3年生',
   },
 ];

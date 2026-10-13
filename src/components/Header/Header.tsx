@@ -5,12 +5,16 @@ import CorporateHeader from './CorporateHeader';
 import DemandHeader from './DemandHeader';
 import SchoolHeader from './SchoolHeader';
 import SchoolFcHeader from './SchoolFcHeader';
+import CareerHeader from './CareerHeader';
+import CareerBusinessHeader from './CareerBusinessHeader';
 
 const Header = () => {
   const pathname = usePathname();
   const isSchoolPage = pathname.includes('/school');
   const isDemandPage = pathname.includes('/demand');
   const isSchoolFcPage = pathname.includes('/school/fc');
+  const isCareerPage = pathname.includes('/career');
+  const isCareerBusinessPage = pathname.includes('/career/for-business/');
   return (
     <AppBar
       position="sticky"
@@ -22,6 +26,10 @@ const Header = () => {
         <SchoolHeader />
       ) : isDemandPage ? (
         <DemandHeader />
+      ) : isCareerBusinessPage ? (
+        <CareerBusinessHeader />
+      ) : isCareerPage ? (
+        <CareerHeader />
       ) : (
         <CorporateHeader />
       )}
