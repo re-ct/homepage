@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 export const metadata = {
   title: '社内の取り組み | 株式会社レクト',
-  description: '株式会社レクトの働きやすい会社づくりについてご紹介します。',
+  description: '株式会社レクトのさまざまな取り組みについてご紹介します。',
 };
 
 const sxStyles = {
