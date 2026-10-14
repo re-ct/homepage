@@ -115,6 +115,7 @@ const sxStyles = {
     borderRadius: '4px',
     border: 'solid 1px rgba(150, 150, 150, 0.5)',
     overflow: 'hidden',
+    transition: 'all 0.3s ease',
   },
   cardLink: {
     transition: 'background-color 0.3s ease',
@@ -146,17 +147,17 @@ const sxStyles = {
     alignItems: 'center',
     gap: '12px',
     flexWrap: 'wrap',
-    transition: 'font-weight 0.3s ease',
   },
   cardCaption: {
     fontSize: '16px',
     letterSpacing: '0.1em',
+    transition: 'all 0.3s ease',
     '@media screen and (max-width:768px)': {
       fontSize: '14px',
     },
   },
   cardDescription: {
-    fontSize: '16px',
+    fontSize: '15px',
     letterSpacing: '0.01em',
     flexShrink: 0,
     color: '#969696',
