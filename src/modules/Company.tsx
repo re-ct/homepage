@@ -9,7 +9,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Lato } from 'next/font/google';
 import Link from 'next/link';
 import FadeInOnView from '../components/FadeInOnView';
-import { colors } from '@mui/material';
 
 const createData = (title: string, description: string) => {
   return { title, description };
