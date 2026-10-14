@@ -154,7 +154,7 @@ const sxStyles = {
     letterSpacing: '0.1em',
     '@media screen and (max-width:768px)': {
       fontSize: '14px',
-    }
+    },
   },
   cardDescription: {
     fontSize: '16px',
@@ -163,7 +163,7 @@ const sxStyles = {
     color: '#969696',
     '@media screen and (max-width:768px)': {
       fontSize: '14px',
-    }
+    },
   },
   cardArrow: {
     color: '#00298A',
@@ -171,7 +171,7 @@ const sxStyles = {
     flexShrink: 0,
     '@media screen and (max-width:768px)': {
       fontSize: '20px',
-    }
+    },
   },
 };
 

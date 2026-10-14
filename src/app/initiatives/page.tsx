@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 export const metadata = {
   title: '社内の取り組み | 株式会社レクト',
-  description: '株式会社レクトの働きやすい会社づくりと有給休暇の取得促進についてご紹介します。',
+  description: '株式会社レクトの働きやすい会社づくりについてご紹介します。',
 };
 
 const sxStyles = {
@@ -61,8 +61,12 @@ const Initiatives = () => (
       <Typography variant="h1" sx={sxStyles.heading}>
         社内の取り組み
       </Typography>
-      <Typography sx={[commonSxStyles.typography.normalText, sxStyles.introduction]}>
-        {'私たちはより良い会社を目指して、さまざまな取り組みを行っています。\nここでは、私たちの活動実績や認定についてご紹介します。'}
+      <Typography
+        sx={[commonSxStyles.typography.normalText, sxStyles.introduction]}
+      >
+        {
+          '私たちはより良い会社を目指して、さまざまな取り組みを行っています。\nここでは、私たちの活動実績や認定についてご紹介します。'
+        }
       </Typography>
 
       <Box component="section" sx={sxStyles.section}>
@@ -73,16 +77,25 @@ const Initiatives = () => (
           <Typography variant="h3" sx={sxStyles.articleHeading}>
             有給休暇の取得促進
           </Typography>
-          <Typography sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}>
+          <Typography
+            sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}
+          >
             心身ともに充実した状態で働けるよう、有給休暇を取得しやすい環境づくりを進めています。
           </Typography>
-          <Typography sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}>
+          <Typography
+            sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}
+          >
             具体的な取り組みとして、普段から業務の調整や情報共有を行い、業務をスムーズに引き継げる体制を整えています。
           </Typography>
-          <Typography sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}>
-            その結果、2026年XX月時点で<strong>有給休暇取得率60％を達成</strong>。
+          <Typography
+            sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}
+          >
+            その結果、2026年XX月時点で<strong>有給休暇取得率60％を達成</strong>
+            。
           </Typography>
-          <Typography sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}>
+          <Typography
+            sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}
+          >
             今後も、仕事と休暇のバランスを大切にしながら、より働きやすい職場を目指してまいります。
           </Typography>
         </Box>
