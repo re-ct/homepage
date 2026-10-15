@@ -90,7 +90,7 @@ const Initiatives = () => (
           <Typography
             sx={[commonSxStyles.typography.normalText, sxStyles.articleText]}
           >
-            その結果、2026年10月時点で<strong>有給休暇取得率60％を達成</strong>
+            その結果、2026年11月時点で<strong>有給休暇取得率60％を達成</strong>
             。
           </Typography>
           <Typography
