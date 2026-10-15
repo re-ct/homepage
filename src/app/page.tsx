@@ -2,7 +2,6 @@ import './globals.css';
 import Kv from '../modules/Kv';
 import Company from '../modules/Company';
 import Business from '../modules/Business';
-import Recruitment from '@/modules/Recuritment';
 import Contact from '@/modules/Contact';
 import BreadcrumbsNavigation from './BreadcrumbsNavigation';
 import { schoolTopTitle } from '@/lib/const/BreadCrumbTitle';
@@ -22,7 +21,6 @@ export default function Home() {
       <Kv />
       <Business />
       <Company />
-      <Recruitment />
       <Contact />
       <BreadcrumbsNavigation titles={schoolTopTitle} />
     </main>

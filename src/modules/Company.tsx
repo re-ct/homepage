@@ -5,7 +5,9 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Lato } from 'next/font/google';
+import Link from 'next/link';
 import FadeInOnView from '../components/FadeInOnView';
 
 const createData = (title: string, description: string) => {
@@ -93,6 +95,84 @@ const sxStyles = {
     padding: '24px 0',
     color: '#000',
   },
+  cardList: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '16px',
+    mt: '72px',
+    '@media screen and (max-width:768px)': {
+      gridTemplateColumns: '1fr',
+      gap: '24px',
+      mt: '56px',
+    },
+  },
+  card: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    alignItems: 'center',
+    color: '#000',
+    textDecoration: 'none',
+    borderRadius: '4px',
+    border: 'solid 1px rgba(150, 150, 150, 0.5)',
+    overflow: 'hidden',
+    transition: 'all 0.3s ease',
+  },
+  cardLink: {
+    transition: 'background-color 0.3s ease',
+    '&:hover': {
+      '& .company__cardContentHeadingBox, & .company__cardContentHeadingBox span':
+        {
+          fontWeight: 'bold',
+        },
+    },
+  },
+  cardImage: {
+    display: 'block',
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '442 / 131',
+    objectFit: 'cover',
+    backgroundColor: '#EFF7FF',
+  },
+  cardContent: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '12px',
+    py: '12px',
+    px: '20px',
+  },
+  cardHeadingBox: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    flexWrap: 'wrap',
+  },
+  cardCaption: {
+    fontSize: '16px',
+    letterSpacing: '0.1em',
+    transition: 'all 0.3s ease',
+    '@media screen and (max-width:768px)': {
+      fontSize: '14px',
+    },
+  },
+  cardDescription: {
+    fontSize: '15px',
+    letterSpacing: '0.01em',
+    flexShrink: 0,
+    color: '#969696',
+    '@media screen and (max-width:768px)': {
+      fontSize: '14px',
+    },
+  },
+  cardArrow: {
+    color: '#00298A',
+    fontSize: '24px',
+    flexShrink: 0,
+    '@media screen and (max-width:768px)': {
+      fontSize: '20px',
+    },
+  },
 };
 
 const Company = () => {
@@ -124,6 +204,55 @@ const Company = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <FadeInOnView>
+        <Box sx={sxStyles.cardList}>
+          <Link href="/initiatives/" style={{ textDecoration: 'none' }}>
+            <Box sx={[sxStyles.card, sxStyles.cardLink]}>
+              <Box
+                component="img"
+                src="/image/top/initiatives.webp"
+                alt=""
+                width="540"
+                height="296"
+                sx={sxStyles.cardImage}
+              />
+              <Box sx={sxStyles.cardContent}>
+                <Typography
+                  component="h3"
+                  className="company__cardContentHeadingBox"
+                  sx={sxStyles.cardHeadingBox}
+                >
+                  <Typography component="span" sx={sxStyles.cardCaption}>
+                    社内の取り組み
+                  </Typography>
+                </Typography>
+                <ArrowForwardIcon sx={sxStyles.cardArrow} />
+              </Box>
+            </Box>
+          </Link>
+
+          <Box sx={sxStyles.card}>
+            <Box
+              component="img"
+              src="/image/top/recruit.webp"
+              alt=""
+              width="540"
+              height="296"
+              sx={sxStyles.cardImage}
+            />
+            <Box sx={sxStyles.cardContent}>
+              <Typography component="h3" sx={sxStyles.cardHeadingBox}>
+                <Typography component="span" sx={sxStyles.cardCaption}>
+                  採用情報
+                </Typography>
+              </Typography>
+              <Typography component="p" sx={sxStyles.cardDescription}>
+                現在募集しておりません
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </FadeInOnView>
     </Box>
   );
 };
