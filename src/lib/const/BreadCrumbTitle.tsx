@@ -4,6 +4,7 @@ export const demandDevelopmentTitle = [...demandTopTitle, '開発等の相談'];
 export const adTopTitle = [...demandTopTitle, 'インタラクティブ広告の制作'];
 export const downloadTitle = ['お役立ち資料一覧'];
 export const announcementTitle = ['電子公告'];
+export const initiativesTitle = ['社内の取り組み'];
 export const fcTopTitle = [
   ...schoolTopTitle,
   'こども向けプログラミング教室のフランチャイズパートナー募集',
