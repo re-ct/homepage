@@ -4,7 +4,7 @@ import { alpha } from '@mui/system';
 
 interface Heading2Props {
   subText: string;
-  mainText: string;
+  mainText: React.ReactNode;
   position?: 'center' | 'right';
   backGroundWhite?: boolean;
 }
