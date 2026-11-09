@@ -104,7 +104,7 @@ const sxStyles = {
       py: 2,
       backgroundColor: commonSxStyles.color.white,
       borderRadius: '16px',
-      filter: 'drop-shadow(0px 1px 3px rgba(34, 106, 170, 0.25))',
+      filter: 'drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2))',
       '&::after': {
         content: '""',
         position: 'absolute',
@@ -131,7 +131,7 @@ const sxStyles = {
     py: 2,
     fontWeight: 'bold',
     textAlign: 'center',
-    filter: 'drop-shadow(0px 1px 3px rgba(34, 106, 170, 0.25))',
+    filter: 'drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2))',
     '&::after': {
       content: '""',
       position: 'absolute',

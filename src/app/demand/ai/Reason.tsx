@@ -8,7 +8,7 @@ type ReasonItem = {
   id: string;
   number: string;
   title: React.ReactNode;
-  detail: string;
+  detail: React.ReactNode;
   imageName: string;
 };
 
@@ -23,8 +23,13 @@ const reasonData: ReasonItem[] = [
         エンジニアが対応
       </>
     ),
-    detail:
-      '実際の開発・制作現場で培った知見をもとに、情報の取り扱いやセキュリティ面にも配慮した、実現可能なAI活用方法をご提案します。',
+    detail: (
+      <>
+        実際の開発・制作現場で培った知見をもとに、
+        <strong>情報の取り扱いやセキュリティ面にも配慮</strong>した、
+        <strong>実現可能なAI活用方法</strong>をご提案します。
+      </>
+    ),
     imageName: 'reason_image_01.webp',
   },
   {
@@ -37,8 +42,12 @@ const reasonData: ReasonItem[] = [
         ワンストップ
       </>
     ),
-    detail:
-      '課題整理・ツール選定だけでなく、業務自動化やシステム開発まで対応します。',
+    detail: (
+      <>
+        課題整理・ツール選定だけでなく、
+        <strong>業務自動化やシステム開発まで対応</strong>します。
+      </>
+    ),
     imageName: 'reason_image_02.webp',
   },
   {
@@ -51,8 +60,13 @@ const reasonData: ReasonItem[] = [
         伴走可能
       </>
     ),
-    detail:
-      '導入して終わりではなく、利用状況や効果を確認しながら改善を支援することも可能です。',
+    detail: (
+      <>
+        導入して終わりではなく、
+        <strong>利用状況や効果を確認しながら改善を支援</strong>
+        することも可能です。
+      </>
+    ),
     imageName: 'reason_image_03.webp',
   },
 ];
@@ -113,18 +127,26 @@ const sxStyles = {
     fontWeight: 'bold',
     color: alpha(commonSxStyles.color.primary, 0.4),
   },
-  image: {
-    display: 'block',
+  iconCircle: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     mt: 2,
     mx: 'auto',
-    width: '50%',
-    maxWidth: '300px',
-    height: 'auto',
-    p: 1,
+    width: '120px',
+    height: '120px',
     borderRadius: '50%',
     backgroundColor: alpha(commonSxStyles.color.white, 0.6),
+    '& > img': {
+      width: '100px',
+      height: 'auto',
+    },
     '@media screen and (max-width:768px)': {
-      maxWidth: '200px',
+      width: '100px',
+      height: '100px',
+      '& > img': {
+        width: '84px',
+      },
     },
   },
   title: {
@@ -133,6 +155,9 @@ const sxStyles = {
   },
   text: {
     mt: 2,
+    '& > strong': {
+      fontWeight: 'bold',
+    },
   },
 };
 
@@ -166,14 +191,14 @@ const Reason = () => {
               >
                 {item.title}
               </Typography>
-              <Box
-                component="img"
-                src={`/image/demand/ai/${item.imageName}`}
-                alt=""
-                width={300}
-                height={300}
-                sx={sxStyles.image}
-              />
+              <Box sx={sxStyles.iconCircle}>
+                <img
+                  src={`/image/demand/ai/${item.imageName}`}
+                  alt=""
+                  width={960}
+                  height={960}
+                />
+              </Box>
               <Typography
                 sx={[sxStyles.text, commonSxStyles.typography.normalText]}
               >
