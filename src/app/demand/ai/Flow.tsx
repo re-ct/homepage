@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import arrow from '../../../../public/image/demand/flow_arrow.svg';
@@ -169,41 +170,49 @@ const Arrow = () => {
 const Flow = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2 subText="flow" mainText="ご利用の流れ" />
-        <Box sx={sxStyles.scroll}>
-          <Box
-            sx={[sxStyles.list, commonSxStyles.typography.normalText]}
-            component="ol"
-          >
-            {flowData.map((item, index) => (
-              <React.Fragment key={item.id}>
-                <Box component="li" sx={sxStyles.listItem}>
-                  <Typography
-                    variant="h3"
-                    component="h3"
-                    sx={[commonSxStyles.typography.heading3, sxStyles.title]}
-                  >
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2 subText="flow" mainText="ご利用の流れ" />
+          <Box sx={sxStyles.scroll}>
+            <Box
+              sx={[sxStyles.list, commonSxStyles.typography.normalText]}
+              component="ol"
+            >
+              {flowData.map((item, index) => (
+                <React.Fragment key={item.id}>
+                  <Box component="li" sx={sxStyles.listItem}>
                     <Typography
-                      component="span"
-                      sx={[sxStyles.step, commonSxStyles.typography.normalText]}
+                      variant="h3"
+                      component="h3"
+                      sx={[commonSxStyles.typography.heading3, sxStyles.title]}
                     >
-                      {item.step}
+                      <Typography
+                        component="span"
+                        sx={[
+                          sxStyles.step,
+                          commonSxStyles.typography.normalText,
+                        ]}
+                      >
+                        {item.step}
+                      </Typography>
+                      {item.title}
                     </Typography>
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    sx={[sxStyles.detail, commonSxStyles.typography.normalText]}
-                  >
-                    {item.detail}
-                  </Typography>
-                </Box>
-                {index < flowData.length - 1 && <Arrow />}
-              </React.Fragment>
-            ))}
+                    <Typography
+                      sx={[
+                        sxStyles.detail,
+                        commonSxStyles.typography.normalText,
+                      ]}
+                    >
+                      {item.detail}
+                    </Typography>
+                  </Box>
+                  {index < flowData.length - 1 && <Arrow />}
+                </React.Fragment>
+              ))}
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

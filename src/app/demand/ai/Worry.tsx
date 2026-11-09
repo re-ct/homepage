@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
@@ -225,53 +226,65 @@ const sxStyles = {
       },
     },
   },
+  conclusionEmphasis: {
+    fontSize: '36px',
+    '@media screen and (max-width:768px)': {
+      fontSize: '26px',
+    },
+  },
 };
 
 const Worry = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2
-          subText="worry"
-          mainText={
-            <>
-              こんなお悩みは
-              <Box component="br" sx={sxStyles.spBreak} />
-              ありませんか？
-            </>
-          }
-        />
-        <Box component="ul" sx={sxStyles.list}>
-          {worryData.map((item) => (
-            <Typography
-              component="li"
-              key={item.id}
-              sx={[
-                sxStyles.bubble,
-                sxStyles.tail[item.tail],
-                commonSxStyles.typography.largeText,
-              ]}
-            >
-              {item.text}
-            </Typography>
-          ))}
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2
+            subText="worry"
+            mainText={
+              <>
+                こんなお悩みは
+                <Box component="br" sx={sxStyles.spBreak} />
+                ありませんか？
+              </>
+            }
+          />
+          <Box component="ul" sx={sxStyles.list}>
+            {worryData.map((item) => (
+              <Typography
+                component="li"
+                key={item.id}
+                sx={[
+                  sxStyles.bubble,
+                  sxStyles.tail[item.tail],
+                  commonSxStyles.typography.largeText,
+                ]}
+              >
+                {item.text}
+              </Typography>
+            ))}
+          </Box>
+          <Box
+            component="img"
+            src="/image/demand/ai/worry_image.webp"
+            alt=""
+            width={480}
+            height={480}
+            sx={sxStyles.image}
+          />
+          <Typography
+            sx={[commonSxStyles.typography.heading3, sxStyles.conclusion]}
+          >
+            そのお悩み、
+            <br />
+            <Box component="span" sx={sxStyles.conclusionEmphasis}>
+              最適な方法でサポート
+            </Box>
+            <br />
+            いたします
+          </Typography>
         </Box>
-        <Box
-          component="img"
-          src="/image/demand/ai/worry_image.webp"
-          alt=""
-          width={480}
-          height={480}
-          sx={sxStyles.image}
-        />
-        <Typography
-          sx={[commonSxStyles.typography.heading3, sxStyles.conclusion]}
-        >
-          そのお悩み、
-          <br />
-          最適な方法でサポートいたします
-        </Typography>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

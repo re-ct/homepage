@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import CustomButton from '../components/Button';
 import { Box, Typography } from '@mui/material';
@@ -80,41 +81,47 @@ const sxStyles = {
 const Contact = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2
-          subText="contact"
-          mainText={
-            <>
-              まずは現在の
-              <Box component="br" sx={sxStyles.spBreak} />
-              業務や
-              <Box component="br" sx={sxStyles.pcBreak} />
-              お悩みを
-              <Box component="br" sx={sxStyles.spBreak} />
-              お聞かせください
-            </>
-          }
-          position="right"
-          backGroundWhite={false}
-        />
-        <Typography sx={[sxStyles.text, commonSxStyles.typography.normalText]}>
-          何から始めればいいか分からなくても問題ございません。
-        </Typography>
-        <Typography sx={[sxStyles.text, commonSxStyles.typography.normalText]}>
-          課題やご予算に合わせて、AIでできることを一緒に考えます。
-        </Typography>
-        <Box sx={sxStyles.button}>
-          <CustomButton
-            label="AI導入について相談する"
-            isPrimary={false}
-            showFreeLabel={false}
-            icon="arrow-right"
-            href={aiContact}
-            isExternal={true}
-            gaLabel="demandAi_contact_form_contact"
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2
+            subText="contact"
+            mainText={
+              <>
+                まずは現在の
+                <Box component="br" sx={sxStyles.spBreak} />
+                業務や
+                <Box component="br" sx={sxStyles.pcBreak} />
+                お悩みを
+                <Box component="br" sx={sxStyles.spBreak} />
+                お聞かせください
+              </>
+            }
+            position="right"
+            backGroundWhite={false}
           />
+          <Typography
+            sx={[sxStyles.text, commonSxStyles.typography.normalText]}
+          >
+            何から始めればいいか分からなくても問題ございません。
+          </Typography>
+          <Typography
+            sx={[sxStyles.text, commonSxStyles.typography.normalText]}
+          >
+            課題やご予算に合わせて、AIでできることを一緒に考えます。
+          </Typography>
+          <Box sx={sxStyles.button}>
+            <CustomButton
+              label="AI導入について相談する"
+              isPrimary={false}
+              showFreeLabel={false}
+              icon="arrow-right"
+              href={aiContact}
+              isExternal={true}
+              gaLabel="demandAi_contact_form_contact"
+            />
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
       <Box sx={sxStyles.image}>
         <img src={img.src} alt="" width="570" height="434" />
       </Box>

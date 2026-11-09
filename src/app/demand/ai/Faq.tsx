@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from '../components/Style';
@@ -92,51 +93,57 @@ const sxStyles = {
 const Faq = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2 subText="faq" mainText="よくあるご質問" />
-        <Box sx={sxStyles.list}>
-          {questionData.map((item) => (
-            <Box component="dl" key={item.id} sx={sxStyles.item}>
-              <Typography
-                component="dt"
-                sx={[sxStyles.question, commonSxStyles.typography.heading3]}
-              >
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2 subText="faq" mainText="よくあるご質問" />
+          <Box sx={sxStyles.list}>
+            {questionData.map((item) => (
+              <Box component="dl" key={item.id} sx={sxStyles.item}>
                 <Typography
-                  component="span"
-                  sx={[
-                    sxStyles.questionMark,
-                    commonSxStyles.typography.heading3,
-                  ]}
+                  component="dt"
+                  sx={[sxStyles.question, commonSxStyles.typography.heading3]}
                 >
-                  Q.
+                  <Typography
+                    component="span"
+                    sx={[
+                      sxStyles.questionMark,
+                      commonSxStyles.typography.heading3,
+                    ]}
+                  >
+                    Q.
+                  </Typography>
+                  {item.question}
                 </Typography>
-                {item.question}
-              </Typography>
-              <Typography
-                component="dd"
-                sx={[sxStyles.answer, commonSxStyles.typography.normalText]}
-              >
                 <Typography
-                  component="span"
-                  sx={[
-                    sxStyles.answerMark,
-                    commonSxStyles.typography.normalText,
-                  ]}
+                  component="dd"
+                  sx={[sxStyles.answer, commonSxStyles.typography.normalText]}
                 >
-                  A.
+                  <Typography
+                    component="span"
+                    sx={[
+                      sxStyles.answerMark,
+                      commonSxStyles.typography.normalText,
+                    ]}
+                  >
+                    A.
+                  </Typography>
+                  <Box component="span">
+                    {item.answer.map((text, index) => (
+                      <Box
+                        component="span"
+                        key={index}
+                        sx={sxStyles.answerText}
+                      >
+                        {text}
+                      </Box>
+                    ))}
+                  </Box>
                 </Typography>
-                <Box component="span">
-                  {item.answer.map((text, index) => (
-                    <Box component="span" key={index} sx={sxStyles.answerText}>
-                      {text}
-                    </Box>
-                  ))}
-                </Box>
-              </Typography>
-            </Box>
-          ))}
+              </Box>
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

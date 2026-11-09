@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
@@ -175,53 +176,57 @@ const sxStyles = {
 const Service = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2 subText="service" mainText="ご提供サービス" />
-        <Typography sx={[sxStyles.lead, commonSxStyles.typography.normalText]}>
-          企業の課題に合わせて、
-          <br />
-          必要な支援を組み合わせて提供します。
-        </Typography>
-        <Box component="ul" sx={sxStyles.list}>
-          {serviceData.map((item) => (
-            <Box component="li" key={item.id} sx={sxStyles.listItem}>
-              <Box sx={sxStyles.textArea}>
-                <Typography
-                  variant="h3"
-                  component="h3"
-                  sx={[commonSxStyles.typography.heading3, sxStyles.title]}
-                >
-                  {item.title}
-                </Typography>
-                <Box component="ul" sx={sxStyles.tagList}>
-                  {item.tags.map((tag) => (
-                    <Typography
-                      component="li"
-                      key={tag}
-                      sx={[sxStyles.tag, commonSxStyles.typography.smallText]}
-                    >
-                      {tag}
-                    </Typography>
-                  ))}
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2 subText="service" mainText="ご提供サービス" />
+          <Typography
+            sx={[sxStyles.lead, commonSxStyles.typography.normalText]}
+          >
+            企業の課題に合わせて、
+            <br />
+            必要な支援を組み合わせて提供します。
+          </Typography>
+          <Box component="ul" sx={sxStyles.list}>
+            {serviceData.map((item) => (
+              <Box component="li" key={item.id} sx={sxStyles.listItem}>
+                <Box sx={sxStyles.textArea}>
+                  <Typography
+                    variant="h3"
+                    component="h3"
+                    sx={[commonSxStyles.typography.heading3, sxStyles.title]}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Box component="ul" sx={sxStyles.tagList}>
+                    {item.tags.map((tag) => (
+                      <Typography
+                        component="li"
+                        key={tag}
+                        sx={[sxStyles.tag, commonSxStyles.typography.smallText]}
+                      >
+                        {tag}
+                      </Typography>
+                    ))}
+                  </Box>
+                  <Typography
+                    sx={[sxStyles.text, commonSxStyles.typography.normalText]}
+                  >
+                    {item.detail}
+                  </Typography>
                 </Box>
-                <Typography
-                  sx={[sxStyles.text, commonSxStyles.typography.normalText]}
-                >
-                  {item.detail}
-                </Typography>
+                <Box
+                  component="img"
+                  src={`/image/demand/ai/${item.imageName}`}
+                  alt=""
+                  width={480}
+                  height={300}
+                  sx={sxStyles.image}
+                />
               </Box>
-              <Box
-                component="img"
-                src={`/image/demand/ai/${item.imageName}`}
-                alt=""
-                width={480}
-                height={300}
-                sx={sxStyles.image}
-              />
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

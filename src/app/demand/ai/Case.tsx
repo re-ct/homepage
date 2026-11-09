@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import { alpha } from '@mui/system';
@@ -244,71 +245,75 @@ const sxStyles = {
 const Case = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2 subText="case" mainText="AI活用事例" />
-        <Typography sx={[sxStyles.lead, commonSxStyles.typography.normalText]}>
-          AIを活用することで、さまざまな業務の負担を軽減できます。
-        </Typography>
-        <Box component="ul" sx={sxStyles.list}>
-          {caseData.map((item) => (
-            <Box component="li" key={item.id} sx={sxStyles.listItem}>
-              <Box sx={sxStyles.header}>
-                <Typography
-                  variant="h3"
-                  component="h3"
-                  sx={[sxStyles.title, commonSxStyles.typography.heading3]}
-                >
-                  <Box component="span" sx={sxStyles.number}>
-                    {item.number}
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2 subText="case" mainText="AI活用事例" />
+          <Typography
+            sx={[sxStyles.lead, commonSxStyles.typography.normalText]}
+          >
+            AIを活用することで、さまざまな業務の負担を軽減できます。
+          </Typography>
+          <Box component="ul" sx={sxStyles.list}>
+            {caseData.map((item) => (
+              <Box component="li" key={item.id} sx={sxStyles.listItem}>
+                <Box sx={sxStyles.header}>
+                  <Typography
+                    variant="h3"
+                    component="h3"
+                    sx={[sxStyles.title, commonSxStyles.typography.heading3]}
+                  >
+                    <Box component="span" sx={sxStyles.number}>
+                      {item.number}
+                    </Box>
+                    {item.title}
+                  </Typography>
+                  <Box
+                    component="img"
+                    src={`/image/demand/ai/case_image_${item.number}.webp`}
+                    alt=""
+                    width={924}
+                    height={748}
+                    sx={sxStyles.image}
+                  />
+                </Box>
+                <Box component="dl">
+                  <Box sx={[sxStyles.row, sxStyles.beforeRow]}>
+                    <Typography
+                      component="dt"
+                      sx={[sxStyles.label, sxStyles.beforeLabel]}
+                    >
+                      Before
+                    </Typography>
+                    <Typography
+                      component="dd"
+                      sx={commonSxStyles.typography.normalText}
+                    >
+                      {item.before}
+                    </Typography>
                   </Box>
-                  {item.title}
-                </Typography>
-                <Box
-                  component="img"
-                  src={`/image/demand/ai/case_image_${item.number}.webp`}
-                  alt=""
-                  width={924}
-                  height={748}
-                  sx={sxStyles.image}
-                />
-              </Box>
-              <Box component="dl">
-                <Box sx={[sxStyles.row, sxStyles.beforeRow]}>
-                  <Typography
-                    component="dt"
-                    sx={[sxStyles.label, sxStyles.beforeLabel]}
-                  >
-                    Before
-                  </Typography>
-                  <Typography
-                    component="dd"
-                    sx={commonSxStyles.typography.normalText}
-                  >
-                    {item.before}
-                  </Typography>
-                </Box>
-                <Box sx={[sxStyles.row, sxStyles.afterRow]}>
-                  <Typography
-                    component="dt"
-                    sx={[sxStyles.label, sxStyles.afterLabel]}
-                  >
-                    After
-                  </Typography>
-                  <Typography
-                    component="dd"
-                    sx={[
-                      sxStyles.afterText,
-                      commonSxStyles.typography.normalText,
-                    ]}
-                  >
-                    {item.after}
-                  </Typography>
+                  <Box sx={[sxStyles.row, sxStyles.afterRow]}>
+                    <Typography
+                      component="dt"
+                      sx={[sxStyles.label, sxStyles.afterLabel]}
+                    >
+                      After
+                    </Typography>
+                    <Typography
+                      component="dd"
+                      sx={[
+                        sxStyles.afterText,
+                        commonSxStyles.typography.normalText,
+                      ]}
+                    >
+                      {item.after}
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };

@@ -1,3 +1,4 @@
+import FadeInOnView from '@/components/FadeInOnView';
 import Heading2 from '../components/Heading2';
 import { Box, Typography } from '@mui/material';
 import { alpha } from '@mui/system';
@@ -27,7 +28,7 @@ const reasonData: ReasonItem[] = [
       <>
         実際の開発・制作現場で培った知見をもとに、
         <strong>情報の取り扱いやセキュリティ面にも配慮</strong>した、
-        <strong>実現可能なAI活用方法</strong>をご提案します。
+        <strong>AI活用方法</strong>をご提案します。
       </>
     ),
     imageName: 'reason_image_01.webp',
@@ -164,50 +165,52 @@ const sxStyles = {
 const Reason = () => {
   return (
     <Box sx={sxStyles.section}>
-      <Box sx={sxStyles.inner}>
-        <Heading2
-          subText="reason"
-          mainText={
-            <>
-              私たちが選ばれる
-              <Box component="br" sx={sxStyles.spBreak} />
-              3つの理由
-            </>
-          }
-        />
-        <Box component="ul" sx={sxStyles.list}>
-          {reasonData.map((item) => (
-            <Box component="li" key={item.id} sx={sxStyles.listItem}>
-              <Typography
-                component="span"
-                sx={[sxStyles.number, commonSxStyles.typography.normalText]}
-              >
-                {item.number}
-              </Typography>
-              <Typography
-                variant="h3"
-                component="h3"
-                sx={[sxStyles.title, commonSxStyles.typography.heading3]}
-              >
-                {item.title}
-              </Typography>
-              <Box sx={sxStyles.iconCircle}>
-                <img
-                  src={`/image/demand/ai/${item.imageName}`}
-                  alt=""
-                  width={960}
-                  height={960}
-                />
+      <FadeInOnView>
+        <Box sx={sxStyles.inner}>
+          <Heading2
+            subText="reason"
+            mainText={
+              <>
+                私たちが選ばれる
+                <Box component="br" sx={sxStyles.spBreak} />
+                3つの理由
+              </>
+            }
+          />
+          <Box component="ul" sx={sxStyles.list}>
+            {reasonData.map((item) => (
+              <Box component="li" key={item.id} sx={sxStyles.listItem}>
+                <Typography
+                  component="span"
+                  sx={[sxStyles.number, commonSxStyles.typography.normalText]}
+                >
+                  {item.number}
+                </Typography>
+                <Typography
+                  variant="h3"
+                  component="h3"
+                  sx={[sxStyles.title, commonSxStyles.typography.heading3]}
+                >
+                  {item.title}
+                </Typography>
+                <Box sx={sxStyles.iconCircle}>
+                  <img
+                    src={`/image/demand/ai/${item.imageName}`}
+                    alt=""
+                    width={960}
+                    height={960}
+                  />
+                </Box>
+                <Typography
+                  sx={[sxStyles.text, commonSxStyles.typography.normalText]}
+                >
+                  {item.detail}
+                </Typography>
               </Box>
-              <Typography
-                sx={[sxStyles.text, commonSxStyles.typography.normalText]}
-              >
-                {item.detail}
-              </Typography>
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </FadeInOnView>
     </Box>
   );
 };
