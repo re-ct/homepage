@@ -9,7 +9,7 @@ type CaseItem = {
   number: string;
   title: React.ReactNode;
   before: string;
-  after: string;
+  after: React.ReactNode;
 };
 
 const caseData: CaseItem[] = [
@@ -25,8 +25,12 @@ const caseData: CaseItem[] = [
     ),
     before:
       '担当者が問い合わせメールを一件ずつ確認し、内容に応じて振り分けや返信文の作成を行っている。',
-    after:
-      'AIが問い合わせ内容を自動で分類し、FAQや過去の対応履歴をもとに返信案を作成。担当者は内容の確認・修正に集中できる。',
+    after: (
+      <>
+        AIが問い合わせ内容を自動で分類し、FAQや過去の対応履歴をもとに返信案を作成。
+        <strong>担当者は内容の確認・修正に集中できる。</strong>
+      </>
+    ),
   },
   {
     id: '2',
@@ -40,8 +44,12 @@ const caseData: CaseItem[] = [
     ),
     before:
       '請求書や領収書の内容を確認し、金額や取引先情報などを手作業でシステムに入力している。',
-    after:
-      'AIが書類から必要な情報を読み取り、データを整理。既存システムへの入力作業を効率化できる。',
+    after: (
+      <>
+        AIが書類から金額や取引先などの必要な情報を読み取り、データを整理。
+        <strong>既存システムへの入力作業を効率化できる。</strong>
+      </>
+    ),
   },
   {
     id: '3',
@@ -54,9 +62,14 @@ const caseData: CaseItem[] = [
       </>
     ),
     before:
-      '社内規定や業務マニュアルが複数の場所に保存されており、必要な情報を探すのに時間がかかっている。',
-    after:
-      'AIに質問するだけで、社内資料から関連情報を検索し、参照元とともに回答。必要な情報へスムーズにアクセスできる。',
+      '社内規定やマニュアルが複数の場所に保存されており、必要な情報を探すのに時間がかかっている。',
+    after: (
+      <>
+        <strong>AIに質問するだけ</strong>
+        で、社内資料から関連情報を検索し、参照元とともに回答。
+        必要な情報へスムーズにアクセスできる。
+      </>
+    ),
   },
   {
     id: '4',
@@ -69,9 +82,13 @@ const caseData: CaseItem[] = [
       </>
     ),
     before:
-      'SNS投稿の企画から文章作成、画像・動画制作までを担当者が手作業で行い、継続的な発信に時間がかかっている。',
-    after:
-      '商品情報や最新情報をもとに、AIが投稿案や文章、画像・動画の素材を生成。担当者による確認を経て、投稿までの流れを効率化できる。',
+      'SNS投稿の企画から文章作成、画像・動画制作までを担当者が手作業で行っている。',
+    after: (
+      <>
+        商品情報や最新情報をもとに、AIが投稿案や文章、画像・動画の素材を生成。担当者による確認を経て、
+        <strong>投稿までの流れを効率化できる。</strong>
+      </>
+    ),
   },
   {
     id: '5',
@@ -85,8 +102,15 @@ const caseData: CaseItem[] = [
     ),
     before:
       '新商品の登録時に、商品説明文やカテゴリ、タグなどを担当者が一つずつ作成・設定している。',
-    after:
-      '商品情報をもとにAIが説明文やタグを生成し、ECサイトの管理システムに下書き登録。商品登録・更新作業を効率化できる。',
+    after: (
+      <>
+        商品情報をもとに
+        <strong>
+          AIが説明文やタグを生成し、ECサイトの管理システムに下書き登録。
+        </strong>
+        商品登録・更新作業を効率化できる。
+      </>
+    ),
   },
   {
     id: '6',
@@ -99,12 +123,31 @@ const caseData: CaseItem[] = [
       </>
     ),
     before: '売上や顧客データを担当者が集計・分析し、改善点を検討している。',
-    after:
-      'AIが売上傾向や顧客動向を分析し、注目すべき変化や改善施策の候補を提示。データに基づく意思決定を支援できる。',
+    after: (
+      <>
+        <strong>AIが売上傾向や顧客動向を分析</strong>
+        し、注目すべき変化や改善施策の候補を提示。
+        データに基づく意思決定を支援できる。
+      </>
+    ),
   },
 ];
 
 const sxStyles = {
+  section: {
+    pt: 7,
+    pb: 12,
+    backgroundColor: commonSxStyles.color.white,
+    '@media screen and (max-width:450px)': {
+      pb: 9,
+    },
+  },
+  inner: {
+    maxWidth: '940px',
+    width: '100%',
+    mx: 'auto',
+    px: 2.5,
+  },
   lead: {
     mt: 2,
     textAlign: 'center',
@@ -113,7 +156,7 @@ const sxStyles = {
     mt: 5,
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: 2,
+    gap: 3,
     listStyle: 'none',
     '@media screen and (max-width:768px)': {
       gridTemplateColumns: '1fr',
@@ -122,15 +165,14 @@ const sxStyles = {
   listItem: {
     background: commonSxStyles.color.white,
     borderRadius: '4px',
-    px: 3,
+    px: 3.5,
     py: 4,
-    boxShadow: '0px 1px 5px rgba(34, 106, 170, 0.2)',
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.15)',
     '@media screen and (max-width:450px)': {
       px: 2.5,
       py: 3,
     },
   },
-  // 見出しとイラストの横並び
   header: {
     display: 'grid',
     gridTemplateColumns: '1fr 140px',
@@ -144,6 +186,11 @@ const sxStyles = {
     '& > span': {
       display: 'block',
     },
+    '& br': {
+      '@media screen and (max-width:768px)': {
+        display: 'none',
+      },
+    },
   },
   number: {
     color: alpha(commonSxStyles.color.primary, 0.4),
@@ -156,63 +203,48 @@ const sxStyles = {
   },
   beforeRow: {
     backgroundColor: alpha(commonSxStyles.color.grayText, 0.08),
-    borderRadius: '8px',
+    borderRadius: '4px',
     px: 2,
     py: 2,
   },
   afterRow: {
+    mt: 1,
     backgroundColor: commonSxStyles.color.background,
-    borderRadius: '8px',
+    borderRadius: '4px',
     px: 2,
     py: 2,
   },
-  placeholder: {
+  image: {
     width: '100%',
-    aspectRatio: '462 / 374',
-    backgroundColor: '#eee',
-    border: '2px dashed #bbb',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    color: '#888',
-    fontSize: '11px',
-    lineHeight: 1.4,
-    p: 0.5,
-    wordBreak: 'break-all',
+    height: 'auto',
   },
   label: {
     display: 'inline-block',
     color: commonSxStyles.color.white,
     borderRadius: '4px',
-    px: '6px',
-    py: '2px',
+    px: '8px',
+    py: '0',
     fontSize: '14px',
     fontWeight: 'bold',
     letterSpacing: '0.05em',
+  },
+  beforeLabel: {
+    backgroundColor: commonSxStyles.color.grayText,
+  },
+  afterText: {
+    '& > strong': {
+      fontWeight: 'bold',
+    },
+  },
+  afterLabel: {
+    backgroundColor: commonSxStyles.color.primary,
   },
 };
 
 const Case = () => {
   return (
-    <Box
-      sx={{
-        pt: 7,
-        pb: 12,
-        backgroundColor: commonSxStyles.color.background,
-        '@media screen and (max-width:450px)': {
-          pb: 9,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '940px',
-          width: '100%',
-          mx: 'auto',
-          px: 2.5,
-        }}
-      >
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.inner}>
         <Heading2 subText="case" mainText="AI活用事例" />
         <Typography sx={[sxStyles.lead, commonSxStyles.typography.normalText]}>
           AIを活用することで、さまざまな業務の負担を軽減できます。
@@ -231,23 +263,20 @@ const Case = () => {
                   </Box>
                   {item.title}
                 </Typography>
-                {/* TODO(画像): 活用事例のイラスト / 462×374 / public/image/demand/ai/case_image_0X.webp */}
-                <Box sx={sxStyles.placeholder}>
-                  画像
-                  <br />
-                  462×374
-                  <br />
-                  case_image_{item.number}.webp
-                </Box>
+                <Box
+                  component="img"
+                  src={`/image/demand/ai/case_image_${item.number}.webp`}
+                  alt=""
+                  width={924}
+                  height={748}
+                  sx={sxStyles.image}
+                />
               </Box>
               <Box component="dl">
                 <Box sx={[sxStyles.row, sxStyles.beforeRow]}>
                   <Typography
                     component="dt"
-                    sx={[
-                      sxStyles.label,
-                      { backgroundColor: commonSxStyles.color.grayText },
-                    ]}
+                    sx={[sxStyles.label, sxStyles.beforeLabel]}
                   >
                     Before
                   </Typography>
@@ -261,16 +290,16 @@ const Case = () => {
                 <Box sx={[sxStyles.row, sxStyles.afterRow]}>
                   <Typography
                     component="dt"
-                    sx={[
-                      sxStyles.label,
-                      { backgroundColor: commonSxStyles.color.primary },
-                    ]}
+                    sx={[sxStyles.label, sxStyles.afterLabel]}
                   >
                     After
                   </Typography>
                   <Typography
                     component="dd"
-                    sx={commonSxStyles.typography.normalText}
+                    sx={[
+                      sxStyles.afterText,
+                      commonSxStyles.typography.normalText,
+                    ]}
                   >
                     {item.after}
                   </Typography>

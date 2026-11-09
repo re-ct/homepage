@@ -1,35 +1,103 @@
-import { Box, Typography } from '@mui/material';
+import { Box, colors, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { alpha } from '@mui/system';
 import CustomButton from '../components/Button';
 import { commonSxStyles } from '../components/Style';
 import { aiContact } from '@/lib/const/Link';
 
 const pointData = [
-  { id: '1', text: 'エンジニアが直接支援' },
-  { id: '2', text: '課題・ご予算に合わせて柔軟対応' },
-  { id: '3', text: '導入から運用まで幅広くサポート' },
+  {
+    id: '1',
+    text: (
+      <>
+        エンジニアが
+        <br />
+        直接支援
+      </>
+    ),
+  },
+  {
+    id: '2',
+    text: (
+      <>
+        ご予算に合わせて
+        <br />
+        柔軟対応
+      </>
+    ),
+  },
 ];
 
 const sxStyles = {
-  placeholder: {
+  section: {
+    overflow: 'hidden',
+    backgroundColor: commonSxStyles.color.background,
+  },
+  inner: {
+    position: 'relative',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      right: 'calc(50% - min(50vw, 600px))',
+      bottom: 0,
+      left: '45%',
+      backgroundImage: `linear-gradient(to right, ${commonSxStyles.color.background} 0%, ${alpha(commonSxStyles.color.background, 0)} 30%), url(/image/demand/ai/key_visual_background.webp)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'right center',
+      backgroundRepeat: 'no-repeat',
+    },
+    maxWidth: '1000px',
     width: '100%',
-    maxWidth: '414px',
-    aspectRatio: '828 / 640',
-    backgroundColor: '#eee',
-    border: '2px dashed #bbb',
+    mx: 'auto',
+    pt: 7,
+    pb: 6,
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    color: '#888',
-    fontSize: '14px',
-    p: 2,
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    rowGap: 3,
+    columnGap: 4,
+    '@media screen and (max-width:768px)': {
+      flexDirection: 'column',
+      pt: 0,
+      pb: 5,
+      px: 2.5,
+      '&::before': {
+        position: 'static',
+        display: 'block',
+        width: 'calc(100% + 40px)',
+        mx: '-20px',
+        aspectRatio: '16 / 9',
+        backgroundImage: `linear-gradient(to bottom, ${alpha(commonSxStyles.color.background, 0)} 60%, ${commonSxStyles.color.background} 100%), url(/image/demand/ai/key_visual_background.webp)`,
+      },
+    },
+  },
+  textArea: {
+    position: 'relative',
+    '@media screen and (max-width:768px)': {
+      textAlign: 'center',
+      width: '100%',
+    },
+  },
+  heading: {
+    fontSize: '52px',
+    letterSpacing: '0.04em',
+    lineHeight: '1.4',
+    fontWeight: 'bold',
+    '@media screen and (max-width:460px)': {
+      fontSize: '34px',
+    },
+    '@media screen and (max-width:360px)': {
+      fontSize: '29px',
+    },
   },
   lead: {
-    mt: 2,
-    '& > br': {
-      '@media screen and (max-width:460px)': {
-        display: 'none',
+    mt: 1.5,
+    '& > .sp': {
+      display: 'none',
+      '@media screen and (max-width:768px)': {
+        display: 'block',
       },
     },
   },
@@ -37,160 +105,95 @@ const sxStyles = {
     mt: 2,
     listStyle: 'none',
     display: 'flex',
-    flexDirection: 'column',
     gap: 1,
-    '@media screen and (max-width:460px)': {
-      display: 'inline-flex',
-      textAlign: 'left',
+    '@media screen and (max-width:768px)': {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
     },
   },
   listItem: {
     display: 'flex',
     alignItems: 'center',
-    gap: 1,
-    fontWeight: 'bold',
+    gap: 0.5,
+    py: 0.5,
+    px: 1,
+    borderRadius: 1,
+    border: 'solid 1px' + commonSxStyles.color.primary,
+    color: commonSxStyles.color.primary,
+    backgroundColor: alpha(commonSxStyles.color.white, 0.5),
     '& > svg': {
       color: commonSxStyles.color.primary,
-      fontSize: '20px',
+      fontSize: '15px',
+    },
+    '& br': {
+      display: 'none',
+    },
+    '@media screen and (max-width:768px)': {
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      lineHeight: 1.4,
+      px: 1.5,
+      '& br': {
+        display: 'block',
+      },
+    },
+  },
+  button: {
+    mt: 4,
+    width: '100%',
+    '& > a': {
+      '@media screen and (max-width:460px)': {
+        width: '100%',
+      },
     },
   },
 };
 
-const ImagePlaceholder = () => {
-  return (
-    <>
-      画像：キービジュアル
-      <br />
-      828×640
-      <br />
-      key_visual_image.webp
-    </>
-  );
-};
-
 const KeyVisual = () => {
   return (
-    <Box
-      sx={{
-        py: 6,
-        backgroundColor: commonSxStyles.color.background,
-        '@media screen and (max-width:460px)': {
-          py: 5,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '940px',
-          width: '100%',
-          mx: 'auto',
-          px: 2.5,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          rowGap: 3,
-          columnGap: 4,
-          '@media screen and (max-width:460px)': {
-            flexDirection: 'column',
-          },
-        }}
-      >
-        <Box
-          sx={{
-            '@media screen and (max-width:460px)': {
-              textAlign: 'center',
-              width: '100%',
-            },
-          }}
-        >
-          <Typography
-            component="h2"
-            sx={{
-              fontSize: '50px',
-              letterSpacing: '0.04em',
-              lineHeight: '1.4',
-              fontWeight: 'bold',
-              '@media screen and (max-width:460px)': {
-                fontSize: '34px',
-              },
-              '@media screen and (max-width:360px)': {
-                fontSize: '29px',
-              },
-            }}
-          >
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.inner}>
+        <Box sx={sxStyles.textArea}>
+          <Typography component="h2" sx={sxStyles.heading}>
             あなたの会社の
             <br />
             AI活用をサポート
           </Typography>
-          <Typography sx={[sxStyles.lead, commonSxStyles.typography.largeText]}>
-            AIを使いたいけれど、何から始めればいいか分からない...
-            <br />
-            そんな企業のお悩みを、AIを実務で活用するエンジニアが解決。
-            <br />
-            課題整理から導入・開発・運用改善まで、必要な支援を提供します。
-          </Typography>
-          {/* TODO(画像): キービジュアル（SP） / 828×640 / public/image/demand/ai/key_visual_image.webp */}
-          <Box
-            sx={[
-              sxStyles.placeholder,
-              {
-                display: 'none',
-                '@media screen and (max-width:460px)': {
-                  display: 'flex',
-                  mt: 2,
-                  mx: 'auto',
-                },
-              },
-            ]}
+          <Typography
+            sx={[sxStyles.lead, commonSxStyles.typography.normalText]}
           >
-            <ImagePlaceholder />
-          </Box>
+            AIを使いたいけれど、
+            <br className="sp" />
+            何から始めればいいか分からない...
+            <br />
+            そんなお悩みを、AIを実務で活用する
+            <br className="sp" />
+            エンジニアが解決します
+          </Typography>
           <Box component="ul" sx={sxStyles.list}>
             {pointData.map((item) => (
               <Typography
                 component="li"
                 key={item.id}
-                sx={[sxStyles.listItem, commonSxStyles.typography.largeText]}
+                sx={[sxStyles.listItem, commonSxStyles.typography.normalText]}
               >
                 <CheckCircleIcon />
-                {item.text}
+                <span>{item.text}</span>
               </Typography>
             ))}
           </Box>
-          <Box
-            mt={4}
-            sx={{
-              width: '100%',
-              '& > a': {
-                '@media screen and (max-width:460px)': {
-                  width: '100%',
-                },
-              },
-            }}
-          >
+          <Box sx={sxStyles.button}>
             <CustomButton
-              label="AI導入について相談する"
+              label="AI活用について相談する"
               icon="arrow-right"
+              showFreeLabel={false}
               href={aiContact}
               isExternal={true}
               gaLabel="demandAi_contact_form_keyVisual"
             />
           </Box>
-        </Box>
-        {/* TODO(画像): キービジュアル（PC） / 828×640 / public/image/demand/ai/key_visual_image.webp */}
-        <Box
-          sx={[
-            sxStyles.placeholder,
-            {
-              flex: '1 1 300px',
-              '@media screen and (max-width:460px)': {
-                display: 'none',
-              },
-            },
-          ]}
-        >
-          <ImagePlaceholder />
         </Box>
       </Box>
     </Box>

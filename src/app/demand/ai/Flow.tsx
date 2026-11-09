@@ -86,6 +86,20 @@ const flowData: FlowItem[] = [
 ];
 
 const sxStyles = {
+  section: {
+    display: 'flex',
+    alignItems: 'center',
+    pt: 7,
+    pb: 12,
+    '@media screen and (max-width:450px)': {
+      pb: 9,
+    },
+  },
+  inner: {
+    maxWidth: '1180px',
+    width: '100%',
+    mx: 'auto',
+  },
   list: {
     mt: 5,
     display: 'flex',
@@ -134,10 +148,17 @@ const sxStyles = {
     alignItems: 'center',
     textAlign: 'center',
     color: commonSxStyles.color.primary,
-    // 「・」の左右を詰めて1行に収める
     fontFeatureSettings: '"palt"',
     letterSpacing: 0,
     whiteSpace: 'nowrap',
+  },
+  step: {
+    fontWeight: 'bold',
+    color: alpha(commonSxStyles.color.primary, 0.4),
+  },
+  detail: {
+    mt: 2,
+    textAlign: 'center',
   },
 };
 
@@ -147,24 +168,8 @@ const Arrow = () => {
 
 const Flow = () => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        pt: 7,
-        pb: 12,
-        '@media screen and (max-width:450px)': {
-          pb: 9,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '1180px',
-          width: '100%',
-          mx: 'auto',
-        }}
-      >
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.inner}>
         <Heading2 subText="flow" mainText="ご利用の流れ" />
         <Box sx={sxStyles.scroll}>
           <Box
@@ -181,26 +186,14 @@ const Flow = () => {
                   >
                     <Typography
                       component="span"
-                      sx={[
-                        {
-                          fontWeight: 'bold',
-                          color: alpha(commonSxStyles.color.primary, 0.4),
-                        },
-                        commonSxStyles.typography.normalText,
-                      ]}
+                      sx={[sxStyles.step, commonSxStyles.typography.normalText]}
                     >
                       {item.step}
                     </Typography>
                     {item.title}
                   </Typography>
                   <Typography
-                    sx={[
-                      {
-                        mt: 2,
-                        textAlign: 'center',
-                      },
-                      commonSxStyles.typography.normalText,
-                    ]}
+                    sx={[sxStyles.detail, commonSxStyles.typography.normalText]}
                   >
                     {item.detail}
                   </Typography>

@@ -41,58 +41,70 @@ const questionData: Question[] = [
   },
 ];
 
+const sxStyles = {
+  section: {
+    display: 'flex',
+    alignItems: 'center',
+    pt: 7,
+    pb: 12,
+    backgroundColor: commonSxStyles.color.background,
+    '@media screen and (max-width:450px)': {
+      pb: 8,
+    },
+  },
+  inner: {
+    maxWidth: '940px',
+    width: '100%',
+    mx: 'auto',
+    px: 2.5,
+  },
+  list: {
+    mt: 5,
+  },
+  item: {
+    borderBottom: `solid 1px ${commonSxStyles.color.border}`,
+    pb: 3,
+    '& + &': {
+      pt: 3,
+    },
+  },
+  question: {
+    display: 'flex',
+  },
+  questionMark: {
+    mr: 1,
+    color: commonSxStyles.color.primary,
+  },
+  answer: {
+    mt: 2,
+    display: 'flex',
+  },
+  answerMark: {
+    mr: 2,
+    fontWeight: 'bold',
+    color: commonSxStyles.color.primary,
+  },
+  answerText: {
+    display: 'block',
+  },
+};
+
 const Faq = () => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        pt: 7,
-        pb: 12,
-        backgroundColor: commonSxStyles.color.background,
-        '@media screen and (max-width:450px)': {
-          pb: 8,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '940px',
-          width: '100%',
-          mx: 'auto',
-          px: 2.5,
-        }}
-      >
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.inner}>
         <Heading2 subText="faq" mainText="よくあるご質問" />
-        <Box mt={5}>
+        <Box sx={sxStyles.list}>
           {questionData.map((item) => (
-            <Box
-              component="dl"
-              key={item.id}
-              sx={{
-                borderBottom: `solid 1px ${commonSxStyles.color.border}`,
-                pb: 3,
-                '& + &': {
-                  pt: 3,
-                },
-              }}
-            >
+            <Box component="dl" key={item.id} sx={sxStyles.item}>
               <Typography
                 component="dt"
-                sx={[
-                  {
-                    display: 'flex',
-                  },
-                  commonSxStyles.typography.heading3,
-                ]}
+                sx={[sxStyles.question, commonSxStyles.typography.heading3]}
               >
                 <Typography
                   component="span"
                   sx={[
-                    {
-                      mr: 1,
-                      color: commonSxStyles.color.primary,
-                    },
+                    sxStyles.questionMark,
                     commonSxStyles.typography.heading3,
                   ]}
                 >
@@ -102,22 +114,12 @@ const Faq = () => {
               </Typography>
               <Typography
                 component="dd"
-                sx={[
-                  {
-                    mt: 2,
-                    display: 'flex',
-                  },
-                  commonSxStyles.typography.normalText,
-                ]}
+                sx={[sxStyles.answer, commonSxStyles.typography.normalText]}
               >
                 <Typography
                   component="span"
                   sx={[
-                    {
-                      mr: 2,
-                      fontWeight: 'bold',
-                      color: commonSxStyles.color.primary,
-                    },
+                    sxStyles.answerMark,
                     commonSxStyles.typography.normalText,
                   ]}
                 >
@@ -125,13 +127,7 @@ const Faq = () => {
                 </Typography>
                 <Box component="span">
                   {item.answer.map((text, index) => (
-                    <Box
-                      component="span"
-                      key={index}
-                      sx={{
-                        display: 'block',
-                      }}
-                    >
+                    <Box component="span" key={index} sx={sxStyles.answerText}>
                       {text}
                     </Box>
                   ))}

@@ -25,9 +25,9 @@ const DemandAi = () => {
     <main style={{ color: '#000' }}>
       <KeyVisual />
       <Worry />
-      <Reason />
       <Service />
       <Case />
+      <Reason />
       <Flow />
       <Faq />
       <Contact />

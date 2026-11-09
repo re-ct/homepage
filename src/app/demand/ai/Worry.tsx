@@ -5,7 +5,6 @@ import { commonSxStyles } from '../components/Style';
 type WorryItem = {
   id: string;
   text: React.ReactNode;
-  // しっぽを傾ける向き（下のイラストのほうへ向ける）
   tail: 'left' | 'center' | 'right';
 };
 
@@ -15,7 +14,9 @@ const worryData: WorryItem[] = [
     tail: 'right',
     text: (
       <>
-        AI導入の進め方が<br/>分からない
+        AI導入の進め方が
+        <br />
+        分からない
       </>
     ),
   },
@@ -24,7 +25,9 @@ const worryData: WorryItem[] = [
     tail: 'center',
     text: (
       <>
-        AIで効率化できる<br/>業務を知りたい
+        AIで効率化できる
+        <br />
+        業務を知りたい
       </>
     ),
   },
@@ -63,21 +66,28 @@ const worryData: WorryItem[] = [
   },
 ];
 
-// しっぽの傾き（位置はすべて下辺の中央）。right は右下、left は左下に向けて傾ける
-const tailStyles = {
-  center: {
-    borderLeft: '10px solid transparent',
-    borderRight: '10px solid transparent',
-  },
-  right: {
-    borderLeft: '16px solid transparent',
-  },
-  left: {
-    borderRight: '16px solid transparent',
-  },
-};
-
 const sxStyles = {
+  spBreak: {
+    display: 'none',
+    '@media screen and (max-width:768px)': {
+      display: 'block',
+    },
+  },
+  section: {
+    display: 'flex',
+    alignItems: 'center',
+    pt: 7,
+    pb: 12,
+    '@media screen and (max-width:450px)': {
+      pb: 9,
+    },
+  },
+  inner: {
+    maxWidth: '940px',
+    width: '100%',
+    mx: 'auto',
+    px: 2.5,
+  },
   list: {
     mt: 5,
     display: 'flex',
@@ -87,8 +97,26 @@ const sxStyles = {
     rowGap: 4,
     listStyle: 'none',
     '@media screen and (max-width:768px)': {
+      position: 'relative',
       flexDirection: 'column',
-      rowGap: 2,
+      rowGap: 0,
+      px: 3,
+      py: 2,
+      backgroundColor: commonSxStyles.color.white,
+      borderRadius: '16px',
+      filter: 'drop-shadow(0px 1px 3px rgba(34, 106, 170, 0.25))',
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        bottom: '-15px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: 0,
+        height: 0,
+        borderTop: `16px solid ${commonSxStyles.color.white}`,
+        borderLeft: '10px solid transparent',
+        borderRight: '10px solid transparent',
+      },
     },
   },
   bubble: {
@@ -99,15 +127,11 @@ const sxStyles = {
     justifyContent: 'center',
     backgroundColor: commonSxStyles.color.white,
     borderRadius: '16px',
-    px: 3,
-    py: 2.5,
-    // 2行の吹き出し（16px × 行間1.7 × 2行 + 上下余白）に高さをそろえる
-    minHeight: '95px',
+    px: 2,
+    py: 2,
     fontWeight: 'bold',
     textAlign: 'center',
-    // しっぽにも影が付くよう、box-shadow ではなく drop-shadow を使う
-    filter: 'drop-shadow(0px 1px 4px rgba(34, 106, 170, 0.25))',
-    // 下のイラストに向けたしっぽ（位置と傾きは tailStyles で指定）
+    filter: 'drop-shadow(0px 1px 3px rgba(34, 106, 170, 0.25))',
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -120,27 +144,56 @@ const sxStyles = {
     },
     '@media screen and (max-width:768px)': {
       flex: '0 0 auto',
+      display: 'block',
       minHeight: 0,
+      pl: '1em',
+      pr: 0,
+      py: 1,
+      textAlign: 'left',
+      borderRadius: 0,
+      filter: 'none',
+      '& > br': {
+        display: 'none',
+      },
+      '&::before': {
+        content: '"・"',
+        position: 'absolute',
+        top: '8px',
+        left: 0,
+      },
+      '& + &': {
+        borderTop: `solid 1px ${commonSxStyles.color.border}`,
+      },
       '&::after': {
         display: 'none',
       },
     },
   },
-  placeholder: {
+  tail: {
+    center: {
+      '&::after': {
+        borderLeft: '10px solid transparent',
+        borderRight: '10px solid transparent',
+      },
+    },
+    right: {
+      '&::after': {
+        borderLeft: '16px solid transparent',
+      },
+    },
+    left: {
+      '&::after': {
+        borderRight: '16px solid transparent',
+      },
+    },
+  },
+  image: {
+    display: 'block',
     mt: 5,
     width: '100%',
-    maxWidth: '240px',
-    aspectRatio: '1 / 1',
+    maxWidth: '280px',
+    height: 'auto',
     mx: 'auto',
-    backgroundColor: '#eee',
-    border: '2px dashed #bbb',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    color: '#888',
-    fontSize: '14px',
-    p: 2,
     '@media screen and (max-width:768px)': {
       mt: 3,
       maxWidth: '180px',
@@ -149,7 +202,22 @@ const sxStyles = {
   conclusion: {
     mt: 6,
     textAlign: 'center',
+    fontSize: '28px',
     color: commonSxStyles.color.primary,
+    '@media screen and (max-width:768px)': {
+      fontSize: '20px',
+    },
+    '&::before': {
+      content: '""',
+      display: 'block',
+      width: 0,
+      height: 0,
+      mx: 'auto',
+      mb: 2,
+      borderTop: `20px solid ${commonSxStyles.color.primary}`,
+      borderLeft: '40px solid transparent',
+      borderRight: '40px solid transparent',
+    },
     '& > br': {
       display: 'none',
       '@media screen and (max-width:450px)': {
@@ -161,26 +229,18 @@ const sxStyles = {
 
 const Worry = () => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        pt: 7,
-        pb: 12,
-        '@media screen and (max-width:450px)': {
-          pb: 9,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '940px',
-          width: '100%',
-          mx: 'auto',
-          px: 2.5,
-        }}
-      >
-        <Heading2 subText="worry" mainText="こんなお悩みはありませんか？" />
+    <Box sx={sxStyles.section}>
+      <Box sx={sxStyles.inner}>
+        <Heading2
+          subText="worry"
+          mainText={
+            <>
+              こんなお悩みは
+              <Box component="br" sx={sxStyles.spBreak} />
+              ありませんか？
+            </>
+          }
+        />
         <Box component="ul" sx={sxStyles.list}>
           {worryData.map((item) => (
             <Typography
@@ -188,7 +248,7 @@ const Worry = () => {
               key={item.id}
               sx={[
                 sxStyles.bubble,
-                { '&::after': tailStyles[item.tail] },
+                sxStyles.tail[item.tail],
                 commonSxStyles.typography.largeText,
               ]}
             >
@@ -196,20 +256,20 @@ const Worry = () => {
             </Typography>
           ))}
         </Box>
-        {/* TODO(画像): 悩んでいる担当者のイラスト / 480×480 / public/image/demand/ai/worry_image.webp */}
-        <Box sx={sxStyles.placeholder}>
-          画像：悩んでいる担当者のイラスト
-          <br />
-          480×480
-          <br />
-          worry_image.webp
-        </Box>
+        <Box
+          component="img"
+          src="/image/demand/ai/worry_image.webp"
+          alt=""
+          width={480}
+          height={480}
+          sx={sxStyles.image}
+        />
         <Typography
-          sx={[sxStyles.conclusion, commonSxStyles.typography.heading3]}
+          sx={[commonSxStyles.typography.heading3, sxStyles.conclusion]}
         >
-          その課題、
+          そのお悩み、
           <br />
-          最適な方法で解決をサポートします。
+          最適な方法でサポートいたします
         </Typography>
       </Box>
     </Box>
