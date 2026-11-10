@@ -56,8 +56,8 @@ const BusinessList: Business[] = [
     title: '開発支援',
     detail: (
       <>
-        Webアプリ開発・クリエイティブ制作で
-        <br />
+        Webアプリ開発・生成AI活用・クリエイティブ制作で、
+        <br className="businessDetailBreak" />
         ビジネス課題を解決へと導くお手伝いをいたします。
       </>
     ),
@@ -204,6 +204,9 @@ const sxStyles = {
     gridRow: '2 / 3',
     '@media screen and (max-width:768px)': {
       fontSize: '12px',
+      '& > .businessDetailBreak': {
+        display: 'none',
+      },
     },
   },
   listImage: {

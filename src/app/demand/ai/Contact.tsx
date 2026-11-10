@@ -102,12 +102,16 @@ const Contact = () => {
           <Typography
             sx={[sxStyles.text, commonSxStyles.typography.normalText]}
           >
-            何から始めればいいか分からなくても問題ございません。
+            何から始めればいいか
+            <Box component="br" sx={sxStyles.spBreak} />
+            分からなくても問題ございません。
           </Typography>
           <Typography
             sx={[sxStyles.text, commonSxStyles.typography.normalText]}
           >
-            課題やご予算に合わせて、AIでできることを一緒に考えます。
+            課題やご予算に合わせて、
+            <Box component="br" sx={sxStyles.spBreak} />
+            AIでできることを一緒に考えます。
           </Typography>
           <Box sx={sxStyles.button}>
             <CustomButton
