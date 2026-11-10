@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" data-scroll-behavior="smooth">
       <GoogleTagManager gtmId="GTM-MRQP5SQ2" />
       <body>
         <ThemeRegistry>
