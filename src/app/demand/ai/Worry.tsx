@@ -192,7 +192,7 @@ const sxStyles = {
     display: 'block',
     mt: 5,
     width: '100%',
-    maxWidth: '280px',
+    maxWidth: '200px',
     height: 'auto',
     mx: 'auto',
     '@media screen and (max-width:768px)': {

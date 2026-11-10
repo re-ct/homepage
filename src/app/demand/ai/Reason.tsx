@@ -137,7 +137,7 @@ const sxStyles = {
     width: '120px',
     height: '120px',
     borderRadius: '50%',
-    backgroundColor: alpha(commonSxStyles.color.white, 0.6),
+    backgroundColor: alpha(commonSxStyles.color.white, 0.8),
     '& > img': {
       width: '100px',
       height: 'auto',
