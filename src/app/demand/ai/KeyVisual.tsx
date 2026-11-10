@@ -1,4 +1,4 @@
-import { Box, colors, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { alpha } from '@mui/system';
 import CustomButton from '../components/Button';
