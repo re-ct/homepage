@@ -195,9 +195,7 @@ const Flow = () => {
               component="img"
               src={image.src}
               alt="開講準備から開講後まで本部がサポートいたします"
-              width={600}
-              height={658}
-              sx={sxStyles.image}
+              sx={[{ width: 600, height: 658 }, sxStyles.image]}
             />
           </Box>
         </Box>

@@ -225,7 +225,7 @@ const Service = () => {
             >
               対応技術 一例
             </Typography>
-            <Box component="dl" mt={2}>
+            <Box component="dl" sx={{ mt: 2 }}>
               {skillData.map((data) => (
                 <Box
                   key={data.id}

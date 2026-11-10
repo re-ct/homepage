@@ -304,9 +304,7 @@ const Features = () => {
                   component="img"
                   src={`/image/career/${item.image}.webp`}
                   alt=""
-                  width={516}
-                  height={369}
-                  sx={sxStyles.listImage}
+                  sx={[{ width: 516, height: 369 }, sxStyles.listImage]}
                 />
 
                 <Box

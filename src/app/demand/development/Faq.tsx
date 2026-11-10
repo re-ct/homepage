@@ -40,7 +40,7 @@ const Faq = () => {
         }}
       >
         <Heading2 subText="faq" mainText="よくある質問" />
-        <Box mt={5}>
+        <Box sx={{ mt: 5 }}>
           {questionData.map((item) => (
             <Box
               component="dl"

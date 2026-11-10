@@ -64,7 +64,7 @@ const List = ({
       }}
     >
       <dt>
-        <Typography width={70} textAlign={'left'} sx={{ fontSize: '14px' }}>
+        <Typography sx={{ width: 70, textAlign: 'left', fontSize: '14px' }}>
           {title}
         </Typography>
       </dt>
@@ -75,7 +75,7 @@ const List = ({
 
 const Access = () => {
   return (
-    <Box pt={7} pb={7} px={3} bgcolor="#F5F5F5">
+    <Box sx={{ pt: 7, pb: 7, px: 3, bgcolor: '#F5F5F5' }}>
       <Typography variant="h2" sx={sxStyles.heading}>
         <img src={headingCtaImg.src} alt="アクセス" width="246" height="51" />
       </Typography>
@@ -88,26 +88,26 @@ const Access = () => {
           src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_KEY}&q=愛知県豊川市御津町西方日暮50-9`}
         />
         <dl>
-          <Box bgcolor="#fff" borderRadius={3} sx={sxStyles.details}>
+          <Box sx={[{ bgcolor: '#fff', borderRadius: 3 }, sxStyles.details]}>
             <List title="住所">
-              <Typography variant="body2" textAlign={'left'}>
+              <Typography variant="body2" sx={{ textAlign: 'left' }}>
                 〒441-0312
                 <br />
                 愛知県豊川市御津町西方日暮50番地9
               </Typography>
             </List>
             <List title="駐車場">
-              <Typography variant="body2" textAlign={'left'}>
+              <Typography variant="body2" sx={{ textAlign: 'left' }}>
                 6台 スペースあり
               </Typography>
             </List>
             <List title="周辺施設">
-              <Typography variant="body2" textAlign={'left'}>
+              <Typography variant="body2" sx={{ textAlign: 'left' }}>
                 御津中学校 徒歩1分
                 <br />
                 愛知御津駅 徒歩5分
               </Typography>
-              <Typography variant="body2" textAlign={'left'} mt={1}>
+              <Typography variant="body2" sx={{ textAlign: 'left', mt: 1 }}>
                 スーパー/コンビニ/ドラッグストアあり
               </Typography>
             </List>

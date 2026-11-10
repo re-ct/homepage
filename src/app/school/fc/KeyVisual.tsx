@@ -179,10 +179,8 @@ const KeyVisual = () => {
           <Box
             component="img"
             src={image.src}
-            sx={sxStyles.image}
+            sx={[{ width: 896, height: 598 }, sxStyles.image]}
             alt=""
-            width={896}
-            height={598}
           />
         </Box>
       </Box>

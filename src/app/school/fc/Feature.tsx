@@ -437,9 +437,7 @@ const Feature = () => {
                       component="img"
                       src={`../../../../image/school/fc/feature_point${item.id}.webp`}
                       alt=""
-                      width={900}
-                      height={600}
-                      sx={sxStyles.image}
+                      sx={[{ width: 900, height: 600 }, sxStyles.image]}
                     />
                     <Box sx={sxStyles.liDetailWrap}>
                       {item.detail.map(

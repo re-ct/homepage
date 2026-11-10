@@ -90,7 +90,7 @@ const accordionData = [
 
 const Faq = () => {
   return (
-    <Box pt={6} pb={10} mx={3}>
+    <Box sx={{ pt: 6, pb: 10, mx: 3 }}>
       <Typography variant="h2" sx={sxStyles.heading}>
         <img
           src={headingTeacherImg.src}

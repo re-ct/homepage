@@ -17,13 +17,14 @@ const Complete = () => {
     <main>
       <Box
         component="section"
-        sx={{
-          textAlign: 'center',
-        }}
-        position="relative"
+        sx={{ position: 'relative', textAlign: 'center' }}
       >
         <Container sx={{ mt: 8 }}>
-          <Typography variant="h1" fontSize={22} fontWeight={700} gutterBottom>
+          <Typography
+            variant="h1"
+            gutterBottom
+            sx={{ fontSize: 22, fontWeight: 700 }}
+          >
             体験授業のご興味をお持ちいただきありがとうございます！
           </Typography>
           <p>

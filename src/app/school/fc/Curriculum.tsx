@@ -288,8 +288,7 @@ const Curriculum = () => {
                 component="img"
                 src={manager.src}
                 alt=""
-                width={160}
-                height={160}
+                sx={{ width: 160, height: 160 }}
               />
               <Typography
                 component="p"

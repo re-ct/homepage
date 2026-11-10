@@ -206,8 +206,7 @@ const Advisors = () => {
                       component="img"
                       src={`../../../../../image/career/advisors_${advisor.image}_pc.webp`}
                       alt={`${advisor.nameKanji}のプロフィール写真`}
-                      width="444"
-                      height="444"
+                      sx={{ width: '444', height: '444' }}
                     />
                   </Box>
                   <Box sx={sxStyles.listItemProfile}>

@@ -179,8 +179,7 @@ const Advisor = () => {
                     component="img"
                     src={`../../../../../image/career/advisor_pc.webp`}
                     alt={`${advisor.nameKanji}のプロフィール写真`}
-                    width="444"
-                    height="444"
+                    sx={{ width: '444', height: '444' }}
                   />
                 </Box>
               </Box>

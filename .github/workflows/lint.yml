@@ -29,3 +29,6 @@ jobs:
           yarn lint
           yarn format
           yarn lint:filename
+
+      - name: Build
+        run: yarn build

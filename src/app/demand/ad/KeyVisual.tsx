@@ -114,8 +114,8 @@ const KeyVisual = () => {
           </Typography>
         </Box>
         <Box
-          mt={4}
           sx={{
+            mt: 4,
             width: '100%',
             gridRow: '3/4',
             gridColumn: '1/2',

@@ -63,7 +63,11 @@ const Instagram = () => {
           height="84"
         />
       </Typography>
-      <Typography variant="body2" color="#333" fontWeight="bold" mt={2}>
+      <Typography
+        variant="body2"
+        color="#333"
+        sx={{ fontWeight: 'bold', mt: 2 }}
+      >
         教室のお知らせや、{isSmallScreen && <br />}
         プログラミングに関する情報をお届けしています。
       </Typography>

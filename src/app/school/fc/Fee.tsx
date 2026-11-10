@@ -363,8 +363,7 @@ const Fee = () => {
                 component="img"
                 src={equal.src}
                 alt=""
-                width={19}
-                height={8}
+                sx={{ width: 19, height: 8 }}
               />
               <Box sx={sxStyles.dlWrapSales}>
                 <Box sx={sxStyles.dlWrapFeeBox}>
@@ -385,8 +384,7 @@ const Fee = () => {
                 component="img"
                 src={minus.src}
                 alt=""
-                width={19}
-                height={2}
+                sx={{ width: 19, height: 2 }}
               />
               <Box sx={sxStyles.dlWrapFee}>
                 <Box sx={sxStyles.dlWrapFeeBox}>

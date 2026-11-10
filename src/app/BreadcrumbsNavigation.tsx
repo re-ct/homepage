@@ -44,7 +44,7 @@ const BreadcrumbNavigation: React.FC<TBreadCrumbProps> = ({
           underline="hover"
           color="inherit"
           href="/"
-          fontSize="14px"
+          sx={{ fontSize: '14px' }}
         >
           株式会社レクト
         </Link>
@@ -55,7 +55,7 @@ const BreadcrumbNavigation: React.FC<TBreadCrumbProps> = ({
             <Typography
               key={`link-${index}`}
               color="text.primary"
-              fontSize="14px"
+              sx={{ fontSize: '14px' }}
             >
               {title}
             </Typography>
@@ -65,7 +65,7 @@ const BreadcrumbNavigation: React.FC<TBreadCrumbProps> = ({
               underline="hover"
               color="inherit"
               href={href}
-              fontSize="14px"
+              sx={{ fontSize: '14px' }}
             >
               {title}
             </Link>

@@ -256,7 +256,7 @@ const MOVIE_SLIDE_THRESHOLD = 3;
 const Movies = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
-    <Box pt={7} pb={10} bgcolor="#F5F5F5">
+    <Box sx={{ pt: 7, pb: 10, bgcolor: '#F5F5F5' }}>
       <Box sx={sxStyles.wrap}>
         <Typography variant="h2" sx={sxStyles.heading}>
           <img
