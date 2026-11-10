@@ -3,7 +3,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { alpha } from '@mui/system';
 import CustomButton from '../components/Button';
 import { commonSxStyles } from '../components/Style';
-import { aiContact } from '@/lib/const/Link';
+import { contact } from '@/lib/const/Link';
 
 const pointData = [
   {
@@ -189,7 +189,7 @@ const KeyVisual = () => {
               label="AI活用について相談する"
               icon="arrow-right"
               showFreeLabel={false}
-              href={aiContact}
+              href={contact}
               isExternal={true}
               gaLabel="demandAi_contact_form_keyVisual"
             />

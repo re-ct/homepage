@@ -1,12 +1,9 @@
 export const contact = 'https://forms.gle/tWbY3pJaxRpEq7Nz8';
 export const adContact =
   'https://docs.google.com/forms/d/e/1FAIpQLSflRzB9oqb8Em53U9HQ4_iXKZzkPmIHIn_gVlebIx-x8rB9Pw/viewform';
-// TODO: 仮のURL（開発支援の問い合わせフォーム）。AI相談用のURLに差し替える
-export const aiContact = contact;
 export const fcRequestForDocument = 'https://forms.gle/Gbr5BnxzrVHyZ8Xs7';
 export const fcContact = 'https://forms.gle/UXFbp3GQtaerFasc7';
 export const careerContact =
   'https://docs.google.com/forms/d/e/1FAIpQLSdNk4Wh7pRY-zogTsaoQKTwE9H5nj6XMdHTl_hFn2kGdp90gQ/viewform?usp=header';
-// TODO:リンク設置
 export const careerBusinessContact =
   'https://docs.google.com/forms/d/e/1FAIpQLSdlUO-AVDjTb7tgfMhe8P4PETrKy3texecD1FRoJVY8WAFyyQ/viewform?usp=header';
