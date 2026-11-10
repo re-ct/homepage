@@ -11,7 +11,7 @@ import {
   ImportContacts,
   KeyboardArrowDown,
 } from '@mui/icons-material';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 type Point = {
   id: number;
@@ -30,17 +30,17 @@ const point: Point[] = [
     id: 1,
     title: <>授業は教材の内容に沿うだけ</>,
     detail: [
-      <>
+      <Fragment key="teaching-materials">
         現役エンジニア講師が開発した教材を一式提供しています。
         <br />
         動画教材では、生徒が動画に沿って自分のペースで受講するスタイルなので
         <strong>教える側の手間がありません。</strong>
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="support-skills">
         教材の内容からサポートするだけなので、
         <strong>特別な指導スキルが必要ない</strong>のもポイントです。
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="curriculum-link">
         <CommonLink
           link={{
             href: '#curriculum',
@@ -51,7 +51,7 @@ const point: Point[] = [
           教材について詳しく見る
           <KeyboardArrowDown />
         </CommonLink>
-      </>,
+      </Fragment>,
     ],
   },
   {
@@ -63,12 +63,12 @@ const point: Point[] = [
       </>
     ),
     detail: [
-      <>
+      <Fragment key="fixed-royalty">
         ロイヤリティは、生徒数や売上に関わらず月額固定。
         <br />
         低リスクで高収益を目指せます。
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="contract-link">
         <CommonLink
           link={{
             href: '#fee',
@@ -79,18 +79,18 @@ const point: Point[] = [
           契約内容について詳しく見る
           <KeyboardArrowDown />
         </CommonLink>
-      </>,
+      </Fragment>,
     ],
   },
   {
     id: 3,
     title: <>ライフスタイルに合わせて開講可能</>,
     detail: [
-      <>
+      <Fragment key="flexible-schedule">
         週末の数時間や平日の夜のみの稼働でもOKです。
         <br />
         本業や家事と両立しながら、無理なく教室を続けられます。
-      </>,
+      </Fragment>,
     ],
   },
 ];
