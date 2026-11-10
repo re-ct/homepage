@@ -54,7 +54,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version-file: '.node-version'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -73,7 +73,7 @@ jobs:
       - name: Build with Next.js
         run: |
           echo "GOOGLE_MAPS_KEY=$GOOGLE_MAPS_KEY" > .env.local
-          ${{ steps.detect-package-manager.outputs.runner }} next build
+          ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

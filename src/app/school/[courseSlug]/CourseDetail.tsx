@@ -192,12 +192,14 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
       <Box sx={sxStyles.heading1}>
         <Typography
           variant="h1"
-          fontSize={'2rem'}
-          lineHeight={1.5}
-          fontWeight={700}
+          sx={{ fontSize: '2rem', lineHeight: 1.5, fontWeight: 700 }}
         >
           {course.name.category}
-          {isSmallScreen ? <br /> : <Box component="span" marginLeft={1} />}
+          {isSmallScreen ? (
+            <br />
+          ) : (
+            <Box component="span" sx={{ marginLeft: 1 }} />
+          )}
           {course.name.level}
         </Typography>
       </Box>
@@ -266,14 +268,14 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ course }) => {
               </ListItem>
             ))}
           </List>
-          <Box mt={2}>
+          <Box sx={{ mt: 2 }}>
             {course.schedule.times.map((time, index) => (
               <Typography variant="body1" sx={sxStyles.time} key={index}>
                 ・{time}
               </Typography>
             ))}
           </Box>
-          <Typography sx={sxStyles.note} mt={2}>
+          <Typography sx={[{ mt: 2 }, sxStyles.note]}>
             <CheckCircle />
             日程の調整可能です。お気軽にご相談ください。
           </Typography>

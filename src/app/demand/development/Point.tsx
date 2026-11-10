@@ -111,7 +111,7 @@ const Point = () => {
               <br />
               スムーズなやりとりを実現
             </Typography>
-            <Box mt={2}>
+            <Box sx={{ mt: 2 }}>
               <Typography
                 sx={[sxStyles.text, commonSxStyles.typography.normalText]}
               >
@@ -139,7 +139,7 @@ const Point = () => {
               <br />
               歓迎します
             </Typography>
-            <Box mt={2}>
+            <Box sx={{ mt: 2 }}>
               <Typography
                 sx={[sxStyles.text, commonSxStyles.typography.normalText]}
               >

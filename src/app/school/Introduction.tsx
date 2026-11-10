@@ -142,7 +142,7 @@ const Introduction = () => {
           height="86"
         />
       </Typography>
-      <Box mt={5}>
+      <Box sx={{ mt: 5 }}>
         <Box sx={sxStyles.pointWrap}>
           <img
             src="../../../image/school/image_how_to_teach.webp"
@@ -161,7 +161,7 @@ const Introduction = () => {
                 <Typography
                   component="span"
                   variant="body1"
-                  fontWeight={'bold'}
+                  sx={{ fontWeight: 'bold' }}
                 >
                   を
                 </Typography>
@@ -170,13 +170,12 @@ const Introduction = () => {
               <Typography
                 component="span"
                 variant="h6"
-                sx={[sxStyles.pointText, { color: '#FFF652' }]}
-                mt={0.5}
+                sx={[{ mt: 0.5 }, sxStyles.pointText, { color: '#FFF652' }]}
               >
                 一貫して学べる
               </Typography>
             </Typography>
-            <Typography variant="body2" mt={2}>
+            <Typography variant="body2" sx={{ mt: 2 }}>
               視覚的にプログラミングを学べる{isSmallScreen && <br />}
               ビジュアルプログラミングから、
               <br />
@@ -205,8 +204,8 @@ const Introduction = () => {
                 <Typography
                   component="span"
                   variant="body1"
-                  fontWeight={'bold'}
                   color={'#fff'}
+                  sx={{ fontWeight: 'bold' }}
                 >
                   だから
                 </Typography>
@@ -215,19 +214,18 @@ const Introduction = () => {
               <Typography
                 component="span"
                 variant="subtitle1"
-                sx={[sxStyles.pointText, { color: '#fff' }]}
-                mt={0.5}
+                sx={[{ mt: 0.5 }, sxStyles.pointText, { color: '#fff' }]}
               >
                 現場での経験を基にした指導が特徴
               </Typography>
             </Typography>
-            <Typography variant="body2" mt={2}>
+            <Typography variant="body2" sx={{ mt: 2 }}>
               最新の業界動向や実践的なスキルを{isSmallScreen && <br />}
               直接学ぶことができます。
               <br />
               現場での経験を基にした実践的な指導が特徴です。
             </Typography>
-            <Typography variant="body2" mt={2} sx={sxStyles.textLink}>
+            <Typography variant="body2" sx={[{ mt: 2 }, sxStyles.textLink]}>
               <Link href="#school_teacher">講師について詳しく見る</Link>
             </Typography>
           </Box>
@@ -251,7 +249,7 @@ const Introduction = () => {
                   component="span"
                   variant="h6"
                   color={'#FFF652'}
-                  fontWeight={'bold'}
+                  sx={{ fontWeight: 'bold' }}
                 >
                   低価格
                 </Typography>
@@ -260,13 +258,12 @@ const Introduction = () => {
               <Typography
                 component="span"
                 variant="subtitle1"
-                sx={[sxStyles.pointText, { color: '#fff' }]}
-                mt={0.5}
+                sx={[{ mt: 0.5 }, sxStyles.pointText, { color: '#fff' }]}
               >
                 気軽に受講できる
               </Typography>
             </Typography>
-            <Typography variant="body2" mt={2}>
+            <Typography variant="body2" sx={{ mt: 2 }}>
               受講料は業界最安値レベルを維持。
               <br />
               多くの方に手軽にプログラミングを学ぶ機会を
@@ -280,10 +277,10 @@ const Introduction = () => {
         <Box sx={sxStyles.skillContents}>
           <Typography sx={sxStyles.balloon}>さらに</Typography>
           <Typography
-            mt={2}
             variant="subtitle2"
             component="p"
             color={'#24285B'}
+            sx={{ mt: 2 }}
           >
             プログラミングを学ぶことで
             <br />
@@ -291,7 +288,7 @@ const Introduction = () => {
               variant="h6"
               component="span"
               color={'#24285B'}
-              fontWeight={'bold'}
+              sx={{ fontWeight: 'bold' }}
             >
               さまざまなスキルが{isSmallScreen && <br />}身につきます
             </Typography>

@@ -138,16 +138,23 @@ const KeyVisual = () => {
             />
             <Typography
               variant="body2"
-              fontWeight="900"
-              sx={sxStyles.subHeading}
+              sx={[{ fontWeight: '900' }, sxStyles.subHeading]}
             >
               とにかく楽しんで！気づいたら
             </Typography>
             <Typography variant="body2" sx={sxStyles.heading}>
-              <Typography component="span" variant="body2" fontWeight="900">
+              <Typography
+                component="span"
+                variant="body2"
+                sx={{ fontWeight: '900' }}
+              >
                 プログラミングが
               </Typography>
-              <Typography component="span" variant="body2" fontWeight="900">
+              <Typography
+                component="span"
+                variant="body2"
+                sx={{ fontWeight: '900' }}
+              >
                 できるようになっている教室
               </Typography>
             </Typography>
@@ -155,14 +162,22 @@ const KeyVisual = () => {
         </Box>
         <Box sx={sxStyles.text}>
           <Typography variant="body2" style={{ lineHeight: '1.8' }}>
-            <Typography component="span" variant="body2" fontWeight="bold">
+            <Typography
+              component="span"
+              variant="body2"
+              sx={{ fontWeight: 'bold' }}
+            >
               現役エンジニア
             </Typography>
             が低価格で教えます！
           </Typography>
           <Typography variant="body2" style={{ lineHeight: '1.8' }}>
             個人の学びがより深まる
-            <Typography component="span" variant="body2" fontWeight="bold">
+            <Typography
+              component="span"
+              variant="body2"
+              sx={{ fontWeight: 'bold' }}
+            >
               少人数での教室
             </Typography>
             で{isSmallScreen && <br />}

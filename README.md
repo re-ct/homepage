@@ -17,3 +17,8 @@
 
 ## lintの適用
 * `npx prettier --write './{bin,lib,src,tests}/**/*.{ts,tsx}'`
+
+## 型チェック
+
+* `yarn typecheck` でTypeScript 7の型チェックを実行します。`yarn build` でも実行されます。
+* TypeScript 7のCLIは `@typescript/native`、Next.jsとtypescript-eslintが使うTypeScript 6のAPIは `typescript` のnpmエイリアスで導入しています。[TypeScript公式の併用構成](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0)に従っています。

@@ -110,8 +110,8 @@ const KeyVisual = () => {
           </Box>
           <img src={img.src} alt="" width="828" height="640" />
           <Box
-            mt={4}
             sx={{
+              mt: 4,
               width: '100%',
               '& > a': {
                 '@media screen and (max-width:890px)': {

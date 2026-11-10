@@ -123,9 +123,7 @@ const Case = () => {
                 <Box
                   component="img"
                   src={`../../../../image/demand/ad/case_${item.id}.webp`}
-                  width={900}
-                  height={450}
-                  sx={sxStyles.image}
+                  sx={[{ width: 900, height: 450 }, sxStyles.image]}
                 />
               </Box>
             </React.Fragment>

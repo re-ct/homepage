@@ -105,7 +105,7 @@ const Contact = () => {
   const isSmallScreen = useMediaQuery('(max-width:450px)');
   return (
     <>
-      <Box pt={7} pb={7} px={3} bgcolor="#407BFF" id="contact-form">
+      <Box id="contact-form" sx={{ pt: 7, pb: 7, px: 3, bgcolor: '#407BFF' }}>
         <Typography variant="h2" sx={sxStyles.heading}>
           <img
             src={headingCtaImg.src}
@@ -114,12 +114,16 @@ const Contact = () => {
             height="146"
           />
         </Typography>
-        <Box mt={3}>
-          <Typography variant="body2" color="#fff" fontWeight="bold">
+        <Box sx={{ mt: 3 }}>
+          <Typography variant="body2" color="#fff" sx={{ fontWeight: 'bold' }}>
             下記フォームより{isSmallScreen && <br />}
             メールアドレスをご登録ください。
           </Typography>
-          <Typography variant="body2" color="#fff" fontWeight="bold" mt={1}>
+          <Typography
+            variant="body2"
+            color="#fff"
+            sx={{ fontWeight: 'bold', mt: 1 }}
+          >
             ご登録後、メールにてご連絡いたしますので{isSmallScreen && <br />}
             必要事項をご記入お願いいたします。
           </Typography>
@@ -148,7 +152,11 @@ const Contact = () => {
             </Button>
           </Box>
         </Box>
-        <Typography variant="body2" mt={5} color="#fff" fontWeight="bold">
+        <Typography
+          variant="body2"
+          color="#fff"
+          sx={{ mt: 5, fontWeight: 'bold' }}
+        >
           その他、お問合せやご相談は
           <br />
           お電話または公式LINEアカウントへ{isSmallScreen && <br />}
@@ -192,7 +200,11 @@ const Contact = () => {
             height="78"
           />
         </Typography>
-        <Typography variant="body2" color="#333" fontWeight="bold" mt={3}>
+        <Typography
+          variant="body2"
+          color="#333"
+          sx={{ fontWeight: 'bold', mt: 3 }}
+        >
           下記資料から詳細内容について{isSmallScreen && <br />}
           ご確認いただけます。
         </Typography>

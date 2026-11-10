@@ -3,7 +3,7 @@ import Heading2 from '../components/Heading2';
 import { commonSxStyles } from '../components/Style';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 const sxStyles = {
   wrap: {
@@ -56,7 +56,7 @@ const sxStyles = {
     padding: '6px 12px',
     columnGap: '8px',
     color: commonSxStyles.color.black,
-    '> [data-testid="HelpOutlineIcon"]': {
+    '> [data-testid="HelpOutlineOutlinedIcon"]': {
       fontSize: '20px',
       color: commonSxStyles.color.grayText,
     },
@@ -218,7 +218,7 @@ const Plan = () => {
                   }}
                 >
                   <Button sx={sxStyles.button}>
-                    <HelpOutlineIcon />
+                    <HelpOutlineOutlinedIcon />
                     作業時間の目安
                   </Button>
                 </Tooltip>

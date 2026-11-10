@@ -1,7 +1,7 @@
 'use client';
 import { Box, Typography } from '@mui/material';
 import { commonSxStyles } from './components/Style';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import FadeInOnView from '../../components/FadeInOnView';
 
@@ -27,12 +27,14 @@ const caseStudies: CaseStudy[] = [
     ),
     image: 'feature_case1',
     troubles: [
-      <>
+      <Fragment key="skills-confidence">
         自分のスキルが市場で通用するのか
         <br />
         分からない
-      </>,
-      <>面接で、技術的な質問にうまく答えられるか不安</>,
+      </Fragment>,
+      <Fragment key="technical-interview">
+        面接で、技術的な質問にうまく答えられるか不安
+      </Fragment>,
     ],
     solutions: [
       {
@@ -68,16 +70,16 @@ const caseStudies: CaseStudy[] = [
     ),
     image: 'feature_case2',
     troubles: [
-      <>
+      <Fragment key="frontend-transition">
         バックエンドからフロントエンドへ
         <br />
         移りたいが、必要なスキルが分からない
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="engineer-transition">
         デザイナーから、コーディングができる
         <br />
         エンジニアになりたい
-      </>,
+      </Fragment>,
     ],
     solutions: [
       {
@@ -111,16 +113,16 @@ const caseStudies: CaseStudy[] = [
     ),
     image: 'feature_case3',
     troubles: [
-      <>
+      <Fragment key="career-growth">
         今より裁量権のある開発環境で
         <br />
         働きたい
-      </>,
-      <>
+      </Fragment>,
+      <Fragment key="development-environment">
         最新の技術スタックを使っている
         <br />
         企業に転職したい
-      </>,
+      </Fragment>,
     ],
     solutions: [
       {
@@ -304,9 +306,7 @@ const Features = () => {
                   component="img"
                   src={`/image/career/${item.image}.webp`}
                   alt=""
-                  width={516}
-                  height={369}
-                  sx={sxStyles.listImage}
+                  sx={[{ width: 516, height: 369 }, sxStyles.listImage]}
                 />
 
                 <Box

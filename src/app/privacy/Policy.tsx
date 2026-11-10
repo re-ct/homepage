@@ -9,40 +9,34 @@ const Policy = () => {
     <>
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第1条（個人情報）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第2条（個人情報の収集方法）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社は、ユーザーが利用登録をする際に氏名、生年月日、住所、電話番号、メールアドレス、銀行口座番号、クレジットカード番号などの個人情報をお尋ねすることがあります。また、ユーザーの個人情報を含む取引記録や決済に関する情報を、当社の提携先（情報提供元、広告主、広告配信先などを含みます。以下、｢提携先｣といいます。）などから収集することがあります。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第3条（個人情報を収集・利用する目的）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社が個人情報を収集・利用する目的は以下のとおりです。
       </Typography>
       <List component={'ul'} sx={listUlStyle}>
@@ -83,27 +77,23 @@ const Policy = () => {
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第4条（利用目的の変更）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。利用目的の変更を行った場合には、変更後の目的について、当社所定の方法により、ユーザーに通知し、または本ウェブサイト上に公表するものとします。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第5条（個人情報の第三者提供）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。
       </Typography>
       <List component={'ul'} sx={listUlStyle}>
@@ -138,14 +128,12 @@ const Policy = () => {
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第6条（WebサイトにおけるCookie等の取扱いについて）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社では、当社及び当社グループに関する情報提供の利便性向上、統計データ分析等の目的でCookie及びウェブ・ビーコン等の統計的なサイト利用情報を取得しています。
       </Typography>
       <List component={'ul'} sx={listUlStyle}>
@@ -165,14 +153,12 @@ const Policy = () => {
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第7条（個人情報の開示）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社は、本人から個人情報の開示を求められたときは、本人に対し、遅滞なくこれを開示します。ただし、開示することにより次のいずれかに該当する場合は、全部または一部を開示しないこともあります。
       </Typography>
       <List component={'ul'} sx={listUlStyle}>
@@ -189,60 +175,52 @@ const Policy = () => {
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第8条（個人情報の訂正および削除）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、訂正、追加または削除を請求することができます。当社は、必要があると判断した場合、遅滞なく、訂正等を行います。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第9条（個人情報の利用停止等）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         当社は、本人から、個人情報が利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、利用停止または消去を求められた場合には、必要な調査を行います。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第10条（プライバシーポリシーの変更）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         本ポリシーの内容は、ユーザーに通知することなく変更することができます。変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。
       </Typography>
 
       <Typography
         variant="h2"
-        fontSize={20}
-        fontWeight={600}
         gutterBottom
-        sx={h2TypographyStyle}
+        sx={[{ fontSize: 20, fontWeight: 600 }, h2TypographyStyle]}
       >
         第11条（お問い合わせ窓口）
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
         本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。
         <br />
         Eメールアドレス：privacyinfo@re-ct.co.jp
       </Typography>
 
-      <Box mt={4} sx={{ textAlign: 'right' }}>
-        <Typography variant="body1" paragraph>
+      <Box sx={{ mt: 4, textAlign: 'right' }}>
+        <Typography variant="body1" component="p" sx={{ marginBottom: '16px' }}>
           制定日：2024年10月1日
           <br />
           株式会社レクト <br />

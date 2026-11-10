@@ -212,9 +212,7 @@ const Company = () => {
                 component="img"
                 src="/image/top/initiatives.webp"
                 alt=""
-                width="540"
-                height="296"
-                sx={sxStyles.cardImage}
+                sx={[{ width: '540', height: '296' }, sxStyles.cardImage]}
               />
               <Box sx={sxStyles.cardContent}>
                 <Typography
@@ -236,9 +234,7 @@ const Company = () => {
               component="img"
               src="/image/top/recruit.webp"
               alt=""
-              width="540"
-              height="296"
-              sx={sxStyles.cardImage}
+              sx={[{ width: '540', height: '296' }, sxStyles.cardImage]}
             />
             <Box sx={sxStyles.cardContent}>
               <Typography component="h3" sx={sxStyles.cardHeadingBox}>

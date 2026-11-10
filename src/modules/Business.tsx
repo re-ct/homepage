@@ -266,11 +266,12 @@ const Business = () => {
                       <Box
                         component="img"
                         key={item.id}
-                        width="152"
-                        height="152"
                         src={`/image/top/${item.img}_square.webp`}
                         alt={item.title}
-                        sx={sxStyles.listImageSp}
+                        sx={[
+                          { width: '152', height: '152' },
+                          sxStyles.listImageSp,
+                        ]}
                       />
                       <Box>
                         <Typography variant="h3" sx={sxStyles.title}>
@@ -297,13 +298,12 @@ const Business = () => {
                   <Box
                     component="img"
                     key={item.id}
-                    width="580"
-                    height="664"
                     src={`/image/top/${item.img}_rectangle.webp`}
                     alt={item.title}
                     style={{
                       opacity: hoveredId === item.id ? 1 : 0,
                     }}
+                    sx={{ width: '580', height: '664' }}
                   />
                 ))}
               </Box>
