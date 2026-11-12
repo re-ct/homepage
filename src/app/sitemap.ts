@@ -31,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${url}/school/list/`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
       url: `${url}/school/fc/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
