@@ -144,9 +144,9 @@ const worries: Worries[] = [
 const sxStyles = {
   section: {
     width: '100%',
-    backgroundColor: commonSxStyles.color.white,
-    pt: '28px',
-    pb: 4,
+    position: 'relative',
+    zIndex: 1,
+    pt: '16px',
   },
   wrap: {
     maxWidth: '948px',
@@ -162,20 +162,10 @@ const sxStyles = {
     position: 'relative',
     width: '100%',
     backgroundColor: commonSxStyles.color.primary[400],
-    pt: 7,
+    pt: 'calc(56px + 40px)',
     pb: 10,
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '0',
-      height: '0',
-      borderLeft: '18px solid transparent',
-      borderRight: '18px solid transparent',
-      borderBottom: '17px solid transparent',
-      borderTop: '17px solid' + commonSxStyles.color.white,
+    '@media screen and (max-width:768px)': {
+      pt: 'calc(56px + 24px)',
     },
   },
   contentWrap: {
@@ -187,14 +177,43 @@ const sxStyles = {
     },
   },
   worries: {
+    position: 'relative',
     display: 'flex',
     columnGap: '40px',
     alignItems: 'center',
     listStyle: 'none',
+    backgroundColor: commonSxStyles.color.white,
+    border: `solid 1px ${commonSxStyles.color.Gray[300]}`,
+    borderRadius: '8px',
+    py: 3,
+    px: 4,
+    mb: '-40px',
     '@media screen and (max-width:768px)': {
       flexDirection: 'column',
       alignItems: 'flex-start',
       rowGap: '12px',
+      py: 2.5,
+      px: 2.5,
+      mb: '-24px',
+    },
+    '&::before, &::after': {
+      content: '""',
+      position: 'absolute',
+      top: '100%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: 0,
+      height: 0,
+    },
+    '&::before': {
+      borderLeft: '20px solid transparent',
+      borderRight: '20px solid transparent',
+      borderTop: `19px solid ${commonSxStyles.color.Gray[300]}`,
+    },
+    '&::after': {
+      borderLeft: '18px solid transparent',
+      borderRight: '18px solid transparent',
+      borderTop: `17px solid ${commonSxStyles.color.white}`,
     },
   },
   worriesList: {
@@ -217,10 +236,9 @@ const sxStyles = {
     },
   },
   worriesListText: {
-    '& > br': {
-      '@media screen and (max-width:768px)': {
-        display: 'none',
-      },
+    // 幅 360px の端末でも 1 行が折り返さないように少し小さくする
+    '@media screen and (max-width:450px)': {
+      fontSize: '15px',
     },
   },
   heading2: {
@@ -381,8 +399,8 @@ const Feature = () => {
                   <Box sx={sxStyles.worriesIcon}>{item.icon}</Box>
                   <Typography
                     sx={[
-                      sxStyles.worriesListText,
                       commonSxStyles.typography.largeText,
+                      sxStyles.worriesListText,
                     ]}
                   >
                     {item.title}
