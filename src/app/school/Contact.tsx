@@ -115,7 +115,10 @@ const Contact = () => {
           />
         </Typography>
         <Box sx={{ mt: 3 }}>
-          <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#fff' }}>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: 'bold', color: '#fff' }}
+          >
             下記フォームより{isSmallScreen && <br />}
             メールアドレスをご登録ください。
           </Typography>
