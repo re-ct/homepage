@@ -115,14 +115,13 @@ const Contact = () => {
           />
         </Typography>
         <Box sx={{ mt: 3 }}>
-          <Typography variant="body2" color="#fff" sx={{ fontWeight: 'bold' }}>
+          <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#fff' }}>
             下記フォームより{isSmallScreen && <br />}
             メールアドレスをご登録ください。
           </Typography>
           <Typography
             variant="body2"
-            color="#fff"
-            sx={{ fontWeight: 'bold', mt: 1 }}
+            sx={{ fontWeight: 'bold', mt: 1, color: '#fff' }}
           >
             ご登録後、メールにてご連絡いたしますので{isSmallScreen && <br />}
             必要事項をご記入お願いいたします。
@@ -154,8 +153,7 @@ const Contact = () => {
         </Box>
         <Typography
           variant="body2"
-          color="#fff"
-          sx={{ mt: 5, fontWeight: 'bold' }}
+          sx={{ mt: 5, fontWeight: 'bold', color: '#fff' }}
         >
           その他、お問合せやご相談は
           <br />
