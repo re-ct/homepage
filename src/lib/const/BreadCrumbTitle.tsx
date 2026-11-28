@@ -6,6 +6,7 @@ export const demandAiTitle = [...demandTopTitle, 'AI導入・活用支援'];
 export const downloadTitle = ['お役立ち資料一覧'];
 export const announcementTitle = ['電子公告'];
 export const initiativesTitle = ['社内の取り組み'];
+export const schoolListTitle = [...schoolTopTitle, '開講教室一覧'];
 export const fcTopTitle = [
   ...schoolTopTitle,
   'こども向けプログラミング教室のフランチャイズパートナー募集',

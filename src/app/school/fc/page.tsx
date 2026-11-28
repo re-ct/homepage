@@ -3,6 +3,7 @@ import BreadcrumbsNavigation from '../../BreadcrumbsNavigation';
 import { fcTopTitle } from '@/lib/const/BreadCrumbTitle';
 import Curriculum from './Curriculum';
 import KeyVisual from './KeyVisual';
+import MemberInfo from './MemberInfo';
 import Feature from './Feature';
 import Fee from './Fee';
 import Comparison from './Comparison';
@@ -25,6 +26,7 @@ const School = () => {
   return (
     <main>
       <KeyVisual />
+      <MemberInfo />
       <Feature />
       <Fee />
       <Comparison />

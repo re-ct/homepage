@@ -6,7 +6,8 @@ import Image from 'next/image';
 import logoReprosImg from '../../../public/image/school/logo.png';
 import Button from '@mui/material/Button';
 import { PlayCircle } from '@mui/icons-material';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { contact } from '@/lib/const/Link';
 
 const sxStyles = {
   schoolHeader: {
@@ -49,6 +50,9 @@ const sxStyles = {
 
 const SchoolHeader = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  // 教室一覧ページでは、無料体験ではなく通常のお問い合わせへ誘導する
+  const isListPage = pathname.includes('/school/list');
   const schoolHandleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     router.push('/school/complete');
@@ -67,15 +71,29 @@ const SchoolHeader = () => {
             style={{ verticalAlign: 'bottom', height: 'auto' }}
           />
         </Link>
-        <Button
-          variant="contained"
-          sx={sxStyles.button}
-          endIcon={<PlayCircle />}
-          onClick={schoolHandleClick}
-          data-ga="school_free_trial_header"
-        >
-          無料体験受付中
-        </Button>
+        {isListPage ? (
+          <Button
+            variant="contained"
+            sx={sxStyles.button}
+            endIcon={<PlayCircle />}
+            href={contact}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-ga="schoolList_contact_header"
+          >
+            お問い合わせ
+          </Button>
+        ) : (
+          <Button
+            variant="contained"
+            sx={sxStyles.button}
+            endIcon={<PlayCircle />}
+            onClick={schoolHandleClick}
+            data-ga="school_free_trial_header"
+          >
+            無料体験受付中
+          </Button>
+        )}
       </Box>
     </Toolbar>
   );
